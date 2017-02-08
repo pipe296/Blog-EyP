@@ -1,0 +1,638 @@
+﻿<!DOCTYPE HTML>
+<!DOCTYPE html PUBLIC "" ""><HTML><HEAD><META content="IE=11.0000" 
+http-equiv="X-UA-Compatible">
+ 
+<META charset="utf-8"> <TITLE>Documento sin t�tulo</TITLE> 
+<STYLE type="text/css">
+<!--
+p.MsoNormal {
+margin-top:0cm;
+margin-right:0cm;
+margin-bottom:10.0pt;
+margin-left:0cm;
+line-height:115%;
+font-size:11.0pt;
+font-family:"Calibri","sans-serif";
+}
+-->
+</STYLE>
+ 
+<STYLE type="text/css">
+<!--
+table.MsoNormalTable {
+font-size:10.0pt;
+font-family:"Calibri","sans-serif";
+}
+-->
+</STYLE>
+ 
+<SCRIPT src="Scripts/swfobject_modified.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT type="text/javascript">
+	document.oncontextmenu = function(){return false;}
+    function disabletext(e){
+    return false
+    }
+    function reEnable(){
+    return true
+    }
+    document.onselectstart=new Function ("return false")
+    if (window.sidebar){
+    document.onmousedown=disabletext
+    document.onclick=reEnable
+    }
+</SCRIPT>
+ 
+<STYLE type="text/css">
+<!--
+p.MsoListParagraph {
+margin-top:0cm;
+margin-right:0cm;
+margin-bottom:10.0pt;
+margin-left:36.0pt;
+line-height:115%;
+font-size:11.0pt;
+font-family:"Calibri","sans-serif";
+}
+div.MsoListParagraph {margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:36.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+div.MsoNormal {margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+div.Style6 {mso-style-name:Style6;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:14.15pt;
+	line-height:14.45pt;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+div.Style7 {mso-style-name:Style7;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-indent:14.5pt;
+	line-height:14.45pt;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+li.MsoListParagraph {margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:36.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+li.MsoNormal {margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+li.Style6 {mso-style-name:Style6;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:14.15pt;
+	line-height:14.45pt;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+li.Style7 {mso-style-name:Style7;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-indent:14.5pt;
+	line-height:14.45pt;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.Style6 {mso-style-name:Style6;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:14.15pt;
+	line-height:14.45pt;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.Style7 {mso-style-name:Style7;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-indent:14.5pt;
+	line-height:14.45pt;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+span.FontStyle50 {mso-style-name:"Font Style50";
+	font-family:"Arial","sans-serif";
+	color:black;}
+-->
+</STYLE>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD> 
+<BODY><FIGURE><FIGCAPTION>
+<P class="Style6" style="line-height: 12.7pt; text-indent: 0cm; margin-top: 0.5pt;"><B><SPAN 
+lang="ES-TRAD" style='color: rgb(0, 112, 192); font-family: "Calibri","sans-serif"; font-size: 11pt;'>Diseño 
+de tarjetas de circuito impreso con PROTEUS</SPAN></B></P>
+<P class="Style6" style="line-height: 12.7pt; margin-top: 0.5pt;"><SPAN class="FontStyle50"><SPAN 
+style='font-family: "Calibri","sans-serif"; font-size: 11pt;'>&nbsp;</SPAN></SPAN></P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">Vamos 
+a configurar un proyecto      paso a paso para exportar un esquemático al diseño 
+de la PCB correspondiente.</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">Esquemático 
+fuente DC variable,      +12V y +5V</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: normal; text-indent: -18pt;">1)<SPAN 
+style='font: 7pt/normal "Times New Roman"; font-size-adjust: none; font-stretch: normal;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>Insertamos los componentes requeridos para elaborar el circuito de la     
+ fuente:</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: normal; margin-bottom: 0pt;"><IMG 
+width="192" height="327" src="prueba_archivos/image001.png"></P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: normal;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: normal; text-indent: -18pt;"><B>2)<SPAN 
+style='font: 7pt/normal "Times New Roman"; font-size-adjust: none; font-stretch: normal;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></B>Realizamos las conexiones entre los componentes:</P>
+<P class="MsoNormal" style="background: white; line-height: normal; margin-bottom: 0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<IMG 
+width="622" height="343" src="prueba_archivos/image002.jpg"></P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: normal; margin-bottom: 0pt;"><B>&nbsp;</B></P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: normal; text-indent: -18pt;">3)<SPAN 
+style='font: 7pt/normal "Times New Roman"; font-size-adjust: none; font-stretch: normal;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>Configuramos los componentes.</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: normal;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: normal;">Los 
+filtros son capacitores de diferente valor, por lo tanto      debemos 
+configurarlos antes de generar el circuito impreso. C1 es un capacitor      de 
+2200uF, por lo tanto su encapsulado ELEC-RAD30 es más grande que el de C2 y      
+C3.</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: normal; margin-bottom: 0pt;"><IMG 
+width="384" height="276" src="prueba_archivos/image003.jpg"></P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">Configurar 
+encapsulado de los      diodos D1 y D2 como DO35.</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;"><B>&nbsp;</B></P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: normal; margin-bottom: 0pt;"><IMG 
+width="403" height="290" src="prueba_archivos/image004.jpg"></P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">Debemos 
+asignar un encapsulado a      los diodos LED, siguiendo el procedimiento 
+mostrado a continuación:</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: normal; margin-bottom: 0pt;">
+  <object id="FlashID5" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="550" height="400">
+    <param name="movie" value="prueba_archivos/prueba.swf">
+    <param name="quality" value="high">
+    <param name="wmode" value="opaque">
+    <param name="swfversion" value="6.0.65.0">
+    <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. -->
+    <param name="expressinstall" value="Scripts/expressInstall.swf">
+    <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="prueba_archivos/prueba.swf" width="550" height="400">
+      <!--<![endif]-->
+      <param name="quality" value="high">
+      <param name="wmode" value="opaque">
+      <param name="swfversion" value="6.0.65.0">
+      <param name="expressinstall" value="Scripts/expressInstall.swf">
+      <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. -->
+      <div>
+        <h4>El contenido de esta página requiere una versión más reciente de Adobe Flash Player.</h4>
+        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Obtener Adobe Flash Player" width="112" height="33" /></a></p>
+      </div>
+      <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
+  </object>
+</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">Una 
+vez finalizado el esquemático      podemos pasar al diseño de la PCB con la 
+herramienta ARES.</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: normal; margin-bottom: 0pt;"><IMG 
+width="431" height="241" id="Imagen 30" src="prueba_archivos/image005.png"></P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoListParagraph" style="background: white; text-align: justify; line-height: normal; text-indent: -18pt; margin-bottom: 0pt;">4)<SPAN 
+style='font: 7pt/normal "Times New Roman"; font-size-adjust: none; font-stretch: normal;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>Agregamos      un polígono de la Toolbox “2D Graphics Box Mode”</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: normal;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: normal; margin-bottom: 0pt;"><B><IMG 
+width="450" height="338" id="Imagen 29" 
+src="prueba_archivos/image006.jpg"></B></P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: normal; margin-bottom: 0pt;"><B>&nbsp;</B></P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">Este 
+polígono corresponderá al      área de nuestro circuito, por lo tanto, debemos 
+asociarlo con la capa “Board      Edge” haciendo Click derecho sobre el polígono 
+y modificando la opción en el      menú “Change Layer”.</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><IMG 
+width="554" height="317" id="Imagen 28" src="prueba_archivos/image007.jpg"></P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt; text-indent: -18pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">Muchas 
+de las medidas que se utilizan en este programa están      dadas en milésimas de 
+pulgada.</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">A 
+continuación una sencilla tabla para recordar su      equivalencia:</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">&nbsp;</P>
+<TABLE class="MsoNormalTable" style="border: currentColor; border-image: none; margin-left: 147.15pt; border-collapse: collapse;" 
+border="1" cellspacing="0" cellpadding="0">
+  <TBODY>
+  <TR>
+    <TD width="157" valign="top" style="padding: 0cm 5.4pt; border: 1pt solid windowtext; border-image: none; width: 118pt;">
+      <P align="center" class="MsoNormal" style="text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><B><SPAN 
+      lang="ES-CO">Medida</SPAN></B></P>
+      <P align="center" class="MsoNormal" style="text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><B><SPAN 
+      lang="ES-CO">(th)</SPAN></B></P></TD>
+    <TD width="155" valign="top" style="border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none; border-color: windowtext windowtext windowtext currentColor; padding: 0cm 5.4pt; border-image: none; width: 115.9pt;">
+      <P align="center" class="MsoNormal" style="text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><B><SPAN 
+      lang="ES-CO">Equivalencia (mm)</SPAN></B></P></TD></TR>
+  <TR>
+    <TD width="157" valign="top" style="border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentColor windowtext windowtext; padding: 0cm 5.4pt; border-image: none; width: 118pt;">
+      <P align="center" class="MsoNormal" style="text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><SPAN 
+      lang="ES-CO">10</SPAN></P></TD>
+    <TD width="155" valign="top" style="border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: currentColor windowtext windowtext currentColor; padding: 0cm 5.4pt; width: 115.9pt;">
+      <P align="center" class="MsoNormal" style="text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><SPAN 
+      lang="ES-CO">0.2540</SPAN></P></TD></TR>
+  <TR>
+    <TD width="157" valign="top" style="border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentColor windowtext windowtext; padding: 0cm 5.4pt; border-image: none; width: 118pt;">
+      <P align="center" class="MsoNormal" style="text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><SPAN 
+      lang="ES-CO">20</SPAN></P></TD>
+    <TD width="155" valign="top" style="border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: currentColor windowtext windowtext currentColor; padding: 0cm 5.4pt; width: 115.9pt;">
+      <P align="center" class="MsoNormal" style="text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><SPAN 
+      lang="ES-CO">0.5080</SPAN></P></TD></TR>
+  <TR>
+    <TD width="157" valign="top" style="border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentColor windowtext windowtext; padding: 0cm 5.4pt; border-image: none; width: 118pt;">
+      <P align="center" class="MsoNormal" style="text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><SPAN 
+      lang="ES-CO">30</SPAN></P></TD>
+    <TD width="155" valign="top" style="border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: currentColor windowtext windowtext currentColor; padding: 0cm 5.4pt; width: 115.9pt;">
+      <P align="center" class="MsoNormal" style="text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><SPAN 
+      lang="ES-CO">0.7620</SPAN></P></TD></TR>
+  <TR>
+    <TD width="157" valign="top" style="border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentColor windowtext windowtext; padding: 0cm 5.4pt; border-image: none; width: 118pt;">
+      <P align="center" class="MsoNormal" style="text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><SPAN 
+      lang="ES-CO">40</SPAN></P></TD>
+    <TD width="155" valign="top" style="border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: currentColor windowtext windowtext currentColor; padding: 0cm 5.4pt; width: 115.9pt;">
+      <P align="center" class="MsoNormal" style="text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><SPAN 
+      lang="ES-CO">1.0160</SPAN></P></TD></TR>
+  <TR>
+    <TD width="157" valign="top" style="border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentColor windowtext windowtext; padding: 0cm 5.4pt; border-image: none; width: 118pt;">
+      <P align="center" class="MsoNormal" style="text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><SPAN 
+      lang="ES-CO">60</SPAN></P></TD>
+    <TD width="155" valign="top" style="border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: currentColor windowtext windowtext currentColor; padding: 0cm 5.4pt; width: 115.9pt;">
+      <P align="center" class="MsoNormal" style="text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><SPAN 
+      lang="ES-CO">1.5240</SPAN></P></TD></TR>
+  <TR>
+    <TD width="157" valign="top" style="border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentColor windowtext windowtext; padding: 0cm 5.4pt; border-image: none; width: 118pt;">
+      <P align="center" class="MsoNormal" style="text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><SPAN 
+      lang="ES-CO">80</SPAN></P></TD>
+    <TD width="155" valign="top" style="border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: currentColor windowtext windowtext currentColor; padding: 0cm 5.4pt; width: 115.9pt;">
+      <P align="center" class="MsoNormal" style="text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><SPAN 
+      lang="ES-CO">2.0320</SPAN></P></TD></TR></TBODY></TABLE>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">Para 
+cambiar entre sistema métrico y sistema imperial solamente pulse la letra m en 
+su teclado.</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt; text-indent: -18pt;">6)<SPAN 
+style='font: 7pt/normal "Times New Roman"; font-size-adjust: none; font-stretch: normal;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>Una vez definido el borde de la placa, éste debe quedar como un marco de  
+    color amarillo.</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">Ahora 
+vamos a ubicar los componentes requeridos para el      circuito. Este es un 
+proceso semi-automático que se ejecuta con la opción       ”Auto-placer” del 
+menú “Tools”.</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><IMG 
+width="1128" height="627" src="prueba_archivos/image009.jpg"><BR><BR></P>
+<P class="MsoNormal" style="background: white; line-height: 13.5pt; margin-bottom: 0pt;">Nos 
+aseguramos de que todos los componentes estén      marcados y hacemos Click en 
+OK.</P>
+<P class="MsoNormal" style="background: white; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<BLOCKQUOTE>
+  <P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><IMG 
+  width="615" height="464" src="prueba_archivos/image010.jpg"></P></BLOCKQUOTE>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoListParagraph" style="background: white; text-align: justify; line-height: 13.5pt; text-indent: -18pt; margin-bottom: 0pt;">7)<SPAN 
+style='font: 7pt/normal "Times New Roman"; font-size-adjust: none; font-stretch: normal;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>Realizamos      la redistribución de los componentes de manera manual y 
+guiándonos por las      líneas de conexión proporcionadas por el software, las 
+cuales vienen definidas      desde la creación del esquemático.</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><IMG 
+width="573" height="419" src="prueba_archivos/image011.png"></P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt; text-indent: -18pt;">8)<SPAN 
+style='font: 7pt/normal "Times New Roman"; font-size-adjust: none; font-stretch: normal;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>Cuando los componentes hayan sido ubicados en su posición, verificamos    
+  si es necesario redimensionar el tamaño de la placa, de manera que todos los   
+   componentes cuenten con el espacio requerido dentro del perímetro del 
+polígono      amarillo.</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">Para 
+medir las dimensiones de la placa siga el procedimiento que se muestra a 
+continuación:</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">
+<OBJECT width="640" height="480" id="FlashID2" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"><PARAM 
+name="movie" value="Diseño de circuitos impresos con PROTEUS_archivos/swf/Dimension.swf"> 
+        <PARAM name="quality" value="high">         <PARAM name="wmode" value="opaque"> 
+        <PARAM name="swfversion" value="6.0.65.0">         <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. --> 
+        <PARAM name="expressinstall" value="Scripts/expressInstall.swf">         <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. --> 
+        <!--[if !IE]>-->         
+<OBJECT width="640" height="480" data="Diseño de circuitos impresos con PROTEUS_archivos/swf/Dimension.swf" 
+type="application/x-shockwave-flash"><!--<![endif]-->           <PARAM name="quality" 
+value="high">           <PARAM name="wmode" value="opaque">           <PARAM 
+name="swfversion" value="6.0.65.0">           <PARAM name="expressinstall" 
+value="Scripts/expressInstall.swf">           <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. --> 
+          
+<DIV>
+<H4>El contenido de esta página requiere una versión más reciente de Adobe Flash 
+Player.</H4>
+<P><A href="http://www.adobe.com/go/getflashplayer"><IMG width="112" height="33" 
+alt="Obtener Adobe Flash Player" 
+src="prueba_archivos/get_flash_player.gif"></A></P></DIV><!--[if !IE]>-->        
+ </OBJECT>         <!--<![endif]-->       </OBJECT>     </P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">Ahora 
+podemos generar la capa “Power      Plane” que servirá como blindaje de nuestro 
+circuito.</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><IMG 
+width="1025" height="611" src="prueba_archivos/image012.jpg"></P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">Opciones 
+recomendadas para crear      la capa “Power Plane”</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><IMG 
+width="388" height="225" id="Imagen 22" src="prueba_archivos/image013.jpg"></P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt; text-indent: -18pt;">9)<SPAN 
+style='font: 7pt/normal "Times New Roman"; font-size-adjust: none; font-stretch: normal;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>Buscamos el borde de la capa “Power Plane” (bloque azul), hacemos doble   
+   Click para modificar sus parámetros.</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 18pt; text-align: justify; line-height: 13.5pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><IMG 
+width="517" height="419" id="Imagen 21" src="prueba_archivos/image014.jpg"></P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">Parámetros 
+recomendados para la      capa “Power Plane”. En esta ventana puede también 
+cambiar el color de su placa      de circuito impreso.</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><IMG 
+width="419" height="251" id="Imagen 20" src="prueba_archivos/image015.png"></P>
+<P class="MsoNormal" style="background: white; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt; text-indent: -18pt;">10)<SPAN 
+style='font: 7pt/normal "Times New Roman"; font-size-adjust: none; font-stretch: normal;'>&nbsp; 
+</SPAN>&nbsp;Ahora podemos generar la capa que contendrá las pistas de cobre que 
+     interconectarán nuestros componentes. Esto lo haremos mediante la opción    
+   “Auto-router” del menú Tools.</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;">
+<OBJECT width="640" height="480" id="FlashID3" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"><PARAM 
+name="movie" value="Diseño de circuitos impresos con PROTEUS_archivos/swf/auto-routing.swf"> 
+        <PARAM name="quality" value="high">         <PARAM name="wmode" value="opaque"> 
+        <PARAM name="swfversion" value="6.0.65.0">         <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. --> 
+        <PARAM name="expressinstall" value="Scripts/expressInstall.swf">         <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. --> 
+        <!--[if !IE]>-->         
+<OBJECT width="640" height="480" data="Diseño de circuitos impresos con PROTEUS_archivos/swf/auto-routing.swf" 
+type="application/x-shockwave-flash"><!--<![endif]-->           <PARAM name="quality" 
+value="high">           <PARAM name="wmode" value="opaque">           <PARAM 
+name="swfversion" value="6.0.65.0">           <PARAM name="expressinstall" 
+value="Scripts/expressInstall.swf">           <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. --> 
+          
+<DIV>
+<H4>El contenido de esta página requiere una versión más reciente de Adobe Flash 
+Player.</H4>
+<P><A href="http://www.adobe.com/go/getflashplayer"><IMG width="112" height="33" 
+alt="Obtener Adobe Flash Player" 
+src="prueba_archivos/get_flash_player.gif"></A></P></DIV><!--[if !IE]>-->        
+ </OBJECT>         <!--<![endif]-->       </OBJECT>     </P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><IMG 
+width="405" height="339" id="Imagen 18" src="prueba_archivos/image017.jpg"></P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoListParagraph" style="background: white; text-align: justify; line-height: 13.5pt; text-indent: -18pt; margin-bottom: 0pt;">11)<SPAN 
+style='font: 7pt/normal "Times New Roman"; font-size-adjust: none; font-stretch: normal;'>&nbsp; 
+</SPAN>Es posible que el software      no haya podido generar una capa de pistas 
+en la que todas ellas hayan quedado      en la parte inferior de la placa 
+(pistas de color rojo). Aquellas pistas que no      tengan ningún obstáculo 
+podrán ser transferidas a la capa “Bottom Copper”       mediante la función 
+“Change Layer”</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 18pt; text-align: justify; line-height: 13.5pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><IMG 
+width="606" height="517" id="Imagen 17" src="prueba_archivos/image018.jpg"></P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt; text-indent: -18pt;">12)<SPAN 
+style='font: 7pt/normal "Times New Roman"; font-size-adjust: none; font-stretch: normal;'>&nbsp; 
+</SPAN>&nbsp;Un aspecto fundamental en el diseño de circuitos impresos es la     
+ dimensión de las pistas de cobre. En términos generales, una pista nunca será   
+   demasiado ancha para la función que habrá de cumplir en el circuito si puede  
+    conducir la cantidad de corriente necesaria para cumplir su función.</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">En 
+este enlace encontrará una herramienta para calcular el      ancho de las pistas 
+de cobre basada en su longitud y la cantidad de corriente      que 
+transportará.</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;"><A 
+href="http://www.microensamble.com/site/index.php?option=com_content&amp;view=article&amp;id=105:calculadora-de-ancho-de-pista&amp;catid=62&amp;Itemid=197">http://www.microensamble.com/site/index.php?option=com_content&amp;view=article&amp;id=105:calculadora-de-ancho-de-pista&amp;catid=62&amp;Itemid=197</A></P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">Esta 
+utilidad calcula el ancho de una pista en el diseño de      circuitos impresos 
+de acuerdo a la curva de la norma IPC-2221 (Formalmente      llamada IPC-D-275) 
+tomando como base el valor de la corriente que va a circular      por ella, así 
+como el espesor del cobre utilizado.</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: center; line-height: 13.5pt;"><IMG 
+width="301" height="232" id="Imagen 16" src="prueba_archivos/image019.jpg" 
+border="0"></P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">Ejemplo: 
+cálculo del ancho de una      pista para conducir una corriente hasta de 1 
+Amperio.</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: center; line-height: 13.5pt;"><IMG 
+width="303" height="245" id="Imagen 15" src="prueba_archivos/image020.jpg" 
+border="0"></P>
+<P class="MsoNormal" style="background: white; line-height: 13.5pt; margin-bottom: 0pt;">El 
+resultado arrojado por la calculadora es el      siguiente:</P>
+<P class="MsoNormal" style="background: white; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: center; line-height: 13.5pt;"><IMG 
+width="273" height="153" id="Imagen 14" src="prueba_archivos/image021.png" 
+border="0"></P>
+<P align="center" class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: center; line-height: 13.5pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: center; line-height: 13.5pt;"><IMG 
+width="360" height="357" id="Imagen 13" src="prueba_archivos/image022.png" 
+border="0"></P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">Para 
+modificar el ancho de una      pista hacemos Click derecho sobre la misma y la 
+modificamos con la opción       “Change Trace Style”.</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><IMG 
+width="572" height="550" id="Imagen 12" src="prueba_archivos/image023.jpg" 
+border="0"></P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoListParagraph" style="background: white; text-align: justify; line-height: 13.5pt; text-indent: -18pt; margin-bottom: 0pt;">13)<SPAN 
+style='font: 7pt/normal "Times New Roman"; font-size-adjust: none; font-stretch: normal;'>&nbsp; 
+</SPAN>Si quedan pistas por      conectar, el programa lo notificará mostrando 
+las líneas correspondientes a las      conexiones faltantes y en la parte 
+inferior llevará el conteo.</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">En 
+la imagen – 2 conexiones faltantes (2 missing).</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><IMG 
+width="407" height="319" id="Imagen 11" src="prueba_archivos/image024.jpg" 
+border="0"></P>
+<P class="MsoNormal" style="background: white; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: 13.5pt; text-indent: -18pt;">14)<SPAN 
+style='font: 7pt/normal "Times New Roman"; font-size-adjust: none; font-stretch: normal;'>&nbsp; 
+</SPAN>&nbsp;Cuando no haya conexiones faltantes aparecerá una indicación en la  
+    parte inferior de la ventana (No CRC Errors)</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><IMG 
+width="860" height="582" id="Imagen 10" src="prueba_archivos/image025.jpg" 
+border="0"></P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">Configuramos 
+las dimensiones de      los PAD para que los pines de los componentes a 
+ensamblar en la tarjeta encajen      con exactitud en las perforaciones y para 
+tener un área de soldadura que      permita una adherencia firme.</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">Para 
+cambiar las dimensiones de un      PAD: Hacer Click derecho sobre el PAD y 
+seleccionar la opción “Edit Properties”</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: normal; margin-bottom: 0pt;"><B><IMG 
+width="561" height="477" id="Imagen 9" src="prueba_archivos/image026.jpg" 
+border="0"></B></P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;"><B>&nbsp;</B></P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">La 
+opción “Style” nos permite      seleccionar entre diferentes formas y 
+dimensiones de PAD.</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: normal; margin-bottom: 0pt;"><B><IMG 
+width="293" height="202" id="Imagen 8" src="prueba_archivos/image027.png" 
+border="0"></B></P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">Los 
+parámetros del PAD son su      forma, dimensiones externas y dimensiones 
+internas (diámetro de perforación).</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">Por 
+ejemplo, un PAD tipo S-70-40      es un PAD cuadrado (Square) con 70 th 
+(milésimas de pulgada) de lado y 40 th de    diámetro de perforación.</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">Un 
+PAD tipo C-80-40 es un PAD      circular (Circle) con 80 th (milésimas de 
+pulgada) de diámetro y 30 th de      diámetro de perforación.</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: normal;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 36pt; text-align: center; line-height: normal;"><IMG 
+width="314" height="284" id="Imagen 7" src="prueba_archivos/image028.jpg" 
+border="0"></P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: normal; margin-bottom: 0pt;"><B>&nbsp;</B></P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: normal; margin-bottom: 0pt;">Dimensiones 
+recomendadas para los    PAD&nbsp; de diferentes encapsulados.</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><B><IMG 
+width="437" height="729" id="Imagen 6" src="prueba_archivos/image029.jpg" 
+border="0"></B></P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoListParagraph" style="background: white; text-align: justify; line-height: 13.5pt; text-indent: -18pt; margin-bottom: 0pt;">15)<SPAN 
+style='font: 7pt/normal "Times New Roman"; font-size-adjust: none; font-stretch: normal;'>&nbsp; 
+</SPAN>Finalmente, agregamos Pad’s      de tamaño C250-M4 que servirán para la 
+sujeción de la placa a la carcasa que la      contendrá.</P>
+<P class="MsoNormal" style="background: white; margin: 0cm 0cm 0pt 18pt; text-align: justify; line-height: 13.5pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;">
+<OBJECT width="640" height="480" id="FlashID4" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"><PARAM 
+name="movie" value="Diseño de circuitos impresos con PROTEUS_archivos/swf/C250-M4.swf"> 
+        <PARAM name="quality" value="high">         <PARAM name="wmode" value="opaque"> 
+        <PARAM name="swfversion" value="6.0.65.0">         <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. --> 
+        <PARAM name="expressinstall" value="Scripts/expressInstall.swf">         <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. --> 
+        <!--[if !IE]>-->         
+<OBJECT width="640" height="480" data="Diseño de circuitos impresos con PROTEUS_archivos/swf/C250-M4.swf" 
+type="application/x-shockwave-flash"><!--<![endif]-->           <PARAM name="quality" 
+value="high">           <PARAM name="wmode" value="opaque">           <PARAM 
+name="swfversion" value="6.0.65.0">           <PARAM name="expressinstall" 
+value="Scripts/expressInstall.swf">           <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. --> 
+          
+<DIV>
+<H4>El contenido de esta página requiere una versión más reciente de Adobe Flash 
+Player.</H4>
+<P><A href="http://www.adobe.com/go/getflashplayer"><IMG width="112" height="33" 
+alt="Obtener Adobe Flash Player" 
+src="prueba_archivos/get_flash_player.gif"></A></P></DIV><!--[if !IE]>-->        
+ </OBJECT>         <!--<![endif]-->       </OBJECT>     </P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><IMG 
+width="519" height="419" id="Imagen 1" src="prueba_archivos/image031.jpg" 
+border="0"></P>
+<P class="Style7" style="line-height: 12pt;"><SPAN lang="EN-US" style='font-family: "Calibri","sans-serif";'>&nbsp;</SPAN></P>
+<P class="MsoListParagraph" style="background: white; text-align: justify; line-height: 13.5pt; text-indent: -18pt; margin-bottom: 0pt;">16)<SPAN 
+style='font: 7pt/normal "Times New Roman"; font-size-adjust: none; font-stretch: normal;'>&nbsp; 
+</SPAN>En el menú tenemos la opción       “3D visualizer” para conocer el 
+aspecto que tendrá nuestra PCB una vez      ensamblada.</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><IMG 
+width="292" height="102" id="Imagen 356" src="prueba_archivos/image032.png" 
+border="0"></P>
+<P class="MsoNormal" style="background: white; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">Aspecto 
+de la placa vista desde la      parte superior (capa de componentes)</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><IMG 
+width="639" height="482" id="Imagen 355" src="prueba_archivos/image033.jpg" 
+border="0"></P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">Aspecto 
+de la placa vista desde la      parte inferior (capa de pistas de cobre)</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 0pt;"><IMG 
+width="545" height="453" id="Imagen 357" src="prueba_archivos/image034.png" 
+border="0"></P></FIGCAPTION></FIGURE>
+<P>&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P>&nbsp;</P>
+<P class="MsoNormal" style='background: white; text-align: justify; color: rgb(16, 16, 16); line-height: 13.5pt; font-family: "Courier New"; font-size: 12pt; margin-bottom: 0pt;'>&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<P align="center" class="MsoNormal" style="background: white; text-align: center; line-height: 13.5pt; margin-bottom: 12pt;">&nbsp;</P>
+<P class="MsoNormal" style="background: white; text-align: justify; line-height: 13.5pt; margin-bottom: 0pt;">&nbsp;</P>
+<SCRIPT type="text/javascript">
+swfobject.registerObject("FlashID2");
+swfobject.registerObject("FlashID3");
+swfobject.registerObject("FlashID4");
+swfobject.registerObject("FlashID5");
+</SCRIPT>
+ </BODY></HTML>
