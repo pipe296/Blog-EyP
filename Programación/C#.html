@@ -24,6 +24,7 @@ font-family:"Calibri","sans-serif";
 }
 -->
 </style>
+<script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
 <script type="text/javascript">
 	document.oncontextmenu = function(){return false;}
     function disabletext(e){
@@ -51,6 +52,32 @@ font-family:"Calibri","sans-serif";
 }
 -->
 </style>
+<style type="text/css">
+<!--
+p.MsoHeader {
+margin:0cm;
+margin-bottom:.0001pt;
+tab-stops:center 212.6pt right 425.2pt;
+font-size:11.0pt;
+font-family:"Calibri",sans-serif;
+}
+-->
+</style>
+<style type="text/css">
+<!--
+span.MsoHyperlink {
+color:blue;
+text-decoration:underline;
+text-underline:single;
+}
+p.MsoHeader1 {margin:0cm;
+margin-bottom:.0001pt;
+tab-stops:center 212.6pt right 425.2pt;
+font-size:11.0pt;
+font-family:"Calibri",sans-serif;
+}
+-->
+</style>
 </head>
 
 <body>
@@ -58,18 +85,105 @@ font-family:"Calibri","sans-serif";
   <figcaption></figcaption>
 </figure>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family: 'Arial', 'sans-serif'; font-size: 12.0pt;">C#</span></strong></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoHeader1" style="text-align:justify;"><strong><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; color:#0070C0; ">Programación  en lenguaje de alto nivel con C#</span></strong></p>
+<p class="MsoHeader1" style="text-align:justify;"><strong><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; color:white; ">&nbsp;</span></strong></p>
+<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;background:white;"><span style="line-height:115%; font-family:'Arial, sans-serif',serif; font-size:12.0pt; color:black; ">C# SHARP es un lenguaje de programación  desarrollado por Microsoft muy apropiado para construir sistemas de información  basados en red o mejor aún en internet.</span></p>
+<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;background:white;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; color:black; ">Se ejecuta sobre la plataforma .NET,  que es la nueva tecnología desarrollada y ofrecida por Microsoft que permite  hacer más fácil la construcción y desarrollo de programas y aplicaciones.</span></p>
+<p style="text-align:justify;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">La sintaxis  de C# es muy expresiva, aunque cuenta con menos de 90 palabras clave; también  es sencilla y fácil de aprender.</span></p>
+<p style="text-align:justify;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">Es muy  similar a la sintaxis de C, C++ o Java. </span></p>
+<p style="text-align:justify;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">Como <strong>lenguaje orientado a objetos</strong>, C# admite  los conceptos de encapsulación, herencia y polimorfismo.</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span style="line-height:115%; font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">En el desarrollo de la presente guía se presentarán los fundamentos para  el desarrollo de interfaces gráficas en el entorno de programación de C#.</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-family: Arial, sans-serif; font-size: 12pt;">&nbsp;</p>
+<ol>
+  <li><strong><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; color:#0070C0; ">Modelo de solución</span></strong></li>
+  <li><strong><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; color:#0070C0; ">Instalación  del software Sharp Develop</span></strong></li>
+  <li><strong><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; color:#0070C0; ">Tipos de  datos: numéricos, alfanuméricos, lógicos</span></strong></li>
+  <li><strong><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; color:#0070C0; ">Operadores  aritméticos, relacionales y lógicos</span></strong></li>
+  <li><strong><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; color:#0070C0; ">Controles  en C#: Button, Label, TextBox, Timer</span></strong></li>
+  <li><strong><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; color:#0070C0; ">Propiedades,  métodos y eventos</span></strong></li>
+</ol>
+<p class="MsoHeader" style="text-align:justify;">&nbsp;</p>
+<p class="MsoHeader" style="text-align:justify;"><strong><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; color:#0070C0; ">1. Modelo  de solución</span></strong></p>
+<p class="MsoHeader" style="text-align:justify;"><strong><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; color:#0070C0; ">&nbsp;</span></strong></p>
+<p class="MsoNormal" style="text-align:justify;"><span style="line-height:115%; font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">Una herramienta rápida que nos permite descomponer en partes un  problema para su solución es el llamado modelo de solución, esta consiste de  una pequeña caja que contiene los tres elementos más básicos en que se puede  descomponer cualquier problema sencillo de información, estas tres partes son:</span></p>
+<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;background:white;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">LA PRIMERA PARTE son todos los datos que el  computador ocupa para resolver el problema, estos datos son almacenados  internamente en la memoria del computador en las llamadas variables de entrada.</span></p>
+<p class="MsoNormal" style="text-align:justify;background:white;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">LA SEGUNDA PARTE son todas las operaciones  generalmente algebraicas necesarias para solucionar el problema, generalmente  esta parte del modelo es una ecuación algebraica o&nbsp;formula&nbsp;(o  igualdad matemática, ej. x= y + 5).</span></p>
+<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;background:white;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">LA TERCERA PARTE es el resultado o solución del  problema que generalmente se obtiene de la parte de operaciones del modelo y  dichos datos están almacenados en las llamadas variables de salida.</span></p>
+<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;background:white;"><span style="line-height:115%; font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">En resumen, para todo problema sencillo de  información es necesario plantearse las siguientes preguntas:</span></p>
+<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;background:white;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">¿Qué datos ocupa conocer el computador para  resolver el problema y en cuales variables de entrada se van a almacenar?</span></p>
+<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;background:white;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">¿Qué procesos u operaciones debe realizar el  computador para resolver el problema planteado?</span></p>
+<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;background:white;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">¿Qué información o variables de salida se van a  desplegar en pantalla para responder al problema planteado originalmente?</span></p>
+<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;background:white;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">Como nota importante no confundir los términos  datos, variables e información:</span></p>
+<p class="MsoNormal" style="text-align:justify;background:white;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">Datos&nbsp;se refiere a información en bruto no  procesada ni catalogada, por ejemplo &ldquo;Tijuana&rdquo;, &ldquo;calle primera # 213&rdquo;, &ldquo;15 años&rdquo;,  &ldquo;$2,520.00&rdquo;, etc.</span></p>
+<p class="MsoNormal" style="text-align:justify;background:white;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">Variables&nbsp;es el nombre de una localidad o  dirección interna en la memoria del computador donde se almacenan los datos,  ejemplo de variables para los casos del inciso anterior, CIUDAD, DIRECCIÓN,  EDAD, SUELDO, ETC.</span></p>
+<p class="MsoNormal" style="text-align:justify;background:white;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">Información&nbsp;son datos ya procesados que  resuelven un problema planteado.</span></p>
+<p class="MsoHeader" style="text-align:justify;"><strong><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; color:#0070C0; ">2  . Instalación</span></strong></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">&nbsp;</span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">SharpDevelop es una distribución libre para  programar sobre la plataforma .Net con el lenguaje C#.</span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">&nbsp;</span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">SharpDevelop requiere .Net  Framework 4.5.1</span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;">&nbsp;</p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; "><a href="http://www.microsoft.com/en-us/download/details.aspx?id=40779">http://www.microsoft.com/en-us/download/details.aspx?id=40779</a></span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">&nbsp;</span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">Se puede obtener el instalador de SharpDevelop en  el siguiente enlace:</span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">&nbsp;</span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; "><a href="http://www.icsharpcode.net/opensource/sd/download/GetFile.aspx?What=Setup&Release=Zimnitz">http://www.icsharpcode.net/opensource/sd/download/GetFile.aspx?What=Setup&amp;Release=Zimnitz</a></span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-family: Arial, sans-serif; font-size: 12pt;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-family: Arial, sans-serif; font-size: 12pt;">
+  <object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="708" height="564">
+    <param name="movie" value="swf/1 - Instalación.swf">
+    <param name="quality" value="high">
+    <param name="wmode" value="opaque">
+    <param name="swfversion" value="6.0.65.0">
+    <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. -->
+    <param name="expressinstall" value="Scripts/expressInstall.swf">
+    <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="swf/1 - Instalación.swf" width="708" height="564">
+      <!--<![endif]-->
+      <param name="quality" value="high">
+      <param name="wmode" value="opaque">
+      <param name="swfversion" value="6.0.65.0">
+      <param name="expressinstall" value="Scripts/expressInstall.swf">
+      <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. -->
+      <div>
+        <h4>El contenido de esta página requiere una versión más reciente de Adobe Flash Player.</h4>
+        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Obtener Adobe Flash Player" width="112" height="33" /></a></p>
+      </div>
+      <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
+  </object>
+</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-family: Arial, sans-serif; font-size: 12pt;">&nbsp;</p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;"><strong><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; color:#0070C0; ">Primer  proyecto</span></strong></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">&nbsp;</span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">Una vez instalado vamos a crear el primer proyecto  en C#.</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-family: Arial, sans-serif; font-size: 12pt;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-family: Arial, sans-serif; font-size: 12pt;"><img src="img/Nuevo proyecto.png" width="495" height="449" alt=""/></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-family: Arial, sans-serif; font-size: 12pt;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;"><span style="line-height:115%; font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">Al ejecutar C# debemos seleccionar el tipo de  proyecto <strong>Windows Application</strong> y darle  un nombre.</span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">&nbsp;</span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">La ruta predeterminada donde se guardará el  proyecto es la carpeta de documentos del sistema:</span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">&nbsp;</span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;"><strong><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">Documentos</span></strong><strong><span style="font-family:Wingdings; font-size:12.0pt; ">à</span></strong><strong><span style="font-family:'Arial, sans-serif',serif; font-size:12.0pt; ">SharpDevelop Projects</span></strong></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-family: Arial, sans-serif; font-size: 12pt;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-family: Arial, sans-serif; font-size: 12pt;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">1.1   <a href="https://www.dropbox.com/s/u3vtpajigbsnx74/Button.exe?dl=0" target="_blank">Button</a></span></strong></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">1.2   <a href="https://www.dropbox.com/s/t5miaxt06teqii9/HScrollBar.exe?dl=0" target="_blank">HScrollBar</a></span></strong></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><strong>1.3   <a href="https://www.dropbox.com/s/f9sai2u7zp091jw/Timer.exe?dl=0">Timer</a></strong></span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">1.4   <a href="https://www.dropbox.com/s/9wp853w0ls5alin/ordenar.exe?dl=0" target="_blank">Ordenar</a></span></strong></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">1.5   <a href="https://www.dropbox.com/s/xdgh1qzz44inw0s/proy 1.exe?dl=0" target="_blank">Area</a></span></strong></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><strong>1.6   <a href="https://www.dropbox.com/s/kgo25nhck685bha/Ej 1.exe?dl=0">Ganancia</a></strong></span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;text-indent:35.4pt;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;text-indent:35.4pt;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">1.1   <a href="https://www.dropbox.com/s/u3vtpajigbsnx74/Button.exe?dl=0" target="_blank">Button</a></span></strong></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;text-indent:35.4pt;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;text-indent:35.4pt;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">1.2   <a href="https://www.dropbox.com/s/t5miaxt06teqii9/HScrollBar.exe?dl=0" target="_blank">HScrollBar</a></span></strong></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;text-indent:35.4pt;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;text-indent:35.4pt;line-height:normal;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><strong>1.3   <a href="https://www.dropbox.com/s/f9sai2u7zp091jw/Timer.exe?dl=0">Timer</a></strong></span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;text-indent:35.4pt;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;text-indent:35.4pt;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">1.4   <a href="https://www.dropbox.com/s/9wp853w0ls5alin/ordenar.exe?dl=0" target="_blank">Ordenar</a></span></strong></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;text-indent:35.4pt;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;text-indent:35.4pt;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">1.5   <a href="https://www.dropbox.com/s/xdgh1qzz44inw0s/proy 1.exe?dl=0" target="_blank">Area</a></span></strong></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;text-indent:35.4pt;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;text-indent:35.4pt;line-height:normal;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><strong>1.6   <a href="https://www.dropbox.com/s/kgo25nhck685bha/Ej 1.exe?dl=0">Ganancia</a></strong></span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;text-indent:35.4pt;line-height:normal;background:white;">&nbsp;</p>
+<script type="text/javascript">
+swfobject.registerObject("FlashID");
+</script>
 </body>
 </html>
