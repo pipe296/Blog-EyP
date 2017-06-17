@@ -1769,9 +1769,9 @@ p.MsoNormal1 {margin-top: 0cm;
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Código Energia IDE</span></strong></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">#define  boton_inc P1_3 </span><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">/ / B oton incremento</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">#define  boton_dec P1_4 </span><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">/ / B oton decremento</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">#define  boton_reset P1_5 </span><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">// Boton reset</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">#define  boton_inc P1_3 &nbsp;&nbsp;</span><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">//Boton incremento</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">#define  boton_dec P1_4 &nbsp;&nbsp;</span><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">//Boton decremento</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">#define  boton_reset P1_5 </span><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">//Boton reset</span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">&nbsp;</span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8000; ">boolean </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_inc;</span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8000; ">boolean </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_dec;</span></p>
@@ -1939,50 +1939,34 @@ p.MsoNormal1 {margin-top: 0cm;
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a name="RS-485" id="Comunicación_serial_asíncrona_(UART)4"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">RS-485</span></strong></a></span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Algunas referencias de microcontroladores PIC incluyen  módulos para comunicación dentro de su hardware. El módulo para comunicaciones  RS-232 se conoce también como UART.</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Para este tipo de comunicación lo primero será  configurarla mediante la siguiente directiva en la cabecera del programa:</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><br>
-  <span style="color:#00B050; ">#use  rs232(baud=9600,bits=8,parity=N,xmit=PIN_C6,rcv=PIN_C7,errors)</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Esto quiere decir que cada vez que queramos utilizar  las funciones para enviar o recibir información utilizando el protocolo de  comunicación serie RS-232 debemos haber incluido previamente esta directiva,  que posibilita la comunicación del PIC con otro dispositivo.</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Algunas referencias de microcontroladores incluyen  módulos para comunicación dentro de su hardware. El módulo para comunicaciones  RS-232 se conoce también como UART.</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">En general habrá que usar un conversor de niveles  basado en el MAX232 o similar.</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">El protocolo serie es una descripción  &quot;digital&quot; (0/1) de lo que debe estar pasando en la línea (por  ejemplo, 1 mientras se espera, 0 indica el bit de start, etc.), pero no  especifica que voltajes representan el 0/1 lógicos.</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Por ejemplo en los PIC se usa la convención (lógica)  que el 0 lógico son 0V y el 1 lógico (línea alta) son 5V.</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Por ejemplo en los mocrocontroladores  se usa la convención (lógica)  que el 0 lógico son 0V y el 1 lógico (línea alta) son 3.3V.</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">En el puerto serie de un PC (standard RS232) la  relación lógica/voltajes está invertida. Un 0 lógico se representa con un  voltaje entre 3 y 15V (12 es típico) y un 1 lógico por un voltaje negativo  (entre -3 y -15V). Es por esto por lo que para comunicar PIC-PC necesitamos un  Max232 o equivalente.</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Las especificaciones de su tarjeta le dirán cuales son  los voltajes asociados a su puerto serie. Si dice algo de RS232 tendrá que usar  seguramente un buffer tipo MAX232.</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Las especificaciones de su tarjeta le dirán cuales son  los voltajes asociados a su puerto serie. Si dice  RS232 tendrá que usar  seguramente un buffer tipo MAX232.</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Si nuestro PIC no tiene UART como es el caso del PIC  16f84A, CCS nos permite implementar la comunicación serie por software y de  forma totalmente transparente para el programador. Sin embargo el utilizar un  PIC con UART nos permite disponer de una serie de funcionalidades adicionales,  como el empleo de interrupciones para controlar el envío y recepción de datos.</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Si queremos realizar una comunicación serie utilizando  la UART del MSP430G2553, las conexiones tendrán que ser a las siguientes: P1_2 para la  transmisión de datos y P1_1 para la recepción de datos.</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Si queremos realizar una comunicación serie utilizando  la USART del PIC, las conexiones tendrán que ser a las siguientes: RC6 para la  transmisión de datos y RC7 para la recepción de datos.</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Como vemos la directiva #use RS232 admite una serie de  parámetros que son los que van entre paréntesis separados por comas, estos son  los siguientes:</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">El procedimiento Serial.begin(baud) admite como  parámetro la tasa de transferencia de bits de la comunicación a establecer:</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">baud</span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> con este parámetro establecemos la  velocidad en baudios a la que queremos que se transmitan los datos por el  puerto serie, 9600 es lo normal.</span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">bits</span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> número de bits que utilizaremos en  la transmisión, el estándar establece que pueden ser 8 ó 9, para la  comunicación con microcontroladores con 8 son suficientes.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">parity</span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> nos permite utilizar un bit de  paridad para la comprobación de errores.<strong></strong></span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">xmit</span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> ésta opción nos permite seleccionar  la patilla del PIC por la cual saldrán los datos.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">rcv</span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> ésta opción nos permite seleccionar  la patilla del PIC por la cual PIC se recibirán los datos.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">errors</span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> El PIC se sobrecargará al recibir 3  caracteres con la función getc(). Esta opción previene el apagado del módulo  UART detectando la condición y reseteándolo.</span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Pero ¿de qué funciones disponemos para enviar y  recibir datos desde y hacia nuestro PIC?.</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Pero ¿de qué funciones disponemos para enviar y  recibir datos desde y hacia nuestro microcontrolador?.</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Para éste propósito disponemos de múltiples funciones</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Para enviar solamente un caracter tenemos: <strong>putc()</strong></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Para enviar una cadena de caracteres: <strong>printf()</strong></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Para enviar una cadena de caracteres: <strong>Serial.print()</strong></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">La forma de hacer la llamada a la función printf es la  siguiente:</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">printf(cadena de caracteres,valores);</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Serial.print(cadena de caracteres ó valores);</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Los datos se enviaran por el puerto serie al pin que  hayamos definido en la directiva #use RS232, en esta llamada vemos que tenemos  la cadena de caracteres limitada por las comillas dobles y separado por una  coma, como tercer parámetro el nombre de la variable i1 que habíamos declarado  previamente. En la cadena de caracteres vemos que aparece el carácter de %  seguido de la letra d, ese es un carácter especial para la función y lo que le  indica a la función es que en esa posición muestre el valor de la variable i1,  la d le indica a la función que represente ese valor en formato de número  entero. Podemos representar el valor de la variable en diferentes formatos  según se muestra en la tabla de abajo:</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Los datos se enviaran por el puerto serie al pin que  al hardware del UART, en esta llamada vemos que tenemos  la cadena de caracteres limitada por las comillas dobles y separado por una  coma, como tercer parámetro el nombre de la variable i1 que habíamos declarado  previamente. En la cadena de caracteres vemos que aparece el carácter de %  seguido de la letra d, ese es un carácter especial para la función y lo que le  indica a la función es que en esa posición muestre el valor de la variable i1,  la d le indica a la función que represente ese valor en formato de número  entero. Podemos representar el valor de la variable en diferentes formatos  según se muestra en la tabla de abajo:</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:12.45pt;background:white;"><br>
   &nbsp;</p>
@@ -2053,9 +2037,7 @@ p.MsoNormal1 {margin-top: 0cm;
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"> </p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Vamos con la última llamada a la función del 1º  ejemplo:</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"> </p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">printf (lcd_putc,&quot;El valor de i1 es:  %d&quot;,i1);</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">En esta llamada hemos incluido el primer parámetro y  hemos puesto el nombre de la función lcd_putc, está función está definida en la  librería LCD.C que trae el compilador para ayuda del manejo de los dispositivos  LCD y que hemos incluido en nuestro programa por medio de la directiva #include  &lt;lcd.c&gt;, vemos que la librería está encerrada entre los símbolos de  &lt;&gt; esto le indica al compilador que busque la librería en el directorio  en que se instalo el compilador, si copiáramos esa librería en otro directorio  tendríamos que indicarle la ruta completa, pero esta vez encerrada entre  comillas dobles.</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">printf (&quot;El valor de i1 es:  %d&quot;,i1);</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Las secuencias de escape se utilizan para representar  caracteres o acciones especiales.</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
@@ -2118,31 +2100,6 @@ p.MsoNormal1 {margin-top: 0cm;
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;">Durante la  simulación es muy conveniente que el micro nos mande mensajes, así como en un  programa de PC normal con la ayuda de la función printf(), para este caso se  puede conectar la terminal virtual de ISIS a la línea TX del micro que nos va a  mandar la información y, con un simple printf() el programa va a mandar esa  cadena por el puerto serial.</p>
 <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;">Manos a la  obra!!!</p>
-<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><br>
-  En PIC-C CCS creamos un&nbsp;proyecto con las siguientes características:</p>
-<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;">*  Micro-controlador PIC 18F4550.</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;">* Frecuencia  de reloj 20 MHz</p>
-<div align="center">
-  <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td style="padding:3.0pt 3.0pt 3.0pt 3.0pt;"></td>
-    </tr>
-    <tr style="height:1.0pt;">
-      <td style="padding:3.0pt 3.0pt 3.0pt 3.0pt;height:1.0pt;"><p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;">&nbsp;</p></td>
-    </tr>
-  </table>
-</div>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Agregamos la&nbsp;directiva&nbsp;<span style="color:#00B050; ">#use  rs232(baud=9600,bits=8,parity=N,xmit=PIN_C6,rcv=PIN_C7,errors)</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<div align="center">
-  <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td style="padding:3.0pt 3.0pt 3.0pt 3.0pt;"><p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;">&nbsp;</p></td>
-    </tr>
-  </table>
-</div>
-<p class="MsoNormal" align="center" style="margin-bottom:12.0pt;text-align:center;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Extraído  parcialmente de: <a href="http://www.aquihayapuntes.com/programacion-pic-en-c.html?start=7">http://www.aquihayapuntes.com/programacion-pic-en-c.html?start=7</a></span><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a name="Comunicación_serial_síncrona" id="Comunicación_serial_asíncrona_(UART)5"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Comunicación serial síncrona</span></strong></a></span></span></p>
