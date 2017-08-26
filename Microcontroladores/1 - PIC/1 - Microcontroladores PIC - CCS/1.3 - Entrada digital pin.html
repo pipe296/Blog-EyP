@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="IE=edge">
+<title>Documento sin título</title>
+<script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
+<style type="text/css">
+<!--
+p.MsoNormal {
+	margin-top: 0cm;
+	margin-right: 0cm;
+	margin-bottom: 10.0pt;
+	margin-left: 0cm;
+	line-height: 115%;
+	font-size: 12pt;
+	font-family: Arial, sans-serif;
+}
+-->
+</style>
+<style type="text/css">
+<!--
+table.MsoNormalTable {
+font-size:10.0pt;
+font-family:"Calibri","sans-serif";
+}
+-->
+</style>
+<script type="text/javascript">
+	document.oncontextmenu = function(){return false;}
+    function disabletext(e){
+    return false
+    }
+    function reEnable(){
+    return true
+    }
+    document.onselectstart=new Function ("return false")
+    if (window.sidebar){
+    document.onmousedown=disabletext
+    document.onclick=reEnable
+    }
+</script>
+<style type="text/css">
+<!--
+p.MsoListParagraph {
+margin-top:0cm;
+margin-right:0cm;
+margin-bottom:10.0pt;
+margin-left:36.0pt;
+line-height:115%;
+font-size:11.0pt;
+font-family:"Calibri","sans-serif";
+}
+p.MsoNormal1 {margin-top:0cm;
+margin-right:0cm;
+margin-bottom:10.0pt;
+margin-left:0cm;
+line-height:115%;
+font-size:11.0pt;
+font-family:"Calibri","sans-serif";
+}
+-->
+</style>
+</head>
+
+<body>
+<figure>
+  <figcaption></figcaption>
+</figure>
+<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><a name="Entrada_digital_pin" id="Entrada_digital_pin"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Entrada digital pin</span></strong></a></p>
+<p>
+  <object id="FlashID4" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1000" height="720">
+    <param name="movie" value="../swf/Input_pin.swf">
+    <param name="quality" value="high">
+    <param name="wmode" value="opaque">
+    <param name="swfversion" value="6.0.65.0">
+    <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. -->
+    <param name="expressinstall" value="Scripts/expressInstall.swf">
+    <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="../swf/Input_pin.swf" width="1000" height="720">
+      <!--<![endif]-->
+      <param name="quality" value="high">
+      <param name="wmode" value="opaque">
+      <param name="swfversion" value="6.0.65.0">
+      <param name="expressinstall" value="Scripts/expressInstall.swf">
+      <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. -->
+      <div>
+        <h4>El contenido de esta página requiere una versión más reciente de Adobe Flash Player.</h4>
+        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Obtener Adobe Flash Player" /></a></p>
+      </div>
+      <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
+  </object>
+</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span style="font-family: 'Courier New'; font-size: 12pt; color: #F32933;">#<span style="font-size: 12pt">include</span></span></strong><span style="font-family: 'Courier New'; font-size: 12pt; color: #101010;"> &lt;</span><strong><span style="font-family: 'Courier New'; font-size: 12pt; color: green;">16</span></strong><span style="font-family: 'Courier New'; font-size: 12pt; color: black;">F877A</span><span style="font-family: 'Courier New'; font-size: 12pt; color: #101010;">.</span><span style="font-family: 'Courier New'; font-size: 12pt; color: black;">h</span><span style="font-family: 'Courier New'; font-size: 12pt; color: #101010;">&gt;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:'Courier New'; font-size:12.0pt; color:#818181; ">//#include &lt;18F4550.h&gt;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:'Courier New'; font-size:12.0pt; color:#F32933; ">#fuses </span><span style="font-family:'Courier New'; font-size:12.0pt; color:black; ">HS</span><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">,</span><span style="font-family:'Courier New'; font-size:12.0pt; color:black; ">NOWDT</span><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">,</span><span style="font-family:'Courier New'; font-size:12.0pt; color:black; ">NOPROTECT</span><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">,</span><span style="font-family:'Courier New'; font-size:12.0pt; color:black; ">NOLVP</span><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">,</span><span style="font-family:'Courier New'; font-size:12.0pt; color:black; ">NODEBUG</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:'Courier New'; font-size:12.0pt; color:#F32933; ">#use </span><span style="font-family:'Courier New'; font-size:12.0pt; color:black; ">delay</span><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">(</span><span style="font-family:'Courier New'; font-size:12.0pt; color:black; ">clock</span><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">=</span><span style="font-family:'Courier New'; font-size:12.0pt; color:#008100; ">20000000</span><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">)</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:'Courier New'; font-size:12.0pt; color:#003EC7; ">void </span><span style="font-family:'Courier New'; font-size:12.0pt; color:black; ">main</span><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">()</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">{</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:'Courier New'; font-size:12.0pt; color:#003EC7; ">   while </span><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">(</span><span style="font-family:'Courier New'; font-size:12.0pt; color:black; ">true</span><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">)             </span><span style="font-family:'Courier New'; font-size:12.0pt; color:#818181; ">//Bucle  infinito que mantendrá el programa en ejecución</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:'Courier New'; font-size:12.0pt; color:#818181; ">   </span><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">{</span><span style="font-family:'Courier New'; font-size:12.0pt; color:#818181; "> </span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:'Courier New'; font-size:12.0pt; color:#818181; ">      </span><span style="font-family:'Courier New'; font-size:12.0pt; color:#003EC7; ">if </span><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">(</span><span style="font-family:'Courier New'; font-size:12.0pt; color:black; ">INPUT</span><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">(</span><span style="font-family:'Courier New'; font-size:12.0pt; color:black; ">PIN_A0</span><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">)==</span><span style="font-family:'Courier New'; font-size:12.0pt; color:#008100; ">1</span><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">)     </span><span style="font-family:'Courier New'; font-size:12.0pt; color:#818181; ">//Lee  la entrada en el pin A0 y determina si está activa </span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:'Courier New'; font-size:12.0pt; color:black; ">         OUTPUT_HIGH</span><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">(</span><span style="font-family:'Courier New'; font-size:12.0pt; color:black; ">PIN_B0</span><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">);   </span><span style="font-family:'Courier New'; font-size:12.0pt; color:#818181; ">//Si la  entrada A0 está activa (conectada a 5V) se activa B0</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:'Courier New'; font-size:12.0pt; color:#818181; ">      </span><span style="font-family:'Courier New'; font-size:12.0pt; color:#003EC7; ">else</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:'Courier New'; font-size:12.0pt; color:black; ">         OUTPUT_LOW</span><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">(</span><span style="font-family:'Courier New'; font-size:12.0pt; color:black; ">PIN_B0</span><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">);    </span><span style="font-family:'Courier New'; font-size:12.0pt; color:#818181; ">//Si la entrada A0 está inactiva (conectada a 0V) se desactiva B0</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:'Courier New'; font-size:12.0pt; color:#818181; ">   </span><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">}</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Courier New'; font-size:12.0pt; color:#101010; ">}</span></p>
+<script type="text/javascript">
+swfobject.registerObject("FlashID4");
+  </script>
+</body>
+</html>
