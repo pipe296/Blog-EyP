@@ -1893,41 +1893,37 @@ p.MsoNormal1 {margin-top: 0cm;
 <p class="MsoNormal" style="text-autospace:none;">&nbsp;</p>
 <p class="MsoNormal" style="text-align:justify;text-autospace:none;">Comprobamos los parámetros de  comunicación de los dispositivos en simulación, verificando con la herramienta  I2C debugger:</p>
 <p class="MsoNormal" style="text-align:justify;text-autospace:none;">&nbsp;</p>
-<p class="MsoNormal" align="center" style="text-align:center;text-autospace:none;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="text-align:justify;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="text-align:justify;text-autospace:none;"><a name="Real_Time_Clock_DS1307"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">R</span></strong></a><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">eal Time Clock DS1307</span></strong></span><strong></strong></span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;">El  DS1307 Real-Time-Clock Serie, es un dispositivo de bajo consumo de energía,  completo con código binario decimal (BCD), reloj/calendario más 56 bytes de NV  SRAM.</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;">Dirección  y datos son transferidos a través de 2 hilos serie, bus bi-direccional. El  reloj/calendario provee información de segundos, minutos, horas, día, fecha,  mes y año.</p>
+<p class="MsoNormal" style="text-align:justify;text-autospace:none;">
+  <object id="FlashID32" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="400" height="25">
+    <param name="movie" value="../../1 - PIC/swf/Real Time Clock DS1307_lbl.swf">
+    <param name="quality" value="high">
+    <param name="wmode" value="opaque">
+    <param name="swfversion" value="6.0.65.0">
+    <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. -->
+    <param name="expressinstall" value="Scripts/expressInstall.swf">
+    <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="../../1 - PIC/swf/Real Time Clock DS1307_lbl.swf" width="400" height="25">
+      <!--<![endif]-->
+      <param name="quality" value="high">
+      <param name="wmode" value="opaque">
+      <param name="swfversion" value="6.0.65.0">
+      <param name="expressinstall" value="Scripts/expressInstall.swf">
+      <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. -->
+      <div>
+        <h4>El contenido de esta página requiere una versión más reciente de Adobe Flash Player.</h4>
+        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Obtener Adobe Flash Player" width="112" height="33" /></a></p>
+      </div>
+      <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
+  </object>
+</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;">&nbsp;</p>
-<p class="MsoNormal" style="text-align:justify;">El final de fecha de mes se  ajusta automáticamente durante meses menores de 31 días, incluyendo  correcciones para el año bisiesto. El reloj funciona en cualquier formato de 24  horas o en 12 horas con indicador AM/PM. El DS1307 tiene incorporado un  circuito de sensor de tensión que detecta fallas de energía y cambia  automáticamente al suministro de batería de respaldo.</p>
-<p class="MsoNormal" style="text-align:justify;">CARACTERÍSTICAS </p>
-<p class="MsoNormal" style="text-align:justify;">° Reloj en tiempo real (RTC)  Cuenta segundos, Minutos, horas, fecha del mes, mes, día de la semana, y año  con año bisiesto. Compensación válida hasta 2100. </p>
-<p class="MsoNormal" style="text-align:justify;">° 56-Byte, con respaldo de  batería, no volátil (NV) de RAM para almacenamiento de datos.</p>
-<p class="MsoNormal" style="text-align:justify;">° Interface Serie I2C.</p>
-<p class="MsoNormal" style="text-align:justify;">° Onda-Cuadrada programable  de la señal de salida. </p>
-<p class="MsoNormal" style="text-align:justify;">° Detector Automático  Fallo-Energía y Circuito Conmutación. </p>
-<p class="MsoNormal" style="text-align:justify;">° Consume menos de 500nA en  la batería -- Modo de copia de seguridad con el oscilador funcionando. </p>
-<p class="MsoNormal" style="text-align:justify;">° Rango de temperatura  Industrial Opcional: -40 ° C a +85 ° C </p>
-<p class="MsoNormal" style="text-align:justify;">° Disponible en 8-Pin  Plástico DIP o SO </p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;">°  Reconocido Underwriters Laboratory (UL) </p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;">El  DS1307 funciona como un dispositivo esclavo en el bus serie. El acceso se  obtiene mediante la aplicación de una condición de START (Inicio) y la  prestación de un código de identificación del dispositivo seguido de una  dirección de registro. Se puede acceder a registros posteriores de forma  secuencial hasta que es ejecutada una condición STOP.</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;">Cuando  VCC cae por debajo de 1,25 x VBAT un dispositivo en curso rescinde el acceso y  restablece el contador de dirección de dispositivo. En este momento, pueden no  ser reconocidas entradas al dispositivo para evitar que se escriban datos  erróneos en el dispositivo por fuera de tolerancia del sistema. Cuando VCC cae  por debajo de VBAT el dispositivo conmuta a batería de baja corriente modo de  seguridad. Tras el encendido, el dispositivo conmuta de la batería a VCC VCC  cuando es mayor que VBAT + 0,2 V y reconoce las entradas cuando VCC es mayor de  1,25 x VBAT. El diagrama de bloques de la Figura 1 muestra los principales  elementos del RTC serie. </p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;">&nbsp;</p>
-<p class="MsoNormal" style="text-align:justify;">Veamos  una aplicación con un ejemplo:</p>
+<p class="MsoNormal" align="center" style="text-align:center;"><img src="../img/DS1307.JPG" width="650" height="485" alt=""/></p>
 <p class="MsoNormal" style="text-align:justify;">&nbsp;</p>
-<p class="MsoNormal" align="center" style="text-align:center;">&nbsp;</p>
 <p class="MsoNormal" style="text-align:justify;">&nbsp;</p>
-<p class="MsoNormal" style="text-align:justify;">Vamos  a copiar el siguiente código ejemplo que nos proporciona el compilador:</p>
-<p class="MsoNormal" style="text-align:justify;text-autospace:none;">&nbsp;</p>
-<p class="MsoNormal" style="text-autospace:none;">&nbsp;</p>
-<p class="MsoNormal" style="text-align:justify;text-autospace:none;">&nbsp;</p>
-<p class="MsoNormal" style="text-align:justify;text-autospace:none;">Comprobamos los parámetros de  comunicación de los dispositivos en simulación, verificando con la herramienta  I2C debugger:</p>
-<p class="MsoNormal" style="text-align:justify;text-autospace:none;">&nbsp;</p>
-<p class="MsoNormal" align="center" style="text-align:center;text-autospace:none;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a name="USB"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">U</span></strong></a></span><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">SB</span></strong></p>
+<p class="MsoNormal" style="text-align:justify;"><strong><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a name="USB"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">U</span></strong></a></span><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">SB</span></strong></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">Diseñar la interfaz  visual del proyecto formativo utilizando los controles que puede descargar del  siguiente enlace:</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
@@ -1972,6 +1968,7 @@ swfobject.registerObject("FlashID28");
 swfobject.registerObject("FlashID29");
 swfobject.registerObject("FlashID30");
 swfobject.registerObject("FlashID31");
+swfobject.registerObject("FlashID32");
 </script>
 </body>
 </html>
