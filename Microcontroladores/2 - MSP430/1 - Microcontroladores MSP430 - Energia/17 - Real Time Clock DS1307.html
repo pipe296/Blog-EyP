@@ -106,10 +106,9 @@ font-family:"Calibri","sans-serif";
 
 <span style="color: #FF0000;">void</span> <span style="color: #8B308B;"><b>setup</b></span>()
 {
-&nbsp;&nbsp;<span style="color: #FF8000;">Wire</span>.<span style="color: #FF8000;">begin</span>();
-&nbsp;&nbsp;<span style="color: #8B308B;"><b>Serial</b></span>.<span style="color: #FF8000;">begin</span>(9600);
 &nbsp;&nbsp;<span style="color: #007F00;">// set up the LCD's number of columns and rows: </span>
 &nbsp;&nbsp;lcd.<span style="color: #FF8000;">begin</span>(16, 2);
+&nbsp;&nbsp;<span style="color: #FF8000;">Wire</span>.<span style="color: #FF8000;">begin</span>();
 &nbsp;&nbsp;<span style="color: #007F00;">/*</span>
 <span style="color: #007F00;">&nbsp;&nbsp;//////here&nbsp;programmer&nbsp;set&nbsp;the&nbsp;current&nbsp;time&nbsp;,from&nbsp;where&nbsp;the&nbsp;ds&nbsp;runs</span>
 <span style="color: #007F00;">&nbsp;&nbsp;*/</span>
@@ -125,16 +124,19 @@ font-family:"Calibri","sans-serif";
 
 <span style="color: #FF0000;">void</span> <span style="color: #FF8000;">loop</span>()
 {
+&nbsp;&nbsp;leer_fecha_y_hora();
+&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(1000);
+}
+
+<span style="color: #FF0000;">void</span> leer_fecha_y_hora()
+{
 &nbsp;&nbsp;getDateDs1307(&amp;second,&nbsp;&amp;minute,&nbsp;&amp;hour,&nbsp;&amp;dayOfWeek,&nbsp;&amp;dayOfMonth,&nbsp;&amp;month,&nbsp;&amp;year);<span style="color: #007F00;">///to get current time from ds1307</span>
 &nbsp;&nbsp;sprintf(buffer_fecha,&nbsp;<span style="color: #0066FF;">"%02d/%02d/20%02d "</span>, dayOfMonth, month, year);
 &nbsp;&nbsp;sprintf(buffer_hora,&nbsp;<span style="color: #0066FF;">"%02d:%02d:%02d"</span>, hour, minute, second);
-&nbsp;&nbsp;<span style="color: #8B308B;"><b>Serial</b></span>.<span style="color: #FF8000;">print</span>(buffer_fecha);
-&nbsp;&nbsp;<span style="color: #8B308B;"><b>Serial</b></span>.<span style="color: #FF8000;">println</span>(buffer_hora);
 &nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(0, 0);
 &nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(buffer_fecha);
 &nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(0, 1);
-&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(buffer_hora);
-&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(500);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(buffer_hora); 
 }
 
 <span style="color: #FF0000;">void</span> getDateDs1307(<span style="color: #FF8000;">byte</span> *second,   <span style="color: #007F00;">// Gets the date and time from the ds1307</span>
