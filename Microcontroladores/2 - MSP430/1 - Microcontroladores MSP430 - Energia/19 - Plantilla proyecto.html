@@ -64,32 +64,11 @@ font-family:"Calibri","sans-serif";
 
 <body>
 <figure>
-  <figcaption><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Real Time Clock DS1307</span></strong> <strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> </span></strong></figcaption>
+  <figcaption><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Plantilla proyecto</span></strong></figcaption>
 </figure>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">El  DS1307 Real-Time-Clock Serie, es un dispositivo de bajo consumo de energía,  completo con código binario decimal (BCD), reloj/calendario más 56 bytes de NV  SRAM.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Dirección  y datos son transferidos a través de 2 hilos serie, bus bi-direccional. El  reloj/calendario provee información de segundos, minutos, horas, día, fecha,  mes y año.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">El final de fecha de mes se  ajusta automáticamente durante meses menores de 31 días, incluyendo  correcciones para el año bisiesto. El reloj funciona en cualquier formato de 24  horas o en 12 horas con indicador AM/PM. El DS1307 tiene incorporado un  circuito de sensor de tensión que detecta fallas de energía y cambia  automáticamente al suministro de batería de respaldo.</span></p>
-<p class="MsoNormal" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">CARACTERÍSTICAS </span></p>
-<p class="MsoNormal" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">° Reloj en tiempo real (RTC)  Cuenta segundos, Minutos, horas, fecha del mes, mes, día de la semana, y año  con año bisiesto. Compensación válida hasta 2100. </span></p>
-<p class="MsoNormal" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">° 56-Byte, con respaldo de  batería, no volátil (NV) de RAM para almacenamiento de datos.</span></p>
-<p class="MsoNormal" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">° Interface Serie I2C.</span></p>
-<p class="MsoNormal" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">° Onda-Cuadrada programable  de la señal de salida. </span></p>
-<p class="MsoNormal" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">° Detector Automático  Fallo-Energía y Circuito Conmutación. </span></p>
-<p class="MsoNormal" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">° Consume menos de 500nA en  la batería -- Modo de copia de seguridad con el oscilador funcionando. </span></p>
-<p class="MsoNormal" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">° Rango de temperatura  Industrial Opcional: -40 ° C a +85 ° C </span></p>
-<p class="MsoNormal" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">° Disponible en 8-Pin  Plástico DIP o SO </span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">°  Reconocido Underwriters Laboratory (UL) </span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> </span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">El  DS1307 funciona como un dispositivo esclavo en el bus serie. El acceso se  obtiene mediante la aplicación de una condición de START (Inicio) y la  prestación de un código de identificación del dispositivo seguido de una  dirección de registro. Se puede acceder a registros posteriores de forma  secuencial hasta que es ejecutada una condición STOP.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Cuando  VCC cae por debajo de 1,25 x VBAT un dispositivo en curso rescinde el acceso y  restablece el contador de dirección de dispositivo. En este momento, pueden no  ser reconocidas entradas al dispositivo para evitar que se escriban datos  erróneos en el dispositivo por fuera de tolerancia del sistema. Cuando VCC cae  por debajo de VBAT el dispositivo conmuta a batería de baja corriente modo de  seguridad. Tras el encendido, el dispositivo conmuta de la batería a VCC VCC  cuando es mayor que VBAT + 0,2 V y reconoce las entradas cuando VCC es mayor de  1,25 x VBAT. El diagrama de bloques de la Figura 1 muestra los principales  elementos del RTC serie. </span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> </span></p>
-<p class="MsoNormal" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Veamos  una aplicación con un ejemplo:</span></p>
-<p class="MsoNormal" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
 <p class="MsoNormal" align="center" style="text-align:center;"><img src="../img/DS1307.JPG" width="650" height="485" alt=""/></p>
-<p class="MsoNormal" style="text-align:justify;">&nbsp;</p>
+<p>&nbsp;</p>
 <pre>
 #include&nbsp;<span style="color: #0066FF;">"Wire.h"</span>                 <span style="color: #007F00;">//for DS1307 I2C</span>
 #include&nbsp;&lt;string.h&gt;
@@ -100,16 +79,38 @@ font-family:"Calibri","sans-serif";
 <span style="color: #FF0000;">LiquidCrystal</span> lcd(P2_0, P2_1, P2_2, P2_3, P2_4, P2_5);
 
 #define&nbsp;DS1307_I2C_ADDRESS&nbsp;0x68
+#define&nbsp;boton&nbsp;P1_3
+
+<span style="color: #FF8000;">boolean</span> estado_boton;
+
+<span style="color: #FF8000;">char</span> txt2stream[17];
+
 <span style="color: #FF8000;">byte</span> second, minute, hour, dayOfWeek, dayOfMonth, month, year;
 <span style="color: #FF8000;">char</span> buffer_fecha[12];
 <span style="color: #FF8000;">char</span> buffer_hora[12];
 
 <span style="color: #FF0000;">void</span> <span style="color: #8B308B;"><b>setup</b></span>()
 {
-&nbsp;&nbsp;<span style="color: #FF8000;">Wire</span>.<span style="color: #FF8000;">begin</span>();
-&nbsp;&nbsp;<span style="color: #8B308B;"><b>Serial</b></span>.<span style="color: #FF8000;">begin</span>(9600);
+&nbsp;&nbsp;<span style="color: #FF8000;">pinMode</span>(P1_3, <span style="color: #0066FF;">INPUT</span>);
 &nbsp;&nbsp;<span style="color: #007F00;">// set up the LCD's number of columns and rows: </span>
 &nbsp;&nbsp;lcd.<span style="color: #FF8000;">begin</span>(16, 2);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(5,0);
+&nbsp;&nbsp;sprintf(txt2stream,<span style="color: #0066FF;">"Nombre"</span>);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(txt2stream);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(4,1);
+&nbsp;&nbsp;sprintf(txt2stream,<span style="color: #0066FF;">"Proyecto"</span>);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(txt2stream);
+&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(1500);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">clear</span>();
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(2,1);
+&nbsp;&nbsp;sprintf(txt2stream,<span style="color: #0066FF;">"Ficha:xxxxxxx"</span>);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(txt2stream);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(2,1);
+&nbsp;&nbsp;sprintf(txt2stream,<span style="color: #0066FF;">"Sena Reg. Caldas"</span>);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(txt2stream);
+&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(1500);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">clear</span>();
+&nbsp;&nbsp;<span style="color: #FF8000;">Wire</span>.<span style="color: #FF8000;">begin</span>();
 &nbsp;&nbsp;<span style="color: #007F00;">/*</span>
 <span style="color: #007F00;">&nbsp;&nbsp;//////here&nbsp;programmer&nbsp;set&nbsp;the&nbsp;current&nbsp;time&nbsp;,from&nbsp;where&nbsp;the&nbsp;ds&nbsp;runs</span>
 <span style="color: #007F00;">&nbsp;&nbsp;*/</span>
@@ -125,16 +126,31 @@ font-family:"Calibri","sans-serif";
 
 <span style="color: #FF0000;">void</span> <span style="color: #FF8000;">loop</span>()
 {
+&nbsp;&nbsp;&nbsp;<span style="color: #007F00;">// Escribir c&#243;digo de la aplicaci&#243;n</span>
+
+&nbsp;&nbsp;&nbsp;estado_boton&nbsp;=&nbsp;!<span style="color: #FF8000;">digitalRead</span>(boton);
+
+&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">if</span> (estado_boton==1)
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">while</span> (estado_boton==1)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;leer_fecha_y_hora();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(1000);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;estado_boton&nbsp;=&nbsp;<span style="color: #FF8000;">digitalRead</span>(boton);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lcd.<span style="color: #FF8000;">clear</span>();
+&nbsp;&nbsp;&nbsp;}
+}
+
+<span style="color: #FF0000;">void</span> leer_fecha_y_hora()
+{
 &nbsp;&nbsp;getDateDs1307(&amp;second,&nbsp;&amp;minute,&nbsp;&amp;hour,&nbsp;&amp;dayOfWeek,&nbsp;&amp;dayOfMonth,&nbsp;&amp;month,&nbsp;&amp;year);<span style="color: #007F00;">///to get current time from ds1307</span>
 &nbsp;&nbsp;sprintf(buffer_fecha,&nbsp;<span style="color: #0066FF;">"%02d/%02d/20%02d "</span>, dayOfMonth, month, year);
 &nbsp;&nbsp;sprintf(buffer_hora,&nbsp;<span style="color: #0066FF;">"%02d:%02d:%02d"</span>, hour, minute, second);
-&nbsp;&nbsp;<span style="color: #8B308B;"><b>Serial</b></span>.<span style="color: #FF8000;">print</span>(buffer_fecha);
-&nbsp;&nbsp;<span style="color: #8B308B;"><b>Serial</b></span>.<span style="color: #FF8000;">println</span>(buffer_hora);
 &nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(0, 0);
 &nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(buffer_fecha);
 &nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(0, 1);
-&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(buffer_hora);
-&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(500);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(buffer_hora); 
 }
 
 <span style="color: #FF0000;">void</span> getDateDs1307(<span style="color: #FF8000;">byte</span> *second,   <span style="color: #007F00;">// Gets the date and time from the ds1307</span>
