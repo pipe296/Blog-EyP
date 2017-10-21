@@ -80,68 +80,90 @@ p.MsoNormal1 {margin-top: 0cm;
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><a><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Sensor de temperatura DS1820B</span></strong></a></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Código Energia IDE</span></strong></span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">// include the library code:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">#include &lt;</span><span style="font-family:Courier; font-size:10.0pt; color:red; ">LiquidCrystal</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">.h&gt;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">// initialize the library with the  numbers of the interface pins</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">LiquidCrystal </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">lcd(P2_0, P2_1, P2_2, P2_3, P2_4, P2_5);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">String </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">inputString;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8000; ">boolean </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">stringComplete;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8000; ">int </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">intPWM = 0;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8000; ">float </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">floatPWM = 0;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8000; ">char </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream[12];</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">void </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#8C308C; ">setup</span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">()</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">{</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8000; ">  pinMode</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(P1_6, </span><span style="font-family:Courier; font-size:10.0pt; color:#0066FF; ">OUTPUT</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  lcd.</span><span style="font-family:Courier; font-size:10.0pt; color:#FF8000; ">begin</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(16,2);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8000; ">  delay</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(200);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  lcd.</span><span style="font-family:Courier; font-size:10.0pt; color:#FF8000; ">setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(0,0);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  sprintf(txt2stream,</span><span style="font-family:Courier; font-size:10.0pt; color:#0066FF; ">&quot;PWM: 0%%&quot;</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  lcd.</span><span style="font-family:Courier; font-size:10.0pt; color:#FF8000; ">print</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(txt2stream);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#8C308C; ">  Serial</span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">.</span><span style="font-family:Courier; font-size:10.0pt; color:#FF8000; ">begin</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(9600);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">}</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">void </span><span style="font-family:Courier; font-size:10.0pt; color:#FF8000; ">loop</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">()</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">{</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">  if </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(stringComplete)</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  {</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">    intPWM  = inputString.toInt();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">    floatPWM  = intPWM / 10.0;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">    lcd.</span><span style="font-family:Courier; font-size:10.0pt; color:#FF8000; ">setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(5,0);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">    lcd.</span><span style="font-family:Courier; font-size:10.0pt; color:#FF8000; ">print</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(floatPWM);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">    lcd.</span><span style="font-family:Courier; font-size:10.0pt; color:#FF8000; ">print</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:#0066FF; ">&quot;% &quot;</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">    intPWM  = </span><span style="font-family:Courier; font-size:10.0pt; color:#FF8000; ">map</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(intPWM,0,1000,0,255);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8000; ">     analogWrite</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(P1_6,intPWM);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">     // clear the string:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">    inputString=</span><span style="font-family:Courier; font-size:10.0pt; color:#0066FF; ">&quot;&quot;</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">    stringComplete  = </span><span style="font-family:Courier; font-size:10.0pt; color:red; ">false</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  }</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">}</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">void </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">serialEvent()</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">{</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">  while </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:#8C308C; ">Serial</span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">.</span><span style="font-family:Courier; font-size:10.0pt; color:#FF8000; ">available</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">())</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  {</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8000; ">     char </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">inChar[2];</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">     // get the new byte:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">    inChar[0]  = </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#8C308C; ">Serial</span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">.</span><span style="font-family:Courier; font-size:10.0pt; color:#FF8000; ">read</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">     // add it to the inputString:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">    inputString  += inChar[0];</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">     // if the incoming character is a newline, set a flag</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">     // so the main loop can do something about it:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">    if </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(inChar[0] == </span><span style="font-family:Courier; font-size:10.0pt; color:#0066FF; ">'\r'</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">)</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">    {</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      stringComplete  = </span><span style="font-family:Courier; font-size:10.0pt; color:red; ">true</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">    }</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  }</span></p>
-<p class="MsoNormal"><span style="line-height:107%; font-family:Courier; font-size:10.0pt; color:black; ">}</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Código Sharp Develop</span></strong></span></span></span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<pre>
+#include&nbsp;&lt;OneWire.h&gt;
+
+<span style="color: #007F00;"></span>OneWire&nbsp;&nbsp;ds(2);&nbsp;&nbsp;<span style="color: #007F00;">// on pin 10 (a 4.7K resistor is necessary)</span>
+
+<span style="color: #007F00;">//&nbsp;include&nbsp;the&nbsp;library&nbsp;code:</span>
+#include&nbsp;&lt;<span style="color: #FF0000;">LiquidCrystal</span>.h&gt;
+
+<span style="color: #007F00;">//&nbsp;initialize&nbsp;the&nbsp;library&nbsp;with&nbsp;the&nbsp;numbers&nbsp;of&nbsp;the&nbsp;interface&nbsp;pins</span>
+<span style="color: #FF0000;">LiquidCrystal</span> lcd(P2_0, P2_1, P2_2, P2_3, P2_4, P2_5);
+
+<span style="color: #FF0000;">void</span> <span style="color: #8B308B;"><b>setup</b></span>(<span style="color: #FF0000;"></span>) {
+&nbsp;&nbsp;<span style="color: #8B308B;"><b>Serial</b></span>.<span style="color: #FF8000;">begin</span>(9600);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #007F00;">// set up the LCD's number of columns and rows: </span>
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">begin</span>(16, 2);
+&nbsp;&nbsp;<span style="color: #007F00;">// Print a message to the LCD.</span>
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(<span style="color: #0066FF;">"Temp: "</span>);
+}
+
+<span style="color: #FF0000;">void</span> <span style="color: #FF8000;">loop</span>(<span style="color: #FF0000;"></span>) {
+&nbsp;&nbsp;<span style="color: #FF8000;">byte</span> i;
+&nbsp;&nbsp;<span style="color: #FF8000;">byte</span> present = 0;
+&nbsp;&nbsp;<span style="color: #FF8000;">byte</span> type_s;
+&nbsp;&nbsp;<span style="color: #FF8000;">byte</span> data[12];
+&nbsp;&nbsp;<span style="color: #FF8000;">byte</span> addr[8];
+&nbsp;&nbsp;<span style="color: #FF8000;">float</span> sensor;
+&nbsp;&nbsp;
+&nbsp;&nbsp;<span style="color: #FF0000;">if</span> ( !ds.search(addr)) {
+&nbsp;&nbsp;&nbsp;&nbsp;ds.reset_search();
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(250);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">return</span>;
+&nbsp;&nbsp;}
+&nbsp;
+&nbsp;&nbsp;<span style="color: #007F00;">// the first ROM byte indicates which chip</span>
+&nbsp;&nbsp;<span style="color: #FF0000;">switch</span> (addr[0]) {
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">case</span> 0x10:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type_s&nbsp;=&nbsp;1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">break</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">case</span> 0x28:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type_s&nbsp;=&nbsp;0;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">break</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">case</span> 0x22:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type_s&nbsp;=&nbsp;0;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">break</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">default</span>:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">return</span>;
+&nbsp;&nbsp;}&nbsp;
+
+&nbsp;&nbsp;ds.reset();
+&nbsp;&nbsp;ds.select(addr);
+&nbsp;&nbsp;ds.<span style="color: #FF8000;">write</span>(0x44, 1);        <span style="color: #007F00;">// start conversion, with parasite power on at the end</span>
+&nbsp;&nbsp;
+&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(1000);     <span style="color: #007F00;">// maybe 750ms is enough, maybe not</span>
+&nbsp;&nbsp;<span style="color: #007F00;">// we might do a ds.depower() here, but the reset will take care of it.</span>
+&nbsp;&nbsp;
+&nbsp;&nbsp;present&nbsp;=&nbsp;ds.reset();
+&nbsp;&nbsp;ds.select(addr);&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;ds.<span style="color: #FF8000;">write</span>(0xBE);         <span style="color: #007F00;">// Read Scratchpad</span>
+
+&nbsp;&nbsp;<span style="color: #FF0000;">for</span> ( i = 0; i &lt; 9; i++) {           <span style="color: #007F00;">// we need 9 bytes</span>
+&nbsp;&nbsp;&nbsp;&nbsp;data[i]&nbsp;=&nbsp;ds.<span style="color: #FF8000;">read</span>();
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;<span style="color: #FF0000;">int16_t</span> raw = (data[1] &lt;&lt; 8) | data[0];
+&nbsp;&nbsp;<span style="color: #FF0000;">if</span> (type_s) {
+&nbsp;&nbsp;&nbsp;&nbsp;raw&nbsp;=&nbsp;raw&nbsp;&lt;&lt;&nbsp;3;&nbsp;<span style="color: #007F00;">// 9 bit resolution default</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">if</span> (data[7] == 0x10) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raw&nbsp;=&nbsp;(raw&nbsp;&amp;&nbsp;0xFFF0)&nbsp;+&nbsp;12&nbsp;-&nbsp;data[6];
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;}&nbsp;<span style="color: #FF0000;">else</span> {
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF8000;">byte</span> cfg = (data[4] &amp; 0x60);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">if</span> (cfg == 0x00) raw = raw &amp; ~7;  <span style="color: #007F00;">// 9 bit resolution, 93.75 ms</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">else</span> <span style="color: #FF0000;">if</span> (cfg == 0x20) raw = raw &amp; ~3; <span style="color: #007F00;">// 10 bit res, 187.5 ms</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">else</span> <span style="color: #FF0000;">if</span> (cfg == 0x40) raw = raw &amp; ~1; <span style="color: #007F00;">// 11 bit res, 375 ms</span>
+&nbsp;&nbsp;}
+&nbsp;&nbsp;sensor&nbsp;=&nbsp;(<span style="color: #FF8000;">float</span>)raw / 16.0;
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(7, 0);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(sensor);
+&nbsp;&nbsp;<span style="color: #8B308B;"><b>Serial</b></span>.<span style="color: #FF8000;">println</span>(sensor);
+}
+
+
+<span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Código Sharp Develop</span></strong></span></span></span>
+</pre>
 <p class="MsoNormal"><span style="line-height:107%; font-family:Courier; font-size:10.0pt; color:green; ">/*</span><span style="line-height:107%; font-family:Courier; font-size:10.0pt; "><br>
     <span style="color:green; ">&nbsp;* Created by SharpDevelop.</span><br>
     <span style="color:green; ">&nbsp;* User: AnDrEs</span><br>
