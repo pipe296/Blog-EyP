@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style type="text/css">
+<!--
+p.MsoNormal {
+	margin-top: 0cm;
+	margin-right: 0cm;
+	margin-bottom: 10.0pt;
+	margin-left: 0cm;
+	line-height: 115%;
+	font-size: 11.0pt;
+	/* [disabled]font-family: "Calibri","sans-serif"; */
+}
+-->
+</style>
+<style type="text/css">
+<!--
+table.MsoNormalTable {
+font-size:10.0pt;
+font-family:"Calibri","sans-serif";
+}
+-->
+</style>
+<script type="text/javascript">
+	document.oncontextmenu = function(){return false;}
+    function disabletext(e){
+    return false
+    }
+    function reEnable(){
+    return true
+    }
+    document.onselectstart=new Function ("return false")
+    if (window.sidebar){
+    document.onmousedown=disabletext
+    document.onclick=reEnable
+    }
+</script>
+<style type="text/css">
+<!--
+p.MsoListParagraph {
+	margin-top: 0cm;
+	margin-right: 0cm;
+	margin-bottom: 10.0pt;
+	margin-left: 36.0pt;
+	line-height: 115%;
+	font-size: 11.0pt;
+	/* [disabled]font-family: "Calibri","sans-serif"; */
+}
+-->
+</style>
+<style type="text/css">
+<!--
+-->
+</style>
+<style type="text/css">
+<!--
+-->
+</style>
+<style type="text/css">
+<!--
+p.MsoNormal1 {margin-top: 0cm;
+	margin-right: 0cm;
+	margin-bottom: 10.0pt;
+	margin-left: 0cm;
+	line-height: 115%;
+	font-size: 12pt;
+	font-family: Arial, sans-serif;
+}
+-->
+</style>
+</head>
+
+<body>
+<figure>
+  <figcaption><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Contador 0 - 9 con decodificador</span></strong></figcaption>
+</figure>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">/**</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">Display 7 segmenti per corso arduino.</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">segmenti:</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">a P2_0</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">b P2_1</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">c P2_2</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">d P2_3</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">e P2_4</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">f P2_5</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">g P2_6</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">*/</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">#define boton_inc P1_3   </span><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">//Boton incremento</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">#define boton_dec P1_4   </span><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">//Boton decremento</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">#define boton_reset P1_5 </span><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">//Boton reset</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">boolean </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_inc;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">boolean </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_dec;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">boolean </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_reset;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">boolean </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_inc_ant;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">boolean </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_dec_ant;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">byte </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">unidades = 0;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">long </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">segment_to_pin[4] = {P2_0, P2_1, P2_2,  P2_3}</span>;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">void </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">write_digit(</span><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">byte </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">cifra){</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">  byte </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">i;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">  for </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(i=0; i&lt;4; i++)</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  {</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">     digitalWrite</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(segment_to_pin[i],  (cifra&gt;&gt;i)&amp;1);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  }</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">}</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">void </span><span style="font-family:Courier; font-size:10.0pt; color:#8C308C; ">setup</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(){</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">    byte </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">i;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">    pinMode</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(boton_inc, </span><span style="font-family:Courier; font-size:10.0pt; color:#0066FF; ">INPUT_PULLUP</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">    pinMode</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(boton_dec, </span><span style="font-family:Courier; font-size:10.0pt; color:#0066FF; ">INPUT_PULLUP</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">    pinMode</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(boton_reset, </span><span style="font-family:Courier; font-size:10.0pt; color:#0066FF; ">INPUT_PULLUP</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">   for </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(i=0; i&lt;4; i++){</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">       pinMode</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(segment_to_pin[i], </span><span style="font-family:Courier; font-size:10.0pt; color:#0066FF; ">OUTPUT</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   }</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">}</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">void </span><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">loop</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(){</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   estado_boton_inc = </span><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">digitalRead</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(boton_inc);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   estado_boton_reset = </span><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">digitalRead</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(boton_reset);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">   if </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(estado_boton_inc!=estado_boton_inc_ant)</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   {</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">      if </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">((estado_boton_inc==0)&amp;&amp;(unidades&lt;9))</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      {</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">         unidades++;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      }</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      estado_boton_inc_ant  = estado_boton_inc;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">      delay</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(5);</span></span></span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   }</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">   //Programar acción boton_dec</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">   if </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_reset==0)</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   {</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      unidades = 0;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   }</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   write_digit(unidades);</span></p>
+<p class="MsoNormal"><span style="line-height:107%; font-family:Courier; font-size:10.0pt; color:black; ">}</span></p>
+</body>
+</html>

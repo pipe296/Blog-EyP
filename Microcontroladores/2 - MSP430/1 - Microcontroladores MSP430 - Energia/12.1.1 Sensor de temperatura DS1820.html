@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style type="text/css">
+<!--
+p.MsoNormal {
+	margin-top: 0cm;
+	margin-right: 0cm;
+	margin-bottom: 10.0pt;
+	margin-left: 0cm;
+	line-height: 115%;
+	font-size: 11.0pt;
+	/* [disabled]font-family: "Calibri","sans-serif"; */
+}
+-->
+</style>
+<style type="text/css">
+<!--
+table.MsoNormalTable {
+font-size:10.0pt;
+font-family:"Calibri","sans-serif";
+}
+-->
+</style>
+<script type="text/javascript">
+	document.oncontextmenu = function(){return false;}
+    function disabletext(e){
+    return false
+    }
+    function reEnable(){
+    return true
+    }
+    document.onselectstart=new Function ("return false")
+    if (window.sidebar){
+    document.onmousedown=disabletext
+    document.onclick=reEnable
+    }
+</script>
+<style type="text/css">
+<!--
+p.MsoListParagraph {
+	margin-top: 0cm;
+	margin-right: 0cm;
+	margin-bottom: 10.0pt;
+	margin-left: 36.0pt;
+	line-height: 115%;
+	font-size: 11.0pt;
+	/* [disabled]font-family: "Calibri","sans-serif"; */
+}
+-->
+</style>
+<style type="text/css">
+<!--
+-->
+</style>
+<style type="text/css">
+<!--
+-->
+</style>
+<style type="text/css">
+<!--
+p.MsoNormal1 {margin-top: 0cm;
+	margin-right: 0cm;
+	margin-bottom: 10.0pt;
+	margin-left: 0cm;
+	line-height: 115%;
+	font-size: 12pt;
+	font-family: Arial, sans-serif;
+}
+-->
+</style>
+</head>
+
+<body>
+<figure>
+  <figcaption><a><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Sensor de temperatura DS1820</span></strong></a></figcaption>
+</figure>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="text-align: justify; font-size: 12pt; font-family: Arial;"><strong><a href="https://www.dropbox.com/s/watb4n0tgeazsqo/OneWire-master.zip?dl=1">Descargar  librería DS1820</a></strong></span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Código Energia IDE</span></strong></span></p>
+<pre>
+#include&nbsp;&lt;OneWire.h&gt;
+
+<span style="color: #007F00;"></span>OneWire&nbsp;&nbsp;ds(2);&nbsp;&nbsp;<span style="color: #007F00;">// on pin 10 (a 4.7K resistor is necessary)</span>
+
+<span style="color: #007F00;">//&nbsp;include&nbsp;the&nbsp;library&nbsp;code:</span>
+#include&nbsp;&lt;<span style="color: #FF0000;">LiquidCrystal</span>.h&gt;
+
+<span style="color: #007F00;">//&nbsp;initialize&nbsp;the&nbsp;library&nbsp;with&nbsp;the&nbsp;numbers&nbsp;of&nbsp;the&nbsp;interface&nbsp;pins</span>
+<span style="color: #FF0000;">LiquidCrystal</span> lcd(P2_0, P2_1, P2_2, P2_3, P2_4, P2_5);
+
+<span style="color: #FF0000;">void</span> <span style="color: #8B308B;"><b>setup</b></span>(<span style="color: #FF0000;"></span>) {
+&nbsp;&nbsp;<span style="color: #8B308B;"><b>Serial</b></span>.<span style="color: #FF8000;">begin</span>(9600);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #007F00;">// set up the LCD's number of columns and rows: </span>
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">begin</span>(16, 2);
+&nbsp;&nbsp;<span style="color: #007F00;">// Print a message to the LCD.</span>
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(<span style="color: #0066FF;">"Temp: "</span>);
+}
+
+<span style="color: #FF0000;">void</span> <span style="color: #FF8000;">loop</span>(<span style="color: #FF0000;"></span>) {
+&nbsp;&nbsp;<span style="color: #FF8000;">byte</span> i;
+&nbsp;&nbsp;<span style="color: #FF8000;">byte</span> present = 0;
+&nbsp;&nbsp;<span style="color: #FF8000;">byte</span> type_s;
+&nbsp;&nbsp;<span style="color: #FF8000;">byte</span> data[12];
+&nbsp;&nbsp;<span style="color: #FF8000;">byte</span> addr[8];
+&nbsp;&nbsp;<span style="color: #FF8000;">float</span> sensor;
+&nbsp;&nbsp;
+&nbsp;&nbsp;<span style="color: #FF0000;">if</span> ( !ds.search(addr)) {
+&nbsp;&nbsp;&nbsp;&nbsp;ds.reset_search();
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(250);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">return</span>;
+&nbsp;&nbsp;}
+&nbsp;
+&nbsp;&nbsp;<span style="color: #007F00;">// the first ROM byte indicates which chip</span>
+&nbsp;&nbsp;<span style="color: #FF0000;">switch</span> (addr[0]) {
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">case</span> 0x10:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type_s&nbsp;=&nbsp;1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">break</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">case</span> 0x28:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type_s&nbsp;=&nbsp;0;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">break</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">case</span> 0x22:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type_s&nbsp;=&nbsp;0;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">break</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">default</span>:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">return</span>;
+&nbsp;&nbsp;}&nbsp;
+
+&nbsp;&nbsp;ds.reset();
+&nbsp;&nbsp;ds.select(addr);
+&nbsp;&nbsp;ds.<span style="color: #FF8000;">write</span>(0x44, 1);        <span style="color: #007F00;">// start conversion, with parasite power on at the end</span>
+&nbsp;&nbsp;
+&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(1000);     <span style="color: #007F00;">// maybe 750ms is enough, maybe not</span>
+&nbsp;&nbsp;<span style="color: #007F00;">// we might do a ds.depower() here, but the reset will take care of it.</span>
+&nbsp;&nbsp;
+&nbsp;&nbsp;present&nbsp;=&nbsp;ds.reset();
+&nbsp;&nbsp;ds.select(addr);&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;ds.<span style="color: #FF8000;">write</span>(0xBE);         <span style="color: #007F00;">// Read Scratchpad</span>
+
+&nbsp;&nbsp;<span style="color: #FF0000;">for</span> ( i = 0; i &lt; 9; i++) {           <span style="color: #007F00;">// we need 9 bytes</span>
+&nbsp;&nbsp;&nbsp;&nbsp;data[i]&nbsp;=&nbsp;ds.<span style="color: #FF8000;">read</span>();
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;<span style="color: #FF0000;">int16_t</span> raw = (data[1] &lt;&lt; 8) | data[0];
+&nbsp;&nbsp;<span style="color: #FF0000;">if</span> (type_s) {
+&nbsp;&nbsp;&nbsp;&nbsp;raw&nbsp;=&nbsp;raw&nbsp;&lt;&lt;&nbsp;3;&nbsp;<span style="color: #007F00;">// 9 bit resolution default</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">if</span> (data[7] == 0x10) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raw&nbsp;=&nbsp;(raw&nbsp;&amp;&nbsp;0xFFF0)&nbsp;+&nbsp;12&nbsp;-&nbsp;data[6];
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;}&nbsp;<span style="color: #FF0000;">else</span> {
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF8000;">byte</span> cfg = (data[4] &amp; 0x60);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">if</span> (cfg == 0x00) raw = raw &amp; ~7;  <span style="color: #007F00;">// 9 bit resolution, 93.75 ms</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">else</span> <span style="color: #FF0000;">if</span> (cfg == 0x20) raw = raw &amp; ~3; <span style="color: #007F00;">// 10 bit res, 187.5 ms</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">else</span> <span style="color: #FF0000;">if</span> (cfg == 0x40) raw = raw &amp; ~1; <span style="color: #007F00;">// 11 bit res, 375 ms</span>
+&nbsp;&nbsp;}
+&nbsp;&nbsp;sensor&nbsp;=&nbsp;(<span style="color: #FF8000;">float</span>)raw / 16.0;
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(7, 0);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(sensor);
+&nbsp;&nbsp;<span style="color: #8B308B;"><b>Serial</b></span>.<span style="color: #FF8000;">println</span>(sensor);
+}
+
+
+<span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Código Sharp Develop</span></strong></span></span></span>
+</pre>
+<p class="MsoNormal"><span style="line-height:107%; font-family:Courier; font-size:10.0pt; color:green; ">/*</span><span style="line-height:107%; font-family:Courier; font-size:10.0pt; "><br>
+    <span style="color:green; ">&nbsp;* Created by SharpDevelop.</span><br>
+    <span style="color:green; ">&nbsp;* User: AnDrEs</span><br>
+    <span style="color:green; ">&nbsp;* Date: 25/04/2016</span><br>
+    <span style="color:green; ">&nbsp;* Time: 19:25</span><br>
+    <span style="color:green; ">&nbsp;*&nbsp;</span><br>
+    <span style="color:green; ">&nbsp;* To change this template use Tools | Options |  Coding | Edit Standard Headers.</span><br>
+    <span style="color:green; ">&nbsp;*/</span><br>
+    <strong><span style="color:green; ">using</span></strong>&nbsp;System;<br>
+    <strong><span style="color:green; ">using</span></strong>&nbsp;System.Collections.Generic;<br>
+    <strong><span style="color:green; ">using</span></strong>&nbsp;System.Drawing;<br>
+    <strong><span style="color:green; ">using</span></strong>&nbsp;System.Windows.Forms;<br>
+    <strong><span style="color:green; ">using</span></strong>&nbsp;System.IO.Ports;<br>
+    <br>
+    <strong><span style="color:green; ">namespace</span></strong>&nbsp;PIC_a_C_<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:gray; ">///</span><span style="color:green; ">&nbsp;</span><span style="color:gray; ">&lt;<strong>summary</strong>&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:gray; ">///</span><span style="color:green; ">&nbsp;Description of MainForm.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:gray; ">///</span><span style="color:green; ">&nbsp;</span><span style="color:gray; ">&lt;<strong>/summary</strong>&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">public</span></strong>&nbsp;<span style="color:navy; ">partial</span>&nbsp;<span style="color:red; ">class</span>&nbsp;MainForm  : Form<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">public</span></strong>&nbsp;<strong><span style="color:midnightblue; ">MainForm</span></strong>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green; ">//</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green; ">// The InitializeComponent() call is required for Windows  Forms designer support.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green; ">//</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:midnightblue; ">InitializeComponent</span></strong>();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green; ">//</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green; ">//&nbsp;</span><strong><span style="color:red; ">TODO</span></strong><span style="color:green; ">: Add constructor code after the InitializeComponent()  call.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green; ">//</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">Button_BuscarClick</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs e)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comboBox_Puertos.Items.<strong><span style="color:midnightblue; ">Clear</span></strong>();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">foreach</span></strong>&nbsp;(<span style="color:red; ">string</span>&nbsp;s&nbsp;<strong><span style="color:blue; ">in</span></strong>&nbsp;SerialPort.<strong><span style="color:midnightblue; ">GetPortNames</span></strong>())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comboBox_Puertos.Items.<strong><span style="color:midnightblue; ">Add</span></strong>(s);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">if</span></strong>&nbsp;(SerialPort.<strong><span style="color:midnightblue; ">GetPortNames</span></strong>().<strong><span style="color:midnightblue; ">GetLength</span></strong>(<span style="color:darkblue; ">0</span>)&gt;<span style="color:darkblue; ">0</span>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comboBox_Puertos.Enabled  =&nbsp;<strong><span style="color:darkcyan; ">true</span></strong>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Close</span></strong>();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">ComboBox_PuertosSelectedIndexChanged</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs e)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">if</span></strong>&nbsp;(comboBox_Puertos.Text&nbsp;!=&nbsp;<span style="color:blue; ">&quot;&quot;</span>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;button_Conectar.Enabled  =&nbsp;<strong><span style="color:darkcyan; ">true</span></strong>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">Button_ConectarClick</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs e)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">if</span></strong>&nbsp;(comboBox_Puertos.Text&nbsp;!=&nbsp;<span style="color:blue; ">&quot;&quot;</span>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CheckForIllegalCrossThreadCalls  =&nbsp;<strong><span style="color:darkcyan; ">false</span></strong>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.PortName  = comboBox_Puertos.Text;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comboBox_Puertos.Enabled  =&nbsp;<strong><span style="color:darkcyan; ">false</span></strong>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Open</span></strong>();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;button_Conectar.Enabled  =&nbsp;<strong><span style="color:darkcyan; ">false</span></strong>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">SerialPort1DataReceived</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;System.IO.Ports.SerialDataReceivedEventArgs  e)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:red; ">int</span></strong>&nbsp;cant_datos =&nbsp;<span style="color:darkblue; ">1</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">string</span>&nbsp;datos;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">string</span>[]&nbsp;vector_datos;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:red; ">double</span></strong>&nbsp;sensor;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">if</span></strong>&nbsp;(serialPort1.BytesToRead&nbsp;&gt;&nbsp;<span style="color:darkblue; ">1</span>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;datos  = serialPort1.<strong><span style="color:midnightblue; ">ReadLine</span></strong>();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">if</span></strong>&nbsp;(datos.<strong><span style="color:midnightblue; ">StartsWith</span></strong>(<span style="color:blue; ">&quot;$&quot;</span>))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vector_datos  = datos.<strong><span style="color:midnightblue; ">Substring</span></strong>(<span style="color:darkblue; ">1</span>).<strong><span style="color:midnightblue; ">Split</span></strong>(<span style="color:fuchsia; ">'/'</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">if</span></strong>&nbsp;(vector_datos.Length==cant_datos)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor  = Convert.<strong><span style="color:midnightblue; ">ToDouble</span></strong>(vector_datos[<span style="color:darkblue; ">0</span>])/<span style="color:darkblue; ">10</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label2.Text  = sensor.<strong><span style="color:midnightblue; ">ToString</span></strong>()+<span style="color:blue; ">&quot;°C&quot;</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;basicChart1.MaxPoints  =&nbsp;<span style="color:darkblue; ">1000</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;basicChart1.YMaximum  =&nbsp;<span style="color:darkblue; ">100</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;basicChart1.Points.<strong><span style="color:midnightblue; ">Add</span></strong>(Convert.<strong><span style="color:midnightblue; ">ToInt16</span></strong>(sensor));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">MainFormLoad</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs  e)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Threading.Thread.CurrentThread.CurrentCulture  =&nbsp;<strong><span style="color:darkcyan; ">new</span></strong>&nbsp;System.Globalization.<strong><span style="color:midnightblue; ">CultureInfo</span></strong>(<span style="color:blue; ">&quot;en-US&quot;</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">MainFormFormClosed</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;FormClosedEventArgs e)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Close</span></strong>();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}</span></p>
+</body>
+</html>
