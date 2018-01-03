@@ -1623,6 +1623,56 @@ p.MsoNormal1 {	margin-top: 0cm;
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a id="Entradas_análogas"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Entradas análogas</span></strong></a></span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Los sentidos del ser humano perciben al mundo de forma analógica, tal como es el mundo.  Por ejemplo, el ser humano puede diferenciar, en el espectro de la luz, entre el negro y el blanco una infinidad de colores, de forma contraria a lo que sería una respuesta digital, negro o blanco, incluso si el hombre percibiera los colores en escalas de grises ésta ya sería una respuesta analógica. Teniendo en cuenta que la mayoría de las veces nos interesará medir variables físicas que pueden percibir los humanos, necesitaremos unos dispositivos electrónicos especiales para poder medir esas cantidades, esos dispositivos son los sensores.</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Típica señal analógica:</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">La conversión Analógica a Digital que es  capaz de hacer un PIC consiste en convertir un valor de tensión (voltaje) que  conectemos a un PIN habilitado para ello, en un valor numérico proporcional a  dicha tensión que podemos guardar en una variable y ser utilizado por nuestro  programa del PIC.</span></p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Dicho  de otra forma: Si entre un pin del PIC podemos tener una tensión, con respecto  a GND, entre 0V y 5V y realizamos una conversión Analógico-Digital de ese pin  con una precisión de 8 bits entonces el PIC puede &quot;leer&quot; esa tensión  en 256 (2^8=256) valores distintos que nos devuelve como resultado de la  lectura, siendo el 0 el correspondiente a los 0V y el 255 el correspondiente a  los 5V, y todos los intermedios en &quot;saltos&quot; de 0,019V (5V/256).</span></p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Si  en lugar de 8 bits estamos utilizando un PIC que tiene un conversor A/D de 10  bits de precisión entonces ese mismo rango de 0V a 5V podemos  &quot;leerlo&quot; en 1024 (2^10=1024) valores distintos, siendo el  &quot;resultado&quot; 0 el que corresponde a los 0V y el 1023 a los 5V.  Cualquier valor intermedio nos devolverá un número equivalente con  &quot;pasos&quot; de 0,0049V por valor.</span></p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Hemos  visto que el mínimo que podemos convertir es 0V o tensión del nivel del Vss  (GND) del PIC y 5V o tensión del nivel de alimentación Vcc del PIC.</span></p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Esto  es así si no utilizamos los Voltajes de Referencia, porque si los utilizamos  entonces las cosas pueden cambiar....</span></p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Imaginemos  un dispositivo analógico que varía su tensión de salida entre 0V y 1V. Si le  aplicamos la conversión A/D como antes con 8 bits de precisión entonces los  valores que vamos a obtener son entre 0 y 51 (1*256/5V) con lo que  desperdiciamos una parte muy importante del rango posible de conversión, entre  52 y 255 nunca nos va a aparecer como resultado de la misma.</span></p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Entonces  el truco está en poner a 1V la patilla VRef+ del PIC con lo que la conversión  A/D a realizar en lo que haya presente en nuestro pin a leer se va a efectuar  en 256 pasos entre GND y VRef+, no entre GND y Vcc como antes, con lo que  obtenemos un resultado 5 veces más preciso: 1V dividido en 256 partes con lo  que cada número corresponde con 0,0039V.</span></p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Ahora,  imaginemos que nuestro dispositivo analógico varía su tensión de salida entre  1V y 2V. Si utilizamos el primer ejemplo que vimos, conversión A/D entre 0V y  5V con 8 bits de precisión, entonces solo obtendremos números entre 51 y 102,  perdiendo todos los valores inferiores y superiores a éstos.</span></p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Si  utilizamos el ejemplo anterior a éste pero colocando el VRef+ a 2V entonces  tendremos valores entre 128 y 255 pero ninguno inferior a 128 ya que nuestra  tensión analógica no baja de 1V .... </span></p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Así  que la solución está en utilizar otra patilla del PIC, en este caso para VRef-,  o sea para ponerle la referencia de tensión mínima a partir de la cual vamos a  convertir valores, que junto con la VRef+ tenemos el margen o rango de  tensiones a convertir a gusto.</span></p>
+<p style="line-height:115%; font-family:'Arial','sans-serif'; font-size:12.0pt; ">En este segundo ejemplo pondríamos VRef- a 1V y VRef+  a 2V con lo que tendríamos una conversión de 8 bits en la que el 0  correspondería a los 1V y el 255 a los 2V ... </p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Todo esto se puede ver en el siguiente  diagrama de bloques del conversor A/D de los PIC's de la familia 16F87X:</span></p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> </span><img src="../img/Microcontroladores PIC - CCS_clip_image001_0000.png" width="489" height="475" alt=""/></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
+  <object id="FlashID79" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
+    <param name="movie" value="../../swf_lbl/9.1 Escalamiento de lectura analogica (Formula).swf">
+    <param name="quality" value="high">
+    <param name="wmode" value="opaque">
+    <param name="swfversion" value="6.0.65.0">
+    <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. -->
+    <param name="expressinstall" value="Scripts/expressInstall.swf">
+    <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="../../swf_lbl/9.1 Escalamiento de lectura analogica (Formula).swf" width="600" height="25">
+      <!--<![endif]-->
+      <param name="quality" value="high">
+      <param name="wmode" value="opaque">
+      <param name="swfversion" value="6.0.65.0">
+      <param name="expressinstall" value="Scripts/expressInstall.swf">
+      <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. -->
+      <div>
+        <h4>El contenido de esta página requiere una versión más reciente de Adobe Flash Player.</h4>
+        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Obtener Adobe Flash Player" width="112" height="33" /></a></p>
+      </div>
+      <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
+  </object>
+</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
   <object id="FlashID35" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="532" height="600">
     <param name="movie" value="../swf/Entrada analoga.swf">
@@ -1651,8 +1701,33 @@ p.MsoNormal1 {	margin-top: 0cm;
 </p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">map analogRead</span></strong></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
+  <object id="FlashID78" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
+    <param name="movie" value="../../swf_lbl/9.2 Funcion map para escalamiento de lectura analogica.swf">
+    <param name="quality" value="high">
+    <param name="wmode" value="opaque">
+    <param name="swfversion" value="6.0.65.0">
+    <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. -->
+    <param name="expressinstall" value="Scripts/expressInstall.swf">
+    <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="../../swf_lbl/9.2 Funcion map para escalamiento de lectura analogica.swf" width="600" height="25">
+      <!--<![endif]-->
+      <param name="quality" value="high">
+      <param name="wmode" value="opaque">
+      <param name="swfversion" value="6.0.65.0">
+      <param name="expressinstall" value="Scripts/expressInstall.swf">
+      <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. -->
+      <div>
+        <h4>El contenido de esta página requiere una versión más reciente de Adobe Flash Player.</h4>
+        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Obtener Adobe Flash Player" width="112" height="33" /></a></p>
+      </div>
+      <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
+  </object>
+</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Sensor de humedad: 0% - 100%</span></strong></span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
@@ -1670,6 +1745,16 @@ p.MsoNormal1 {	margin-top: 0cm;
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a name="Salida_análoga_PWM" id="Interrupción_externa_INT4"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">S</span></strong></a></span><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">alida análoga PWM</span></strong></span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Muchas veces  nos gustaría controlar la cantidad física de una acción: qué tan brillantes son  las luces, qué tan rápido se mueve un motor, cuantos grados girar, etc. En este  caso estaremos hablando de salidas de tipo analógico, con este tipo de salidas  podemos tener un grado de control sobre la salida, donde el resultado no solo  se limitará a On-Off.</span></p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;">Como la mayoría de los microcontroladores no pueden generar un voltaje (real) variable en sus pines de salida, una de las soluciones para resolver esta carencia es utilizar un truco electrónico que se basa en la modulación del ancho del pulso (PWM para abreviar).</p>
+<p><span class="MsoNormal" style="margin-bottom:12.0pt;text-align:center;line-height:13.5pt;background:white;"><img src="../img/Microcontroladores PIC - CCS_clip_image001_0001.png" width="326" height="278" alt=""/></span></p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Como se  puede observar en la figura, el voltaje promedio es el resultado de alternar el  valor de salida de un pin entre 0 y 5 voltios con un ancho de pulso variable,  durante un periodo de tiempo determinado.</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Como la mayoría de los microcontroladores no pueden  generar un voltaje (real) variable en sus pines de salida, una de las  soluciones para resolver esta carencia es utilizar un truco electrónico que se  basa en la modulación del ancho del pulso – Pulse Width Modulation - (PWM para  abreviar).</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">La conversión digital a analógico que es  capaz de hacer un PIC consiste en convertir un valor discreto en el ciclo de  trabajo del PWM proporcional al valor de tensión (voltaje) que deseamos  producir en un PIN habilitado para ello.</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Dicho  de otra forma: En un pin del PIC podemos tener una tensión, con respecto a GND,  entre 0V y 5V obtenida de la tensión promedio generada por el ciclo de trabajo  del PWM. Entonces el PIC puede &quot;escribir&quot; esa tensión en 100 valores  distintos, siendo el 0 el correspondiente a los 0V y el 100 el correspondiente  a los 5V, y todos los intermedios en &quot;saltos&quot; de 0,05 (5V/100).</span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
   <object id="FlashID32" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
@@ -2104,6 +2189,89 @@ p.MsoNormal1 {	margin-top: 0cm;
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><img src="../img/Bluetooth_RN-42.png" width="682" height="624" alt=""/></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
+  <object id="FlashID80" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
+    <param name="movie" value="../../swf_lbl/11.2.1 Micro a Bluetooth_pulsador.swf">
+    <param name="quality" value="high">
+    <param name="wmode" value="opaque">
+    <param name="swfversion" value="6.0.65.0">
+    <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. -->
+    <param name="expressinstall" value="Scripts/expressInstall.swf">
+    <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="../../swf_lbl/11.2.1 Micro a Bluetooth_pulsador.swf" width="600" height="25">
+      <!--<![endif]-->
+      <param name="quality" value="high">
+      <param name="wmode" value="opaque">
+      <param name="swfversion" value="6.0.65.0">
+      <param name="expressinstall" value="Scripts/expressInstall.swf">
+      <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. -->
+      <div>
+        <h4>El contenido de esta página requiere una versión más reciente de Adobe Flash Player.</h4>
+        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Obtener Adobe Flash Player" width="112" height="33" /></a></p>
+      </div>
+      <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
+  </object>
+</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
+  <object id="FlashID81" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
+    <param name="movie" value="../../swf_lbl/11.2.2 Micro a Bluetooth_pulsador_contador.swf">
+    <param name="quality" value="high">
+    <param name="wmode" value="opaque">
+    <param name="swfversion" value="6.0.65.0">
+    <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. -->
+    <param name="expressinstall" value="Scripts/expressInstall.swf">
+    <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="../../swf_lbl/11.2.2 Micro a Bluetooth_pulsador_contador.swf" width="600" height="25">
+      <!--<![endif]-->
+      <param name="quality" value="high">
+      <param name="wmode" value="opaque">
+      <param name="swfversion" value="6.0.65.0">
+      <param name="expressinstall" value="Scripts/expressInstall.swf">
+      <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. -->
+      <div>
+        <h4>El contenido de esta página requiere una versión más reciente de Adobe Flash Player.</h4>
+        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Obtener Adobe Flash Player" width="112" height="33" /></a></p>
+      </div>
+      <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
+  </object>
+</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
+  <object id="FlashID82" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
+    <param name="movie" value="../../swf_lbl/11.2.3 Micro a Bluetooth_pulsador_contador_sensor.swf">
+    <param name="quality" value="high">
+    <param name="wmode" value="opaque">
+    <param name="swfversion" value="6.0.65.0">
+    <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. -->
+    <param name="expressinstall" value="Scripts/expressInstall.swf">
+    <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="../../swf_lbl/11.2.3 Micro a Bluetooth_pulsador_contador_sensor.swf" width="600" height="25">
+      <!--<![endif]-->
+      <param name="quality" value="high">
+      <param name="wmode" value="opaque">
+      <param name="swfversion" value="6.0.65.0">
+      <param name="expressinstall" value="Scripts/expressInstall.swf">
+      <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. -->
+      <div>
+        <h4>El contenido de esta página requiere una versión más reciente de Adobe Flash Player.</h4>
+        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Obtener Adobe Flash Player" width="112" height="33" /></a></p>
+      </div>
+      <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
+  </object>
+</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp; </p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
   <object id="FlashID70" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
@@ -2590,6 +2758,11 @@ swfobject.registerObject("FlashID74");
 swfobject.registerObject("FlashID75");
 swfobject.registerObject("FlashID76");
 swfobject.registerObject("FlashID77");
+swfobject.registerObject("FlashID78");
+swfobject.registerObject("FlashID79");
+swfobject.registerObject("FlashID80");
+swfobject.registerObject("FlashID81");
+swfobject.registerObject("FlashID82");
 </script>
 </body>
 </html>
