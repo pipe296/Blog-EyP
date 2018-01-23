@@ -1732,63 +1732,17 @@ p.MsoNormal11 {margin-top: 0cm;
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><img src="../img/Sensor LM35.png" width="998" height="620" alt=""/></p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p><strong><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a name="Salida_análoga_PWM" id="Interrupción_externa_INT4"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">S</span></strong></a></span><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">alida análoga PWM</span></strong></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Muchas veces  nos gustaría controlar la cantidad física de una acción: qué tan brillantes son  las luces, qué tan rápido se mueve un motor, cuantos grados girar, etc. En este  caso estaremos hablando de salidas de tipo analógico, con este tipo de salidas  podemos tener un grado de control sobre la salida, donde el resultado no solo  se limitará a On-Off.</span></p>
+<p class="MsoNormal11" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Muchas veces  nos gustaría controlar la cantidad física de una acción: qué tan brillantes son  las luces, qué tan rápido se mueve un motor, cuantos grados girar, etc. En este  caso estaremos hablando de salidas de tipo analógico, con este tipo de salidas  podemos tener un grado de control sobre la salida, donde el resultado no solo  se limitará a On-Off.</span></p>
+<p class="MsoNormal11" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Como la mayoría de los microcontroladores no pueden  generar un voltaje (real) variable en sus pines de salida, una de las  soluciones para resolver esta carencia es utilizar un truco electrónico que se  basa en la modulación del ancho del pulso – Pulse Width Modulation - (PWM para  abreviar).</span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;">Como la mayoría de los microcontroladores no pueden generar un voltaje (real) variable en sus pines de salida, una de las soluciones para resolver esta carencia es utilizar un truco electrónico que se basa en la modulación del ancho del pulso (PWM para abreviar).</p>
 <p class="MsoNormal" align="center" style="margin-bottom:12.0pt;text-align:center;line-height:13.5pt;background:white;"><img src="../img/Microcontroladores PIC - CCS_clip_image001_0001.png" width="326" height="278" alt=""/></p>
-<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Como se  puede observar en la figura, el voltaje promedio es el resultado de alternar el  valor de salida de un pin entre 0 y 5 voltios con un ancho de pulso variable,  durante un periodo de tiempo determinado.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">La conversión digital a analógico que es  capaz de hacer un PIC consiste en convertir un valor discreto en el ciclo de  trabajo del PWM proporcional al valor de tensión (voltaje) que deseamos  producir en un PIN habilitado para ello.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Dicho  de otra forma: En un pin del PIC podemos tener una tensión, con respecto a GND,  entre 0V y 5V obtenida de la tensión promedio generada por el ciclo de trabajo  del PWM. Entonces el PIC puede &quot;escribir&quot; esa tensión en 100 valores  distintos, siendo el 0 el correspondiente a los 0V y el 1000 el correspondiente  a los 5V, y todos los intermedios en &quot;saltos&quot; de 0,005 (5V/1000).</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Como ejemplo del uso de la conversión D/A  vamos a utilizar las funciones para controlar la velociidad de un motor de corriente continua conectado al colector de un transistor bipolar NPN (TIP41).</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Haremos que nuestro circuito sea capaz de  realizar un conteo ascendente/descendente entre 0 y 1000 y que éste valor sea  asignado al ciclo de trabajo del PWM para manipular el voltaje aplicado a la base del transistor.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">
-  <object id="FlashID11" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="561" height="577">
-    <param name="movie" value="../swf/LCD_PWM_DIGITAL.swf">
-    <param name="quality" value="high">
-    <param name="wmode" value="opaque">
-    <param name="swfversion" value="6.0.65.0">
-    <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. -->
-    <param name="expressinstall" value="Scripts/expressInstall.swf">
-    <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
-    <!--[if !IE]>-->
-    <object type="application/x-shockwave-flash" data="../swf/LCD_PWM_DIGITAL.swf" width="561" height="577">
-      <!--<![endif]-->
-      <param name="quality" value="high">
-      <param name="wmode" value="opaque">
-      <param name="swfversion" value="6.0.65.0">
-      <param name="expressinstall" value="Scripts/expressInstall.swf">
-      <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. -->
-      <div>
-        <h4>El contenido de esta página requiere una versión más reciente de Adobe Flash Player.</h4>
-        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Obtener Adobe Flash Player" /></a></p>
-      </div>
-      <!--[if !IE]>-->
-    </object>
-    <!--<![endif]-->
-  </object>
-<span style="text-align: center"></span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;; font-family: 'Arial', 'sans-serif'; font-size: 12.0pt">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;; font-family: 'Arial', 'sans-serif'; font-size: 12.0pt">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Esquemático control de velocidad motor DC con PWM:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Programa control de velocidad motor DC con PWM:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;; font-family: 'Arial', 'sans-serif'; font-size: 12.0pt">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Comentarios del programa:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">La variable PWM se ha programado que su valor aumente o disminuya 10 unidades por cada pulsación. Se ha limitado el valor máximo del parámetro PWM a 1000 y el mínimo a 0  y que nunca rebase estos límites. .</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Se debe tener especial atención al asignar el ciclo de  trabajo al PWM, el cual debe ser un número entero comprendido entre 0 (0V) y  1000 (5V), es decir, el incremento en una unidad en el contador se verá  reflejado como una variación de 0,05V a la salida del pin C2 del  microcontrolador.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Extraído parcialmente de:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><a href="http://www.dtic.upf.edu/~jlozano/interfaces/interfaces5.html">http://www.dtic.upf.edu/~jlozano/interfaces/interfaces5.html</a></span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal" align="center" style="margin-bottom:12.0pt;text-align:center;line-height:13.5pt;background:white;">&nbsp;</p>
+<p class="MsoNormal11" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">La conversión digital a analógico que es  capaz de hacer un PIC consiste en convertir un valor discreto en el ciclo de  trabajo del PWM proporcional al valor de tensión (voltaje) que deseamos  producir en un PIN habilitado para ello.</span></span></p>
+<p class="MsoNormal11" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Como se  puede observar en la figura, el voltaje promedio es el resultado de alternar el  valor de salida de un pin entre 0 y 5 voltios con un ancho de pulso variable,  durante un periodo de tiempo determinado.</span><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal11" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Dicho  de otra forma: En un pin del PIC podemos tener una tensión, con respecto a GND,  entre 0V y 5V obtenida de la tensión promedio generada por el ciclo de trabajo  del PWM. Entonces el PIC puede &quot;escribir&quot; esa tensión en 100 valores  distintos, siendo el 0 el correspondiente a los 0V y el 100 el correspondiente  a los 5V, y todos los intermedios en &quot;saltos&quot; de 0,05 (5V/100).</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
-  <object id="FlashID10" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
+  <object id="FlashID49" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
     <param name="movie" value="../../swf_lbl/10.1 PWM motor 12VDC.swf">
     <param name="quality" value="high">
     <param name="wmode" value="opaque">
@@ -1815,7 +1769,7 @@ p.MsoNormal11 {margin-top: 0cm;
 </p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp; </p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
-  <object id="FlashID51" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1000" height="614">
+  <object id="FlashID71" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1000" height="614">
     <param name="movie" value="../swf/PWM motor DC 12V_Osc.swf">
     <param name="quality" value="high">
     <param name="wmode" value="opaque">
@@ -1840,8 +1794,8 @@ p.MsoNormal11 {margin-top: 0cm;
     <!--<![endif]-->
   </object>
 </p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp; </p>
+<p class="MsoNormal11" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
   <object id="FlashID58" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
     <param name="movie" value="../../swf_lbl/10.2 PWM motor DC industrial.swf">
@@ -1870,10 +1824,10 @@ p.MsoNormal11 {margin-top: 0cm;
 </p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><img src="../img/PWM motor DC 220V.png" width="916" height="616" alt=""/></span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
-  <object id="FlashID72" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp; </p>
+<p class="MsoNormal11" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
+<p class="MsoNormal11" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;">
+  <object id="FlashID10" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
     <param name="movie" value="../../swf_lbl/10.3 Convertidor D_A con PWM.swf">
     <param name="quality" value="high">
     <param name="wmode" value="opaque">
@@ -1898,11 +1852,8 @@ p.MsoNormal11 {margin-top: 0cm;
     <!--<![endif]-->
   </object>
 </p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp; </p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp; </p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a name="Comunicación_serial_asíncrona_(UART)" id="Comunicación_serial_asíncrona_(UART)"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Comunicación serial asíncrona (UART)</span></strong></a></span></span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a name="RS-232" id="Comunicación_serial_asíncrona_(UART)2"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">RS-232</span></strong></a></span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
@@ -2101,7 +2052,7 @@ p.MsoNormal11 {margin-top: 0cm;
 </div>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Agregamos la&nbsp;directiva&nbsp;<span style="color:#00B050; ">#use  rs232(baud=9600,bits=8,parity=N,xmit=PIN_C6,rcv=PIN_C7,errors)</span></span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../img/MAX232.png" width="1000" height="600" alt=""/></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../img/RS232.png" width="1000" height="447" alt=""/></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;; font-family: 'Arial', 'sans-serif'; font-size: 12.0pt"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;; font-family: 'Arial', 'sans-serif'; font-size: 12.0pt"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;; font-family: 'Arial', 'sans-serif'; font-size: 12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../img/RS232 C#.png" width="827" height="556" alt=""/></span></span></p>
@@ -2682,7 +2633,6 @@ p.MsoNormal11 {margin-top: 0cm;
 <img src="../swf/Control de humedad y temperatura sensor SHT7X_SHT1x.gif" width="1000" height="580" alt=""/><script type="text/javascript">
 swfobject.registerObject("FlashID");
 swfobject.registerObject("FlashID4");
-swfobject.registerObject("FlashID11");
 swfobject.registerObject("FlashID13");
 swfobject.registerObject("FlashID14");
 swfobject.registerObject("FlashID15");
@@ -2731,10 +2681,6 @@ swfobject.registerObject("FlashID62");
 swfobject.registerObject("FlashID61");
 swfobject.registerObject("FlashID68");
 swfobject.registerObject("FlashID69");
-swfobject.registerObject("FlashID72");
-swfobject.registerObject("FlashID58");
-swfobject.registerObject("FlashID10");
-swfobject.registerObject("FlashID51");
 swfobject.registerObject("FlashID99");
 swfobject.registerObject("FlashID53");
 swfobject.registerObject("FlashID52");
@@ -2754,6 +2700,10 @@ swfobject.registerObject("FlashID67");
 swfobject.registerObject("FlashID6");
 swfobject.registerObject("FlashID79");
 swfobject.registerObject("FlashID78");
+swfobject.registerObject("FlashID49");
+swfobject.registerObject("FlashID71");
+swfobject.registerObject("FlashID58");
+swfobject.registerObject("FlashID10");
 </script>
 </body>
 </html>
