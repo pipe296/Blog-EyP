@@ -67,6 +67,10 @@ p.MsoNormal1 {	margin-top: 0cm;
   <figcaption><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Entradas análogas</span></strong></span></figcaption>
 </figure>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Como ejemplo del uso del conversor ADC del  microcontrolador vamos a utilizar las funciones para leer el dato proveniente  de un sensor en el rango de 0 a 5V y representad en un display LCD el valor </span>leñido por el convertidor ADC en el rango de 0 a 1023.</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Después, haremos que sea  capaz de leer una entrada entre 0 y 5V de manera que para 0V representará 0 unidades  y 5V representará 100 unidades.</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
   <object id="FlashID35" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="532" height="600">
     <param name="movie" value="../swf/Entrada analoga.swf">
@@ -166,6 +170,24 @@ p.MsoNormal1 {	margin-top: 0cm;
 <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">500</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
 <p class="MsoNormal"><span style="line-height:107%; font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Comentarios del programa:</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">El ejemplo está debidamente documentado, por lo cual  su comprensión no reviste mayor dificultad.</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Se debe tener especial atención al seleccionar el  canal a leer:</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">set_adc_channel(0); esta instrucción selecciona el  canal AN0</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">set_adc_channel(1); esta instrucción selecciona el  canal AN1</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">set_adc_channel(2); esta instrucción selecciona el  canal AN2…  etc…</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Temperatura = read_adc(); esta instrucción lee el  valor análogo en el canal seleccionado previamente</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Para observar la variación de la unidad medida se ha  dispuesto un potenciómetro para simular el sensor de temperatura.</span></p>
+<p class="MsoNormal1" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Extraído parcialmente de:</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><a href="http://picmania.garcia-cuervo.net/conceptos.php#CONVAD01">http://picmania.garcia-cuervo.net/conceptos.php#CONVAD01</a></span></p>
+<p>&nbsp; </p>
 <script type="text/javascript">
 swfobject.registerObject("FlashID35");
   </script>

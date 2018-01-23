@@ -64,8 +64,8 @@ p.MsoNormal1 {	margin-top: 0cm;
 
 <body>
 <figure>
-  <figcaption></figcaption></figure>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family: 'Arial','sans-serif'; font-size: 12pt; color: #F8F8F8;">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../img/USBProg_USB.png" width="910" height="538" alt=""/></span></strong></p>
+  <figcaption><strong><span style="font-family: 'Arial','sans-serif'; font-size: 12pt; color: #F8F8F8;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../img/USBProg_USB.png" width="910" height="538" alt=""/></span></strong></figcaption>
+</figure>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family: 'Arial','sans-serif'; font-size: 14pt;"><a href="https://www.dropbox.com/s/c2mj58b652az7dg/1 - Plantilla.zip?dl=1" target="_self">Plantilla</a></span></strong></span></p>
@@ -1209,6 +1209,8 @@ p.MsoNormal1 {	margin-top: 0cm;
   </object>
 </p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Cuando queremos utilizar más de un display y minimizar  el número de pines en el PIC para su control hay varias formas de hacerlo, una  de ellas (la que utilizaremos en este ejemplo) es multiplexar las líneas de datos, es  decir, en cada instante solo habrá un display activo pero el cambio de uno a  otro será tan rápido que para el ojo humano parecerá que los dos están activos  a la vez, este sistema es bueno porque nos ahorramos los decodificadores, pero  si utilizamos más de cuatro display, notaremos un parpadeo molesto.</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
   <object id="FlashID28" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1000" height="575">
     <param name="movie" value="../swf/Contador 0 - 99 multiplexado sin decodificador.swf">
@@ -1264,6 +1266,8 @@ p.MsoNormal1 {	margin-top: 0cm;
     <!--<![endif]-->
   </object>
 </p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Otra manera de minimizar el número de pines necesarios es utilizar un decodificador BCD  a 7 segmentos como el 7447 (Para displaay de ánodo común) ó 7448 (Para displaay de cátodo común).</span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
   <object id="FlashID26" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1000" height="650">
@@ -1400,27 +1404,6 @@ p.MsoNormal1 {	margin-top: 0cm;
   </table>
 </div>
 <p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Manos a la obra!!!</span></p>
-<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><br>
-  En PIC-C CCS agregamos la&nbsp;librería&nbsp;<strong>#include&nbsp;&lt;flex_lcd.c&gt;&nbsp;</strong>que  hace una&nbsp;función similar&nbsp;a la de un driver en una PC, pero esta vez  entre el PIC y la LCD.</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Para conocer como se debe conectar el LCD, abriremos la  librería &ldquo;<strong>flex_lcd.c</strong>&rdquo;</span></p>
-<p class="MsoNormal1" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:13.5pt;background:white;"><img src="../img/Microcontroladores PIC - CCS_clip_image001.png" width="483" height="264" alt=""/></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Descripción de conexiones del LCD</span></p>
-<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:center;line-height:13.5pt;background:white;"><img src="../img/LCD.jpg" width="553" height="541" alt=""/></span></span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">En las primeras líneas podemos ver que se definen los  pines del microcontrolador a los cuales irán conectados los pines del LCD, y  serán éstos los que&nbsp;usaremos&nbsp;para diseñar nuestro circuito en Proteus  ISIS.</span></p>
-<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><br>
-  En el circuito&nbsp;seleccionamos&nbsp;un&nbsp;<strong>PIC18F4550</strong>&nbsp;y  un&nbsp;<strong>LM016L</strong> (pantalla  LCD&nbsp;<strong>2x16</strong>), como en  ejercicios anteriores algunas conexiones no se hacen por simplificar, pero eso  no indica que, cuando vamos hacerlo en un Proto-Board no debamos hacerlas. (ej:  conexión del pin V0 – contraste del LCD).</span></p>
-<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Hay que  recordar configurar el reloj 20MHz (<strong>en la simulación</strong>), también colocar  en alto el pin 1 del PIC (MCLR).</span></p>
-<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "></span><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Comentarios:</span></strong></p>
-<ol>
-  <li><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">lcd_gotoxy(1,1);</span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;nos  indica que la próxima instrucción que escriba datos en el LCD los ubicará en la  fila 1 columna 1.</span></li>
-  <li><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">printf(lcd_putc, &quot; escribir aqui &quot;);&nbsp;</span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Este comando es para escribir en la  pantalla LCD y escribe lo que está dentro de la comillas.</span></li>
-</ol>
-<p><span style="line-height:115%; font-family:'Arial','sans-serif'; font-size:12.0pt; ">Extraído parcialmente de: <a href="http://22xd.blogspot.com/2011/04/programando-pic-con-ccs-ejercicio-3-lcd.html">http://22xd.blogspot.com/2011/04/programando-pic-con-ccs-ejercicio-3-lcd.html</a></span></p>
-<p>&nbsp;</p>
 <p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;">
   <object id="FlashID60" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
     <param name="movie" value="../../swf_lbl/4.2.1 Driver LCD2x16 y LCD4x20.swf">
@@ -1510,7 +1493,9 @@ p.MsoNormal1 {	margin-top: 0cm;
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a id="Interrupción_externa_INT"><strong>I</strong></a></span>nterrupción externa INT</span></strong></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Una interrupción es un evento que hace que el microcontrolador deje de ejecutar la tarea que está realizando para atender dicho acontecimiento y luego regrese y continúe la tarea que estaba realizando antes de que se presentara la interrupción. El pic 16F628 (y el 16F628A) tiene 10 fuentes de interrupción, si las interrupciones están habilitadas cada vez que una de estos acontecimientos se presente el pic dejará de ejecutar el programa para ir a atender la interrupción y al término de la misma continuará ejecutando el programa donde lo había dejado.</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Las fuentes de interrupción son:</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Interrupción externa RB0/INT</p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Interrupción por cambio lógico en el puerto B (pines RB7 a RB4)</p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Interrupción por desborde del timer 0 (TMR0)</p>
@@ -1526,8 +1511,6 @@ p.MsoNormal1 {	margin-top: 0cm;
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a id="Timer"><strong>T</strong></a></span>imer</span></strong></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">6.2 Timer on LCD</span></strong></span></p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a name="Teclado"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Teclado</span></strong></a></p>
@@ -1618,7 +1601,6 @@ p.MsoNormal1 {	margin-top: 0cm;
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a id="EEPROM"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong>E</strong></span></span></strong></a><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">EPROM</span></strong></span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">5.1 EEPROM 7-Seg_0-99</span></strong></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a id="Entradas_análogas"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Entradas análogas</span></strong></a></span></p>
@@ -1627,10 +1609,10 @@ p.MsoNormal1 {	margin-top: 0cm;
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Típica señal analógica:</p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><img src="../img/Entrada analógica.png" width="338" height="225" alt=""/></p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">La conversión Analógica a Digital que es  capaz de hacer un PIC consiste en convertir un valor de tensión (voltaje) que  conectemos a un PIN habilitado para ello, en un valor numérico proporcional a  dicha tensión que podemos guardar en una variable y ser utilizado por nuestro  programa del PIC.</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Dicho  de otra forma: Si entre un pin del PIC podemos tener una tensión, con respecto  a GND, entre 0V y 5V y realizamos una conversión Analógico-Digital de ese pin  con una precisión de 8 bits entonces el PIC puede &quot;leer&quot; esa tensión  en 256 (2^8=256) valores distintos que nos devuelve como resultado de la  lectura, siendo el 0 el correspondiente a los 0V y el 255 el correspondiente a  los 5V, y todos los intermedios en &quot;saltos&quot; de 0,019V (5V/256).</span></p>
 <p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Si  en lugar de 8 bits estamos utilizando un PIC que tiene un conversor A/D de 10  bits de precisión entonces ese mismo rango de 0V a 5V podemos  &quot;leerlo&quot; en 1024 (2^10=1024) valores distintos, siendo el  &quot;resultado&quot; 0 el que corresponde a los 0V y el 1023 a los 5V.  Cualquier valor intermedio nos devolverá un número equivalente con  &quot;pasos&quot; de 0,0049V por valor.</span></p>
 <p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Hemos  visto que el mínimo que podemos convertir es 0V o tensión del nivel del Vss  (GND) del PIC y 5V o tensión del nivel de alimentación Vcc del PIC.</span></p>
@@ -1640,7 +1622,7 @@ p.MsoNormal1 {	margin-top: 0cm;
 <p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Ahora,  imaginemos que nuestro dispositivo analógico varía su tensión de salida entre  1V y 2V. Si utilizamos el primer ejemplo que vimos, conversión A/D entre 0V y  5V con 8 bits de precisión, entonces solo obtendremos números entre 51 y 102,  perdiendo todos los valores inferiores y superiores a éstos.</span></p>
 <p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Si  utilizamos el ejemplo anterior a éste pero colocando el VRef+ a 2V entonces  tendremos valores entre 128 y 255 pero ninguno inferior a 128 ya que nuestra  tensión analógica no baja de 1V .... </span></p>
 <p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Así  que la solución está en utilizar otra patilla del PIC, en este caso para VRef-,  o sea para ponerle la referencia de tensión mínima a partir de la cual vamos a  convertir valores, que junto con la VRef+ tenemos el margen o rango de  tensiones a convertir a gusto.</span></p>
-<p style="line-height:115%; font-family:'Arial','sans-serif'; font-size:12.0pt; ">En este segundo ejemplo pondríamos VRef- a 1V y VRef+  a 2V con lo que tendríamos una conversión de 8 bits en la que el 0  correspondería a los 1V y el 255 a los 2V ... </p>
+<p style="line-height:115%; font-family:'Arial','sans-serif'; font-size:12.0pt; ">En este segundo ejemplo pondríamos VRef- a 1V y VRef+  a 2V con lo que tendríamos una conversión de 8 bits en la que el 0  correspondería a los 1V y el 255 a los 2V.</p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Todo esto se puede ver en el siguiente  diagrama de bloques del conversor A/D de los PIC's de la familia 16F87X:</span></p>
 <p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
 <p class="MsoNormal1" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> </span><img src="../img/Microcontroladores PIC - CCS_clip_image001_0000.png" width="489" height="475" alt=""/></p>

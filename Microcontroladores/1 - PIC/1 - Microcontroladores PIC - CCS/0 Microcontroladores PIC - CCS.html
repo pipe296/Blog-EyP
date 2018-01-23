@@ -1212,6 +1212,8 @@ p.MsoNormal11 {margin-top: 0cm;
   </object>
 </p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Cuando queremos utilizar más de un display y minimizar  el número de pines en el PIC para su control hay varias formas de hacerlo, una  de ellas (la que utilizaremos en este ejemplo) es multiplexar las líneas de datos, es  decir, en cada instante solo habrá un display activo pero el cambio de uno a  otro será tan rápido que para el ojo humano parecerá que los dos están activos  a la vez, este sistema es bueno porque nos ahorramos los decodificadores, pero  si utilizamos más de cuatro display, notaremos un parpadeo molesto.</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">
   <object id="FlashID33" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1000" height="575">
     <param name="movie" value="../swf/Contador 0 - 99 multiplexado sin decodificador.swf">
@@ -1266,6 +1268,8 @@ p.MsoNormal11 {margin-top: 0cm;
     <!--<![endif]-->
   </object>
 </p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Otra manera de minimizar el número de pines necesarios es utilizar un decodificador BCD  a 7 segmentos como el 7447 (Para displaay de ánodo común) ó 7448 (Para displaay de cátodo común).</span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">
   <object id="FlashID34" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1000" height="650">
@@ -1369,8 +1373,7 @@ p.MsoNormal11 {margin-top: 0cm;
 <div align="center"><img src="../img/Microcontroladores PIC - CCS_clip_image004.jpg" width="443" height="238" alt=""/>
   <p><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Dorso    Pantalla LCD</span></p>
 </div>
-<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><br>
-  En este modelo en particular de pantalla LCD, solo se marca el PIN&nbsp;<strong>1</strong>&nbsp;y  el&nbsp;<strong>16</strong>.</span></p>
+<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">  En este modelo en particular de pantalla LCD, solo se marca el PIN&nbsp;<strong>1</strong>&nbsp;y  el&nbsp;<strong>16</strong>.</span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Identificar  los pines no es gran problema, ahora debemos saber cómo conectarlos, para  eso&nbsp;vamos&nbsp;a ver el&nbsp;siguiente&nbsp;diagrama.</span></p>
 <div align="center">
   <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0">
@@ -1401,38 +1404,7 @@ p.MsoNormal11 {margin-top: 0cm;
   </table>
 </div>
 <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><br>
-  Manos a la obra!!!</span></p>
-<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><br>
-  En PIC-C CCS a</span><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">gregamos la&nbsp;librería&nbsp;<strong>#include&nbsp;&lt;flex_lcd.c&gt;&nbsp;</strong>que  hace una&nbsp;función similar&nbsp;a la de un driver en una PC, pero esta vez  entre el PIC y la LCD.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Para conocer como se debe conectar el LCD, abriremos la  librería &ldquo;<strong>flex_lcd.c</strong>&rdquo;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:13.5pt;background:white;"><img src="../img/Microcontroladores PIC - CCS_clip_image001.png" width="483" height="264" alt=""/></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Descripción de conexiones del LCD</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:center;line-height:13.5pt;background:white;"><img src="../img/LCD.jpg" width="553" height="541" alt=""/></span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">En las primeras líneas podemos ver que se definen los  pines del microcontrolador a los cuales irán conectados los pines del LCD, y  serán éstos los que&nbsp;usaremos&nbsp;para diseñar nuestro circuito en Proteus  ISIS.</span></p>
-<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><br>
-  En el circuito&nbsp;seleccionamos&nbsp;un&nbsp;<strong>PIC18F4550</strong>&nbsp;y  un&nbsp;<strong>LM016L</strong> (pantalla  LCD&nbsp;<strong>2x16</strong>), como en  ejercicios anteriores algunas conexiones no se hacen por simplificar, pero eso  no indica que, cuando vamos hacerlo en un Proto-Board no debamos hacerlas. (ej:  conexión del pin V0 – contraste del LCD).</span></p>
-<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Hay que  recordar configurar el reloj 20MHz (<strong>en la simulación</strong>), también colocar  en alto el pin 1 del PIC (MCLR).</span></p>
-<div align="center">
-  <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td style="padding:3.0pt 3.0pt 3.0pt 3.0pt;"></td>
-    </tr>
-    <tr>
-      <td style="padding:3.0pt 3.0pt 3.0pt 3.0pt;"></td>
-    </tr>
-  </table>
-</div>
-<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Comentarios:</span></strong></p>
-<ol>
-  <li><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">lcd_gotoxy(1,1);</span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;nos  indica que la próxima instrucción que escriba datos en el LCD los ubicará en la  fila 1 columna 1.</span></li>
-  <li><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">printf(lcd_putc, &quot; escribir aqui &quot;);&nbsp;</span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Este comando es para escribir en la  pantalla LCD y escribe lo que está dentro de la comillas.</span></li>
-</ol>
-<p style="line-height:115%; font-family:'Arial','sans-serif'; font-size:12.0pt; ">Extraído parcialmente de: <a href="http://22xd.blogspot.com/2011/04/programando-pic-con-ccs-ejercicio-3-lcd.html">http://22xd.blogspot.com/2011/04/programando-pic-con-ccs-ejercicio-3-lcd.html</a></p>
+</span></p>
 <p class="MsoNormal11" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;">
   <object id="FlashID60" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
     <param name="movie" value="../../swf_lbl/4.2.1 Driver LCD2x16 y LCD4x20.swf">
@@ -1516,10 +1488,13 @@ p.MsoNormal11 {margin-top: 0cm;
 <p class="MsoNormal11" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a name="LCD_Grafico_(GLCD)" id="Interrupción_externa_INT3"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">L</span></strong></a></span><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">CD Grafico  (GLCD)</span></strong></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a name="Interrupción_externa_INT" id="Interrupción_externa_INT"><strong>I</strong></a></span>nterrupción externa INT</span></strong></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Una interrupción es un evento que hace que el microcontrolador deje de ejecutar la tarea que está realizando para atender dicho acontecimiento y luego regrese y continúe la tarea que estaba realizando antes de que se presentara la interrupción. El pic 16F628 (y el 16F628A) tiene 10 fuentes de interrupción, si las interrupciones están habilitadas cada vez que una de estos acontecimientos se presente el pic dejará de ejecutar el programa para ir a atender la interrupción y al término de la misma continuará ejecutando el programa donde lo había dejado.</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Las fuentes de interrupción son:</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Interrupción externa RB0/INT</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Interrupción por cambio lógico en el puerto B (pines RB7 a RB4)</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Interrupción por desborde del timer 0 (TMR0)</p>
@@ -1626,62 +1601,19 @@ p.MsoNormal11 {margin-top: 0cm;
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp; </p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;; font-family: 'Arial', 'sans-serif'; font-size: 12.0pt">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;; font-family: 'Arial', 'sans-serif'; font-size: 12.0pt"><a name="EEPROM"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong>E</strong></span></span></strong></a><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">EPROM</span></strong></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">CCS implementa muchas funciones para trabajar con la  memoria EEPROM interna del microcontrolador,   estas funciones son:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">value =  read_eeprom(address):</span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> función  básica para leer el valor de la EEPROM interna del PIC.  Devuelve un valor entero (int8) de un byte.  &quot;address&quot; puede ser un entero de 8 ó 16 bit.  Dependiendo del PIC que utilicemos  dispondremos de mas ó menos memoria EEPROM, por ejemplo el PIC 16f84A  dispone de 64 bytes y los PIC 16F87X tienen  256 bytes que se direccionan del 0 a 255.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">write_eeprom(address,  value): </span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">esta función  escribe un dato (entero de 8 bit) en la dirección especificada en address en la  memoria interna del PIC. Al igual que read_eeprom address puede ser un entero  de 8 ó 16 bit.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Algunas consideraciones a tener en cuenta sobre la  memoria EEPROM es que es rápida en el proceso de lectura, pero puede tardar  varios milisegundos en realizar un proceso de escritura. Otro factor a tener en  cuenta es que se pueden hacer operaciones de lectura sobre el valor de sus  registros el número de veces que se quiera, pero soportan un número limitado de  ciclos de escritura / borrado. Ese número según Microchip es de aproximadamente  un millón.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">La memoria EEPROM de datos no está mapeada en la zona  de la memoria de datos donde se ubican los registros SFR y GPR, si  programáramos en Ensamblador deberíamos realizar una serie de pasos para su  lectura y escritura que aunque no difíciles resultan al menos laboriosos. CCS  nos permite abstraernos por completo del proceso de lectura y escritura,  lo único que tenemos que saber es las  funciones que tenemos que aplicar y los parámetros y  valores que devuelven dichas funciones.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Como ejemplo del uso de este tipo de memorias vamos a  utilizar las funciones básicas para leer y escribir datos en la memoria interna  del PIC: <strong>read_eeprom (address)</strong> y <strong>write_eeprom (address, value</strong>).  </span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">El ejemplo es un contador. Como funcionalidades  mínimas haremos que sea capaz de contar del 0 al 9 de manera ascendente y  descendente, y que tenga un botón de RESET a cero.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Y por supuesto que si se corta el suministro de  energía guarda en memoria el último valor. </span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">El esquema del circuito será el siguiente:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:13.5pt;background:white;"><img src="../img/Microcontroladores PIC - CCS_clip_image006_0000.jpg" width="697" height="447" alt=""/></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Cuando queremos utilizar más de un display y minimizar  el número de pines en el PIC para su control hay varias formas de hacerlo, una  de ellas (la que utilizaremos en este ejemplo) es utilizar un decodificador BCD  a 7 segmentos como el 7447 ó 7448.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Otra forma es multiplexar las líneas de datos, es  decir en cada instante solo habrá un display activo pero el cambio de uno a  otro será tan rápido que para el ojo humano parecerá que los dos están activos  a la vez, este sistema es bueno porque nos ahorramos los decodificadores, pero  si utilizamos más de cuatro display, notaremos un parpadeo molesto.  </span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">El código del programa será el siguiente:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><img src="../img/Microcontroladores PIC - CCS_clip_image002_0005.jpg" width="697" height="681" alt=""/></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Comentarios del programa:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">El ejemplo básicamente es un contador  ascendente/descendente de 0 a 9 que incrementa su valor cada vez que pulsamos  &quot;INC&quot; (PIN B0) y decrementa el contador si se pulsa &ldquo;DEC&rdquo; (PIN B1) y  además se puede restablecer a cero si se pulsa &ldquo;RESET&rdquo; (PIN B2). Para evitar  que el contador se reinicie y empiece a contar desde cero cada vez que se  interrumpa el suministro de energía, el valor actual del contador se almacenará  en la memoria EEPROM del PIC en vez de en la memoria RAM. Como solo queremos  guardar un valor que estará comprendido entre 0 y 99, solo utilizaremos el  primer byte de la memoria EEPROM.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">La primera vez que se ejecute el programa el valor de  la EEPROM es 0xFF (viene así de fábrica) por lo que tendremos que sobrescribir  su valor a 0 para iniciar el conteo, después de esto esta condición no se  cumplirá más.  </span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">contador = read_eeprom(dir_contador);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">if ((contador&gt;9)||(contador&lt;0))</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">   contador=0; </span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Proteus simula bastante bien el uso de la memoria  EEPROM del PIC, si paramos la simulación y volvemos a iniciarla vemos como los  valores de la EEPROM se mantienen.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Extraído parcialmente de:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><a href="http://www.aquihayapuntes.com/indice-practicas-pic-en-c/memoria-eeprom-interna-del-pic.html">http://www.aquihayapuntes.com/indice-practicas-pic-en-c/memoria-eeprom-interna-del-pic.html</a></span><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> </span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "></span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;; font-family: 'Arial', 'sans-serif'; font-size: 12.0pt">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;; font-family: 'Arial', 'sans-serif'; font-size: 12.0pt"><a name="Entradas_análogas"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Entradas análogas</span></strong></a></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Los sentidos del ser humano perciben al mundo de forma analógica, tal como es el mundo.  Por ejemplo, el ser humano puede diferenciar, en el espectro de la luz, entre el negro y el blanco una infinidad de colores, de forma contraria a lo que sería una respuesta digital, negro o blanco, incluso si el hombre percibiera los colores en escalas de grises ésta ya sería una respuesta analógica. Teniendo en cuenta que la mayoría de las veces nos interesará medir variables físicas que pueden percibir los humanos, necesitaremos unos dispositivos electrónicos especiales para poder medir esas cantidades, esos dispositivos son los sensores.</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Típica señal analógica: </p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><img src="../img/Entrada analógica.png" width="338" height="225" alt=""/></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">La conversión Analógica a Digital que es  capaz de hacer un PIC consiste en convertir un valor de tensión (voltaje) que  conectemos a un PIN habilitado para ello, en un valor numérico proporcional a  dicha tensión que podemos guardar en una variable y ser utilizado por nuestro  programa del PIC.</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Dicho  de otra forma: Si entre un pin del PIC podemos tener una tensión, con respecto  a GND, entre 0V y 5V y realizamos una conversión Analógico-Digital de ese pin  con una precisión de 8 bits entonces el PIC puede &quot;leer&quot; esa tensión  en 256 (2^8=256) valores distintos que nos devuelve como resultado de la  lectura, siendo el 0 el correspondiente a los 0V y el 255 el correspondiente a  los 5V, y todos los intermedios en &quot;saltos&quot; de 0,019V (5V/256).</span></p>
 <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Si  en lugar de 8 bits estamos utilizando un PIC que tiene un conversor A/D de 10  bits de precisión entonces ese mismo rango de 0V a 5V podemos  &quot;leerlo&quot; en 1024 (2^10=1024) valores distintos, siendo el  &quot;resultado&quot; 0 el que corresponde a los 0V y el 1023 a los 5V.  Cualquier valor intermedio nos devolverá un número equivalente con  &quot;pasos&quot; de 0,0049V por valor.</span></p>
 <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Hemos  visto que el mínimo que podemos convertir es 0V o tensión del nivel del Vss  (GND) del PIC y 5V o tensión del nivel de alimentación Vcc del PIC.</span></p>
@@ -1691,46 +1623,117 @@ p.MsoNormal11 {margin-top: 0cm;
 <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Ahora,  imaginemos que nuestro dispositivo analógico varía su tensión de salida entre  1V y 2V. Si utilizamos el primer ejemplo que vimos, conversión A/D entre 0V y  5V con 8 bits de precisión, entonces solo obtendremos números entre 51 y 102,  perdiendo todos los valores inferiores y superiores a éstos.</span></p>
 <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Si  utilizamos el ejemplo anterior a éste pero colocando el VRef+ a 2V entonces  tendremos valores entre 128 y 255 pero ninguno inferior a 128 ya que nuestra  tensión analógica no baja de 1V .... </span></p>
 <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Así  que la solución está en utilizar otra patilla del PIC, en este caso para VRef-,  o sea para ponerle la referencia de tensión mínima a partir de la cual vamos a  convertir valores, que junto con la VRef+ tenemos el margen o rango de  tensiones a convertir a gusto.</span></p>
-<span style="line-height:115%; font-family:'Arial','sans-serif'; font-size:12.0pt; ">En este segundo ejemplo pondríamos VRef- a 1V y VRef+  a 2V con lo que tendríamos una conversión de 8 bits en la que el 0  correspondería a los 1V y el 255 a los 2V ...</span>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Todo esto se puede ver en el siguiente  diagrama de bloques del conversor A/D de los PIC's de la familia 16F87X:</span></p>
+<p style="line-height:115%; font-family:'Arial','sans-serif'; font-size:12.0pt; ">En este segundo ejemplo pondríamos VRef- a 1V y VRef+  a 2V con lo que tendríamos una conversión de 8 bits en la que el 0  correspondería a los 1V y el 255 a los 2V.</p>
+<p style="line-height:115%; font-family:'Arial','sans-serif'; font-size:12.0pt; "><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Todo esto se puede ver en el siguiente  diagrama de bloques del conversor A/D de los PIC's de la familia 16F87X:</span></p>
 <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
 <p class="MsoNormal" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> </span><img src="../img/Microcontroladores PIC - CCS_clip_image001_0000.png" width="489" height="475" alt=""/></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Como ejemplo del uso del conversor ADC del  microcontrolador vamos a utilizar las funciones para leer el dato proveniente  de un sensor en el rango de 0 a 5V.  </span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Como funcionalidades mínimas haremos que sea  capaz de leer una entrada entre 0 y 5V de manera que para 0V representará 0 ºC  y 5V representará 100 ºC.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">El esquema del circuito será el siguiente:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:13.5pt;background:white;"><img src="../img/Microcontroladores PIC - CCS_clip_image002.png" width="461" height="592" alt=""/></p>
-<p class="MsoNormal" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">El código del programa será el siguiente:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:13.5pt;background:white;"><img src="../img/Microcontroladores PIC - CCS_clip_image004_0002.jpg" width="697" height="378" alt=""/></p>
-<p class="MsoNormal" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Comentarios del programa:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">El ejemplo está debidamente documentado, por lo cual  su comprensión no reviste mayor dificultad.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Se debe tener especial atención al seleccionar el  canal a leer:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">set_adc_channel(0); esta instrucción selecciona el  canal AN0</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">set_adc_channel(1); esta instrucción selecciona el  canal AN1</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">set_adc_channel(2); esta instrucción selecciona el  canal AN2…  etc…</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Temperatura = read_adc(); esta instrucción lee el  valor análogo en el canal seleccionado previamente</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Para observar la variación de la unidad medida se ha  dispuesto un potenciómetro para simular el sensor de temperatura.</span></p>
-<p class="MsoNormal" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Extraído parcialmente de:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><a href="http://picmania.garcia-cuervo.net/conceptos.php#CONVAD01">http://picmania.garcia-cuervo.net/conceptos.php#CONVAD01</a></span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a name="Salida_análoga_PWM" id="Interrupción_externa_INT4"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">S</span></strong></a></span><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">alida análoga PWM</span></strong></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></strong></p>
-<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Muchas veces  nos gustaría controlar la cantidad física de una acción: qué tan brillantes son  las luces, qué tan rápido se mueve un motor, cuantos grados girar, etc. En este  caso estaremos hablando de salidas de tipo analógico, con este tipo de salidas  podemos tener un grado de control sobre la salida, donde el resultado no solo  se limitará a On-Off.</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
+  <object id="FlashID79" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
+    <param name="movie" value="../../swf_lbl/9.1 Escalamiento de lectura analogica (Formula).swf">
+    <param name="quality" value="high">
+    <param name="wmode" value="opaque">
+    <param name="swfversion" value="6.0.65.0">
+    <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. -->
+    <param name="expressinstall" value="Scripts/expressInstall.swf">
+    <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="../../swf_lbl/9.1 Escalamiento de lectura analogica (Formula).swf" width="600" height="25">
+      <!--<![endif]-->
+      <param name="quality" value="high">
+      <param name="wmode" value="opaque">
+      <param name="swfversion" value="6.0.65.0">
+      <param name="expressinstall" value="Scripts/expressInstall.swf">
+      <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. -->
+      <div>
+        <h4>El contenido de esta página requiere una versión más reciente de Adobe Flash Player.</h4>
+        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Obtener Adobe Flash Player" width="112" height="33" /></a></p>
+      </div>
+      <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
+  </object>
+</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
+  <object id="FlashID6" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="532" height="600">
+    <param name="movie" value="../swf/Entrada analoga.swf">
+    <param name="quality" value="high">
+    <param name="wmode" value="opaque">
+    <param name="swfversion" value="6.0.65.0">
+    <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. -->
+    <param name="expressinstall" value="Scripts/expressInstall.swf">
+    <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="../swf/Entrada analoga.swf" width="532" height="600">
+      <!--<![endif]-->
+      <param name="quality" value="high">
+      <param name="wmode" value="opaque">
+      <param name="swfversion" value="6.0.65.0">
+      <param name="expressinstall" value="Scripts/expressInstall.swf">
+      <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. -->
+      <div>
+        <h4>El contenido de esta página requiere una versión más reciente de Adobe Flash Player.</h4>
+        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Obtener Adobe Flash Player" /></a></p>
+      </div>
+      <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
+  </object>
+</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp; </p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;; font-family: 'Arial', 'sans-serif'; font-size: 12.0pt">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
+  <object id="FlashID78" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
+    <param name="movie" value="../../swf_lbl/9.2 Funcion map para escalamiento de lectura analogica.swf">
+    <param name="quality" value="high">
+    <param name="wmode" value="opaque">
+    <param name="swfversion" value="6.0.65.0">
+    <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. -->
+    <param name="expressinstall" value="Scripts/expressInstall.swf">
+    <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="../../swf_lbl/9.2 Funcion map para escalamiento de lectura analogica.swf" width="600" height="25">
+      <!--<![endif]-->
+      <param name="quality" value="high">
+      <param name="wmode" value="opaque">
+      <param name="swfversion" value="6.0.65.0">
+      <param name="expressinstall" value="Scripts/expressInstall.swf">
+      <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. -->
+      <div>
+        <h4>El contenido de esta página requiere una versión más reciente de Adobe Flash Player.</h4>
+        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Obtener Adobe Flash Player" width="112" height="33" /></a></p>
+      </div>
+      <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
+  </object>
+</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Sensor de humedad: 0% - 100%</span></strong></span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><img src="../img/Sensor_humedad.png" width="645" height="611" alt=""/></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Sensor de distancia infrarojo: 0.0mm - 10.0mm</span></strong></span></span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><img src="../img/Sensor_distancia IR.png" width="635" height="609" alt=""/></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Sensor de distancia inductivo: 0.0mm - 20.0mm</span></strong></span></span></span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><img src="../img/Sensor_distancia inductivo.png" width="648" height="612" alt=""/></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Sensor de temperatura LM35</span></strong></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><img src="../img/Sensor LM35.png" width="998" height="620" alt=""/></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p><strong><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a name="Salida_análoga_PWM" id="Interrupción_externa_INT4"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">S</span></strong></a></span><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">alida análoga PWM</span></strong></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Muchas veces  nos gustaría controlar la cantidad física de una acción: qué tan brillantes son  las luces, qué tan rápido se mueve un motor, cuantos grados girar, etc. En este  caso estaremos hablando de salidas de tipo analógico, con este tipo de salidas  podemos tener un grado de control sobre la salida, donde el resultado no solo  se limitará a On-Off.</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;">Como la mayoría de los microcontroladores no pueden generar un voltaje (real) variable en sus pines de salida, una de las soluciones para resolver esta carencia es utilizar un truco electrónico que se basa en la modulación del ancho del pulso (PWM para abreviar).</p>
 <p class="MsoNormal" align="center" style="margin-bottom:12.0pt;text-align:center;line-height:13.5pt;background:white;"><img src="../img/Microcontroladores PIC - CCS_clip_image001_0001.png" width="326" height="278" alt=""/></p>
 <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Como se  puede observar en la figura, el voltaje promedio es el resultado de alternar el  valor de salida de un pin entre 0 y 5 voltios con un ancho de pulso variable,  durante un periodo de tiempo determinado.</span></p>
@@ -2748,6 +2751,9 @@ swfobject.registerObject("FlashID63");
 swfobject.registerObject("FlashID66");
 swfobject.registerObject("FlashID64");
 swfobject.registerObject("FlashID67");
-  </script>
+swfobject.registerObject("FlashID6");
+swfobject.registerObject("FlashID79");
+swfobject.registerObject("FlashID78");
+</script>
 </body>
 </html>
