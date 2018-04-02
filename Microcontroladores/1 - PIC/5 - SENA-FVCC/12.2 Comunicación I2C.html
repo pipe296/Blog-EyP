@@ -91,13 +91,7 @@ p.MsoNormal1 {	margin-top: 0cm;
 <p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- Se repiten los 2 pasos  anteriores hasta finalizar la comunicación entre maestro y esclavo.</span></p>
 <p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- Aun cuando el maestro  siempre controla el estado de la línea del reloj, un esclavo de baja velocidad  o que deba detener la transferencia de datos mientras efectúa otra función,  puede forzar la línea SCL a nivel bajo. Esto hace que el maestro entre en un  estado de espera, durante el cual, no transmite información esperando a que el  esclavo esté listo para continuar la transferencia en el punto donde había sido  detenida.</span></p>
 <p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- Cuando la comunicación  finaliza, el maestro transmite una &quot;stop condition&quot; para dejar libre  el bus.</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- Después de la &quot;stop  condition&quot;, es obligatorio para el bus estar idle durante unos</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">microsegundos.</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">El código del kernel de  Linux para el soporte I2C está separado en varias piezas lógicas:</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- I2C chip driver (maneja  uno de los chips conectados al bus I2C, tanto si se comporta como maestro o  como esclavo)</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- I2C bus driver</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- I2C algorithm driver</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- I2C core (la parte  genérica del subsistema de I2C)</span></p>
+<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- Después de la &quot;stop  condition&quot;, es obligatorio para el bus estar idle durante unos</span> <span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">microsegundos.</span></p>
 <p style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">*extraído de <a href="http://es.wikipedia.org/wiki/I%C2%B2C">http://es.wikipedia.org/wiki/I%C2%B2C</a> </p>
 </body>
 </html>

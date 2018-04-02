@@ -1193,25 +1193,32 @@ p.MsoNormal1 {	margin-top: 0cm;
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a id="Interrupción_externa_INT">5. I</a></span>nterrupción externa INT</span></strong></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Una interrupción es un evento que hace que el microcontrolador deje de ejecutar la tarea que está realizando para atender dicho acontecimiento y luego regrese y continúe la tarea que estaba realizando antes de que se presentara la interrupción. El pic 16F628 (y el 16F628A) tiene 10 fuentes de interrupción, si las interrupciones están habilitadas cada vez que uno de estos acontecimientos se presente el pic dejará de ejecutar el programa para ir a atender la interrupción y al término de la misma continuará ejecutando el programa donde lo había dejado.</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Las fuentes de interrupción son:</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Interrupción externa RB0/INT</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Interrupción por cambio lógico en el puerto B (pines RB7 a RB4)</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Interrupción por desborde del timer 0 (TMR0)</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Interrupción por desborde del timer 1 (TMR1)</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Interrupción por comparación exitosa exitosa en TMR2</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Interrupción del comparador</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Interrupción del transmisor del USART</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Interrupción del receptor del USART</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Interrupción del módulo CCP</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Interrupción del EEPROM </p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Aunque el pic cuenta con 10 fuentes distintas de interrupción solamente tiene un vector de interrupción por lo que si se habilitan varias interrupciones al momento de presentarse cualquiera de ellas el programa saltara a la misma rutina de interrupción y es responsabilidad del programador crear una rutina que identifique la fuente de la interrupción.</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
+  <object id="FlashID87" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
+    <param name="movie" value="../../swf_lbl/5. Interrupción externa INT.swf">
+    <param name="quality" value="high">
+    <param name="wmode" value="opaque">
+    <param name="swfversion" value="6.0.65.0">
+    <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. -->
+    <param name="expressinstall" value="Scripts/expressInstall.swf">
+    <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="../../swf_lbl/5. Interrupción externa INT.swf" width="600" height="25">
+      <!--<![endif]-->
+      <param name="quality" value="high">
+      <param name="wmode" value="opaque">
+      <param name="swfversion" value="6.0.65.0">
+      <param name="expressinstall" value="Scripts/expressInstall.swf">
+      <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. -->
+      <div>
+        <h4>El contenido de esta página requiere una versión más reciente de Adobe Flash Player.</h4>
+        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Obtener Adobe Flash Player" /></a></p>
+      </div>
+      <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
+  </object>
+</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
@@ -1244,31 +1251,33 @@ p.MsoNormal1 {	margin-top: 0cm;
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><img src="../swf/6. Timer.gif" width="676" height="604" alt=""/></p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a name="Teclado"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">7. Teclado</span></strong></a></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">El teclado matricial 4x4,  son los más utilizados  en el desarrollo de proyectos con microcontroladores PIC y  tienen su  aplicación en el ingreso de datos de forma manual por parte del usuario, en  aquellos casos en que el empleo de pulsadores simples no es lo más apropiado,  ya sea por la presentación final del producto o por la restricción del número  de líneas de entrada de los microcontroladores PIC.</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">
+  <object id="FlashID88" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
+    <param name="movie" value="../../swf_lbl/7. Teclado.swf">
+    <param name="quality" value="high">
+    <param name="wmode" value="opaque">
+    <param name="swfversion" value="6.0.65.0">
+    <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. -->
+    <param name="expressinstall" value="Scripts/expressInstall.swf">
+    <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="../../swf_lbl/7. Teclado.swf" width="600" height="25">
+      <!--<![endif]-->
+      <param name="quality" value="high">
+      <param name="wmode" value="opaque">
+      <param name="swfversion" value="6.0.65.0">
+      <param name="expressinstall" value="Scripts/expressInstall.swf">
+      <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. -->
+      <div>
+        <h4>El contenido de esta página requiere una versión más reciente de Adobe Flash Player.</h4>
+        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Obtener Adobe Flash Player" /></a></p>
+      </div>
+      <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
+  </object>
+</p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">El teclado matricial 4x4 está constituido por una  matriz de pulsadores dispuestos en filas (A,B,C,D) y columnas (1,2,3,4), con la  intención de reducir el número de pines necesarios para su conexión. Las 16  teclas necesitan sólo 8 pines del microcontrolador, en lugar de los 16 pines  que se requerirían para la conexión de 16 teclas independientes.</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal1" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">          </span><img src="../img/Microcontroladores PIC - CCS_clip_image004_0001.jpg" width="331" height="235" alt=""/><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:center;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><img src="../img/Microcontroladores PIC - CCS_clip_image002_0004.jpg" width="239" height="242" alt=""/></span></span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">A cada tecla le corresponde una  posición única en la matriz.</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Su funcionamiento es muy sencillo,  cuando se presiona una tecla, se conectan internamente la fila y columna  correspondientes; por ejemplo, al presionar la tecla &ldquo;6&rdquo; se conectan la fila B  y la columna 3. Si no hay ninguna tecla presionada, las filas están  desconectadas de las columnas.</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal1" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:13.5pt;background:white;"><img src="../img/Microcontroladores PIC - CCS_clip_image005.png" width="361" height="353" alt=""/></p>
-<p class="MsoNormal1" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Para facilitar la lectura del teclado matricial  usaremos la librería kbd_matricial.c que se encarga de gestionar las líneas  físicas (pines del microcontrolador) y contiene la función kbd_getc() que se  encuentra implementada en ella.</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">La variable tecla es de tipo <span style="color:#4F81BD; ">char</span>,  permitiendo almacenar en ella un caracter alfanumérico, el cual obtiene al  llamar la función kbd_getc().</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">La función kbd_getc() devuelve caracter ASCII que corresponde a la tecla pulsada o cero (0) si no se ha  pulsado ninguna tecla o el </span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Extraído parcialmente de:</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><a href="http://www.programarpicenc.com/libro/cap08-teclado-matricial-4x4-microcontroladores-pic.html">http://www.programarpicenc.com/libro/cap08-teclado-matricial-4x4-microcontroladores-pic.html</a></span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "></span></p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">
   <object id="FlashID68" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
@@ -1717,18 +1726,35 @@ p.MsoNormal1 {	margin-top: 0cm;
 </p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a name="Salida_análoga_PWM" id="Interrupción_externa_INT4"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">10. S</span></a></span><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">alida análoga PWM</span></strong></span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Muchas veces  nos gustaría controlar la cantidad física de una acción: qué tan brillantes son  las luces, qué tan rápido se mueve un motor, cuantos grados girar, etc. En este  caso estaremos hablando de salidas de tipo analógico, con este tipo de salidas  podemos tener un grado de control sobre la salida, donde el resultado no solo  se limitará a On-Off.</span></p>
-<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Como la mayoría de los microcontroladores no pueden  generar un voltaje (real) variable en sus pines de salida, una de las  soluciones para resolver esta carencia es utilizar un truco electrónico que se  basa en la modulación del ancho del pulso – Pulse Width Modulation - (PWM para  abreviar).</span></p>
-<p><span class="MsoNormal" style="margin-bottom:12.0pt;text-align:center;line-height:13.5pt;background:white;"><img src="../img/Microcontroladores PIC - CCS_clip_image001_0001.png" width="326" height="278" alt=""/></span></p>
-<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">La conversión digital a analógico que es  capaz de hacer un PIC consiste en convertir un valor discreto en el ciclo de  trabajo del PWM proporcional al valor de tensión (voltaje) que deseamos  producir en un PIN habilitado para ello.</span></span></p>
-<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Como se  puede observar en la figura, el voltaje promedio es el resultado de alternar el  valor de salida de un pin entre 0 y 5 voltios con un ancho de pulso variable,  durante un periodo de tiempo determinado.</span><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Dicho  de otra forma: En un pin del PIC podemos tener una tensión, con respecto a GND,  entre 0V y 5V obtenida de la tensión promedio generada por el ciclo de trabajo  del PWM. Entonces el PIC puede &quot;escribir&quot; esa tensión en 100 valores  distintos, siendo el 0 el correspondiente a los 0V y el 100 el correspondiente  a los 5V, y todos los intermedios en &quot;saltos&quot; de 0,05 (5V/100).</span></p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt; font-family: Arial, sans-serif;">Extraído parcialmente de: <a href="http://www.dtic.upf.edu/~jlozano/interfaces/interfaces5.html" target="_blank">http://www.dtic.upf.edu/~jlozano/interfaces/interfaces5.html</a></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
+  <object id="FlashID89" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
+    <param name="movie" value="../../swf_lbl/10. Salida análoga PWM.swf">
+    <param name="quality" value="high">
+    <param name="wmode" value="opaque">
+    <param name="swfversion" value="6.0.65.0">
+    <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. -->
+    <param name="expressinstall" value="Scripts/expressInstall.swf">
+    <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="../../swf_lbl/10. Salida análoga PWM.swf" width="600" height="25">
+      <!--<![endif]-->
+      <param name="quality" value="high">
+      <param name="wmode" value="opaque">
+      <param name="swfversion" value="6.0.65.0">
+      <param name="expressinstall" value="Scripts/expressInstall.swf">
+      <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. -->
+      <div>
+        <h4>El contenido de esta página requiere una versión más reciente de Adobe Flash Player.</h4>
+        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Obtener Adobe Flash Player" /></a></p>
+      </div>
+      <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
+  </object>
+</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;">
   <object id="FlashID32" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
     <param name="movie" value="../../swf_lbl/10.1 PWM motor 12VDC.swf">
     <param name="quality" value="high">
@@ -1820,43 +1846,34 @@ p.MsoNormal1 {	margin-top: 0cm;
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a id="Comunicación_serial_asíncrona_(UART)"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">11. Comunicación serial asíncrona (UART)</span></strong></a></span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family: 'Arial', 'sans-serif'; font-size: 12.0pt"></span></strong></span><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a name="RS-232" id="Comunicación_serial_asíncrona_(UART)2"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">11.1 RS-232</span></strong></a></span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
+  <object id="FlashID90" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
+    <param name="movie" value="../../swf_lbl/11.1 RS-232.swf">
+    <param name="quality" value="high">
+    <param name="wmode" value="opaque">
+    <param name="swfversion" value="6.0.65.0">
+    <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. -->
+    <param name="expressinstall" value="Scripts/expressInstall.swf">
+    <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="../../swf_lbl/11.1 RS-232.swf" width="600" height="25">
+      <!--<![endif]-->
+      <param name="quality" value="high">
+      <param name="wmode" value="opaque">
+      <param name="swfversion" value="6.0.65.0">
+      <param name="expressinstall" value="Scripts/expressInstall.swf">
+      <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. -->
+      <div>
+        <h4>El contenido de esta página requiere una versión más reciente de Adobe Flash Player.</h4>
+        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Obtener Adobe Flash Player" /></a></p>
+      </div>
+      <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
+  </object>
+</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Algunas referencias de microcontroladores PIC incluyen  módulos para comunicación dentro de su hardware. El módulo para comunicaciones  RS-232 se conoce también como UART.</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">En general habrá que usar un conversor de niveles  basado en el MAX232 o similar.</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">El protocolo serie es una descripción  &quot;digital&quot; (0/1) de lo que debe estar pasando en la línea (por  ejemplo, 1 mientras se espera, 0 indica el bit de start, etc.), pero no  especifica que voltajes representan el 0/1 lógicos.</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Por ejemplo en los PIC se usa la convención (lógica)  que el 0 lógico son 0V y el 1 lógico (línea alta) son 5V.</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">En el puerto serie de un PC (standard RS232) la  relación lógica/voltajes está invertida. Un 0 lógico se representa con un  voltaje entre 3 y 15V (12 es típico) y un 1 lógico por un voltaje negativo  (entre -3 y -15V). Es por esto por lo que para comunicar PIC-PC necesitamos un  Max232 o equivalente.</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Las especificaciones de su tarjeta le dirán cuales son  los voltajes asociados a su puerto serie. Si dice algo de RS232 tendrá que usar  seguramente un buffer tipo MAX232.</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Si nuestro PIC no tiene UART como es el caso del PIC  16f84A, CCS nos permite implementar la comunicación serie por software y de  forma totalmente transparente para el programador. Sin embargo el utilizar un  PIC con UART nos permite disponer de una serie de funcionalidades adicionales,  como el empleo de interrupciones para controlar el envío y recepción de datos.</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Si queremos realizar una comunicación serie utilizando  la USART del PIC, las conexiones tendrán que ser a las siguientes: RC6 para la  transmisión de datos y RC7 para la recepción de datos.</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><img src="../img/RS232.png" width="1000" height="447" alt=""/></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">Para implementar la comunicación entre el microcontrolador y una aplicación desarrollada en C# se debe agregar el control SerialPort  al proyecto y configurar los parámetros del puerto.</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;; font-family: 'Arial', 'sans-serif'; font-size: 12.0pt"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;; font-family: 'Arial', 'sans-serif'; font-size: 12.0pt"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;; font-family: 'Arial', 'sans-serif'; font-size: 12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../img/RS232 C.png" width="827" height="556" alt=""/></span></span></p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;; font-family: 'Arial', 'sans-serif'; font-size: 12.0pt">&nbsp;</p>
-<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial',sans-serif; font-size:12.0pt; ">Seleccione  el control SerialPort y haga click en el botón Events de la ventana de  propiedades.</span></p>
-<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;">&nbsp;</p>
-<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../img/SerialPort_Properties.png" width="249" height="149" alt=""/></p>
-<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;">&nbsp;</p>
-<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;"><span style="font-family:'Arial',sans-serif; font-size:12.0pt; ">Acceda al  evento <strong>DataReceived</strong> para programar  las acciones que realizará el control al recibir datos (Doble Click en el  espacio en blanco al frente de <strong>DataReceived</strong>). Allí se programarán las acciones de la aplicación en respuesta al arribo de datos provenientes del microcontrolador.</span></p>
-<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;">&nbsp;</p>
-<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../img/SerialPort_Events.png" width="236" height="150" alt=""/></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><img src="../img/SerialPort_Receive.png" width="673" height="214" alt=""/></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
   <object id="FlashID44" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
     <param name="movie" value="../../swf_lbl/11.1.1 Micro a C_pulsador.swf">
@@ -2339,40 +2356,32 @@ p.MsoNormal1 {	margin-top: 0cm;
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><img src="../swf/12.1.1 Sensor de temperatura DS1820.gif" width="1000" height="596" alt=""/></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><a id="Comunicación_I2C"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">12.2 Co</span></strong></a><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">municación I2C</span></strong></span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">I²C es un bus de  comunicaciones en serie. Su nombre viene de Inter-Integrated Circuit (Circuitos  Inter-Integrados). La versión 1.0 data del año 1992 y la versión 2.1 del año  2000, su diseñador es Philips. La velocidad es de 100Kbits por segundo en el  modo estándar, aunque también permite velocidades de 3.4 Mbit/s. Es un bus muy  usado en la industria, principalmente para comunicar microntroladores y sus  periféricos en sistemas integrados (Embedded Systems) y generalizando más para  comunicar circuitos integrados entre si que normalmente residen en un mismo  circuito impreso.</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">La principal característica  de I²C es que utiliza dos líneas para transmitir la información: una para los  datos y por otra la señal de reloj. También es necesaria una tercera línea,  pero esta sólo es la referencia (masa). Como suelen comunicarse circuitos en  una misma placa que comparten una misma masa esta tercera línea no suele ser  necesaria.</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Las líneas se llaman:</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">SDA: datos</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">SCL: reloj</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">GND: tierra</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Las dos primeras líneas son  drenador abierto, por lo que necesitan resistencias de pull-up.</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Los dispositivos conectados  al bus I²C tienen una dirección única para cada uno. También pueden ser  maestros o esclavos. El dispositivo maestro inicia la transferencia de datos y  además genera la señal de reloj, pero no es necesario que el maestro sea  siempre el mismo dispositivo, esta característica se la pueden ir pasando los  dispositivos que tengan esa capacidad. Esta característica hace que al bus I²C  se le denomine bus multimaestro.</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Las transacciones en el bus  I2C tienen este formato:</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">| start | A7 A6 A5 A4 A3 A2 A1 | R/W | ACK | ... </span><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">DATA  ... | ACK | stop | idle |</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- El bus esta libre cuando  SDA y SCL están en estado lógico alto.</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- En estado bus libre,  cualquier dispositivo puede ocupar el bus I²C como maestro.</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- El maestro comienza la  comunicación enviando un patrón llamado &quot;start condition&quot;. Esto  alerta a los dispositivos esclavos, poniéndolos a la espera de una transacción.</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- El maestro se dirige al  dispositivo con el que quiere hablar, enviando un byte que contiene los siete  bits (A7-A1) que componen la dirección del dispositivo esclavo con el que se  quiere comunicar, y el octavo bit (A0) de menor peso se corresponde con la  operación deseada (L/E), lectura=1 (recibir del esclavo) y escritura=0 (enviar  al esclavo).</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- La dirección enviada es  comparada por cada esclavo del bus con su propia dirección, si ambas coinciden,  el esclavo se considera direccionado como esclavo-transmisor o esclavo receptor  dependiendo del bit R/W.</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- El esclavo responde  enviando un bit de ACK que le indica al dispositivo maestro que el esclavo  reconoce la solicitud y está en condiciones de comunicarse.</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- Seguidamente comienza el  intercambio de información entre los dispositivos.</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- El maestro envía la dirección  del registro interno del dispositivo que se desea leer o escribir.</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- El esclavo responde con  otro bit de ACK</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- Ahora el maestro puede  empezar a leer o escribir bytes de datos. Todos los bytes de datos deben  constar de 8 bits, el número máximo de bytes que pueden ser enviados en una  transmisión no está restringido, siendo el esclavo quien fija esta cantidad de  acuerdo a sus características.</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- Cada byte leído/escrito  por el maestro debe ser obligatoriamente reconocido por un bit de ACK por el  dispositivo maestro/esclavo.</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- Se repiten los 2 pasos  anteriores hasta finalizar la comunicación entre maestro y esclavo.</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- Aun cuando el maestro  siempre controla el estado de la línea del reloj, un esclavo de baja velocidad  o que deba detener la transferencia de datos mientras efectúa otra función,  puede forzar la línea SCL a nivel bajo. Esto hace que el maestro entre en un  estado de espera, durante el cual, no transmite información esperando a que el  esclavo esté listo para continuar la transferencia en el punto donde había sido  detenida.</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- Cuando la comunicación  finaliza, el maestro transmite una &quot;stop condition&quot; para dejar libre  el bus.</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- Después de la &quot;stop  condition&quot;, es obligatorio para el bus estar idle durante unos</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">microsegundos.</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">El código del kernel de  Linux para el soporte I2C está separado en varias piezas lógicas:</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- I2C chip driver (maneja  uno de los chips conectados al bus I2C, tanto si se comporta como maestro o  como esclavo)</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- I2C bus driver</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- I2C algorithm driver</span></p>
-<p class="MsoNormal1" style="text-align:justify;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">- I2C core (la parte  genérica del subsistema de I2C)</span></p>
-<p style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">*extraído de <a href="http://es.wikipedia.org/wiki/I%C2%B2C">http://es.wikipedia.org/wiki/I%C2%B2C</a></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
+  <object id="FlashID91" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="25">
+    <param name="movie" value="../../swf_lbl/12.2 Comunicación I2C.swf">
+    <param name="quality" value="high">
+    <param name="wmode" value="opaque">
+    <param name="swfversion" value="6.0.65.0">
+    <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. -->
+    <param name="expressinstall" value="Scripts/expressInstall.swf">
+    <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="../../swf_lbl/12.2 Comunicación I2C.swf" width="600" height="25">
+      <!--<![endif]-->
+      <param name="quality" value="high">
+      <param name="wmode" value="opaque">
+      <param name="swfversion" value="6.0.65.0">
+      <param name="expressinstall" value="Scripts/expressInstall.swf">
+      <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. -->
+      <div>
+        <h4>El contenido de esta página requiere una versión más reciente de Adobe Flash Player.</h4>
+        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Obtener Adobe Flash Player" /></a></p>
+      </div>
+      <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
+  </object>
+</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"></p>
@@ -2913,6 +2922,11 @@ swfobject.registerObject("FlashID75");
 swfobject.registerObject("FlashID84");
 swfobject.registerObject("FlashID85");
 swfobject.registerObject("FlashID86");
+swfobject.registerObject("FlashID87");
+swfobject.registerObject("FlashID88");
+swfobject.registerObject("FlashID89");
+swfobject.registerObject("FlashID90");
+swfobject.registerObject("FlashID91");
 </script>
 </body>
 </html>
