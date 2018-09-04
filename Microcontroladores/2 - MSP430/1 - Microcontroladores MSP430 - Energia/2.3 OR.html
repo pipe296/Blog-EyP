@@ -76,7 +76,10 @@ p.MsoNormal1 {margin-top: 0cm;
 <body>
 <strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">OR</span></strong>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><img src="../video/2.3 OR.gif" width=auto height=auto alt=""/> </p>
+<video preload="auto" autoplay loop >
+  <source src="../video/2.3 OR.m4v" type="video/mp4">
+  <source src="../video/2.3 OR.mp4" type="video/mp4">
+</video>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">void </span><span style="font-family:Courier; font-size:10.0pt; color:#8C308C; ">setup</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">() {</span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">  pinMode</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(P1_0, </span><span style="font-family:Courier; font-size:10.0pt; color:#0066FF; ">INPUT</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">);</span></p>
@@ -85,7 +88,7 @@ p.MsoNormal1 {margin-top: 0cm;
 <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">}</span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">void </span><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">loop</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(){</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">  digitalWrite</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(P2_0, </span><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">digitalRead</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(P1_0)||</span><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">digitalRead</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(P1_1));</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">  digitalWrite</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(P2_0, </span><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">digitalRead</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(P1_0) || </span><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">digitalRead</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(P1_1));</span></p>
 <p class="MsoNormal"><span style="line-height:107%; font-family:Courier; font-size:10.0pt; color:black; ">}</span></p>
 </body>
 </html>
