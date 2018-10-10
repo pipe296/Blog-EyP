@@ -63,17 +63,16 @@ p.MsoNormal1 {	margin-top: 0cm;
 
 <body>
 <strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Entrada digital puerto</span></strong>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
 <video preload="auto" autoplay loop >
   <source src="../video/1.4 Entrada digital puerto.m4v" type="video/mp4">
   <source src="../video/1.4 Entrada digital puerto.mp4" type="video/mp4">
-</video><pre>
-<font color="#00979c">byte</font> <font color="#000000">unidades</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font>
+</video>
+<pre>
+<font color="#00979c"></font><font color="#00979c">int</font> <font color="#000000">pins_PB</font><font color="#000000">[</font><font color="#000000">6</font><font color="#000000">]</font> <font color="#434f54">=</font> <font color="#000000">{</font><font color="#000000">8</font><font color="#434f54">,</font> <font color="#000000">9</font><font color="#434f54">,</font> <font color="#000000">10</font><font color="#434f54">,</font> <font color="#000000">11</font><font color="#434f54">,</font> <font color="#000000">12</font><font color="#434f54">,</font> <font color="#000000">13</font><font color="#000000">}</font><font color="#000000">;</font>
+<font color="#00979c">int</font> <font color="#000000">pins_PD</font><font color="#000000">[</font><font color="#000000">6</font><font color="#000000">]</font> <font color="#434f54">=</font> <font color="#000000">{</font><font color="#000000">0</font><font color="#434f54">,</font> <font color="#000000">1</font><font color="#434f54">,</font> <font color="#000000">2</font><font color="#434f54">,</font> <font color="#000000">3</font><font color="#434f54">,</font> <font color="#000000">4</font><font color="#434f54">,</font> <font color="#000000">5};</font>
 
-<font color="#00979c">int</font> <font color="#000000">pins_PB</font><font color="#000000">[</font><font color="#000000">6</font><font color="#000000">]</font> <font color="#434f54">=</font> <font color="#000000">{</font><font color="#000000">8</font><font color="#434f54">,</font> <font color="#000000">9</font><font color="#434f54">,</font> <font color="#000000">10</font><font color="#434f54">,</font> <font color="#000000">11</font><font color="#434f54">,</font> <font color="#000000">12</font><font color="#434f54">,</font> <font color="#000000">13</font><font color="#000000">}</font><font color="#000000">;</font>
-<font color="#00979c">int</font> <font color="#000000">pins_PD</font><font color="#000000">[</font><font color="#000000">6</font><font color="#000000">]</font> <font color="#434f54">=</font> <font color="#000000">{</font><font color="#000000">0</font><font color="#434f54">,</font> <font color="#000000">1</font><font color="#434f54">,</font> <font color="#000000">2</font><font color="#434f54">,</font> <font color="#000000">3</font><font color="#434f54">,</font> <font color="#000000">4</font><font color="#434f54">,</font> <font color="#000000">5</font><font color="#000000">}</font><font color="#000000">;</font>
-
-<font color="#00979c">int</font> <font color="#000000">input_PB</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+<font color="#00979c">byte</font> <font color="#000000">input_PB</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
  &nbsp;&nbsp;<font color="#00979c">byte</font> <font color="#000000">cifra</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font>
  &nbsp;&nbsp;<font color="#00979c">byte</font> <font color="#000000">i</font><font color="#000000">;</font>
  &nbsp;&nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">i</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">&lt;</font><font color="#000000">6</font><font color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">++</font><font color="#000000">)</font>
@@ -106,7 +105,6 @@ p.MsoNormal1 {	margin-top: 0cm;
  &nbsp;<font color="#434f54">&#47;&#47; put your main code here, to run repeatedly:</font>
  &nbsp;<font color="#000000">output_PD</font><font color="#000000">(</font><font color="#000000">input_PB</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">)</font><font color="#000000">;</font>
 <font color="#000000">}</font>
-
 </pre>
 </body>
 </html>
