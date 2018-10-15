@@ -153,24 +153,6 @@ p.MsoNormal1 {	margin-top: 0cm;
 
 &nbsp;&nbsp;<span style="color: #007F00;">//Programar acci&#243;n boton_dec</span>
 
-&nbsp;&nbsp;<span style="color: #FF0000;">if</span> (estado_boton_dec!=estado_boton_dec_ant)
-&nbsp;&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">if</span> ((estado_boton_dec==1)&amp;&amp;(decenas*10+unidades&gt;0))
-&nbsp;&nbsp;&nbsp;&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">if</span> (unidades&gt;0)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unidades--;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">else</span> <span style="color: #FF0000;">if</span> (unidades==0)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unidades&nbsp;=&nbsp;9;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decenas--;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;estado_boton_dec_ant&nbsp;=&nbsp;estado_boton_dec;
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(5);
-&nbsp;&nbsp;}
-
 &nbsp;&nbsp;<span style="color: #FF0000;">if</span> (estado_boton_reset==1)
 &nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;unidades&nbsp;=&nbsp;0;
