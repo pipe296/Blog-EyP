@@ -62,71 +62,91 @@ p.MsoNormal1 {	margin-top: 0cm;
 </head>
 
 <body>
-<figure>
-  <figcaption><strong><span style="font-family: 'Arial', 'sans-serif'; font-size: 12.0pt; background-color: white">Contador 0 a 100 L</span><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">CD2x16</span></strong></figcaption></figure>
+<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Contador 0 a 100 LCD2x16</span></strong>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">#include &lt;</span><span style="font-family:Courier; font-size:10.0pt; color:red; ">LiquidCrystal</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">.h&gt;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">LiquidCrystal </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">lcd(P2_0, P2_1, P2_2, P2_3, P2_4, P2_5);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">#define boton_inc P1_0 </span><span style="font-family:Courier; font-size:10.0pt; color:#007F00; "> &nbsp;&nbsp;//Boton incremento</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">#define boton_dec P1_1 </span><span style="font-family:Courier; font-size:10.0pt; color:#007F00; "> &nbsp;&nbsp;//Boton decremento</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">#define boton_reset P1_2 </span><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">//Boton reset</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">boolean </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_inc;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">boolean </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_dec;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">boolean </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_reset;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">boolean </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_inc_ant;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">boolean </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_dec_ant;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">byte </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">contador = 0;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">char </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream[12];</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">void </span><span style="font-family:Courier; font-size:10.0pt; color:#8C308C; ">setup</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">()</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">{</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">  pinMode</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(boton_inc, </span><span style="font-family:Courier; font-size:10.0pt; color:#0066FF; ">INPUT_PULLUP</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">  pinMode</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(boton_dec, </span><span style="font-family:Courier; font-size:10.0pt; color:#0066FF; ">INPUT_PULLUP</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">  pinMode</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(boton_reset, </span><span style="font-family:Courier; font-size:10.0pt; color:#0066FF; ">INPUT_PULLUP</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  lcd.</span><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">begin</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(16, 2);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">  delay</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(200);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  lcd.</span><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(0,0);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  sprintf(txt2stream,</span><span style="font-family:Courier; font-size:10.0pt; color:#0066FF; ">&quot;BI: &nbsp;&nbsp;BD: &nbsp;&nbsp;BR:&quot;</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  lcd.</span><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">print</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(txt2stream);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  lcd.</span><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(0,1);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  sprintf(txt2stream,</span><span style="font-family:Courier; font-size:10.0pt; color:#0066FF; ">&quot;Contador:&quot;</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  lcd.</span><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">print</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(txt2stream);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">}</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">void </span><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">loop</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">()</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">{</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  estado_boton_inc  = </span><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">digitalRead</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(boton_inc);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  estado_boton_reset  = </span><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">digitalRead</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(boton_reset);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">  if </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(estado_boton_inc!=estado_boton_inc_ant)</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  {</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">    if </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">((estado_boton_inc==0)&amp;&amp;(contador&lt;100))</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">    {</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      contador++;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">    }</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">    estado_boton_inc_ant = estado_boton_inc;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">    delay</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(5);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  }</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#007F00; ">  //Programar acción boton_dec</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:red; ">  if </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(estado_boton_reset==0)</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  {</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">    contador = 0;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  }</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  lcd.</span><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(3,0);</span></span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  sprintf(txt2stream,</span><span style="font-family:Courier; font-size:10.0pt; color:#0066FF; ">&quot;%u&quot;</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">,contador);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  lcd.</span><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">print</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(txt2stream);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  lcd.</span><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(10,1);</span></span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  sprintf(txt2stream,</span><span style="font-family:Courier; font-size:10.0pt; color:#0066FF; ">&quot;%u &quot;</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">,contador);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">  lcd.</span><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">print</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(txt2stream);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#FF8100; ">  delay</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">(50);</span></p>
-<p class="MsoNormal"><span style="line-height:107%; font-family:Courier; font-size:10.0pt; color:black; ">}</span></p>
+<video preload="auto" autoplay loop >
+  <source src="../video/4.2.2 Contador 0 a 100 LCD2x16.m4v" type="video/mp4">
+  <source src="../video/4.2.2 Contador 0 a 100 LCD2x16.mp4" type="video/mp4">
+</video>
+<pre>
+#include&nbsp;&lt;<span style="color: #FF0000;">LiquidCrystal</span>.h&gt;
+
+<span style="color: #FF0000;">const</span> <span style="color: #FF8000;">int</span> rs = P2_0, en = P2_1, d4 = P2_2, d5 = P2_3, d6 = P2_4, d7 = P2_5;
+<span style="color: #FF0000;">LiquidCrystal</span> lcd(rs, en, d4, d5, d6, d7);
+
+#define&nbsp;boton_inc&nbsp;P1_0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #007F00;">//Boton incremento</span>
+#define&nbsp;boton_dec&nbsp;P1_1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #007F00;">//Boton decremento</span>
+#define&nbsp;boton_reset&nbsp;P1_2&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #007F00;">//Boton reset</span>
+
+#define&nbsp;estado_boton_inc&nbsp;<span style="color: #FF8000;">digitalRead</span>(boton_inc)
+#define&nbsp;estado_boton_dec&nbsp;<span style="color: #FF8000;">digitalRead</span>(boton_dec)
+#define&nbsp;estado_boton_reset&nbsp;<span style="color: #FF8000;">digitalRead</span>(boton_reset)
+
+<span style="color: #FF8000;">boolean</span> estado_boton_inc_ant;
+<span style="color: #FF8000;">boolean</span> estado_boton_dec_ant;
+
+<span style="color: #FF8000;">byte</span> contador = 0;
+<span style="color: #FF8000;">char</span> txt2stream[4];
+
+<span style="color: #FF0000;">void</span> <span style="color: #8B308B;"><b>setup</b></span>() 
+{
+&nbsp;&nbsp;<span style="color: #FF8000;">pinMode</span>(boton_inc, <span style="color: #0066FF;">INPUT</span>);
+&nbsp;&nbsp;<span style="color: #FF8000;">pinMode</span>(boton_dec, <span style="color: #0066FF;">INPUT</span>);
+&nbsp;&nbsp;<span style="color: #FF8000;">pinMode</span>(boton_reset, <span style="color: #0066FF;">INPUT</span>);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">begin</span>(16, 2);
+&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(200);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(0,0);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(<span style="color: #0066FF;">"BI:   BD:   BR: "</span>);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(0,1);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(<span style="color: #0066FF;">"Contador:"</span>);
+}
+
+<span style="color: #FF0000;">void</span> <span style="color: #FF8000;">loop</span>()
+{
+&nbsp;&nbsp;<span style="color: #FF0000;">if</span> (estado_boton_inc!=estado_boton_inc_ant)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">if</span> ((estado_boton_inc==1)&amp;&amp;(contador&lt;100))
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contador++;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;estado_boton_inc_ant&nbsp;=&nbsp;estado_boton_inc;
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(5);
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;<span style="color: #007F00;">//Programar acci&#243;n boton_dec</span>
+
+&nbsp;&nbsp;<span style="color: #FF0000;">if</span> (estado_boton_dec!=estado_boton_dec_ant)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">if</span> ((estado_boton_dec==1)&amp;&amp;(contador&gt;0))
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contador--;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;estado_boton_dec_ant&nbsp;=&nbsp;estado_boton_dec;
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(5);
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;<span style="color: #FF0000;">if</span> (estado_boton_reset==1)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;contador&nbsp;=&nbsp;0;
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(3,0);
+&nbsp;&nbsp;sprintf(txt2stream,<span style="color: #0066FF;">"%u"</span>,estado_boton_inc);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(txt2stream);
+&nbsp;&nbsp;
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(9,0);
+&nbsp;&nbsp;sprintf(txt2stream,<span style="color: #0066FF;">"%u"</span>,estado_boton_dec);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(txt2stream);
+
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(15,0);
+&nbsp;&nbsp;sprintf(txt2stream,<span style="color: #0066FF;">"%u"</span>,estado_boton_reset);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(txt2stream);
+
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(9,1);
+&nbsp;&nbsp;sprintf(txt2stream,<span style="color: #0066FF;">"%u  "</span>,contador);
+&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(txt2stream);
+&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(50);
+}
+</pre>
 </body>
 </html>

@@ -104,13 +104,13 @@ p.MsoNormal1 {	margin-top: 0cm;
  &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">clear</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
 
  &nbsp;<font color="#00979c">byte</font> <font color="#000000">thisChar</font><font color="#000000">;</font>
- &nbsp;<font color="#434f54">&#47;&#47; set the cursor to (10,1):</font>
+ &nbsp;<font color="#434f54">&#47;&#47; set the cursor to (10,0):</font>
  &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font color="#000000">(</font><font color="#000000">10</font><font color="#434f54">,</font> <font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;<font color="#434f54">&#47;&#47; print from 0 to 9:</font>
  &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">thisChar</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">thisChar</font> <font color="#434f54">&lt;</font> <font color="#000000">10</font><font color="#000000">;</font> <font color="#000000">thisChar</font><font color="#434f54">++</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">sprintf</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#434f54">,</font><font color="#005c5f">&#34;%u&#34;</font><font color="#434f54">,</font><font color="#000000">thisChar</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">500</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">sprintf</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#434f54">,</font><font color="#005c5f">&#34;%u&#34;</font><font color="#434f54">,</font><font color="#000000">thisChar</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">500</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;<font color="#000000">}</font>
 
  &nbsp;<font color="#434f54">&#47;&#47; set the cursor to (10,1):</font>
@@ -119,9 +119,9 @@ p.MsoNormal1 {	margin-top: 0cm;
  &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">autoscroll</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;<font color="#434f54">&#47;&#47; print from 0 to 9:</font>
  &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">thisChar</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">thisChar</font> <font color="#434f54">&lt;</font> <font color="#000000">10</font><font color="#000000">;</font> <font color="#000000">thisChar</font><font color="#434f54">++</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">sprintf</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#434f54">,</font><font color="#005c5f">&#34;%u&#34;</font><font color="#434f54">,</font><font color="#000000">thisChar</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">500</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">sprintf</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#434f54">,</font><font color="#005c5f">&#34;%u&#34;</font><font color="#434f54">,</font><font color="#000000">thisChar</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">500</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;<font color="#000000">}</font>
 
  &nbsp;<font color="#434f54">&#47;&#47; turn off automatic scrolling</font>
@@ -160,7 +160,7 @@ p.MsoNormal1 {	margin-top: 0cm;
  &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">noCursor</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">2000</font><font color="#000000">)</font><font color="#000000">;</font>
 
- &nbsp;<font color="#434f54">&#47;&#47; clear screen for the next loop:</font>
+ &nbsp;<font color="#434f54">&#47;&#47; clear screen:</font>
  &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">clear</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
 
  &nbsp;<font color="#434f54">&#47;&#47; Print a message to the LCD.</font>
@@ -174,7 +174,7 @@ p.MsoNormal1 {	margin-top: 0cm;
  &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">display</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">2000</font><font color="#000000">)</font><font color="#000000">;</font>
 
- &nbsp;<font color="#434f54">&#47;&#47; clear screen for the next loop:</font>
+ &nbsp;<font color="#434f54">&#47;&#47; clear screen:</font>
  &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">clear</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
 
  &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font color="#000000">(</font><font color="#000000">12</font><font color="#434f54">,</font><font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
@@ -185,10 +185,10 @@ p.MsoNormal1 {	margin-top: 0cm;
  &nbsp;<font color="#434f54">&#47;&#47; scroll 12 positions (string length) to the left</font>
  &nbsp;<font color="#434f54">&#47;&#47; to move it offscreen left:</font>
  &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">positionCounter</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">positionCounter</font> <font color="#434f54">&lt;</font> <font color="#000000">12</font><font color="#000000">;</font> <font color="#000000">positionCounter</font><font color="#434f54">++</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; scroll one position left:</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">scrollDisplayLeft</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; wait a bit:</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">250</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; scroll one position left:</font>
+ &nbsp;&nbsp;&nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">scrollDisplayLeft</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; wait a bit:</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">250</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;<font color="#000000">}</font>
 
  &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">;</font>
@@ -203,10 +203,10 @@ p.MsoNormal1 {	margin-top: 0cm;
  &nbsp;<font color="#434f54">&#47;&#47; scroll 13 positions (string length + display length) to the right</font>
  &nbsp;<font color="#434f54">&#47;&#47; to move it offscreen right:</font>
  &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">positionCounter</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">positionCounter</font> <font color="#434f54">&lt;</font> <font color="#000000">13</font><font color="#000000">;</font> <font color="#000000">positionCounter</font><font color="#434f54">++</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; scroll one position right:</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">scrollDisplayRight</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; wait a bit:</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">250</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; scroll one position right:</font>
+ &nbsp;&nbsp;&nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">scrollDisplayRight</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; wait a bit:</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">250</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;<font color="#000000">}</font>
 
  &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">;</font>
@@ -215,23 +215,23 @@ p.MsoNormal1 {	margin-top: 0cm;
 
  &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">leftToRight</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">thisChar</font> <font color="#434f54">=</font> <font color="#000000">65</font><font color="#000000">;</font> <font color="#000000">thisChar</font> <font color="#434f54">&lt;</font> <font color="#000000">85</font><font color="#000000">;</font> <font color="#000000">thisChar</font><font color="#434f54">++</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">sprintf</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#434f54">,</font><font color="#005c5f">&#34;%c&#34;</font><font color="#434f54">,</font><font color="#000000">thisChar</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; print the character</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">250</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">sprintf</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#434f54">,</font><font color="#005c5f">&#34;%c&#34;</font><font color="#434f54">,</font><font color="#000000">thisChar</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; print the character</font>
+ &nbsp;&nbsp;&nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">250</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;<font color="#000000">}</font>
 
  &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font color="#000000">(</font><font color="#000000">19</font><font color="#434f54">,</font><font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">rightToLeft</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;
  &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">thisChar</font> <font color="#434f54">=</font> <font color="#000000">97</font><font color="#000000">;</font> <font color="#000000">thisChar</font> <font color="#434f54">&lt;</font> <font color="#000000">117</font><font color="#000000">;</font> <font color="#000000">thisChar</font><font color="#434f54">++</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">sprintf</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#434f54">,</font><font color="#005c5f">&#34;%c&#34;</font><font color="#434f54">,</font><font color="#000000">thisChar</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; print the character</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">250</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">sprintf</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#434f54">,</font><font color="#005c5f">&#34;%c&#34;</font><font color="#434f54">,</font><font color="#000000">thisChar</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; print the character</font>
+ &nbsp;&nbsp;&nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">250</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;<font color="#000000">}</font>
 
  &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#434f54">&#47;&#47; clear screen for the next loop:</font>
+ &nbsp;<font color="#434f54">&#47;&#47; clear screen:</font>
  &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">clear</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
 <font color="#000000">}</font>
 </pre>
