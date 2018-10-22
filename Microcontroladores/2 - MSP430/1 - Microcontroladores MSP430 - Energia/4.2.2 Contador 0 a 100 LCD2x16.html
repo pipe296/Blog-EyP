@@ -115,16 +115,6 @@ p.MsoNormal1 {	margin-top: 0cm;
 
 &nbsp;&nbsp;<span style="color: #007F00;">//Programar acci&#243;n boton_dec</span>
 
-&nbsp;&nbsp;<span style="color: #FF0000;">if</span> (estado_boton_dec!=estado_boton_dec_ant)
-&nbsp;&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">if</span> ((estado_boton_dec==1)&amp;&amp;(contador&gt;0))
-&nbsp;&nbsp;&nbsp;&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contador--;
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;estado_boton_dec_ant&nbsp;=&nbsp;estado_boton_dec;
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(5);
-&nbsp;&nbsp;}
-
 &nbsp;&nbsp;<span style="color: #FF0000;">if</span> (estado_boton_reset==1)
 &nbsp;&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;contador&nbsp;=&nbsp;0;
@@ -136,10 +126,6 @@ p.MsoNormal1 {	margin-top: 0cm;
 &nbsp;&nbsp;
 &nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(9,0);
 &nbsp;&nbsp;sprintf(txt2stream,<span style="color: #0066FF;">"%u"</span>,estado_boton_dec);
-&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(txt2stream);
-
-&nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(15,0);
-&nbsp;&nbsp;sprintf(txt2stream,<span style="color: #0066FF;">"%u"</span>,estado_boton_reset);
 &nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(txt2stream);
 
 &nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(9,1);

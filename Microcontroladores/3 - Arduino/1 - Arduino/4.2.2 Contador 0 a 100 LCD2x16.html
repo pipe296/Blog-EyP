@@ -117,16 +117,6 @@ p.MsoNormal1 {	margin-top: 0cm;
 
  &nbsp;<font color="#434f54">&#47;&#47;Programar acción boton_dec</font>
 
- &nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">estado_boton_dec</font><font color="#434f54">!=</font><font color="#000000">estado_boton_dec_ant</font><font color="#000000">)</font>
- &nbsp;<font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">(</font><font color="#000000">estado_boton_dec</font><font color="#434f54">==</font><font color="#000000">1</font><font color="#000000">)</font><font color="#434f54">&amp;&amp;</font><font color="#000000">(</font><font color="#000000">contador</font><font color="#434f54">&gt;</font><font color="#000000">0</font><font color="#000000">)</font><font color="#000000">)</font>
- &nbsp;&nbsp;&nbsp;<font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">contador</font><font color="#434f54">--</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
- &nbsp;&nbsp;&nbsp;<font color="#000000">estado_boton_dec_ant</font> <font color="#434f54">=</font> <font color="#000000">estado_boton_dec</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">5</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">}</font>
-
  &nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">estado_boton_reset</font><font color="#434f54">==</font><font color="#000000">1</font><font color="#000000">)</font>
  &nbsp;<font color="#000000">{</font>
  &nbsp;&nbsp;&nbsp;<font color="#000000">contador</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font>
@@ -139,11 +129,7 @@ p.MsoNormal1 {	margin-top: 0cm;
  &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font color="#000000">(</font><font color="#000000">9</font><font color="#434f54">,</font><font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;<font color="#d35400">sprintf</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#434f54">,</font><font color="#005c5f">&#34;%u&#34;</font><font color="#434f54">,</font><font color="#000000">estado_boton_dec</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#000000">)</font><font color="#000000">;</font>
-
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font color="#000000">(</font><font color="#000000">15</font><font color="#434f54">,</font><font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">sprintf</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#434f54">,</font><font color="#005c5f">&#34;%u&#34;</font><font color="#434f54">,</font><font color="#000000">estado_boton_reset</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#000000">)</font><font color="#000000">;</font>
-
+<font color="#000000"></font>
  &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font color="#000000">(</font><font color="#000000">9</font><font color="#434f54">,</font><font color="#000000">1</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;<font color="#d35400">sprintf</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#434f54">,</font><font color="#005c5f">&#34;%u &nbsp;&#34;</font><font color="#434f54">,</font><font color="#000000">contador</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#000000">)</font><font color="#000000">;</font>
