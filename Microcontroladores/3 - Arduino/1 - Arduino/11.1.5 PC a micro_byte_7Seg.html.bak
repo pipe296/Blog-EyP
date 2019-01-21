@@ -179,7 +179,35 @@ color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000
 color="#000000">103</font><font color="#000000">)</font><font color="#000000">;</font> <font
 color="#5e6d03">break</font><font color="#000000">;</font>
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">//Escribir código para procesar A-F</font>
- &nbsp;&nbsp; <font color="#000000">}</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">65</font><font
+color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
+color="#000000">119</font><font color="#000000">)</font><font color="#000000">;</font> <font
+color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">98</font><font
+color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
+color="#000000">124</font><font color="#000000">)</font><font color="#000000">;</font> <font
+color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">67</font><font
+color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
+color="#000000">57</font><font color="#000000">)</font><font color="#000000">;</font> <font
+color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">100</font><font
+color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
+color="#000000">94</font><font color="#000000">)</font><font color="#000000">;</font> <font
+color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">69</font><font
+color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
+color="#000000">121</font><font color="#000000">)</font><font color="#000000">;</font> <font
+color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">70</font><font
+color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
+color="#000000">113</font><font color="#000000">)</font><font color="#000000">;</font> <font
+color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">default</font><font color="#434f54">:</font> <font
+color="#000000">output_PB</font><font color="#000000">(</font><font color="#000000">0</font><font
+color="#000000">)</font><font color="#000000">;</font> <font color="#5e6d03">break</font><font
+color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
  &nbsp;&nbsp;&nbsp;<font color="#434f54">// clear the string:</font>
  &nbsp;&nbsp;&nbsp;<font color="#d35400">sprintf</font><font color="#000000">(</font><font
 color="#000000">inputString</font><font color="#434f54">,</font><font color="#005c5f">""</font><font

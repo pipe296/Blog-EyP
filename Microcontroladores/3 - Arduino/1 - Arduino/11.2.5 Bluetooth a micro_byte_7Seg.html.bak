@@ -66,16 +66,8 @@ p.MsoNormal1 {	margin-top: 0cm;
           class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span
             class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span
               class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span
-                  style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><br>
-                </span></strong></span></span></span></span></p>
-    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span
-        class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span
-          class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span
-            class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span
-              class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span
                   style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Código
-                  Arduino IDE<br>
-                </span></strong></span></span></span></span></p>
+                  PIC C Compiler</span></strong></span></span></span></span></p>
     <pre><font color="#00979c">char</font> <font color="#000000">inputString</font><font
 color="#000000">[</font><font color="#000000">10</font><font color="#000000">]</font><font
 color="#000000">;</font>

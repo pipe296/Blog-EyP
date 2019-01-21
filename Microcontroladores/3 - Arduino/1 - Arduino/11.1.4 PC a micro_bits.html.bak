@@ -201,7 +201,7 @@ color="#000000">;</font>
 color="#d35400">print</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font
 color="#000000">)</font><font color="#000000">;</font>
 
- &nbsp;&nbsp;&nbsp;<font color="#434f54">//Programar visualización inputString[2]</font>
+ &nbsp;&nbsp;&nbsp;<font color="#434f54">//Programar avisualización inputString[2]</font>
 
  &nbsp;&nbsp; <font color="#434f54">// clear the string:</font>
  &nbsp;&nbsp;&nbsp;<font color="#d35400">sprintf</font><font color="#000000">(</font><font
