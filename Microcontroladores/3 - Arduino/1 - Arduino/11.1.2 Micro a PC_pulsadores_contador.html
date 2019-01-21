@@ -57,7 +57,7 @@ p.MsoNormal1 {	margin-top: 0cm;
 -->
 </style> </head>
   <body> <strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Micro
-        a C#_pulsador_contador</span></strong>
+        a C#_pulsadores_contador</span></strong>
     <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
     <video preload="auto" autoplay="autoplay" loop=""> <source src="../video/11.1.2%20Micro%20a%20C_pulsador_contador.m4v"
         type="video/mp4"> <source src="../video/11.1.2%20Micro%20a%20C_pulsador_contador.mp4"
@@ -69,7 +69,8 @@ p.MsoNormal1 {	margin-top: 0cm;
             class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span
               class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span
                   style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Código
-                  PIC C Compiler</span></strong></span></span></span></span></p>
+                  Arduino IDE<br>
+                </span></strong></span></span></span></span></p>
     <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><br>
     </p>
     <pre><font color="#434f54">// include the library code:</font>
@@ -184,35 +185,6 @@ color="#000000">5</font><font color="#000000">)</font><font color="#000000">;</f
 
  &nbsp;<font color="#434f54">//Programar acción boton_reset</font>
 
- &nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">estado_boton_dec</font><font
-color="#434f54">!=</font><font color="#000000">estado_boton_dec_ant</font><font
-color="#000000">)</font>
- &nbsp;<font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font
-color="#000000">estado_boton_dec</font><font color="#434f54">==</font><font color="#000000">1</font><font
-color="#000000">)</font>
- &nbsp;&nbsp;&nbsp;<font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font
-color="#000000">contador</font><font color="#434f54">&gt;</font><font color="#000000">0</font><font
-color="#000000">)</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">contador</font><font
-color="#434f54">--</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
- &nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
- &nbsp;&nbsp;&nbsp;<font color="#000000">estado_boton_dec_ant</font> <font color="#434f54">=</font> <font
-color="#000000">estado_boton_dec</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font
-color="#000000">5</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">}</font>
-
- &nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">estado_boton_reset</font><font
-color="#434f54">==</font><font color="#000000">1</font><font color="#000000">)</font>
- &nbsp;<font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;<font color="#000000">contador</font> <font color="#434f54">=</font> <font
-color="#000000">0</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">}</font>
-
  &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font
 color="#000000">(</font><font color="#000000">3</font><font color="#434f54">,</font><font
 color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
@@ -223,20 +195,6 @@ color="#000000">;</font>
  &nbsp;<font color="#434f54">//Programar visualización estado_boton_dec</font>
 
  &nbsp;<font color="#434f54">//Programar visualización estado_boton_reset</font>
-
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font
-color="#000000">(</font><font color="#000000">9</font><font color="#434f54">,</font><font
-color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font
-color="#000000">(</font><font color="#000000">estado_boton_dec</font><font color="#000000">)</font><font
-color="#000000">;</font>
-
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font
-color="#000000">(</font><font color="#000000">15</font><font color="#434f54">,</font><font
-color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font
-color="#000000">(</font><font color="#000000">estado_boton_reset</font><font color="#000000">)</font><font
-color="#000000">;</font>
 
  &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font
 color="#000000">(</font><font color="#000000">9</font><font color="#434f54">,</font><font
