@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Documento sin título</title>
-<style type="text/css">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Documento sin título</title>
+    <style type="text/css">
 <!--
 p.MsoNormal {
 margin-top:0cm;
@@ -15,16 +15,14 @@ font-size:11.0pt;
 font-family:"Calibri","sans-serif";
 }
 -->
-</style>
-<style type="text/css">
+</style> <style type="text/css">
 <!--
 table.MsoNormalTable {
 font-size:10.0pt;
 font-family:"Calibri","sans-serif";
 }
 -->
-</style>
-<script type="text/javascript">
+</style> <script type="text/javascript">
 	document.oncontextmenu = function(){return false;}
     function disabletext(e){
     return false
@@ -37,8 +35,7 @@ font-family:"Calibri","sans-serif";
     document.onmousedown=disabletext
     document.onclick=reEnable
     }
-</script>
-<style type="text/css">
+</script> <style type="text/css">
 <!--
 p.MsoListParagraph {
 margin-top:0cm;
@@ -58,50 +55,65 @@ p.MsoNormal1 {	margin-top: 0cm;
 	font-family: Arial, sans-serif;
 }
 -->
-</style>
-</head>
-
-<body>
-<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Activar característica de Windows .Net Framework 3.5</span></strong>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<video controls>
-  <source src="video/DNF3.5.m4v" type="video/mp4">
-  <source src="video/DNF3.5.mp4" type="video/mp4">
-</video>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Crear un nuevo proyecto / Agregar controlador</span></strong></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<video controls>
-  <source src="video/CPU.m4v" type="video/mp4">
-  <source src="video/CPU.mp4" type="video/mp4">
-</video>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Agregar módulo de expansión de entradas digitales</span></strong></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<video controls>
-  <source src="video/DI.m4v" type="video/mp4">
-  <source src="video/DI.mp4" type="video/mp4">
-</video>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Agregar módulo de expansión de entradas y salidas analógicas</span></strong></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<video controls>
-  <source src="video/AI AQ.m4v" type="video/mp4">
-  <source src="video/AI AQ.mp4" type="video/mp4">
-</video>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Agregar módulo de comunicaciones GPRS</span></strong></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Agregar módulo de comunicaciones WiFi</span></strong></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Agregar dispositivo de interfaz humana (HMI)</span></strong></p>
-</body>
+</style> </head>
+  <body> <strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Activar
+        característica de Windows .Net Framework 3.5</span></strong>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+    <video controls="controls"> <source src="video/DNF3.5.m4v" type="video/mp4">
+      <source src="video/DNF3.5.mp4" type="video/mp4"> </video>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span
+          style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Crear un
+          nuevo proyecto / Agregar controlador</span></strong></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+    <video controls="controls"> <source src="video/CPU.m4v" type="video/mp4"> <source
+        src="video/CPU.mp4" type="video/mp4"> </video>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span
+          style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Agregar
+          módulo de expansión de entradas digitales</span></strong></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+    <video controls="controls"> <source src="video/DI.m4v" type="video/mp4"> <source
+        src="video/DI.mp4" type="video/mp4"> </video>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span
+          style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Agregar
+          módulo de expansión de entradas y salidas analógicas</span></strong></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+    <video controls="controls"> <source src="video/AI%20AQ.m4v" type="video/mp4">
+      <source src="video/AI%20AQ.mp4" type="video/mp4"> </video>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;
+      </p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;&nbsp;
+      </p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span
+          style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Agregar
+          dispositivo de interfaz humana (HMI)</span></strong></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span
+          style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><br>
+        </span></strong></p>
+    <video controls="controls"> <source src="video/HMI.m4v" type="video/mp4"> <source
+        src="video/HMI.mp4" type="video/mp4"> </video>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><br>
+    </p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><br>
+      <strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Agregar
+          módulo de comunicaciones WiFi</span></strong></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><br>
+    </p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><br>
+    </p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><br>
+      <strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Agregar
+          módulo de comunicaciones GPRS</span></strong></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span
+          style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><br>
+        </span></strong></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span
+          style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><br>
+        </span></strong></p>
+  </body>
 </html>
