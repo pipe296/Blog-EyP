@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Documento sin título</title>
-<style type="text/css">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Documento sin título</title>
+    <style type="text/css">
 <!--
 p.MsoNormal {
 margin-top:0cm;
@@ -16,7 +16,7 @@ font-family:"Calibri","sans-serif";
 }
 -->
 </style>
-<style type="text/css">
+    <style type="text/css">
 <!--
 table.MsoNormalTable {
 font-size:10.0pt;
@@ -24,7 +24,7 @@ font-family:"Calibri","sans-serif";
 }
 -->
 </style>
-<script type="text/javascript">
+    <script type="text/javascript">
 	document.oncontextmenu = function(){return false;}
     function disabletext(e){
     return false
@@ -38,7 +38,7 @@ font-family:"Calibri","sans-serif";
     document.onclick=reEnable
     }
 </script>
-<style type="text/css">
+    <style type="text/css">
 <!--
 p.MsoListParagraph {
 margin-top:0cm;
@@ -59,208 +59,814 @@ p.MsoNormal1 {	margin-top: 0cm;
 }
 -->
 </style>
-</head>
-
-<body>
-<p><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Driver LCD2x16 y LCD4x20</span></strong></p>
-<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">En PIC-C CCS creamos un&nbsp;proyecto con las siguientes características:</span></p>
-<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">* Micro-controlador  PIC 18F4550.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">* Frecuencia  de reloj 20 MHz</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;">&nbsp;</p>
-<div align="center"></div>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Agregamos la&nbsp;librería&nbsp;<strong>#include&nbsp;&lt;flex_lcd.c&gt;&nbsp;</strong>que  hace una&nbsp;función similar&nbsp;a la de un driver en una PC, pero esta vez  entre el PIC y la LCD.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Para conocer como se debe conectar el LCD, abriremos la  librería &ldquo;<strong>flex_lcd.c</strong>&rdquo;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Descripción de conexiones del LCD</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">En las primeras líneas podemos ver que se definen los  pines del microcontrolador a los cuales irán conectados los pines del LCD, y  serán éstos los que&nbsp;usaremos&nbsp;para diseñar nuestro circuito en Proteus  ISIS.</span></p>
-<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><br>
-  En el circuito&nbsp;seleccionamos&nbsp;un&nbsp;<strong>PIC18F4550</strong>&nbsp;y  un&nbsp;<strong>LM016L</strong> (pantalla  LCD&nbsp;<strong>2x16</strong>), como en  ejercicios anteriores algunas conexiones no se hacen por simplificar, pero eso  no indica que, cuando vamos hacerlo en un Proto-Board no debamos hacerlas. (ej:  conexión del pin V0 – contraste del LCD).</span></p>
-<p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Hay que  recordar configurar el reloj 20MHz (<strong>en la simulación</strong>), también colocar  en alto el pin 1 del PIC (MCLR).</span></p>
-<p class="MsoNormal"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Comentarios:</span></strong></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></strong></p>
-<ol>
-  <li><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">lcd_gotoxy(1,1);</span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;nos  indica que la próxima instrucción que escriba datos en el LCD los ubicará en la  fila 1 columna 1.</span></li>
-  <li><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">printf(lcd_putc, &quot; escribir aqui &quot;);&nbsp;</span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Este comando es para escribir en la  pantalla LCD y escribe lo que está dentro de la comillas.</span></li>
-</ol>
-<p style="line-height:115%; font-family:'Arial','sans-serif'; font-size:12.0pt; ">Extraído parcialmente de: <a href="http://22xd.blogspot.com/2011/04/programando-pic-con-ccs-ejercicio-3-lcd.html">http://22xd.blogspot.com/2011/04/programando-pic-con-ccs-ejercicio-3-lcd.html</a></p>
-<p>&nbsp;</p>
-<video preload="auto" autoplay loop >
-  <source src="../video/4.2.1 Driver LCD2x16 y LCD4x20.m4v" type="video/mp4">
-  <source src="../video/4.2.1 Driver LCD2x16 y LCD4x20.mp4" type="video/mp4">
-</video>
-<p>&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC16F84A</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC16F628A</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC16F818</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC16F873A</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC16F883</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC16F877A</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#device </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">PIC16F887</span></span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC18F2550</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device  PIC18F4455</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device  PIC18F4550</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#include </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">&lt;Arduino</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">.</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">h</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">.</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">encrypted&gt;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span class="MsoNormal1" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#include </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">&lt;LiquidCrystal</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">.</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">h&gt;</span></span></span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#F32933; "></span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">char </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">[</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">10</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">];</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">void </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">setup</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">()</span> <span style="font-family:Courier; font-size:10.0pt; color:#101010; ">{</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   digitalWrite</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family: Courier; font-size: 10.0pt; color: black">LCD_BACKLIGHT</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">, </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">HIGH</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_begin</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">20</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">4</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">200</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">void </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">loop</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">()</span> <span style="font-family:Courier; font-size:10.0pt; color:#101010; ">{</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   sprintf</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">&quot;Linea 1&quot;</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">1000</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">1</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   sprintf</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">&quot;Linea 2&quot;</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">1000</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">2</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   sprintf</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">&quot;Linea 3&quot;</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">1000</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">3</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   sprintf</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">&quot;Linea 4&quot;</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">1000</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// clear screen:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_clear</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">&nbsp;</span></strong></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">byte thisChar</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// print from 0 to 9:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">for </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">= </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&lt; </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">10</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">++) {</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      sprintf</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">&quot;%u&quot;</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">500</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// set the cursor to (10,1):</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">10</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">, </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">1</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// set the display to automatically  scroll:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_autoscroll</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// print from 0 to 9:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">for </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">= </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&lt; </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">10</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">++) {</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      sprintf</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">&quot;%u&quot;</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">500</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// turn off automatic scrolling</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_noAutoscroll</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">1000</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// clear screen:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_clear</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// Print a message to the LCD.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">&quot;blink&quot;</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// Turn off the blinking cursor:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_blink</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">2000</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// clear screen for the next loop:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_clear</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// Print a message to the LCD.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">&quot;noBlink&quot;</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// Turn on the blinking cursor:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_noBlink</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">2000</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// clear screen:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_clear</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// Print a message to the LCD.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">&quot;cursor&quot;</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// Turn on the blinking cursor:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_cursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">2000</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// clear screen for the next loop:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_clear</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// Print a message to the LCD.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">&quot;noCursor&quot;</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// Turn off the blinking cursor:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_noCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">2000</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// clear screen:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_clear</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// Print a message to the LCD.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">&quot;display&quot;</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// Turn on the display:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_display</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">2000</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// Turn off the display:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_noDisplay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">2000</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_display</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">2000</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// clear screen:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_clear</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">12</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// Print a message to the LCD.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">&quot;Izquierda&quot;</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">byte ositionCounter</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// scroll 12 positions (string  length) to the left</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// to move it offscreen left:</span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; "> </span></strong></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">for </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">positionCounter </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">= </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">positionCounter </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&lt; </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">12</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">positionCounter</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">++) {</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// scroll one position left:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      lcd_scrollDisplayLeft</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// wait a bit:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">250</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">1000</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// set the cursor to (0,0):</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_home</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// clear screen:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_clear</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// Print a message to the LCD.</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">&quot;Derecha&quot;</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// scroll 13 positions (string  length + display length) to the right</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// to move it offscreen right:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">for </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">positionCounter </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">= </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">positionCounter </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&lt; </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">13</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">positionCounter</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">++) {</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// scroll one position right:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      lcd_scrollDisplayRight</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// wait a bit:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">250</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">1000</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// clear screen:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_clear</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_leftToRight</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">for </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">= </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">65</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&lt; </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">85</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">++) {</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      sprintf</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">&quot;%c&quot;</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// print the character</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">250</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">19</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_rightToLeft</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">for </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">= </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">97</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&lt; </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">117</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">++) {</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      sprintf</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">&quot;%c&quot;</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// print the character</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">250</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">1000</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">// clear screen:</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">lcd_clear</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
-<p class="MsoNormal"><span style="line-height:107%; font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
-</body>
+  </head>
+  <body>
+    <p><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Driver
+          LCD2x16 y LCD4x20</span></strong></p>
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span
+        style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">En PIC-C
+        CCS creamos un&nbsp;proyecto con las siguientes características:</span></p>
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span
+        style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span><span
+        style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">*
+        Micro-controlador PIC 18F4550.</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;"><span
+        style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">*
+        Frecuencia de reloj 20 MHz</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;">&nbsp;</p>
+    <div align="center"></div>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span
+        style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Agregamos
+        la&nbsp;librería&nbsp;<strong>#include&nbsp;&lt;flex_lcd.c&gt;&nbsp;</strong>que
+        hace una&nbsp;función similar&nbsp;a la de un driver en una PC, pero
+        esta vez entre el PIC y la LCD.</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span
+        style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span
+        style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Para
+        conocer como se debe conectar el LCD, abriremos la librería “<strong>flex_lcd.c</strong>”</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span
+        style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span><span
+        style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span
+        style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Descripción
+        de conexiones del LCD</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span
+        style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span
+        style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">En las
+        primeras líneas podemos ver que se definen los pines del
+        microcontrolador a los cuales irán conectados los pines del LCD, y serán
+        éstos los que&nbsp;usaremos&nbsp;para diseñar nuestro circuito en
+        Proteus ISIS.</span></p>
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span
+        style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><br>
+        En el circuito&nbsp;seleccionamos&nbsp;un&nbsp;<strong>PIC18F4550</strong>&nbsp;y
+        un&nbsp;<strong>LM016L</strong> (pantalla LCD&nbsp;<strong>2x16</strong>),
+        como en ejercicios anteriores algunas conexiones no se hacen por
+        simplificar, pero eso no indica que, cuando vamos hacerlo en un
+        Proto-Board no debamos hacerlas. (ej: conexión del pin V0 – contraste
+        del LCD).</span></p>
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span
+        style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Hay que
+        recordar configurar el reloj 20MHz (<strong>en la simulación</strong>),
+        también colocar en alto el pin 1 del PIC (MCLR).</span></p>
+    <p class="MsoNormal"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Comentarios:</span></strong></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span
+          style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></strong></p>
+    <ol>
+      <li><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">lcd_gotoxy(1,1);</span></strong><span
+          style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;nos
+          indica que la próxima instrucción que escriba datos en el LCD los
+          ubicará en la fila 1 columna 1.</span></li>
+      <li><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">printf(lcd_putc,
+            " escribir aqui ");&nbsp;</span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Este
+          comando es para escribir en la pantalla LCD y escribe lo que está
+          dentro de la comillas.</span></li>
+    </ol>
+    <p style="line-height:115%; font-family:'Arial','sans-serif'; font-size:12.0pt; ">Extraído
+      parcialmente de: <a href="http://22xd.blogspot.com/2011/04/programando-pic-con-ccs-ejercicio-3-lcd.html">http://22xd.blogspot.com/2011/04/programando-pic-con-ccs-ejercicio-3-lcd.html</a></p>
+    <p>&nbsp;</p>
+    <video preload="auto" autoplay="autoplay" loop=""> <source src="../video/4.2.1%20Driver%20LCD2x16%20y%20LCD4x20.m4v"
+        type="video/mp4"> <source src="../video/4.2.1%20Driver%20LCD2x16%20y%20LCD4x20.mp4"
+        type="video/mp4">
+    </video>
+    <p>&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC16F84A</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC16F628A</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC16F818</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC16F873A</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC16F883</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC16F877A</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span
+            style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#device
+            </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">PIC16F887</span></span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC18F2550</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC18F4455</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC18F4550</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#include
+          </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">&lt;Arduino</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">.</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">h</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">.</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">encrypted&gt;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+          class="MsoNormal1" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span
+              style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#include
+              </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">&lt;LiquidCrystal</span><span
+            style="font-family:Courier; font-size:10.0pt; color:#101010; ">.</span><span
+            style="font-family:Courier; font-size:10.0pt; color:black; ">h&gt;</span></span></span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:#F32933; "></span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">char </span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">[</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">10</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">];</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">void </span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">setup</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">()</span>
+      <span style="font-family:Courier; font-size:10.0pt; color:#101010; ">{</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        digitalWrite</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family: Courier; font-size: 10.0pt; color: black">LCD_BACKLIGHT</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">, </span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">HIGH</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_begin</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">20</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">4</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">200</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">void </span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">loop</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">()</span>
+      <span style="font-family:Courier; font-size:10.0pt; color:#101010; ">{</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:purple; ">"Linea 1"</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; "></span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">1000</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">1</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:purple; ">"Linea 2"</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">1000</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">2</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:purple; ">"Linea 3"</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">1000</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">3</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:purple; ">"Linea 4"</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; "></span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">1000</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        clear screen:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_clear</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">&nbsp;</span></strong></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">byte
+        thisChar</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        print from 0 to 9:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">for
+          </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar </span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">= </span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar </span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">&lt; </span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">10</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">++) {</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;sprintf</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span
+        style="font-family:Courier; font-size:10.0pt; color:purple; ">"%u"</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">500</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        set the cursor to (10,1):</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">10</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">, </span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">1</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        set the display to automatically scroll:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_autoscroll</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        print from 0 to 9:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">for
+          </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar </span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">= </span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar </span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">&lt; </span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">10</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">++) {</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;sprintf</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span
+        style="font-family:Courier; font-size:10.0pt; color:purple; ">"%u"</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">500</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        turn off automatic scrolling</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_noAutoscroll</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">1000</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        clear screen:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_clear</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        Print a message to the LCD.</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:purple; ">"blink"</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        Turn off the blinking cursor:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_blink</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">2000</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        clear screen for the next loop:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_clear</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        Print a message to the LCD.</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:purple; ">"noBlink"</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        Turn on the blinking cursor:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_noBlink</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">2000</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        clear screen:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_clear</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        Print a message to the LCD.</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:purple; ">"cursor"</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        Turn on the blinking cursor:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_cursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">2000</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        clear screen for the next loop:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_clear</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        Print a message to the LCD.</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:purple; ">"noCursor"</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        Turn off the blinking cursor:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_noCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">2000</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        clear screen:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_clear</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        Print a message to the LCD.</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:purple; ">"display"</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        Turn on the display:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_display</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">2000</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        Turn off the display:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_noDisplay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">2000</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_display</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">2000</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        clear screen:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_clear</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">12</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        Print a message to the LCD.</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:purple; ">"Izquierda"</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">byte
+        ositionCounter</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        scroll 12 positions (string length) to the left</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        to move it offscreen left:</span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">
+        </span></strong></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">for
+          </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">positionCounter
+        </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">=
+      </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">positionCounter
+        </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&lt;
+        </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">12</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">positionCounter</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">++) {</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;</span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        scroll one position left:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;lcd_scrollDisplayLeft</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;</span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        wait a bit:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">250</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">1000</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        set the cursor to (0,0):</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_home</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        clear screen:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_clear</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        Print a message to the LCD.</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:purple; ">"Derecha"</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        scroll 13 positions (string length + display length) to the right</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        to move it offscreen right:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">for
+          </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">positionCounter
+        </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">=
+      </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">positionCounter
+        </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&lt;
+        </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">13</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">positionCounter</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">++) {</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;</span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        scroll one position right:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;lcd_scrollDisplayRight</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;</span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        wait a bit:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">250</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">1000</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        clear screen:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_clear</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_leftToRight</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">for
+          </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar </span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">= </span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">65</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar </span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">&lt; </span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">85</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">++) {</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;sprintf</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span
+        style="font-family:Courier; font-size:10.0pt; color:purple; ">"%c"</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;</span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        print the character</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">250</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">19</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_rightToLeft</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">for
+          </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar </span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">= </span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">97</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar </span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">&lt; </span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">117</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">; </span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">++) {</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;sprintf</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span
+        style="font-family:Courier; font-size:10.0pt; color:purple; ">"%c"</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">thisChar</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;</span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        print the character</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">250</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">1000</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//
+        clear screen:</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">lcd_clear</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+    <p class="MsoNormal"><span style="line-height:107%; font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+  </body>
 </html>

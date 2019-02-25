@@ -1,9 +1,9 @@
-﻿<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Documento sin título</title>
-<style type="text/css">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Documento sin título</title>
+    <style type="text/css">
 <!--
 p.MsoNormal {
 margin-top:0cm;
@@ -16,7 +16,7 @@ font-family:"Calibri","sans-serif";
 }
 -->
 </style>
-<style type="text/css">
+    <style type="text/css">
 <!--
 table.MsoNormalTable {
 font-size:10.0pt;
@@ -24,7 +24,7 @@ font-family:"Calibri","sans-serif";
 }
 -->
 </style>
-<script type="text/javascript">
+    <script type="text/javascript">
 	document.oncontextmenu = function(){return false;}
     function disabletext(e){
     return false
@@ -38,7 +38,7 @@ font-family:"Calibri","sans-serif";
     document.onclick=reEnable
     }
 </script>
-<style type="text/css">
+    <style type="text/css">
 <!--
 p.MsoListParagraph {
 margin-top:0cm;
@@ -59,155 +59,333 @@ p.MsoNormal1 {	margin-top: 0cm;
 }
 -->
 </style>
-</head>
+  </head>
+  <body>
+    <strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Escalamiento
+        de lectura analógica (Fórmula)</span></strong>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+    <video preload="auto" autoplay="autoplay" loop=""> <source src="../video/9.2%20Escalamiento%20de%20lectura%20analogica%20%28Formula%29.m4v"
+        type="video/mp4"> <source src="../video/9.2%20Escalamiento%20de%20lectura%20analogica%20%28Formula%29.mp4"
+        type="video/mp4">
+    </video>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+    <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span
+        class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span
+          style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">En el
+          siguiente ejemplo haremos que el programa lea una entrada entre 0 y 5V
+          de manera que para 0V representará 0 unidades y 5V representará 100
+          unidades.</span></span></p>
+    <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span
+          style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">0 a 100</span></strong></p>
+    <pre><font color="#434f54">// include the library code:</font>
+<font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font
+color="#d35400">LiquidCrystal</font></b><font color="#434f54">.</font><font color="#000000">h</font><font
+color="#434f54">&gt;</font>
 
-<body>
-<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Escalamiento de lectura analógica (Fórmula)</span></strong>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<video preload="auto" autoplay loop >
-  <source src="../video/9.2 Escalamiento de lectura analogica (Formula).m4v" type="video/mp4">
-  <source src="../video/9.2 Escalamiento de lectura analogica (Formula).mp4" type="video/mp4">
-</video>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">En el siguiente ejemplo haremos que el programa  lea una entrada entre 0 y 5V de manera que para 0V representará 0 unidades  y 5V representará 100 unidades.</span></span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">0 a 100</span></strong></p>
-<pre>
-<font color="#434f54">&#47;&#47; include the library code:</font>
-<font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font color="#d35400">LiquidCrystal</font></b><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
-
-<font color="#00979c">const</font> <font color="#00979c">int</font> <font color="#000000">rs</font> <font color="#434f54">=</font> <font color="#000000">12</font><font color="#434f54">,</font> <font color="#000000">en</font> <font color="#434f54">=</font> <font color="#000000">11</font><font color="#434f54">,</font> <font color="#000000">d4</font> <font color="#434f54">=</font> <font color="#000000">5</font><font color="#434f54">,</font> <font color="#000000">d5</font> <font color="#434f54">=</font> <font color="#000000">4</font><font color="#434f54">,</font> <font color="#000000">d6</font> <font color="#434f54">=</font> <font color="#000000">3</font><font color="#434f54">,</font> <font color="#000000">d7</font> <font color="#434f54">=</font> <font color="#000000">2</font><font color="#000000">;</font>
-<b><font color="#d35400">LiquidCrystal</font></b> <font color="#000000">lcd</font><font color="#000000">(</font><font color="#000000">rs</font><font color="#434f54">,</font> <font color="#000000">en</font><font color="#434f54">,</font> <font color="#000000">d4</font><font color="#434f54">,</font> <font color="#000000">d5</font><font color="#434f54">,</font> <font color="#000000">d6</font><font color="#434f54">,</font> <font color="#000000">d7</font><font color="#000000">)</font><font color="#000000">;</font>
-
-<font color="#00979c">long</font> <font color="#000000">sensor</font><font color="#000000">;</font>
-
-<font color="#00979c">char</font> <font color="#000000">txt2stream</font><font color="#000000">[</font><font color="#000000">10</font><font color="#000000">]</font><font color="#000000">;</font>
-
-<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font>
-<font color="#000000">{</font>
- &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">10</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">10</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">16</font><font color="#434f54">,</font> <font color="#000000">2</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">200</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font color="#000000">(</font><font color="#000000">0</font><font color="#434f54">,</font><font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">sprintf</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#434f54">,</font><font color="#005c5f">&#34;Sensor:&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#000000">)</font><font color="#000000">;</font>
-<font color="#000000">}</font>
-
-<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font>
-<font color="#000000">{</font>
- &nbsp;<font color="#000000">sensor</font> <font color="#434f54">=</font> <font color="#d35400">analogRead</font><font color="#000000">(</font><font color="#000000">A0</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">sensor</font> <font color="#434f54">=</font> <font color="#000000">sensor</font> <font color="#434f54">*</font> <font color="#000000">100</font> <font color="#434f54">&#47;</font> <font color="#000000">1023</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font color="#000000">(</font><font color="#000000">8</font><font color="#434f54">,</font><font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">sensor</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#005c5f">&#34; &nbsp;&nbsp;&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">500</font><font color="#000000">)</font><font color="#000000">;</font>
-<font color="#000000">}</font>
-</pre>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
-<p class="MsoNormal"><span class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">En el siguiente ejemplo haremos que el programa  lea una entrada entre 0 y 5V de manera que para 0V representará 20 unidades  y 5V representará 80 unidades.</span></span></span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">20 a 80</span></strong></p>
-<pre>
-<font color="#434f54">&#47;&#47; include the library code:</font>
-<font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font color="#d35400">LiquidCrystal</font></b><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
-
-<font color="#00979c">const</font> <font color="#00979c">int</font> <font color="#000000">rs</font> <font color="#434f54">=</font> <font color="#000000">12</font><font color="#434f54">,</font> <font color="#000000">en</font> <font color="#434f54">=</font> <font color="#000000">11</font><font color="#434f54">,</font> <font color="#000000">d4</font> <font color="#434f54">=</font> <font color="#000000">5</font><font color="#434f54">,</font> <font color="#000000">d5</font> <font color="#434f54">=</font> <font color="#000000">4</font><font color="#434f54">,</font> <font color="#000000">d6</font> <font color="#434f54">=</font> <font color="#000000">3</font><font color="#434f54">,</font> <font color="#000000">d7</font> <font color="#434f54">=</font> <font color="#000000">2</font><font color="#000000">;</font>
-<b><font color="#d35400">LiquidCrystal</font></b> <font color="#000000">lcd</font><font color="#000000">(</font><font color="#000000">rs</font><font color="#434f54">,</font> <font color="#000000">en</font><font color="#434f54">,</font> <font color="#000000">d4</font><font color="#434f54">,</font> <font color="#000000">d5</font><font color="#434f54">,</font> <font color="#000000">d6</font><font color="#434f54">,</font> <font color="#000000">d7</font><font color="#000000">)</font><font color="#000000">;</font>
+<font color="#00979c">const</font> <font color="#00979c">int</font> <font color="#000000">rs</font> <font
+color="#434f54">=</font> <font color="#000000">12</font><font color="#434f54">,</font> <font
+color="#000000">en</font> <font color="#434f54">=</font> <font color="#000000">11</font><font
+color="#434f54">,</font> <font color="#000000">d4</font> <font color="#434f54">=</font> <font
+color="#000000">5</font><font color="#434f54">,</font> <font color="#000000">d5</font> <font
+color="#434f54">=</font> <font color="#000000">4</font><font color="#434f54">,</font> <font
+color="#000000">d6</font> <font color="#434f54">=</font> <font color="#000000">3</font><font
+color="#434f54">,</font> <font color="#000000">d7</font> <font color="#434f54">=</font> <font
+color="#000000">2</font><font color="#000000">;</font>
+<b><font color="#d35400">LiquidCrystal</font></b> <font color="#000000">lcd</font><font
+color="#000000">(</font><font color="#000000">rs</font><font color="#434f54">,</font> <font
+color="#000000">en</font><font color="#434f54">,</font> <font color="#000000">d4</font><font
+color="#434f54">,</font> <font color="#000000">d5</font><font color="#434f54">,</font> <font
+color="#000000">d6</font><font color="#434f54">,</font> <font color="#000000">d7</font><font
+color="#000000">)</font><font color="#000000">;</font>
 
 <font color="#00979c">long</font> <font color="#000000">sensor</font><font color="#000000">;</font>
 
-<font color="#00979c">char</font> <font color="#000000">txt2stream</font><font color="#000000">[</font><font color="#000000">10</font><font color="#000000">]</font><font color="#000000">;</font>
+<font color="#00979c">char</font> <font color="#000000">txt2stream</font><font color="#000000">[</font><font
+color="#000000">10</font><font color="#000000">]</font><font color="#000000">;</font>
 
-<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font>
+<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font
+color="#000000">)</font>
 <font color="#000000">{</font>
- &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">10</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">10</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">16</font><font color="#434f54">,</font> <font color="#000000">2</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">200</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font color="#000000">(</font><font color="#000000">0</font><font color="#434f54">,</font><font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">sprintf</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#434f54">,</font><font color="#005c5f">&#34;Sensor:&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">10</font><font
+color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font
+color="#000000">;</font>
+ &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font
+color="#000000">10</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font
+color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">begin</font><font
+color="#000000">(</font><font color="#000000">16</font><font color="#434f54">,</font> <font
+color="#000000">2</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">200</font><font
+color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font
+color="#000000">(</font><font color="#000000">0</font><font color="#434f54">,</font><font
+color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font
+color="#000000">(</font><font color="#005c5f">"Sensor:"</font><font color="#000000">)</font><font
+color="#000000">;</font>
 <font color="#000000">}</font>
 
-<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font>
+<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font
+color="#000000">)</font>
 <font color="#000000">{</font>
- &nbsp;<font color="#000000">sensor</font> <font color="#434f54">=</font> <font color="#d35400">analogRead</font><font color="#000000">(</font><font color="#000000">A0</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">sensor</font> <font color="#434f54">=</font> <font color="#000000">sensor</font> <font color="#434f54">*</font> <font color="#000000">60</font> <font color="#434f54">&#47;</font> <font color="#000000">1023</font> <font color="#434f54">+</font> <font color="#000000">20</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font color="#000000">(</font><font color="#000000">8</font><font color="#434f54">,</font><font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">sensor</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#005c5f">&#34; &nbsp;&nbsp;&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">500</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">sensor</font> <font color="#434f54">=</font> <font
+color="#d35400">analogRead</font><font color="#000000">(</font><font color="#000000">A0</font><font
+color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">sensor</font> <font color="#434f54">=</font> <font
+color="#000000">sensor</font> <font color="#434f54">*</font> <font color="#000000">100</font> <font
+color="#434f54">/</font> <font color="#000000">1023</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font
+color="#000000">(</font><font color="#000000">8</font><font color="#434f54">,</font><font
+color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font
+color="#000000">(</font><font color="#000000">sensor</font><font color="#000000">)</font><font
+color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font
+color="#000000">(</font><font color="#005c5f">" &nbsp;&nbsp;"</font><font color="#000000">)</font><font
+color="#000000">;</font>
+ &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">500</font><font
+color="#000000">)</font><font color="#000000">;</font>
 <font color="#000000">}</font>
 </pre>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
-<p><span class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">En el siguiente ejemplo haremos que el programa  lea una entrada entre 0 y 5V de manera que para 0V representará -50 unidades  y 5V representará 150 unidades.</span></span></span></p>
-<p><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">-50 a 150</span></strong></p>
-<pre>
-<font color="#434f54">&#47;&#47; include the library code:</font>
-<font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font color="#d35400">LiquidCrystal</font></b><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+    <p class="MsoNormal"><span class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span
+          class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span
+            style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">En el
+            siguiente ejemplo haremos que el programa lea una entrada entre 0 y
+            5V de manera que para 0V representará 20 unidades y 5V representará
+            80 unidades.</span></span></span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span
+          style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">20 a 80</span></strong></p>
+    <pre><font color="#434f54">// include the library code:</font>
+<font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font
+color="#d35400">LiquidCrystal</font></b><font color="#434f54">.</font><font color="#000000">h</font><font
+color="#434f54">&gt;</font>
 
-<font color="#00979c">const</font> <font color="#00979c">int</font> <font color="#000000">rs</font> <font color="#434f54">=</font> <font color="#000000">12</font><font color="#434f54">,</font> <font color="#000000">en</font> <font color="#434f54">=</font> <font color="#000000">11</font><font color="#434f54">,</font> <font color="#000000">d4</font> <font color="#434f54">=</font> <font color="#000000">5</font><font color="#434f54">,</font> <font color="#000000">d5</font> <font color="#434f54">=</font> <font color="#000000">4</font><font color="#434f54">,</font> <font color="#000000">d6</font> <font color="#434f54">=</font> <font color="#000000">3</font><font color="#434f54">,</font> <font color="#000000">d7</font> <font color="#434f54">=</font> <font color="#000000">2</font><font color="#000000">;</font>
-<b><font color="#d35400">LiquidCrystal</font></b> <font color="#000000">lcd</font><font color="#000000">(</font><font color="#000000">rs</font><font color="#434f54">,</font> <font color="#000000">en</font><font color="#434f54">,</font> <font color="#000000">d4</font><font color="#434f54">,</font> <font color="#000000">d5</font><font color="#434f54">,</font> <font color="#000000">d6</font><font color="#434f54">,</font> <font color="#000000">d7</font><font color="#000000">)</font><font color="#000000">;</font>
+<font color="#00979c">const</font> <font color="#00979c">int</font> <font color="#000000">rs</font> <font
+color="#434f54">=</font> <font color="#000000">12</font><font color="#434f54">,</font> <font
+color="#000000">en</font> <font color="#434f54">=</font> <font color="#000000">11</font><font
+color="#434f54">,</font> <font color="#000000">d4</font> <font color="#434f54">=</font> <font
+color="#000000">5</font><font color="#434f54">,</font> <font color="#000000">d5</font> <font
+color="#434f54">=</font> <font color="#000000">4</font><font color="#434f54">,</font> <font
+color="#000000">d6</font> <font color="#434f54">=</font> <font color="#000000">3</font><font
+color="#434f54">,</font> <font color="#000000">d7</font> <font color="#434f54">=</font> <font
+color="#000000">2</font><font color="#000000">;</font>
+<b><font color="#d35400">LiquidCrystal</font></b> <font color="#000000">lcd</font><font
+color="#000000">(</font><font color="#000000">rs</font><font color="#434f54">,</font> <font
+color="#000000">en</font><font color="#434f54">,</font> <font color="#000000">d4</font><font
+color="#434f54">,</font> <font color="#000000">d5</font><font color="#434f54">,</font> <font
+color="#000000">d6</font><font color="#434f54">,</font> <font color="#000000">d7</font><font
+color="#000000">)</font><font color="#000000">;</font>
 
 <font color="#00979c">long</font> <font color="#000000">sensor</font><font color="#000000">;</font>
 
-<font color="#00979c">char</font> <font color="#000000">txt2stream</font><font color="#000000">[</font><font color="#000000">10</font><font color="#000000">]</font><font color="#000000">;</font>
+<font color="#00979c">char</font> <font color="#000000">txt2stream</font><font color="#000000">[</font><font
+color="#000000">10</font><font color="#000000">]</font><font color="#000000">;</font>
 
-<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font>
+<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font
+color="#000000">)</font>
 <font color="#000000">{</font>
- &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">10</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">10</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">16</font><font color="#434f54">,</font> <font color="#000000">2</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">200</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font color="#000000">(</font><font color="#000000">0</font><font color="#434f54">,</font><font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">sprintf</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#434f54">,</font><font color="#005c5f">&#34;Sensor:&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">10</font><font
+color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font
+color="#000000">;</font>
+ &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font
+color="#000000">10</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font
+color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">begin</font><font
+color="#000000">(</font><font color="#000000">16</font><font color="#434f54">,</font> <font
+color="#000000">2</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">200</font><font
+color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font
+color="#000000">(</font><font color="#000000">0</font><font color="#434f54">,</font><font
+color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font
+color="#000000">(</font><font color="#005c5f">"Sensor:"</font><font color="#000000">)</font><font
+color="#000000">;</font>
 <font color="#000000">}</font>
 
-<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font>
+<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font
+color="#000000">)</font>
 <font color="#000000">{</font>
- &nbsp;<font color="#000000">sensor</font> <font color="#434f54">=</font> <font color="#d35400">analogRead</font><font color="#000000">(</font><font color="#000000">A0</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">sensor</font> <font color="#434f54">=</font> <font color="#000000">sensor</font> <font color="#434f54">*</font> <font color="#000000">200</font> <font color="#434f54">&#47;</font> <font color="#000000">1023</font> <font color="#434f54">-</font> <font color="#000000">50</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font color="#000000">(</font><font color="#000000">8</font><font color="#434f54">,</font><font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">sensor</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#005c5f">&#34; &nbsp;&nbsp;&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">500</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">sensor</font> <font color="#434f54">=</font> <font
+color="#d35400">analogRead</font><font color="#000000">(</font><font color="#000000">A0</font><font
+color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">sensor</font> <font color="#434f54">=</font> <font
+color="#000000">sensor</font> <font color="#434f54">*</font> <font color="#000000">60</font> <font
+color="#434f54">/</font> <font color="#000000">1023</font> <font color="#434f54">+</font> <font
+color="#000000">20</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font
+color="#000000">(</font><font color="#000000">8</font><font color="#434f54">,</font><font
+color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font
+color="#000000">(</font><font color="#000000">sensor</font><font color="#000000">)</font><font
+color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font
+color="#000000">(</font><font color="#005c5f">" &nbsp;&nbsp;"</font><font color="#000000">)</font><font
+color="#000000">;</font>
+ &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">500</font><font
+color="#000000">)</font><font color="#000000">;</font>
 <font color="#000000">}</font>
 </pre>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;; font-family: Courier; font-size: 10.0pt; color: gray">&nbsp;</p>
-<p class="MsoNormal"><span class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">En el siguiente ejemplo haremos que el programa  lea una entrada entre 0 y 5V de manera que para 0V representará 0 unidades  y 5V representará 100 unidades (con dígitos decimales).</span></span></span></p>
-<p><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">0 a 100 con decimales</span></strong></p>
-<pre>
-<font color="#434f54">&#47;&#47; include the library code:</font>
-<font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font color="#d35400">LiquidCrystal</font></b><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+    <p><span class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span
+          class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span
+            style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">En el
+            siguiente ejemplo haremos que el programa lea una entrada entre 0 y
+            5V de manera que para 0V representará -50 unidades y 5V representará
+            150 unidades.</span></span></span></p>
+    <p><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">-50
+          a 150</span></strong></p>
+    <pre><font color="#434f54">// include the library code:</font>
+<font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font
+color="#d35400">LiquidCrystal</font></b><font color="#434f54">.</font><font color="#000000">h</font><font
+color="#434f54">&gt;</font>
 
-<font color="#00979c">const</font> <font color="#00979c">int</font> <font color="#000000">rs</font> <font color="#434f54">=</font> <font color="#000000">12</font><font color="#434f54">,</font> <font color="#000000">en</font> <font color="#434f54">=</font> <font color="#000000">11</font><font color="#434f54">,</font> <font color="#000000">d4</font> <font color="#434f54">=</font> <font color="#000000">5</font><font color="#434f54">,</font> <font color="#000000">d5</font> <font color="#434f54">=</font> <font color="#000000">4</font><font color="#434f54">,</font> <font color="#000000">d6</font> <font color="#434f54">=</font> <font color="#000000">3</font><font color="#434f54">,</font> <font color="#000000">d7</font> <font color="#434f54">=</font> <font color="#000000">2</font><font color="#000000">;</font>
-<b><font color="#d35400">LiquidCrystal</font></b> <font color="#000000">lcd</font><font color="#000000">(</font><font color="#000000">rs</font><font color="#434f54">,</font> <font color="#000000">en</font><font color="#434f54">,</font> <font color="#000000">d4</font><font color="#434f54">,</font> <font color="#000000">d5</font><font color="#434f54">,</font> <font color="#000000">d6</font><font color="#434f54">,</font> <font color="#000000">d7</font><font color="#000000">)</font><font color="#000000">;</font>
+<font color="#00979c">const</font> <font color="#00979c">int</font> <font color="#000000">rs</font> <font
+color="#434f54">=</font> <font color="#000000">12</font><font color="#434f54">,</font> <font
+color="#000000">en</font> <font color="#434f54">=</font> <font color="#000000">11</font><font
+color="#434f54">,</font> <font color="#000000">d4</font> <font color="#434f54">=</font> <font
+color="#000000">5</font><font color="#434f54">,</font> <font color="#000000">d5</font> <font
+color="#434f54">=</font> <font color="#000000">4</font><font color="#434f54">,</font> <font
+color="#000000">d6</font> <font color="#434f54">=</font> <font color="#000000">3</font><font
+color="#434f54">,</font> <font color="#000000">d7</font> <font color="#434f54">=</font> <font
+color="#000000">2</font><font color="#000000">;</font>
+<b><font color="#d35400">LiquidCrystal</font></b> <font color="#000000">lcd</font><font
+color="#000000">(</font><font color="#000000">rs</font><font color="#434f54">,</font> <font
+color="#000000">en</font><font color="#434f54">,</font> <font color="#000000">d4</font><font
+color="#434f54">,</font> <font color="#000000">d5</font><font color="#434f54">,</font> <font
+color="#000000">d6</font><font color="#434f54">,</font> <font color="#000000">d7</font><font
+color="#000000">)</font><font color="#000000">;</font>
+
+<font color="#00979c">long</font> <font color="#000000">sensor</font><font color="#000000">;</font>
+
+<font color="#00979c">char</font> <font color="#000000">txt2stream</font><font color="#000000">[</font><font
+color="#000000">10</font><font color="#000000">]</font><font color="#000000">;</font>
+
+<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font
+color="#000000">)</font>
+<font color="#000000">{</font>
+ &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">10</font><font
+color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font
+color="#000000">;</font>
+ &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font
+color="#000000">10</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font
+color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">begin</font><font
+color="#000000">(</font><font color="#000000">16</font><font color="#434f54">,</font> <font
+color="#000000">2</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">200</font><font
+color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font
+color="#000000">(</font><font color="#000000">0</font><font color="#434f54">,</font><font
+color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font
+color="#000000">(</font><font color="#005c5f">"Sensor:"</font><font color="#000000">)</font><font
+color="#000000">;</font>
+<font color="#000000">}</font>
+
+<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font
+color="#000000">)</font>
+<font color="#000000">{</font>
+ &nbsp;<font color="#000000">sensor</font> <font color="#434f54">=</font> <font
+color="#d35400">analogRead</font><font color="#000000">(</font><font color="#000000">A0</font><font
+color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">sensor</font> <font color="#434f54">=</font> <font
+color="#000000">sensor</font> <font color="#434f54">*</font> <font color="#000000">200</font> <font
+color="#434f54">/</font> <font color="#000000">1023</font> <font color="#434f54">-</font> <font
+color="#000000">50</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font
+color="#000000">(</font><font color="#000000">8</font><font color="#434f54">,</font><font
+color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font
+color="#000000">(</font><font color="#000000">sensor</font><font color="#000000">)</font><font
+color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font
+color="#000000">(</font><font color="#005c5f">" &nbsp;&nbsp;"</font><font color="#000000">)</font><font
+color="#000000">;</font>
+ &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">500</font><font
+color="#000000">)</font><font color="#000000">;</font>
+<font color="#000000">}</font>
+</pre>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;; font-family: Courier; font-size: 10.0pt; color: gray">&nbsp;</p>
+    <p class="MsoNormal"><span class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span
+          class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span
+            style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">En el
+            siguiente ejemplo haremos que el programa lea una entrada entre 0 y
+            5V de manera que para 0V representará 0 unidades y 5V representará
+            100 unidades (con dígitos decimales).</span></span></span></p>
+    <p><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">0
+          a 100 con decimales</span></strong></p>
+    <pre><font color="#434f54">// include the library code:</font>
+<font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font
+color="#d35400">LiquidCrystal</font></b><font color="#434f54">.</font><font color="#000000">h</font><font
+color="#434f54">&gt;</font>
+
+<font color="#00979c">const</font> <font color="#00979c">int</font> <font color="#000000">rs</font> <font
+color="#434f54">=</font> <font color="#000000">12</font><font color="#434f54">,</font> <font
+color="#000000">en</font> <font color="#434f54">=</font> <font color="#000000">11</font><font
+color="#434f54">,</font> <font color="#000000">d4</font> <font color="#434f54">=</font> <font
+color="#000000">5</font><font color="#434f54">,</font> <font color="#000000">d5</font> <font
+color="#434f54">=</font> <font color="#000000">4</font><font color="#434f54">,</font> <font
+color="#000000">d6</font> <font color="#434f54">=</font> <font color="#000000">3</font><font
+color="#434f54">,</font> <font color="#000000">d7</font> <font color="#434f54">=</font> <font
+color="#000000">2</font><font color="#000000">;</font>
+<b><font color="#d35400">LiquidCrystal</font></b> <font color="#000000">lcd</font><font
+color="#000000">(</font><font color="#000000">rs</font><font color="#434f54">,</font> <font
+color="#000000">en</font><font color="#434f54">,</font> <font color="#000000">d4</font><font
+color="#434f54">,</font> <font color="#000000">d5</font><font color="#434f54">,</font> <font
+color="#000000">d6</font><font color="#434f54">,</font> <font color="#000000">d7</font><font
+color="#000000">)</font><font color="#000000">;</font>
 
 <font color="#00979c">float</font> <font color="#000000">sensor</font><font color="#000000">;</font>
 
-<font color="#00979c">char</font> <font color="#000000">txt2stream</font><font color="#000000">[</font><font color="#000000">10</font><font color="#000000">]</font><font color="#000000">;</font>
+<font color="#00979c">char</font> <font color="#000000">txt2stream</font><font color="#000000">[</font><font
+color="#000000">10</font><font color="#000000">]</font><font color="#000000">;</font>
 
-<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font>
+<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font
+color="#000000">)</font>
 <font color="#000000">{</font>
- &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">10</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">10</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">16</font><font color="#434f54">,</font> <font color="#000000">2</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">200</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font color="#000000">(</font><font color="#000000">0</font><font color="#434f54">,</font><font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">sprintf</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#434f54">,</font><font color="#005c5f">&#34;Sensor:&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">txt2stream</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">10</font><font
+color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font
+color="#000000">;</font>
+ &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font
+color="#000000">10</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font
+color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">begin</font><font
+color="#000000">(</font><font color="#000000">16</font><font color="#434f54">,</font> <font
+color="#000000">2</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">200</font><font
+color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font
+color="#000000">(</font><font color="#000000">0</font><font color="#434f54">,</font><font
+color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font
+color="#000000">(</font><font color="#005c5f">"Sensor:"</font><font color="#000000">)</font><font
+color="#000000">;</font>
 <font color="#000000">}</font>
 
-<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font>
+<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font
+color="#000000">)</font>
 <font color="#000000">{</font>
- &nbsp;<font color="#000000">sensor</font> <font color="#434f54">=</font> <font color="#d35400">analogRead</font><font color="#000000">(</font><font color="#000000">A0</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">sensor</font> <font color="#434f54">=</font> <font color="#000000">sensor</font> <font color="#434f54">*</font> <font color="#000000">100</font> <font color="#434f54">&#47;</font> <font color="#000000">1023</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font color="#000000">(</font><font color="#000000">8</font><font color="#434f54">,</font><font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">sensor</font><font color="#434f54">,</font><font color="#000000">1</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#005c5f">&#34; &nbsp;&nbsp;&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">500</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">sensor</font> <font color="#434f54">=</font> <font
+color="#d35400">analogRead</font><font color="#000000">(</font><font color="#000000">A0</font><font
+color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">sensor</font> <font color="#434f54">=</font> <font
+color="#000000">sensor</font> <font color="#434f54">*</font> <font color="#000000">100</font> <font
+color="#434f54">/</font> <font color="#000000">1023</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font
+color="#000000">(</font><font color="#000000">8</font><font color="#434f54">,</font><font
+color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font
+color="#000000">(</font><font color="#000000">sensor</font><font color="#434f54">,</font><font
+color="#000000">1</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font
+color="#000000">(</font><font color="#005c5f">" &nbsp;&nbsp;"</font><font color="#000000">)</font><font
+color="#000000">;</font>
+ &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">500</font><font
+color="#000000">)</font><font color="#000000">;</font>
 <font color="#000000">}</font>
 </pre>
-</body>
+  </body>
 </html>

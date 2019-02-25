@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Documento sin título</title>
-<style type="text/css">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Documento sin título</title>
+    <style type="text/css">
 <!--
 p.MsoNormal {
 margin-top:0cm;
@@ -16,7 +16,7 @@ font-family:"Calibri","sans-serif";
 }
 -->
 </style>
-<style type="text/css">
+    <style type="text/css">
 <!--
 table.MsoNormalTable {
 font-size:10.0pt;
@@ -24,7 +24,7 @@ font-family:"Calibri","sans-serif";
 }
 -->
 </style>
-<script type="text/javascript">
+    <script type="text/javascript">
 	document.oncontextmenu = function(){return false;}
     function disabletext(e){
     return false
@@ -38,7 +38,7 @@ font-family:"Calibri","sans-serif";
     document.onclick=reEnable
     }
 </script>
-<style type="text/css">
+    <style type="text/css">
 <!--
 p.MsoListParagraph {
 margin-top:0cm;
@@ -67,101 +67,381 @@ font-family:"Calibri","sans-serif";
 }
 -->
 </style>
-</head>
-
-<body>
-<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Convertidor D/A con PWM</span></strong>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><img src="../img/PWM motor DC 220V.png" width="916" height="616" alt=""/></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">Hay proyectos en los que tenemos que controlar el nivel de voltaje como: la referencia de una fuente regulada, la salida de audio, o bien queremos hacer nuestro generador de funciones. Pero estas señales son analógicas y la mayoría de los microcontroladores de gama baja y media (PICs, AVRs, etc) no tienen un convertidor DAC.</p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">Una solución muy frecuente es usar un circuito DAC (convertidor digital analógico) aparte del micro controlador, lo que es muy útil, pero tiene dos inconvenientes: es un circuito mas, lo que es mas espacio y costo, aparte de que puede requerir muchas lineas de señales por parte de nuestro procesador, en el caso de que la interfaz sea paralela.</p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">Pero todos los microcontroladores tienen por lo menos un timer y en la mayoria de los casos se puede usar como un modulador de ancho de pulso (PWM) En el caso de que se cuente con estos recursos. se puede usar el timer/PWM para hacer conversiones de digital a analogico usando un arreglo de una resistencia, un capacitor y un amplificador operacional.</p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;"><img src="../../img/PWM DAC_1.png" width="558" height="307" alt=""/></p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">El circuito es un filtro pasabaja de primer orden y el amplificador operacional sirve para evitar que se caiga el voltaje de salida debido a la carga que le coloquemos.</p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">Sin adentrarnos mucho en el tema, los filtros pasabaja dejan pasar las señales con frecuencia menor a la frecuencia de corte. En pocas palabras, de la frecuencia de corte para abajo. Para calcular la frecuencia de corte, en este caso se puede usar la siguiente formula: <img src="../../img/PWM DAC_3.png" width="70" height="20" alt=""/></p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;"><img src="../../img/PWM DAC_2.png" width="558" height="250" alt=""/></p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">Esta frecuencia de corte es importante, ya que nos da la pauta de las frecuencias que podemos suministrar como señal de salida analógica. Es decir, si nuestra frecuencia de corte es de 1000Hz, con nuestro dac pwm podemos sacar frecuencias menores de 1000Hz, por ejemplo podemos sacar senoidales a 600Hz sin problema.</p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">Ahora bien, ya tenemos la frecuencia de corte, pero hace falta otra frecuencia importante a considerar, que es la frecuencia del PWM. La frecuencia del pwm es la que usara el timer para generar la señal de salida analógica. No podemos elegir una frecuencia de pwm menor que la frecuencia de corte del filtro, ya que prácticamente solo veríamos la señal del timer. Tampoco podemos igualarla con la de corte ya que la señal de salida presentaría mucho ruido debido a que la atenuación empieza en la frecuencia de corte, es decir, todavía veríamos la señal del timer en la salida analógica.</p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;"> Debemos elegir una frecuencia de pwm mucho mayor que la frecuencia de corte, para asegurar que la frecuencia del timer no llegue a la salida de nuestro convertidor ya que estaría muy atenuada según nuestro filtro.</p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">Es recomendable utilizar frecuencias de pwm por lo menos 20 veces mas alta que la frecuencia de corte. De hecho, generalmente empezaremos viendo cual es la frecuencia máxima de pwm que podemos tener en el timer/pwm y de allí propondremos la frecuencia de corte. Al final  la velocidad del microprocesador es nuestro limite.</p>
-<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC16F84A</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC16F628A</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC16F818</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC16F873A</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC16F883</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC16F877A</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#device </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">PIC16F887</span></span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC18F2550</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device  PIC18F4455</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device  PIC18F4550</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#include </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">&lt;Arduino</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">.</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">h</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">.</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">encrypted&gt;</span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span class="MsoNormal1" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#include </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">&lt;LiquidCrystal</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">.</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">h&gt;</span></span></span></span></p>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#define </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">boton_inc PIN_A0   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//Boton incremento</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#define </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">boton_dec PIN_A1   </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//Boton decremento</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#define </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">boton_reset PIN_A2 </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//Boton reset</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#define </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_inc digitalRead</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">boton_inc</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#define </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_dec digitalRead</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">boton_dec</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#define </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_reset  digitalRead</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">boton_reset</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">int16 </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">contador </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">= </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">char </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">[</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">12</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">];</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">void </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">setup</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">() {</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   pinMode</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">PIN_A0</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">, </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">INPUT_</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   pinMode</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">PIN_A1</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">, </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">INPUT_</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   pinMode</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">PIN_A2</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">, </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">INPUT_</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   digitalWrite</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">LCD_BACKLIGHT</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">, </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">HIGH</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_begin</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">16</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">2</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">200</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   sprintf</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">&quot;PWM: 0&quot;</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">void </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">loop</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">() {</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">if </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_inc</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">==</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">1</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">{</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">if </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">contador</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&lt;</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">1000</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">{</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">      </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">contador </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">+= </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">10</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">&nbsp;</span></strong></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">if </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_dec</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">==</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">1</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">{</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">if </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">contador</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&gt;</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">{</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">      </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">contador </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">-= </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">10</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">if </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_reset</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">==</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">1</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">{</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">      contador </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">= </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">sprintf</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">&quot;%Lu &quot;</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">contador</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">5</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">analogWrite</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">PIN_C2</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">contador</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">   </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">50</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
-<p class="MsoNormal"><span style="line-height:107%; font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
-</body>
+  </head>
+  <body>
+    <strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Convertidor
+        D/A con PWM</span></strong>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><img
+        src="../img/PWM%20motor%20DC%20220V.png" alt="" height="616" width="916"></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">Hay
+      proyectos en los que tenemos que controlar el nivel de voltaje como: la
+      referencia de una fuente regulada, la salida de audio, o bien queremos
+      hacer nuestro generador de funciones. Pero estas señales son analógicas y
+      la mayoría de los microcontroladores de gama baja y media (PICs, AVRs,
+      etc) no tienen un convertidor DAC.</p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">Una
+      solución muy frecuente es usar un circuito DAC (convertidor digital
+      analógico) aparte del micro controlador, lo que es muy útil, pero tiene
+      dos inconvenientes: es un circuito mas, lo que es mas espacio y costo,
+      aparte de que puede requerir muchas lineas de señales por parte de nuestro
+      procesador, en el caso de que la interfaz sea paralela.</p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">Pero
+      todos los microcontroladores tienen por lo menos un timer y en la mayoria
+      de los casos se puede usar como un modulador de ancho de pulso (PWM) En el
+      caso de que se cuente con estos recursos. se puede usar el timer/PWM para
+      hacer conversiones de digital a analogico usando un arreglo de una
+      resistencia, un capacitor y un amplificador operacional.</p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;"><img
+        src="../../img/PWM%20DAC_1.png" alt="" height="307" width="558"></p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">El
+      circuito es un filtro pasabaja de primer orden y el amplificador
+      operacional sirve para evitar que se caiga el voltaje de salida debido a
+      la carga que le coloquemos.</p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">Sin
+      adentrarnos mucho en el tema, los filtros pasabaja dejan pasar las señales
+      con frecuencia menor a la frecuencia de corte. En pocas palabras, de la
+      frecuencia de corte para abajo. Para calcular la frecuencia de corte, en
+      este caso se puede usar la siguiente formula: <img src="../../img/PWM%20DAC_3.png"
+        alt="" height="20" width="70"></p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;"><img
+        src="../../img/PWM%20DAC_2.png" alt="" height="250" width="558"></p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">Esta
+      frecuencia de corte es importante, ya que nos da la pauta de las
+      frecuencias que podemos suministrar como señal de salida analógica. Es
+      decir, si nuestra frecuencia de corte es de 1000Hz, con nuestro dac pwm
+      podemos sacar frecuencias menores de 1000Hz, por ejemplo podemos sacar
+      senoidales a 600Hz sin problema.</p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">Ahora
+      bien, ya tenemos la frecuencia de corte, pero hace falta otra frecuencia
+      importante a considerar, que es la frecuencia del PWM. La frecuencia del
+      pwm es la que usara el timer para generar la señal de salida analógica. No
+      podemos elegir una frecuencia de pwm menor que la frecuencia de corte del
+      filtro, ya que prácticamente solo veríamos la señal del timer. Tampoco
+      podemos igualarla con la de corte ya que la señal de salida presentaría
+      mucho ruido debido a que la atenuación empieza en la frecuencia de corte,
+      es decir, todavía veríamos la señal del timer en la salida analógica.</p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">
+      Debemos elegir una frecuencia de pwm mucho mayor que la frecuencia de
+      corte, para asegurar que la frecuencia del timer no llegue a la salida de
+      nuestro convertidor ya que estaría muy atenuada según nuestro filtro.</p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">Es
+      recomendable utilizar frecuencias de pwm por lo menos 20 veces mas alta
+      que la frecuencia de corte. De hecho, generalmente empezaremos viendo cual
+      es la frecuencia máxima de pwm que podemos tener en el timer/pwm y de allí
+      propondremos la frecuencia de corte. Al final la velocidad del
+      microprocesador es nuestro limite.</p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC16F84A</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC16F628A</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC16F818</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC16F873A</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC16F883</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC16F877A</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span
+            style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#device
+            </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">PIC16F887</span></span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC18F2550</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC18F4455</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC18F4550</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#include
+          </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">&lt;Arduino</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">.</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">h</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">.</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">encrypted&gt;</span></p>
+    <p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+          class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+            class="MsoNormal1" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span
+                style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#include
+                </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">&lt;LiquidCrystal</span><span
+              style="font-family:Courier; font-size:10.0pt; color:#101010; ">.</span><span
+              style="font-family:Courier; font-size:10.0pt; color:black; ">h&gt;</span></span></span></span></p>
+    <p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#define
+        </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">boton_inc
+        PIN_A0 &nbsp;&nbsp;</span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//Boton
+        incremento</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#define
+        </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">boton_dec
+        PIN_A1&nbsp;&nbsp; </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//Boton
+        decremento</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#define
+        </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">boton_reset
+        PIN_A2 </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//Boton
+        reset</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:gray; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#define
+        </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_inc
+        digitalRead</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">boton_inc</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#define
+        </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_dec
+        digitalRead</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">boton_dec</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#define
+        </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_reset
+        digitalRead</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">boton_reset</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">int16 </span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">contador </span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">= </span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">char </span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">[</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">12</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">];</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">void </span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">setup</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">() {</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        pinMode</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">PIN_A0</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">, </span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">INPUT_</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        pinMode</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">PIN_A1</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">, </span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">INPUT_</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        pinMode</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">PIN_A2</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">, </span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">INPUT_</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        digitalWrite</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">LCD_BACKLIGHT</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">, </span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">HIGH</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_begin</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">16</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">2</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">200</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:purple; ">"PWM: 0"</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">void </span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">loop</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">() {</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">if
+          </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_inc</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">==</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">1</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">{</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;</span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">if
+          </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">contador</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">&lt;</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">1000</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">{</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">contador </span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">+= </span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">10</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">&nbsp;</span></strong></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">if
+          </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_dec</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">==</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">1</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">{</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;</span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">if
+          </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">contador</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">&gt;</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">{</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">contador </span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">-= </span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">10</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">if
+          </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_reset</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">==</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">1</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">{</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;contador </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">=
+      </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">sprintf</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span
+        style="font-family:Courier; font-size:10.0pt; color:purple; ">"%Lu "</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">contador</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">5</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">analogWrite</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">PIN_C2</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">contador</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span
+        style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">delay</span><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span
+          style="font-family:Courier; font-size:10.0pt; color:green; ">50</span></strong><span
+        style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal"><span style="line-height:107%; font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+  </body>
 </html>
