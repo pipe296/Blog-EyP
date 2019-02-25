@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
     <title>Documento sin título</title>
     <style type="text/css">
 <!--
@@ -15,14 +16,16 @@ font-size:11.0pt;
 font-family:"Calibri","sans-serif";
 }
 -->
-</style> <style type="text/css">
+</style> 
+<style type="text/css">
 <!--
 table.MsoNormalTable {
 font-size:10.0pt;
 font-family:"Calibri","sans-serif";
 }
 -->
-</style> <script type="text/javascript">
+</style> 
+<script type="text/javascript">
 	document.oncontextmenu = function(){return false;}
     function disabletext(e){
     return false
@@ -35,7 +38,8 @@ font-family:"Calibri","sans-serif";
     document.onmousedown=disabletext
     document.onclick=reEnable
     }
-</script> <style type="text/css">
+</script> 
+<style type="text/css">
 <!--
 p.MsoListParagraph {
 margin-top:0cm;
@@ -58,186 +62,82 @@ p.MsoNormal1 {	margin-top: 0cm;
 </style> </head>
   <body> <strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Bluetooth
         a micro_byte_7Seg</span></strong>
-    <p><img src="../../img/11.2.5%20Bluetooth%20a%20micro%20byte_7Seg_1.png" alt=""
-        height="auto" width="auto"><img src="../video/11.2.5%20Bluetooth%20a%20micro%20byte_7Seg.gif"
-        alt="" height="auto" width="auto"></p>
-    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span
-        class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span
-          class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span
-            class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span
-              class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span
-                  style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><br>
+    <p><img src="../../img/16.6.5%20Bluetooth%20a%20micro%20byte_7Seg_1.png" alt="" height="auto" width="auto"><img src="../video/16.6.5%20Bluetooth%20a%20micro%20byte_7Seg.gif" alt="" height="auto" width="auto"></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><br>
                 </span></strong></span></span></span></span></p>
-    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span
-        class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span
-          class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span
-            class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span
-              class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span
-                  style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Código
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Código
                   Arduino IDE<br>
                 </span></strong></span></span></span></span></p>
-    <pre><font color="#00979c">char</font> <font color="#000000">inputString</font><font
-color="#000000">[</font><font color="#000000">10</font><font color="#000000">]</font><font
-color="#000000">;</font>
-<font color="#00979c">boolean</font> <font color="#000000">stringComplete</font><font
-color="#000000">;</font>
+    <pre><font color="#00979c">char</font> <font color="#000000">inputString</font><font color="#000000">[</font><font color="#000000">10</font><font color="#000000">]</font><font color="#000000">;</font>
+<font color="#00979c">boolean</font> <font color="#000000">stringComplete</font><font color="#000000">;</font>
 
-<font color="#00979c">int</font> <font color="#000000">pins_PB</font><font color="#000000">[</font><font
-color="#000000">7</font><font color="#000000">]</font> <font color="#434f54">=</font> <font
-color="#000000">{</font><font color="#000000">8</font><font color="#434f54">,</font> <font
-color="#000000">7</font><font color="#434f54">,</font> <font color="#000000">6</font><font
-color="#434f54">,</font> <font color="#000000">5</font><font color="#434f54">,</font> <font
-color="#000000">4</font><font color="#434f54">,</font> <font color="#000000">3</font><font
-color="#434f54">,</font> <font color="#000000">2</font><font color="#000000">}</font><font
-color="#000000">;</font>
+<font color="#00979c">int</font> <font color="#000000">pins_PB</font><font color="#000000">[</font><font color="#000000">7</font><font color="#000000">]</font> <font color="#434f54">=</font> <font color="#000000">{</font><font color="#000000">8</font><font color="#434f54">,</font> <font color="#000000">7</font><font color="#434f54">,</font> <font color="#000000">6</font><font color="#434f54">,</font> <font color="#000000">5</font><font color="#434f54">,</font> <font color="#000000">4</font><font color="#434f54">,</font> <font color="#000000">3</font><font color="#434f54">,</font> <font color="#000000">2</font><font color="#000000">}</font><font color="#000000">;</font>
 
-<font color="#00979c">void</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#00979c">byte</font> <font color="#000000">cifra</font><font color="#000000">)</font> <font
-color="#000000">{</font>
+<font color="#00979c">void</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#00979c">byte</font> <font color="#000000">cifra</font><font color="#000000">)</font> <font color="#000000">{</font>
  &nbsp;<font color="#00979c">byte</font> <font color="#000000">i</font><font color="#000000">;</font>
- &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">i</font><font
-color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font> <font
-color="#000000">i</font><font color="#434f54">&lt;</font><font color="#000000">7</font><font
-color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">++</font><font
-color="#000000">)</font>
+ &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">i</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">&lt;</font><font color="#000000">7</font><font color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">++</font><font color="#000000">)</font>
  &nbsp;<font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font
-color="#000000">pins_PB</font><font color="#000000">[</font><font color="#000000">i</font><font
-color="#000000">]</font><font color="#434f54">,</font> <font color="#000000">(</font><font
-color="#000000">cifra</font><font color="#434f54">&gt;&gt;</font><font color="#000000">i</font><font
-color="#000000">)</font><font color="#434f54">&amp;</font><font color="#000000">1</font><font
-color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">pins_PB</font><font color="#000000">[</font><font color="#000000">i</font><font color="#000000">]</font><font color="#434f54">,</font> <font color="#000000">(</font><font color="#000000">cifra</font><font color="#434f54">&gt;&gt;</font><font color="#000000">i</font><font color="#000000">)</font><font color="#434f54">&amp;</font><font color="#000000">1</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;<font color="#000000">}</font>
 <font color="#000000">}</font>
 
-<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font
-color="#000000">)</font>
+<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font>
 <font color="#000000">{</font>
  &nbsp;<font color="#00979c">byte</font> <font color="#000000">i</font><font color="#000000">;</font>
- &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">i</font><font
-color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font> <font
-color="#000000">i</font><font color="#434f54">&lt;</font><font color="#000000">7</font><font
-color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">++</font><font
-color="#000000">)</font>
+ &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">i</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">&lt;</font><font color="#000000">7</font><font color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">++</font><font color="#000000">)</font>
  &nbsp;<font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font
-color="#000000">pins_PB</font><font color="#000000">[</font><font color="#000000">i</font><font
-color="#000000">]</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font
-color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font
-color="#000000">pins_PB</font><font color="#000000">[</font><font color="#000000">i</font><font
-color="#000000">]</font><font color="#434f54">,</font> <font color="#00979c">LOW</font><font
-color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">pins_PB</font><font color="#000000">[</font><font color="#000000">i</font><font color="#000000">]</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">pins_PB</font><font color="#000000">[</font><font color="#000000">i</font><font color="#000000">]</font><font color="#434f54">,</font> <font color="#00979c">LOW</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;<font color="#000000">}</font>
- &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font
-color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">9600</font><font
-color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">9600</font><font color="#000000">)</font><font color="#000000">;</font>
 <font color="#000000">}</font>
 
-<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font
-color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">stringComplete</font><font
-color="#000000">)</font>
+<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+ &nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">stringComplete</font><font color="#000000">)</font>
  &nbsp;<font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;<font color="#5e6d03">switch</font> <font color="#000000">(</font><font
-color="#000000">inputString</font><font color="#000000">[</font><font color="#000000">0</font><font
-color="#000000">]</font><font color="#000000">)</font>
+ &nbsp;&nbsp;&nbsp;<font color="#5e6d03">switch</font> <font color="#000000">(</font><font color="#000000">inputString</font><font color="#000000">[</font><font color="#000000">0</font><font color="#000000">]</font><font color="#000000">)</font>
  &nbsp;&nbsp;&nbsp;<font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#00979c">'0'</font><font
-color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#000000">0b00111111</font><font color="#000000">)</font><font color="#000000">;</font> <font
-color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#00979c">'1'</font><font
-color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#000000">6</font><font color="#000000">)</font><font color="#000000">;</font> <font
-color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#00979c">'2'</font><font
-color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#000000">91</font><font color="#000000">)</font><font color="#000000">;</font> <font
-color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#00979c">'3'</font><font
-color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#000000">79</font><font color="#000000">)</font><font color="#000000">;</font> <font
-color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#00979c">'4'</font><font
-color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#000000">102</font><font color="#000000">)</font><font color="#000000">;</font> <font
-color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">53</font><font
-color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#000000">109</font><font color="#000000">)</font><font color="#000000">;</font> <font
-color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">54</font><font
-color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#000000">125</font><font color="#000000">)</font><font color="#000000">;</font> <font
-color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">55</font><font
-color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#000000">7</font><font color="#000000">)</font><font color="#000000">;</font> <font
-color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">56</font><font
-color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#000000">127</font><font color="#000000">)</font><font color="#000000">;</font> <font
-color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">57</font><font
-color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#000000">103</font><font color="#000000">)</font><font color="#000000">;</font> <font
-color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#00979c">'0'</font><font color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#000000">0b00111111</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#00979c">'1'</font><font color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#000000">6</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#00979c">'2'</font><font color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#000000">91</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#00979c">'3'</font><font color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#000000">79</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#00979c">'4'</font><font color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#000000">102</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">53</font><font color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#000000">109</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">54</font><font color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#000000">125</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">55</font><font color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#000000">7</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">56</font><font color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#000000">127</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">57</font><font color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#000000">103</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#5e6d03">break</font><font color="#000000">;</font>
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">//Escribir código para procesar A-F</font>
  &nbsp;&nbsp; <font color="#000000">}</font>
  &nbsp;&nbsp;&nbsp;<font color="#434f54">// clear the string:</font>
- &nbsp;&nbsp;&nbsp;<font color="#d35400">sprintf</font><font color="#000000">(</font><font
-color="#000000">inputString</font><font color="#434f54">,</font><font color="#005c5f">""</font><font
-color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;<font color="#000000">stringComplete</font> <font color="#434f54">=</font> <font
-color="#00979c">false</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">sprintf</font><font color="#000000">(</font><font color="#000000">inputString</font><font color="#434f54">,</font><font color="#005c5f">""</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#000000">stringComplete</font> <font color="#434f54">=</font> <font color="#00979c">false</font><font color="#000000">;</font>
  &nbsp;<font color="#000000">}</font>
 <font color="#000000">}</font>
 
-<font color="#00979c">void</font> <font color="#000000">serialEvent</font><font
-color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;<font color="#5e6d03">while</font> <font color="#000000">(</font><b><font
-color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">available</font><font
-color="#000000">(</font><font color="#000000">)</font><font color="#000000">)</font>
+<font color="#00979c">void</font> <font color="#000000">serialEvent</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+ &nbsp;<font color="#5e6d03">while</font> <font color="#000000">(</font><b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">available</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">)</font>
  &nbsp;<font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;<font color="#00979c">char</font> <font color="#000000">inChar</font><font
-color="#000000">[</font><font color="#000000">2</font><font color="#000000">]</font><font
-color="#434f54">=</font><font color="#005c5f">"0"</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#00979c">char</font> <font color="#000000">inChar</font><font color="#000000">[</font><font color="#000000">2</font><font color="#000000">]</font><font color="#434f54">=</font><font color="#005c5f">"0"</font><font color="#000000">;</font>
  &nbsp;&nbsp;&nbsp;<font color="#434f54">// get the new byte:</font>
- &nbsp;&nbsp;&nbsp;<font color="#000000">inChar</font><font color="#000000">[</font><font
-color="#000000">0</font><font color="#000000">]</font> <font color="#434f54">=</font> <b><font
-color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">read</font><font
-color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#000000">inChar</font><font color="#000000">[</font><font color="#000000">0</font><font color="#000000">]</font> <font color="#434f54">=</font> <b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">read</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;&nbsp;&nbsp;<font color="#434f54">// add it to the inputString:</font>
- &nbsp;&nbsp;&nbsp;<font color="#d35400">strcat</font><font color="#000000">(</font><font
-color="#000000">inputString</font><font color="#434f54">,</font><font color="#000000">inChar</font><font
-color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">strcat</font><font color="#000000">(</font><font color="#000000">inputString</font><font color="#434f54">,</font><font color="#000000">inChar</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;&nbsp;&nbsp;<font color="#434f54">// if the incoming character is a newline, set a flag</font>
  &nbsp;&nbsp;&nbsp;<font color="#434f54">// so the main loop can do something about it:</font>
- &nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font
-color="#000000">inChar</font><font color="#000000">[</font><font color="#000000">0</font><font
-color="#000000">]</font> <font color="#434f54">==</font> <font color="#00979c">'\r'</font><font
-color="#000000">)</font>
+ &nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">inChar</font><font color="#000000">[</font><font color="#000000">0</font><font color="#000000">]</font> <font color="#434f54">==</font> <font color="#00979c">'\r'</font><font color="#000000">)</font>
  &nbsp;&nbsp;&nbsp;<font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">stringComplete</font> <font
-color="#434f54">=</font> <font color="#00979c">true</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">stringComplete</font> <font color="#434f54">=</font> <font color="#00979c">true</font><font color="#000000">;</font>
  &nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
  &nbsp;<font color="#000000">}</font>
 <font color="#000000">}</font>
 
 </pre>
-    <p><span class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span
-            style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Programa
+    <p><span class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Programa
             App Inventor 2</span></strong></span></p>
-    <p><img src="../../img/11.2.5%20Bluetooth%20a%20micro%20byte_7Seg_1.png" alt=""
-        height="auto" width="auto"></p>
-    <p><img src="../../img/11.2.5%20Bluetooth%20a%20micro%20byte_7Seg_2.png" alt=""
-        height="623" width="1000"></p>
-    <p><img src="../../img/11.2.5%20Bluetooth%20a%20micro%20byte_7Seg_3.png" alt=""
-        height="1017" width="693"></p>
-    <p><img src="../../img/11.2.5%20Bluetooth%20a%20micro%20byte_7Seg_4.png" alt=""
-        height="2742" width="535"></p>
-    <p><img src="../../img/11.2.5%20Bluetooth%20a%20micro%20byte_7Seg_5.png" alt=""
-        height="1074" width="464"></p>
-  </body>
-</html>
+    <p><img src="../../img/16.6.5%20Bluetooth%20a%20micro%20byte_7Seg_1.png" alt="" height="auto" width="auto"></p>
+    <p><img src="../../img/16.6.5%20Bluetooth%20a%20micro%20byte_7Seg_2.png" alt="" height="623" width="1000"></p>
+    <p><img src="../../img/16.6.5%20Bluetooth%20a%20micro%20byte_7Seg_3.png" alt="" height="1017" width="693"></p>
+    <p><img src="../../img/16.6.5%20Bluetooth%20a%20micro%20byte_7Seg_4.png" alt="" height="2742" width="535"></p>
+    <p><img src="../../img/16.6.5%20Bluetooth%20a%20micro%20byte_7Seg_5.png" alt="" height="1074" width="464"></p>
+</body></html>
