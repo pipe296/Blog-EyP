@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
     <title>Documento sin título</title>
     <style type="text/css">
 <!--
@@ -15,14 +16,16 @@ font-size:11.0pt;
 font-family:"Calibri","sans-serif";
 }
 -->
-</style> <style type="text/css">
+</style> 
+<style type="text/css">
 <!--
 table.MsoNormalTable {
 font-size:10.0pt;
 font-family:"Calibri","sans-serif";
 }
 -->
-</style> <script type="text/javascript">
+</style> 
+<script type="text/javascript">
 	document.oncontextmenu = function(){return false;}
     function disabletext(e){
     return false
@@ -35,7 +38,8 @@ font-family:"Calibri","sans-serif";
     document.onmousedown=disabletext
     document.onclick=reEnable
     }
-</script> <style type="text/css">
+</script> 
+<style type="text/css">
 <!--
 p.MsoListParagraph {
 margin-top:0cm;
@@ -59,176 +63,80 @@ p.MsoNormal1 {	margin-top: 0cm;
   <body>
     <p><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">PC
           a micro_byte_7Seg</span></strong></p>
-    <video preload="auto" autoplay="autoplay" loop=""> <source src="../video/11.1.5%20Serial_read_byte_7Seg.m4v"
-        type="video/mp4"> <source src="../video/11.1.5%20Serial_read_byte_7Seg.mp4"
-        type="video/mp4"> </video>
+    <video preload="auto" autoplay="autoplay" loop=""> <source src="../video/11.1.5%20PC%20a%20micro_byte_7Seg.m4v" type="video/mp4"> <source src="../video/11.1.5%20PC%20a%20micro_byte_7Seg.mp4" type="video/mp4"> </video>
     <p class="MsoNormal">&nbsp; </p>
-    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span
-        class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span
-          class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span
-            class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span
-              class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span
-                  style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Código
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Código
                   Arduino IDE<br>
                 </span></strong></span></span></span></span></p>
-    <pre><font color="#00979c">char</font> <font color="#000000">inputString</font><font
-color="#000000">[</font><font color="#000000">10</font><font color="#000000">]</font><font
-color="#000000">;</font>
-<font color="#00979c">boolean</font> <font color="#000000">stringComplete</font><font
-color="#000000">;</font>
+    <pre><font color="#00979c">char</font> <font color="#000000">inputString</font><font color="#000000">[</font><font color="#000000">10</font><font color="#000000">]</font><font color="#000000">;</font>
+<font color="#00979c">boolean</font> <font color="#000000">stringComplete</font><font color="#000000">;</font>
 
-<font color="#00979c">int</font> <font color="#000000">pins_PB</font><font color="#000000">[</font><font
-color="#000000">7</font><font color="#000000">]</font> <font color="#434f54">=</font> <font
-color="#000000">{</font><font color="#000000">8</font><font color="#434f54">,</font> <font
-color="#000000">7</font><font color="#434f54">,</font> <font color="#000000">6</font><font
-color="#434f54">,</font> <font color="#000000">5</font><font color="#434f54">,</font> <font
-color="#000000">4</font><font color="#434f54">,</font> <font color="#000000">3</font><font
-color="#434f54">,</font> <font color="#000000">2</font><font color="#000000">}</font><font
-color="#000000">;</font>
+<font color="#00979c">int</font> <font color="#000000">pins_PB</font><font color="#000000">[</font><font color="#000000">7</font><font color="#000000">]</font> <font color="#434f54">=</font> <font color="#000000">{</font><font color="#000000">8</font><font color="#434f54">,</font> <font color="#000000">7</font><font color="#434f54">,</font> <font color="#000000">6</font><font color="#434f54">,</font> <font color="#000000">5</font><font color="#434f54">,</font> <font color="#000000">4</font><font color="#434f54">,</font> <font color="#000000">3</font><font color="#434f54">,</font> <font color="#000000">2</font><font color="#000000">}</font><font color="#000000">;</font>
 
-<font color="#00979c">void</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#00979c">byte</font> <font color="#000000">cifra</font><font color="#000000">)</font> <font
-color="#000000">{</font>
+<font color="#00979c">void</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#00979c">byte</font> <font color="#000000">cifra</font><font color="#000000">)</font> <font color="#000000">{</font>
  &nbsp;<font color="#00979c">byte</font> <font color="#000000">i</font><font color="#000000">;</font>
- &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">i</font><font
-color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font> <font
-color="#000000">i</font><font color="#434f54">&lt;</font><font color="#000000">7</font><font
-color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">++</font><font
-color="#000000">)</font>
+ &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">i</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">&lt;</font><font color="#000000">7</font><font color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">++</font><font color="#000000">)</font>
  &nbsp;<font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font
-color="#000000">pins_PB</font><font color="#000000">[</font><font color="#000000">i</font><font
-color="#000000">]</font><font color="#434f54">,</font> <font color="#000000">(</font><font
-color="#000000">cifra</font><font color="#434f54">&gt;&gt;</font><font color="#000000">i</font><font
-color="#000000">)</font><font color="#434f54">&amp;</font><font color="#000000">1</font><font
-color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">pins_PB</font><font color="#000000">[</font><font color="#000000">i</font><font color="#000000">]</font><font color="#434f54">,</font> <font color="#000000">(</font><font color="#000000">cifra</font><font color="#434f54">&gt;&gt;</font><font color="#000000">i</font><font color="#000000">)</font><font color="#434f54">&amp;</font><font color="#000000">1</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;<font color="#000000">}</font>
 <font color="#000000">}</font>
 
-<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font
-color="#000000">)</font>
+<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font>
 <font color="#000000">{</font>
  &nbsp;<font color="#00979c">byte</font> <font color="#000000">i</font><font color="#000000">;</font>
- &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">i</font><font
-color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font> <font
-color="#000000">i</font><font color="#434f54">&lt;</font><font color="#000000">7</font><font
-color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">++</font><font
-color="#000000">)</font>
+ &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">i</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">&lt;</font><font color="#000000">7</font><font color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">++</font><font color="#000000">)</font>
  &nbsp;<font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font
-color="#000000">pins_PB</font><font color="#000000">[</font><font color="#000000">i</font><font
-color="#000000">]</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font
-color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font
-color="#000000">pins_PB</font><font color="#000000">[</font><font color="#000000">i</font><font
-color="#000000">]</font><font color="#434f54">,</font> <font color="#00979c">LOW</font><font
-color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">pins_PB</font><font color="#000000">[</font><font color="#000000">i</font><font color="#000000">]</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">pins_PB</font><font color="#000000">[</font><font color="#000000">i</font><font color="#000000">]</font><font color="#434f54">,</font> <font color="#00979c">LOW</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;<font color="#000000">}</font>
- &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font
-color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">9600</font><font
-color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">9600</font><font color="#000000">)</font><font color="#000000">;</font>
 <font color="#000000">}</font>
 
-<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font
-color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">stringComplete</font><font
-color="#000000">)</font>
+<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+ &nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">stringComplete</font><font color="#000000">)</font>
  &nbsp;<font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;<font color="#5e6d03">switch</font> <font color="#000000">(</font><font
-color="#000000">inputString</font><font color="#000000">[</font><font color="#000000">0</font><font
-color="#000000">]</font><font color="#000000">)</font>
+ &nbsp;&nbsp;&nbsp;<font color="#5e6d03">switch</font> <font color="#000000">(</font><font color="#000000">inputString</font><font color="#000000">[</font><font color="#000000">0</font><font color="#000000">]</font><font color="#000000">)</font>
  &nbsp;&nbsp;&nbsp;<font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#00979c">'0'</font><font
-color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#000000">0b00111111</font><font color="#000000">)</font><font color="#000000">;</font> <font
-color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#00979c">'1'</font><font
-color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#000000">6</font><font color="#000000">)</font><font color="#000000">;</font> <font
-color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#00979c">'2'</font><font
-color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#000000">91</font><font color="#000000">)</font><font color="#000000">;</font> <font
-color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#00979c">'3'</font><font
-color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#000000">79</font><font color="#000000">)</font><font color="#000000">;</font> <font
-color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#00979c">'4'</font><font
-color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#000000">102</font><font color="#000000">)</font><font color="#000000">;</font> <font
-color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">53</font><font
-color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#000000">109</font><font color="#000000">)</font><font color="#000000">;</font> <font
-color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">54</font><font
-color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#000000">125</font><font color="#000000">)</font><font color="#000000">;</font> <font
-color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">55</font><font
-color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#000000">7</font><font color="#000000">)</font><font color="#000000">;</font> <font
-color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">56</font><font
-color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#000000">127</font><font color="#000000">)</font><font color="#000000">;</font> <font
-color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">57</font><font
-color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font
-color="#000000">103</font><font color="#000000">)</font><font color="#000000">;</font> <font
-color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#00979c">'0'</font><font color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#000000">0b00111111</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#00979c">'1'</font><font color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#000000">6</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#00979c">'2'</font><font color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#000000">91</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#00979c">'3'</font><font color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#000000">79</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#00979c">'4'</font><font color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#000000">102</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">53</font><font color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#000000">109</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">54</font><font color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#000000">125</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">55</font><font color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#000000">7</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">56</font><font color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#000000">127</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#5e6d03">break</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">57</font><font color="#434f54">:</font> <font color="#000000">output_PB</font><font color="#000000">(</font><font color="#000000">103</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#5e6d03">break</font><font color="#000000">;</font>
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">//Escribir código para procesar A-F</font>
  &nbsp;&nbsp; <font color="#000000">}</font>
  &nbsp;&nbsp;&nbsp;<font color="#434f54">// clear the string:</font>
- &nbsp;&nbsp;&nbsp;<font color="#d35400">sprintf</font><font color="#000000">(</font><font
-color="#000000">inputString</font><font color="#434f54">,</font><font color="#005c5f">""</font><font
-color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;<font color="#000000">stringComplete</font> <font color="#434f54">=</font> <font
-color="#00979c">false</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">sprintf</font><font color="#000000">(</font><font color="#000000">inputString</font><font color="#434f54">,</font><font color="#005c5f">""</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#000000">stringComplete</font> <font color="#434f54">=</font> <font color="#00979c">false</font><font color="#000000">;</font>
  &nbsp;<font color="#000000">}</font>
 <font color="#000000">}</font>
 
-<font color="#00979c">void</font> <font color="#000000">serialEvent</font><font
-color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;<font color="#5e6d03">while</font> <font color="#000000">(</font><b><font
-color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">available</font><font
-color="#000000">(</font><font color="#000000">)</font><font color="#000000">)</font>
+<font color="#00979c">void</font> <font color="#000000">serialEvent</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+ &nbsp;<font color="#5e6d03">while</font> <font color="#000000">(</font><b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">available</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">)</font>
  &nbsp;<font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;<font color="#00979c">char</font> <font color="#000000">inChar</font><font
-color="#000000">[</font><font color="#000000">2</font><font color="#000000">]</font><font
-color="#434f54">=</font><font color="#005c5f">"0"</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#00979c">char</font> <font color="#000000">inChar</font><font color="#000000">[</font><font color="#000000">2</font><font color="#000000">]</font><font color="#434f54">=</font><font color="#005c5f">"0"</font><font color="#000000">;</font>
  &nbsp;&nbsp;&nbsp;<font color="#434f54">// get the new byte:</font>
- &nbsp;&nbsp;&nbsp;<font color="#000000">inChar</font><font color="#000000">[</font><font
-color="#000000">0</font><font color="#000000">]</font> <font color="#434f54">=</font> <b><font
-color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">read</font><font
-color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#000000">inChar</font><font color="#000000">[</font><font color="#000000">0</font><font color="#000000">]</font> <font color="#434f54">=</font> <b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">read</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;&nbsp;&nbsp;<font color="#434f54">// add it to the inputString:</font>
- &nbsp;&nbsp;&nbsp;<font color="#d35400">strcat</font><font color="#000000">(</font><font
-color="#000000">inputString</font><font color="#434f54">,</font><font color="#000000">inChar</font><font
-color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">strcat</font><font color="#000000">(</font><font color="#000000">inputString</font><font color="#434f54">,</font><font color="#000000">inChar</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;&nbsp;&nbsp;<font color="#434f54">// if the incoming character is a newline, set a flag</font>
  &nbsp;&nbsp;&nbsp;<font color="#434f54">// so the main loop can do something about it:</font>
- &nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font
-color="#000000">inChar</font><font color="#000000">[</font><font color="#000000">0</font><font
-color="#000000">]</font> <font color="#434f54">==</font> <font color="#00979c">'\r'</font><font
-color="#000000">)</font>
+ &nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">inChar</font><font color="#000000">[</font><font color="#000000">0</font><font color="#000000">]</font> <font color="#434f54">==</font> <font color="#00979c">'\r'</font><font color="#000000">)</font>
  &nbsp;&nbsp;&nbsp;<font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">stringComplete</font> <font
-color="#434f54">=</font> <font color="#00979c">true</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">stringComplete</font> <font color="#434f54">=</font> <font color="#00979c">true</font><font color="#000000">;</font>
  &nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
  &nbsp;<font color="#000000">}</font>
 <font color="#000000">}</font>
 
 </pre>
     <p></p>
-    <p class="MsoNormal"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span
-          class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span
-            class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span
-                style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Programa
+    <p class="MsoNormal"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Programa
                 Sharp Develop</span></strong></span></span></span></p>
-    <p class="MsoNormal"><img src="../../img/11.1.5%20PC%20a%20micro_byte_7Seg.png"
-        alt="" height="221" width="590"></p>
+    <p class="MsoNormal"><img src="../../img/11.1.5%20PC%20a%20micro_byte_7Seg.png" alt="" height="221" width="590"></p>
     <p class="MsoNormal"><span style="color:green; ">/*</span><br>
       <span style="color:green; ">&nbsp;* Created by SharpDevelop.</span><br>
       <span style="color:green; ">&nbsp;* User: AnDrEs</span><br>
@@ -246,60 +154,36 @@ color="#434f54">=</font> <font color="#00979c">true</font><font color="#000000">
       <br>
       <strong><span style="color:green; ">namespace</span></strong>&nbsp;Serial_read_byte_7Seg<br>
       {<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:gray; ">///</span><span style="color:green; ">&nbsp;</span><span
-        style="color:gray; ">&lt;<strong>summary</strong>&gt;</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:gray; ">///</span><span style="color:green; ">&nbsp;</span><span style="color:gray; ">&lt;<strong>summary</strong>&gt;</span><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:gray; ">///</span><span style="color:green; ">&nbsp;Description
         of MainForm.</span><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:gray; ">///</span><span style="color:green; ">&nbsp;</span><span
-        style="color:gray; ">&lt;<strong>/summary</strong>&gt;</span><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">public</span></strong>&nbsp;<span
-        style="color:navy; ">partial</span>&nbsp;<span style="color:red; ">class</span>&nbsp;MainForm
+      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:gray; ">///</span><span style="color:green; ">&nbsp;</span><span style="color:gray; ">&lt;<strong>/summary</strong>&gt;</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">public</span></strong>&nbsp;<span style="color:navy; ">partial</span>&nbsp;<span style="color:red; ">class</span>&nbsp;MainForm
       : Form<br>
       &nbsp;&nbsp;&nbsp;&nbsp;{<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">public</span></strong>&nbsp;<strong><span
-          style="color:midnightblue; ">MainForm</span></strong>()<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">public</span></strong>&nbsp;<strong><span style="color:midnightblue; ">MainForm</span></strong>()<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-        style="color:green; ">//</span><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-        style="color:green; ">// The InitializeComponent() call is required for
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green; ">//</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green; ">// The InitializeComponent() call is required for
         Windows Forms designer support.</span><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-        style="color:green; ">//</span><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span
-          style="color:midnightblue; ">InitializeComponent</span></strong>();<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green; ">//</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:midnightblue; ">InitializeComponent</span></strong>();<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-        style="color:green; ">//</span><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-        style="color:green; ">//&nbsp;</span><strong><span style="color:red; ">TODO</span></strong><span
-        style="color:green; ">: Add constructor code after the
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green; ">//</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green; ">//&nbsp;</span><strong><span style="color:red; ">TODO</span></strong><span style="color:green; ">: Add constructor code after the
         InitializeComponent() call.</span><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-        style="color:green; ">//</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green; ">//</span><br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span
-          style="color:midnightblue; ">Button_BuscarClick</span></strong>(<span
-        style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs e)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">Button_BuscarClick</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs e)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comboBox_Puertos.Items.<strong><span
-          style="color:midnightblue; ">Clear</span></strong>();<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span
-          style="color:blue; ">foreach</span></strong>&nbsp;(<span style="color:red; ">string</span>&nbsp;s&nbsp;<strong><span
-          style="color:blue; ">in</span></strong>&nbsp;SerialPort.<strong><span
-          style="color:midnightblue; ">GetPortNames</span></strong>())<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comboBox_Puertos.Items.<strong><span
-          style="color:midnightblue; ">Add</span></strong>(s);<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span
-          style="color:blue; ">if</span></strong>&nbsp;(SerialPort.<strong><span
-          style="color:midnightblue; ">GetPortNames</span></strong>().<strong><span
-          style="color:midnightblue; ">GetLength</span></strong>(<span style="color:darkblue; ">0</span>)&gt;<span
-        style="color:darkblue; ">0</span>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comboBox_Puertos.Items.<strong><span style="color:midnightblue; ">Clear</span></strong>();<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">foreach</span></strong>&nbsp;(<span style="color:red; ">string</span>&nbsp;s&nbsp;<strong><span style="color:blue; ">in</span></strong>&nbsp;SerialPort.<strong><span style="color:midnightblue; ">GetPortNames</span></strong>())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comboBox_Puertos.Items.<strong><span style="color:midnightblue; ">Add</span></strong>(s);<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">if</span></strong>&nbsp;(SerialPort.<strong><span style="color:midnightblue; ">GetPortNames</span></strong>().<strong><span style="color:midnightblue; ">GetLength</span></strong>(<span style="color:darkblue; ">0</span>)&gt;<span style="color:darkblue; ">0</span>)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comboBox_Puertos.Enabled
       =&nbsp;<strong><span style="color:darkcyan; ">true</span></strong>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span
-          style="color:midnightblue; ">Close</span></strong>();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Close</span></strong>();<br>
       <br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;button1.Enabled
       =&nbsp;<strong><span style="color:darkcyan; ">false</span></strong>;<br>
@@ -335,24 +219,16 @@ color="#434f54">=</font> <font color="#00979c">true</font><font color="#000000">
       =&nbsp;<strong><span style="color:darkcyan; ">false</span></strong>;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span
-          style="color:midnightblue; ">ComboBox_PuertosSelectedIndexChanged</span></strong>(<span
-        style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs e)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">ComboBox_PuertosSelectedIndexChanged</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs e)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span
-          style="color:blue; ">if</span></strong>&nbsp;(comboBox_Puertos.Text&nbsp;!=&nbsp;<span
-        style="color:blue; ">""</span>)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">if</span></strong>&nbsp;(comboBox_Puertos.Text&nbsp;!=&nbsp;<span style="color:blue; ">""</span>)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;button_Conectar.Enabled
       =&nbsp;<strong><span style="color:darkcyan; ">true</span></strong>;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span
-          style="color:midnightblue; ">Button_ConectarClick</span></strong>(<span
-        style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs e)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">Button_ConectarClick</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs e)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span
-          style="color:blue; ">if</span></strong>&nbsp;(comboBox_Puertos.Text&nbsp;!=&nbsp;<span
-        style="color:blue; ">""</span>)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">if</span></strong>&nbsp;(comboBox_Puertos.Text&nbsp;!=&nbsp;<span style="color:blue; ">""</span>)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CheckForIllegalCrossThreadCalls
       =&nbsp;<strong><span style="color:darkcyan; ">false</span></strong>;<br>
@@ -360,8 +236,7 @@ color="#434f54">=</font> <font color="#00979c">true</font><font color="#000000">
       = comboBox_Puertos.Text;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comboBox_Puertos.Enabled
       =&nbsp;<strong><span style="color:darkcyan; ">false</span></strong>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span
-          style="color:midnightblue; ">Open</span></strong>();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Open</span></strong>();<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;button_Conectar.Enabled
       =&nbsp;<strong><span style="color:darkcyan; ">false</span></strong>;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
@@ -400,168 +275,114 @@ color="#434f54">=</font> <font color="#00979c">true</font><font color="#000000">
       =&nbsp;<strong><span style="color:darkcyan; ">true</span></strong>;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span
-          style="color:midnightblue; ">Button1Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">Button1Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
       e)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span
-          style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"0"</span>&nbsp;+&nbsp;(<strong><span
-          style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"0"</span>&nbsp;+&nbsp;(<strong><span style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span
-          style="color:midnightblue; ">Button2Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">Button2Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
       e)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span
-          style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"1"</span>&nbsp;+&nbsp;(<strong><span
-          style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"1"</span>&nbsp;+&nbsp;(<strong><span style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span
-          style="color:midnightblue; ">Button3Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">Button3Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
       e)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span
-          style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"2"</span>&nbsp;+&nbsp;(<strong><span
-          style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"2"</span>&nbsp;+&nbsp;(<strong><span style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span
-          style="color:midnightblue; ">Button4Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">Button4Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
       e)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span
-          style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"3"</span>&nbsp;+&nbsp;(<strong><span
-          style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"3"</span>&nbsp;+&nbsp;(<strong><span style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span
-          style="color:midnightblue; ">Button5Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">Button5Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
       e)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span
-          style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"4"</span>&nbsp;+&nbsp;(<strong><span
-          style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"4"</span>&nbsp;+&nbsp;(<strong><span style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span
-          style="color:midnightblue; ">Button6Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">Button6Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
       e)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span
-          style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"5"</span>&nbsp;+&nbsp;(<strong><span
-          style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"5"</span>&nbsp;+&nbsp;(<strong><span style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span
-          style="color:midnightblue; ">Button7Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">Button7Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
       e)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span
-          style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"6"</span>&nbsp;+&nbsp;(<strong><span
-          style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"6"</span>&nbsp;+&nbsp;(<strong><span style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span
-          style="color:midnightblue; ">Button8Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">Button8Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
       e)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span
-          style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"7"</span>&nbsp;+&nbsp;(<strong><span
-          style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"7"</span>&nbsp;+&nbsp;(<strong><span style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span
-          style="color:midnightblue; ">Button9Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">Button9Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
       e)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span
-          style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"8"</span>&nbsp;+&nbsp;(<strong><span
-          style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"8"</span>&nbsp;+&nbsp;(<strong><span style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span
-          style="color:midnightblue; ">Button10Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">Button10Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
       e)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span
-          style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"9"</span>&nbsp;+&nbsp;(<strong><span
-          style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"9"</span>&nbsp;+&nbsp;(<strong><span style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span
-          style="color:midnightblue; ">Button11Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">Button11Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
       e)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span
-          style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"A"</span>&nbsp;+&nbsp;(<strong><span
-          style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"A"</span>&nbsp;+&nbsp;(<strong><span style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span
-          style="color:midnightblue; ">Button12Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">Button12Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
       e)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span
-          style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"b"</span>&nbsp;+&nbsp;(<strong><span
-          style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"b"</span>&nbsp;+&nbsp;(<strong><span style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span
-          style="color:midnightblue; ">Button13Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">Button13Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
       e)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span
-          style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"C"</span>&nbsp;+&nbsp;(<strong><span
-          style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"C"</span>&nbsp;+&nbsp;(<strong><span style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span
-          style="color:midnightblue; ">Button14Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">Button14Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
       e)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span
-          style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"d"</span>&nbsp;+&nbsp;(<strong><span
-          style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"d"</span>&nbsp;+&nbsp;(<strong><span style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span
-          style="color:midnightblue; ">Button15Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">Button15Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
       e)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span
-          style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"E"</span>&nbsp;+&nbsp;(<strong><span
-          style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"E"</span>&nbsp;+&nbsp;(<strong><span style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span
-          style="color:midnightblue; ">Button16Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">Button16Click</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
       e)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span
-          style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"F"</span>&nbsp;+&nbsp;(<strong><span
-          style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Write</span></strong>(<span style="color:blue; ">"F"</span>&nbsp;+&nbsp;(<strong><span style="color:red; ">char</span></strong>)<span style="color:darkblue; ">13</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span
-          style="color:midnightblue; ">MainFormLoad</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">MainFormLoad</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs
       e)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Threading.Thread.CurrentThread.CurrentCulture
-      =&nbsp;<strong><span style="color:darkcyan; ">new</span></strong>&nbsp;System.Globalization.<strong><span
-          style="color:midnightblue; ">CultureInfo</span></strong>(<span style="color:blue; ">"en-US"</span>);<br>
+      =&nbsp;<strong><span style="color:darkcyan; ">new</span></strong>&nbsp;System.Globalization.<strong><span style="color:midnightblue; ">CultureInfo</span></strong>(<span style="color:blue; ">"en-US"</span>);<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span
-          style="color:midnightblue; ">MainFormFormClosed</span></strong>(<span
-        style="color:red; ">object</span>&nbsp;sender,&nbsp;FormClosedEventArgs
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">MainFormFormClosed</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;FormClosedEventArgs
       e)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span
-          style="color:midnightblue; ">Close</span></strong>();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<strong><span style="color:midnightblue; ">Close</span></strong>();<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
       &nbsp;&nbsp;&nbsp;&nbsp;}<br>
       }</p>
-  </body>
-</html>
+</body></html>
