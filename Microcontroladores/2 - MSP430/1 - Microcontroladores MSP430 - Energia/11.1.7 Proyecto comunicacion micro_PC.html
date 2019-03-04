@@ -1,7 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
 <title>Documento sin título</title>
 <style type="text/css">
 <!--
@@ -74,13 +75,12 @@ p.MsoNormal1 {margin-top: 0cm;
 </head>
 
 <body>
-<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Proyecto Serial_print_Serial_read</span></strong>
+<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Proyecto comunicación micro&lt;-&gt;PC</span></strong>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><br></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Código Energia IDE</span></strong></span></p>
-<pre>
-<span style="color: #007F00;">//&nbsp;include&nbsp;the&nbsp;library&nbsp;code:</span>
+<pre><span style="color: #007F00;">//&nbsp;include&nbsp;the&nbsp;library&nbsp;code:</span>
 #include&nbsp;&lt;<span style="color: #FF0000;">LiquidCrystal</span>.h&gt;
 
 <span style="color: #007F00;">//&nbsp;initialize&nbsp;the&nbsp;library&nbsp;with&nbsp;the&nbsp;numbers&nbsp;of&nbsp;the&nbsp;interface&nbsp;pins</span>
@@ -115,11 +115,9 @@ p.MsoNormal1 {margin-top: 0cm;
 &nbsp;&nbsp;lcd.<span style="color: #FF8000;">begin</span>(16,2);
 &nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(200);
 &nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(0,0);
-&nbsp;&nbsp;sprintf(txt2stream,<span style="color: #0066FF;">"I: D: R:  C:"</span>);
-&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(txt2stream);
+&nbsp; lcd.<span style="color: #FF8000;">print</span>(<span style="color: #0066FF;">"I: D: R:  C:"</span>);
 &nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(0,1);
-&nbsp;&nbsp;sprintf(txt2stream,<span style="color: #0066FF;">"S:     L: M: B:"</span>);
-&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(txt2stream);
+&nbsp; lcd.<span style="color: #FF8000;">print</span>(<span style="color: #0066FF;">"S:     L: M: B:"</span>);
 &nbsp;&nbsp;<span style="color: #8B308B;"><b>Serial</b></span>.<span style="color: #FF8000;">begin</span>(9600);
 }
 
@@ -217,7 +215,8 @@ p.MsoNormal1 {margin-top: 0cm;
 &nbsp;&nbsp;}
 }
 </pre>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><img src="../../img/Proyecto Serial_print_Serial_read.png" width="720" height="399" alt=""/></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
+  <img src="../../img/11.1.7%20Proyecto%20comunicacion%20micro_PC.png" alt="" height="399" width="720"></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Código Sharp Develop</span></strong></span></span></span></p>
@@ -277,13 +276,13 @@ p.MsoNormal1 {margin-top: 0cm;
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">ComboBox_PuertosSelectedIndexChanged</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs e)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">if</span></strong>&nbsp;(comboBox_Puertos.Text&nbsp;!=&nbsp;<span style="color:blue; ">&quot;&quot;</span>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">if</span></strong>&nbsp;(comboBox_Puertos.Text&nbsp;!=&nbsp;<span style="color:blue; ">""</span>)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;button_Conectar.Enabled  =&nbsp;<strong><span style="color:darkcyan; ">true</span></strong>;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">Button_ConectarClick</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs e)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">if</span></strong>&nbsp;(comboBox_Puertos.Text&nbsp;!=&nbsp;<span style="color:blue; ">&quot;&quot;</span>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">if</span></strong>&nbsp;(comboBox_Puertos.Text&nbsp;!=&nbsp;<span style="color:blue; ">""</span>)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CheckForIllegalCrossThreadCalls  =&nbsp;<strong><span style="color:darkcyan; ">false</span></strong>;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.PortName  = comboBox_Puertos.Text;<br>
@@ -313,7 +312,7 @@ p.MsoNormal1 {margin-top: 0cm;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">if</span></strong>&nbsp;(serialPort1.BytesToRead&nbsp;&gt;&nbsp;<span style="color:darkblue; ">1</span>)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;datos  = serialPort1.<strong><span style="color:midnightblue; ">ReadLine</span></strong>();<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">if</span></strong>&nbsp;(datos.<strong><span style="color:midnightblue; ">StartsWith</span></strong>(<span style="color:blue; ">&quot;$&quot;</span>))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">if</span></strong>&nbsp;(datos.<strong><span style="color:midnightblue; ">StartsWith</span></strong>(<span style="color:blue; ">"$"</span>))<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vector_datos  = datos.<strong><span style="color:midnightblue; ">Substring</span></strong>(<span style="color:darkblue; ">1</span>).<strong><span style="color:midnightblue; ">Split</span></strong>(<span style="color:fuchsia; ">'/'</span>);<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:blue; ">if</span></strong>&nbsp;(vector_datos.Length==cant_datos)<br>
@@ -349,7 +348,7 @@ p.MsoNormal1 {margin-top: 0cm;
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">MainFormLoad</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;EventArgs  e)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Threading.Thread.CurrentThread.CurrentCulture  =&nbsp;<strong><span style="color:darkcyan; ">new</span></strong>&nbsp;System.Globalization.<strong><span style="color:midnightblue; ">CultureInfo</span></strong>(<span style="color:blue; ">&quot;en-US&quot;</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Threading.Thread.CurrentThread.CurrentCulture  =&nbsp;<strong><span style="color:darkcyan; ">new</span></strong>&nbsp;System.Globalization.<strong><span style="color:midnightblue; ">CultureInfo</span></strong>(<span style="color:blue; ">"en-US"</span>);<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; ">void</span>&nbsp;<strong><span style="color:midnightblue; ">MainFormFormClosed</span></strong>(<span style="color:red; ">object</span>&nbsp;sender,&nbsp;FormClosedEventArgs e)<br>
@@ -394,5 +393,4 @@ p.MsoNormal1 {margin-top: 0cm;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
 }</span></p>
-</body>
-</html>
+</body></html>

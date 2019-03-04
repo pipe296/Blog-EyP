@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
     <title>Documento sin título</title>
     <style type="text/css">
 <!--
@@ -63,33 +64,20 @@ p.MsoNormal1 {	margin-top: 0cm;
   <body>
     <strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">XOR</span></strong>
     <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-    <video preload="auto" autoplay="autoplay" loop=""> <source src="../video/2.4%20XOR.m4v"
-        type="video/mp4"> <source src="../video/2.4%20XOR.mp4" type="video/mp4">
+    <video controls="controls" preload="preload" autoplay="autoplay" loop="loop">
+      <source src="../video/2.4%20XOR.m4v" type="video/mp4">
     </video>
-    <pre><font color="#00979c">void</font> <font color="#5e6d03">setup</font><font
-color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+    <pre><font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
  &nbsp;<font color="#434f54">// put your setup code here, to run once:</font>
- &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font>A0<font
-color="#434f54">,</font> <font color="#00979c">INPUT</font><font color="#000000">)</font><font
-color="#000000">;</font>
- &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">A1</font><font
-color="#434f54">,</font> <font color="#00979c">INPUT</font><font color="#000000">)</font><font
-color="#000000">;</font>
- &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><span style="color: #434f54;">8</span><font
-color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font
-color="#000000">;</font>
+ &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font>A0<font color="#434f54">,</font> <font color="#00979c">INPUT</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">A1</font><font color="#434f54">,</font> <font color="#00979c">INPUT</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><span style="color: #434f54;">8</span><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font>
 <font color="#000000">}</font>
 
-<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font
-color="#000000">)</font> <font color="#000000">{</font>
+<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
  &nbsp;<font color="#434f54">// put your main code here, to run repeatedly:</font>
- &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><span
-style="color: #434f54;">8</span><font color="#434f54">,</font> <font color="#d35400">digitalRead</font><font
-color="#000000">(</font>A0<font color="#000000">)</font> <font color="#434f54">^</font> <font
-color="#d35400">digitalRead</font><font color="#000000">(</font><font color="#000000">A1</font><font
-color="#000000">)</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><span style="color: #434f54;">8</span><font color="#434f54">,</font> <font color="#d35400">digitalRead</font><font color="#000000">(</font>A0<font color="#000000">)</font> <font color="#434f54">^</font> <font color="#d35400">digitalRead</font><font color="#000000">(</font><font color="#000000">A1</font><font color="#000000">)</font><font color="#000000">)</font><font color="#000000">;</font>
 <font color="#000000">}</font>
 
 </pre>
-  </body>
-</html>
+</body></html>

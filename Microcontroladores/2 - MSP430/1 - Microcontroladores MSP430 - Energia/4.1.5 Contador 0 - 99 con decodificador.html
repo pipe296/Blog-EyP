@@ -1,7 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
 <title>Documento sin título</title>
 <style type="text/css">
 <!--
@@ -64,12 +65,10 @@ p.MsoNormal1 {	margin-top: 0cm;
 <body>
 <strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Contador 0 - 99 con decodificador</span></strong>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<video preload="auto" autoplay loop >
-  <source src="../video/4.1.5 Contador 0 - 99 con decodificador.m4v" type="video/mp4">
-  <source src="../video/4.1.5 Contador 0 - 99 con decodificador.mp4" type="video/mp4">
+<video controls="controls" preload="preload" autoplay="autoplay" loop="loop">
+  <source src="../video/4.1.5%20Contador%200%20-%2099%20con%20decodificador.m4v" type="video/mp4">
 </video>
-<pre>
-#define&nbsp;boton_inc&nbsp;P1_0&nbsp;&nbsp;<span style="color: #007F00;">//Boton incremento</span>
+<pre>#define&nbsp;boton_inc&nbsp;P1_0&nbsp;&nbsp;<span style="color: #007F00;">//Boton incremento</span>
 #define&nbsp;boton_dec&nbsp;P1_1&nbsp;&nbsp;<span style="color: #007F00;">//Boton decremento</span>
 #define&nbsp;boton_reset&nbsp;P1_2&nbsp;&nbsp;<span style="color: #007F00;">//Boton reset</span>
 
@@ -118,7 +117,7 @@ p.MsoNormal1 {	margin-top: 0cm;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(5);
 &nbsp;&nbsp;}
 
-&nbsp;&nbsp;<span style="color: #007F00;">//Programar acci&#243;n boton_dec</span>
+&nbsp;&nbsp;<span style="color: #007F00;">//Programar acción boton_dec</span>
 
 &nbsp;&nbsp;<span style="color: #FF0000;">if</span> (estado_boton_reset==1)
 &nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -129,5 +128,4 @@ p.MsoNormal1 {	margin-top: 0cm;
 &nbsp;&nbsp;write_digit(decenas&nbsp;+&nbsp;unidades);
 }
 </pre>
-</body>
-</html>
+</body></html>

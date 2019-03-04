@@ -1,7 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
 <title>Documento sin título</title>
 <style type="text/css">
 <!--
@@ -76,11 +77,10 @@ p.MsoNormal1 {margin-top: 0cm;
 <body>
 <strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Entrada digital puerto</span></strong>
 <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
-<video preload="auto" autoplay loop >
-  <source src="../video/1.4 Entrada digital puerto.m4v" type="video/mp4">
+<video controls="controls" preload="preload" autoplay="autoplay" loop="loop">
+  <source src="../video/1.4%20Entrada%20digital%20puerto.m4v" type="video/mp4">
 </video>
-<pre>
-<span style="color: #FF8000;">int</span> pins_P1[8] = {P1_0, P1_1, P1_2, P1_3, P1_4, P1_5, P1_6, P1_7};  
+<pre><span style="color: #FF8000;">int</span> pins_P1[8] = {P1_0, P1_1, P1_2, P1_3, P1_4, P1_5, P1_6, P1_7};  
 <span style="color: #FF8000;">int</span> pins_P2[8] = {P2_0, P2_1, P2_2, P2_3, P2_4, P2_5, P2_6, P2_7};
 
 <span style="color: #FF8000;">byte</span> input_P1(){
@@ -115,5 +115,4 @@ p.MsoNormal1 {margin-top: 0cm;
 &nbsp;&nbsp;output_P2(input_P1());
 }
 </pre>
-</body>
-</html>
+</body></html>

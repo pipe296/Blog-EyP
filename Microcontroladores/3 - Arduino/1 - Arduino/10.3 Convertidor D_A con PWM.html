@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
     <title>Documento sin título</title>
     <style type="text/css">
 <!--
@@ -15,14 +16,16 @@ font-size:11.0pt;
 font-family:"Calibri","sans-serif";
 }
 -->
-</style> <style type="text/css">
+</style> 
+<style type="text/css">
 <!--
 table.MsoNormalTable {
 font-size:10.0pt;
 font-family:"Calibri","sans-serif";
 }
 -->
-</style> <script type="text/javascript">
+</style> 
+<script type="text/javascript">
 	document.oncontextmenu = function(){return false;}
     function disabletext(e){
     return false
@@ -35,7 +38,8 @@ font-family:"Calibri","sans-serif";
     document.onmousedown=disabletext
     document.onclick=reEnable
     }
-</script> <style type="text/css">
+</script> 
+<style type="text/css">
 <!--
 p.MsoListParagraph {
 margin-top:0cm;
@@ -59,8 +63,8 @@ p.MsoNormal1 {	margin-top: 0cm;
   <body> <strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Convertidor
         D/A con PWM</span></strong>
     <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><img
-        src="../img/PWM%20motor%20DC%20220V.png" alt="" height="616" width="916"></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
+      <img src="../img/PWM%20motor%20DC%20220V.png" alt="" height="616" width="916"></p>
     <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
     <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">Hay
       proyectos en los que tenemos que controlar el nivel de voltaje como: la
@@ -83,8 +87,7 @@ p.MsoNormal1 {	margin-top: 0cm;
       hacer conversiones de digital a analogico usando un arreglo de una
       resistencia, un capacitor y un amplificador operacional.</p>
     <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
-    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;"><img
-        src="../img/PWM%20DAC_1.png" alt="" height="307" width="558"></p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;"><img src="../img/PWM%20DAC_1.png" alt="" height="307" width="558"></p>
     <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
     <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">El
       circuito es un filtro pasabaja de primer orden y el amplificador
@@ -95,11 +98,9 @@ p.MsoNormal1 {	margin-top: 0cm;
       adentrarnos mucho en el tema, los filtros pasabaja dejan pasar las señales
       con frecuencia menor a la frecuencia de corte. En pocas palabras, de la
       frecuencia de corte para abajo. Para calcular la frecuencia de corte, en
-      este caso se puede usar la siguiente formula: <img src="../img/PWM%20DAC_3.png"
-        alt="" height="28" width="80"></p>
+      este caso se puede usar la siguiente formula: <img src="../img/PWM%20DAC_3.png" alt="" height="28" width="80"></p>
     <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
-    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;"><img
-        src="../img/PWM%20DAC_2.png" alt="" height="250" width="558"></p>
+    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;"><img src="../img/PWM%20DAC_2.png" alt="" height="250" width="558"></p>
     <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
     <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">Esta
       frecuencia de corte es importante, ya que nos da la pauta de las
@@ -131,76 +132,30 @@ p.MsoNormal1 {	margin-top: 0cm;
       microprocesador es nuestro limite.</p>
     <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt;">&nbsp;</p>
     <pre><font color="#434f54">// include the library code:</font>
-<font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font
-color="#d35400">LiquidCrystal</font></b><font color="#434f54">.</font><font color="#000000">h</font><font
-color="#434f54">&gt;</font>
+<font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font color="#d35400">LiquidCrystal</font></b><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
 
-<font color="#00979c">const</font> <font color="#00979c">int</font> <font color="#000000">rs</font> <font
-color="#434f54">=</font> <font color="#000000">12</font><font color="#434f54">,</font> <font
-color="#000000">en</font> <font color="#434f54">=</font> <font color="#000000">11</font><font
-color="#434f54">,</font> <font color="#000000">d4</font> <font color="#434f54">=</font> <font
-color="#000000">5</font><font color="#434f54">,</font> <font color="#000000">d5</font> <font
-color="#434f54">=</font> <font color="#000000">4</font><font color="#434f54">,</font> <font
-color="#000000">d6</font> <font color="#434f54">=</font> <font color="#000000">3</font><font
-color="#434f54">,</font> <font color="#000000">d7</font> <font color="#434f54">=</font> <font
-color="#000000">2</font><font color="#000000">;</font>
-<b><font color="#d35400">LiquidCrystal</font></b> <font color="#000000">lcd</font><font
-color="#000000">(</font><font color="#000000">rs</font><font color="#434f54">,</font> <font
-color="#000000">en</font><font color="#434f54">,</font> <font color="#000000">d4</font><font
-color="#434f54">,</font> <font color="#000000">d5</font><font color="#434f54">,</font> <font
-color="#000000">d6</font><font color="#434f54">,</font> <font color="#000000">d7</font><font
-color="#000000">)</font><font color="#000000">;</font>
+<font color="#00979c">const</font> <font color="#00979c">int</font> <font color="#000000">rs</font> <font color="#434f54">=</font> <font color="#000000">12</font><font color="#434f54">,</font> <font color="#000000">en</font> <font color="#434f54">=</font> <font color="#000000">11</font><font color="#434f54">,</font> <font color="#000000">d4</font> <font color="#434f54">=</font> <font color="#000000">5</font><font color="#434f54">,</font> <font color="#000000">d5</font> <font color="#434f54">=</font> <font color="#000000">4</font><font color="#434f54">,</font> <font color="#000000">d6</font> <font color="#434f54">=</font> <font color="#000000">3</font><font color="#434f54">,</font> <font color="#000000">d7</font> <font color="#434f54">=</font> <font color="#000000">2</font><font color="#000000">;</font>
+<b><font color="#d35400">LiquidCrystal</font></b> <font color="#000000">lcd</font><font color="#000000">(</font><font color="#000000">rs</font><font color="#434f54">,</font> <font color="#000000">en</font><font color="#434f54">,</font> <font color="#000000">d4</font><font color="#434f54">,</font> <font color="#000000">d5</font><font color="#434f54">,</font> <font color="#000000">d6</font><font color="#434f54">,</font> <font color="#000000">d7</font><font color="#000000">)</font><font color="#000000">;</font>
 
-<font color="#00979c">long</font> <font color="#000000">sensor</font> <font color="#434f54">=</font> <font
-color="#000000">0</font><font color="#000000">;</font>
+<font color="#00979c">long</font> <font color="#000000">sensor</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font>
 
-<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font
-color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;<font color="#d35400"><font color="#d35400">pinMode</font><font color="#000000">(</font><font
-color="#000000">10</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font
-color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400"></font>digitalWrite</font><font color="#000000">(</font><font
-color="#000000">10</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font
-color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">begin</font><font
-color="#000000">(</font><font color="#000000">16</font><font color="#434f54">,</font><font
-color="#000000">2</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">200</font><font
-color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font
-color="#000000">(</font><font color="#000000">0</font><font color="#434f54">,</font><font
-color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font
-color="#000000">(</font><font color="#005c5f">"PWM: 0"</font><font color="#000000">)</font><font
-color="#000000">;</font>
+<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+ &nbsp;<font color="#d35400"><font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">10</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#d35400"></font>digitalWrite</font><font color="#000000">(</font><font color="#000000">10</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">16</font><font color="#434f54">,</font><font color="#000000">2</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">200</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font color="#000000">(</font><font color="#000000">0</font><font color="#434f54">,</font><font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#005c5f">"PWM: 0"</font><font color="#000000">)</font><font color="#000000">;</font>
 <font color="#000000">}</font>
 
-<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font
-color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;<font color="#000000">sensor</font> <font color="#434f54">=</font> <font
-color="#d35400">analogRead</font><font color="#000000">(</font><font color="#000000">A0</font><font
-color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">sensor</font> <font color="#434f54">=</font> <font
-color="#d35400">map</font><font color="#000000">(</font><font color="#000000">sensor</font><font
-color="#434f54">,</font><font color="#000000">0</font><font color="#434f54">,</font><font
-color="#000000">1023</font><font color="#434f54">,</font><font color="#000000">0</font><font
-color="#434f54">,</font><font color="#000000">255</font><font color="#000000">)</font><font
-color="#000000">;</font>
+<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+ &nbsp;<font color="#000000">sensor</font> <font color="#434f54">=</font> <font color="#d35400">analogRead</font><font color="#000000">(</font><font color="#000000">A0</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">sensor</font> <font color="#434f54">=</font> <font color="#d35400">map</font><font color="#000000">(</font><font color="#000000">sensor</font><font color="#434f54">,</font><font color="#000000">0</font><font color="#434f54">,</font><font color="#000000">1023</font><font color="#434f54">,</font><font color="#000000">0</font><font color="#434f54">,</font><font color="#000000">255</font><font color="#000000">)</font><font color="#000000">;</font>
 
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font
-color="#000000">(</font><font color="#000000">5</font><font color="#434f54">,</font><font
-color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font
-color="#000000">(</font><font color="#000000">sensor</font><font color="#000000">)</font><font
-color="#000000">;</font>
- &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font
-color="#000000">(</font><font color="#005c5f">" &nbsp; "</font><font color="#000000">)</font><font
-color="#000000">;</font>
- &nbsp;<font color="#d35400">analogWrite</font><font color="#000000">(</font><font
-color="#000000">9</font><font color="#434f54">,</font> <font color="#000000">sensor</font><font
-color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">50</font><font
-color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">setCursor</font><font color="#000000">(</font><font color="#000000">5</font><font color="#434f54">,</font><font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">sensor</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">lcd</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#005c5f">" &nbsp; "</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#d35400">analogWrite</font><font color="#000000">(</font><font color="#000000">9</font><font color="#434f54">,</font> <font color="#000000">sensor</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">50</font><font color="#000000">)</font><font color="#000000">;</font>
 <font color="#000000">}</font></pre>
-  </body>
-</html>
+</body></html>

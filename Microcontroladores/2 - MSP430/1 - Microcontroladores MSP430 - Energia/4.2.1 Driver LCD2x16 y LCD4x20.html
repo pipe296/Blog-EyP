@@ -1,7 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+
 <title>Documento sin título</title>
 <style type="text/css">
 <!--
@@ -63,12 +65,10 @@ p.MsoNormal1 {	margin-top: 0cm;
 
 <body>
 <p><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Driver LCD2x16 y LCD4x20</span></strong></p>
-<video preload="auto" autoplay loop >
-  <source src="../video/4.2.1 Driver LCD2x16 y LCD4x20.m4v" type="video/mp4">
-  <source src="../video/4.2.1 Driver LCD2x16 y LCD4x20.mp4" type="video/mp4">
+<video controls="controls" preload="preload" autoplay="autoplay" loop="loop">
+  <source src="../video/4.2.1%20Driver%20LCD2x16%20y%20LCD4x20.m4v" type="video/mp4">
 </video>
-<pre>
-#include&nbsp;&lt;<span style="color: #FF0000;">LiquidCrystal</span>.h&gt;
+<pre>#include&nbsp;&lt;<span style="color: #FF0000;">LiquidCrystal</span>.h&gt;
 
 <span style="color: #FF0000;">const</span> <span style="color: #FF8000;">int</span> rs = P2_0, en = P2_1, d4 = P2_2, d5 = P2_3, d6 = P2_4, d7 = P2_5;
 <span style="color: #FF0000;">LiquidCrystal</span> lcd(rs, en, d4, d5, d6, d7);
@@ -84,20 +84,16 @@ p.MsoNormal1 {	margin-top: 0cm;
 <span style="color: #FF0000;">void</span> <span style="color: #FF8000;">loop</span>()
 {
 &nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(0,0);
-&nbsp;&nbsp;sprintf(txt2stream,<span style="color: #0066FF;">"Linea 1"</span>);
-&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(txt2stream);
+&nbsp; lcd.<span style="color: #FF8000;">print</span>(<span style="color: #0066FF;">"Linea 1"</span>);
 &nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(1000);
 &nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(0,1);
-&nbsp;&nbsp;sprintf(txt2stream,<span style="color: #0066FF;">"Linea 2"</span>);
-&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(txt2stream);
+&nbsp; lcd.<span style="color: #FF8000;">print</span>(<span style="color: #0066FF;">"Linea 2"</span>);
 &nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(1000);
 &nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(0,2);
-&nbsp;&nbsp;sprintf(txt2stream,<span style="color: #0066FF;">"Linea 3"</span>);
-&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(txt2stream);
+&nbsp; lcd.<span style="color: #FF8000;">print</span>(<span style="color: #0066FF;">"Linea 3"</span>);
 &nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(1000);
 &nbsp;&nbsp;lcd.<span style="color: #FF8000;">setCursor</span>(0,3);
-&nbsp;&nbsp;sprintf(txt2stream,<span style="color: #0066FF;">"Linea 4"</span>);
-&nbsp;&nbsp;lcd.<span style="color: #FF8000;">print</span>(txt2stream);
+&nbsp; lcd.<span style="color: #FF8000;">print</span>(<span style="color: #0066FF;">"Linea 4"</span>);
 &nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(1000);
 
 &nbsp;&nbsp;<span style="color: #007F00;">// clear screen:</span>
@@ -235,5 +231,4 @@ p.MsoNormal1 {	margin-top: 0cm;
 &nbsp;&nbsp;lcd.<span style="color: #FF8000;">clear</span>();
 }
 </pre>
-</body>
-</html>
+</body></html>
