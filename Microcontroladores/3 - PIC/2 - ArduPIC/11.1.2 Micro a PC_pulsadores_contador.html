@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+
+    
+    <title>Documento sin título</title>
+    <style type="text/css">
+<!--
+p.MsoNormal {
+margin-top:0cm;
+margin-right:0cm;
+margin-bottom:10.0pt;
+margin-left:0cm;
+line-height:115%;
+font-size:11.0pt;
+font-family:"Calibri","sans-serif";
+}
+-->
+</style> 
+<style type="text/css">
+<!--
+table.MsoNormalTable {
+font-size:10.0pt;
+font-family:"Calibri","sans-serif";
+}
+-->
+</style> 
+<script type="text/javascript">
+	document.oncontextmenu = function(){return false;}
+    function disabletext(e){
+    return false
+    }
+    function reEnable(){
+    return true
+    }
+    document.onselectstart=new Function ("return false")
+    if (window.sidebar){
+    document.onmousedown=disabletext
+    document.onclick=reEnable
+    }
+</script> 
+<style type="text/css">
+<!--
+p.MsoListParagraph {
+margin-top:0cm;
+margin-right:0cm;
+margin-bottom:10.0pt;
+margin-left:36.0pt;
+line-height:115%;
+font-size:11.0pt;
+font-family:"Calibri","sans-serif";
+}
+p.MsoNormal1 {	margin-top: 0cm;
+	margin-right: 0cm;
+	margin-bottom: 10.0pt;
+	margin-left: 0cm;
+	line-height: 115%;
+	font-size: 12pt;
+	font-family: Arial, sans-serif;
+}
+-->
+</style> </head>
+  <body> <strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Micro
+        a PC_pulsadores_contador</span></strong>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+    <video controls="controls" controlslist="nodownload" preload="preload" autoplay="autoplay" loop="loop">
+      <source src="../video/11.1.2%20Micro%20a%20PC_pulsadores_contador.m4v" type="video/mp4">
+    </video>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Código
+                  PIC C Compiler</span></strong></span></span></span></span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC16F84A</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC16F628A</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC16F818</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC16F873A</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC16F883</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC16F877A</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#device
+            </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">PIC16F887</span></span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC18F2550</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC18F4455</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device
+        PIC18F4550</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#include
+          </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">&lt;Arduino</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">.</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">h</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">.</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">encrypted&gt;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span class="MsoNormal1" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#include
+                </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">&lt;LiquidCrystal</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">.</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">h&gt;</span></span></span></span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#define
+        </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">boton_inc
+        PIN_A1 &nbsp;&nbsp;</span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//Boton
+        incremento</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#define
+        </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">boton_dec
+        PIN_A2&nbsp;&nbsp; </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//Boton
+        decremento</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#define
+        </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">boton_reset
+        PIN_A3 </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//Boton
+        reset</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#define
+        </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_inc
+        digitalRead</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">boton_inc</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#define
+        </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_dec
+        digitalRead</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">boton_dec</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#define
+        </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_reset
+        digitalRead</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">boton_reset</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">int1 </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_inc_ant</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">int1 </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_dec_ant</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">&nbsp;</span></strong></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">int8 </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">contador</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; "> = </span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">&nbsp;</span></strong></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">char </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">[</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">17</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">];</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">&nbsp;</span></strong></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">void </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">setup</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">()</span>
+      <span style="font-family:Courier; font-size:10.0pt; color:#101010; ">{</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        pinMode</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">boton_inc</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">INPUT_</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        pinMode</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">boton_dec</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">INPUT_</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        pinMode</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">boton_reset</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">INPUT_</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        digitalWrite</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">LCD_BACKLIGHT</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">, </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">HIGH</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_begin</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">16</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">2</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">200</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">"BI:
+        &nbsp;&nbsp;BD: &nbsp;&nbsp;BR: "</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">1</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">"Contador:"</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; "></span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        Serial_begin</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">9600</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">void </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">loop</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">()</span>
+      <span style="font-family:Courier; font-size:10.0pt; color:#101010; ">{</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">&nbsp;&nbsp;
+          if </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_inc</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">!=</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_inc_ant</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;&nbsp;
+        {</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          if </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_inc</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">==</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">1</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          if </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">contador</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&lt;</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">100</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        contador</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">++;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        }</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        }</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        estado_boton_inc_ant </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">=
+      </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_inc</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">5</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;&nbsp;
+        }</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//Programar
+        acción boton_dec</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//Programar
+        acción boton_reset</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">&nbsp;</span></strong><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">&nbsp;</span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">3</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        sprintf</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">"%u"</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_inc</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//Programar
+        visualización estado_boton_dec</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//Programar
+        visualización estado_boton_reset</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">&nbsp;</span></strong><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">&nbsp;</span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">9</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">1</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        sprintf</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">"%u"</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">contador</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+          sprintf</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">"$%u/%u/%u/%u"</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_inc</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_dec</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">estado_boton_reset</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; "></span></span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">contador</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        Serial_println</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;
+        delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">50</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+    <p class="MsoNormal"><span style="line-height:107%; font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Programa
+                Sharp Develop</span></strong></span></span></span></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><img src="../../img/11.1.2%20Micro%20a%20PC_pulsadores_contador.png" alt="" height="237" width="716"></p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
+      <span style="color:#008000; ">/*</span><br>
+      <span style="color:#008000; ">&nbsp;* Created by SharpDevelop.</span><br>
+      <span style="color:#008000; ">&nbsp;* User: AnDrEs</span><br>
+      <span style="color:#008000; ">&nbsp;* Date: 25/04/2016</span><br>
+      <span style="color:#008000; ">&nbsp;* Time: 19:25</span><br>
+      <span style="color:#008000; ">&nbsp;*&nbsp;</span><br>
+      <span style="color:#008000; ">&nbsp;* To change this template use Tools |
+        Options | Coding | Edit Standard Headers.</span><br>
+      <span style="color:#008000; ">&nbsp;*/</span><br>
+      <span style="color:#008000; font-weight:bold; ">using</span>&nbsp;System;<br>
+      <span style="color:#008000; font-weight:bold; ">using</span>&nbsp;System.Collections.Generic;<br>
+      <span style="color:#008000; font-weight:bold; ">using</span>&nbsp;System.Drawing;<br>
+      <span style="color:#008000; font-weight:bold; ">using</span>&nbsp;System.Windows.Forms;<br>
+      <span style="color:#008000; font-weight:bold; ">using</span>&nbsp;System.IO.Ports;<br>
+      <br>
+      <span style="color:#008000; font-weight:bold; ">namespace</span>&nbsp;PIC_a_C_<br>
+      {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#008000; "><span style="color:#808080; ">///</span>&nbsp;<span style="color:#808080; ">&lt;<span style="font-weight:bold; ">summary</span>&gt;</span></span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#008000; "><span style="color:#808080; ">///</span>&nbsp;Description
+        of MainForm.</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#008000; "><span style="color:#808080; ">///</span>&nbsp;<span style="color:#808080; ">&lt;<span style="font-weight:bold; ">/</span><span style="font-weight:bold; ">summary</span>&gt;</span></span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#0000ff; font-weight:bold; ">public</span>&nbsp;<span style="color:#000080; ">partial</span>&nbsp;<span style="color:#ff0000; ">class</span>&nbsp;MainForm
+      : Form<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#0000ff; font-weight:bold; ">public</span>&nbsp;<span style="color:#191970; font-weight:bold; ">MainForm</span>()<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#008000; ">//</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#008000; ">// The InitializeComponent() call is required
+        for Windows Forms designer support.</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#008000; ">//</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#191970; font-weight:bold; ">InitializeComponent</span>();<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#008000; ">//</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#008000; ">//&nbsp;<span style="color:#ff0000; font-weight:bold; ">TODO</span>:
+        Add constructor code after the InitializeComponent() call.</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#008000; ">//</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff0000; ">void</span>&nbsp;<span style="color:#191970; font-weight:bold; ">Button_BuscarClick</span>(<span style="color:#ff0000; ">object</span>&nbsp;sender,&nbsp;EventArgs e)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comboBox_Puertos.Items.<span style="color:#191970; font-weight:bold; ">Clear</span>();<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#0000ff; font-weight:bold; ">foreach</span>&nbsp;(<span style="color:#ff0000; ">string</span>&nbsp;s&nbsp;<span style="color:#0000ff; font-weight:bold; ">in</span>&nbsp;SerialPort.<span style="color:#191970; font-weight:bold; ">GetPortNames</span>())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comboBox_Puertos.Items.<span style="color:#191970; font-weight:bold; ">Add</span>(s);<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#0000ff; font-weight:bold; ">if</span>&nbsp;(SerialPort.<span style="color:#191970; font-weight:bold; ">GetPortNames</span>().<span style="color:#191970; font-weight:bold; ">GetLength</span>(<span style="color:#00008b; ">0</span>)&gt;<span style="color:#00008b; ">0</span>)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comboBox_Puertos.Enabled
+      =&nbsp;<span style="color:#008b8b; font-weight:bold; ">true</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<span style="color:#191970; font-weight:bold; ">Close</span>();<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff0000; ">void</span>&nbsp;<span style="color:#191970; font-weight:bold; ">ComboBox_PuertosSelectedIndexChanged</span>(<span style="color:#ff0000; ">object</span>&nbsp;sender,&nbsp;EventArgs e)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#0000ff; font-weight:bold; ">if</span>&nbsp;(comboBox_Puertos.Text&nbsp;!=&nbsp;<span style="color:#0000ff; ">""</span>)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;button_Conectar.Enabled
+      =&nbsp;<span style="color:#008b8b; font-weight:bold; ">true</span>;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff0000; ">void</span>&nbsp;<span style="color:#191970; font-weight:bold; ">Button_ConectarClick</span>(<span style="color:#ff0000; ">object</span>&nbsp;sender,&nbsp;EventArgs e)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#0000ff; font-weight:bold; ">if</span>&nbsp;(comboBox_Puertos.Text&nbsp;!=&nbsp;<span style="color:#0000ff; ">""</span>)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CheckForIllegalCrossThreadCalls
+      =&nbsp;<span style="color:#008b8b; font-weight:bold; ">false</span>;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.PortName
+      = comboBox_Puertos.Text;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comboBox_Puertos.Enabled
+      =&nbsp;<span style="color:#008b8b; font-weight:bold; ">false</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<span style="color:#191970; font-weight:bold; ">Open</span>();<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;button_Conectar.Enabled
+      =&nbsp;<span style="color:#008b8b; font-weight:bold; ">false</span>;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff0000; ">void</span>&nbsp;<span style="color:#191970; font-weight:bold; ">SerialPort1DataReceived</span>(<span style="color:#ff0000; ">object</span>&nbsp;sender,&nbsp;System.IO.Ports.SerialDataReceivedEventArgs
+      e)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff0000; font-weight:bold; ">int</span>&nbsp;cant_datos
+      =&nbsp;<span style="color:#00008b; ">4</span>;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff0000; ">string</span>&nbsp;datos;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff0000; ">string</span>[]&nbsp;vector_datos;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff0000; font-weight:bold; ">int</span>&nbsp;pulsador_inc;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff0000; font-weight:bold; ">int</span>&nbsp;pulsador_dec;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff0000; font-weight:bold; ">int</span>&nbsp;pulsador_reset;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff0000; font-weight:bold; ">int</span>&nbsp;contador;<br>
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#0000ff; font-weight:bold; ">if</span>&nbsp;(serialPort1.BytesToRead&nbsp;&gt;&nbsp;<span style="color:#00008b; ">1</span>)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;datos
+      = serialPort1.<span style="color:#191970; font-weight:bold; ">ReadLine</span>();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#0000ff; font-weight:bold; ">if</span>&nbsp;(datos.<span style="color:#191970; font-weight:bold; ">StartsWith</span>(<span style="color:#0000ff; ">"$"</span>))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vector_datos
+      = datos.<span style="color:#191970; font-weight:bold; ">Substring</span>(<span style="color:#00008b; ">1</span>).<span style="color:#191970; font-weight:bold; ">Split</span>(<span style="color:#ff00ff; ">'/'</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#0000ff; font-weight:bold; ">if</span>&nbsp;(vector_datos.Length==cant_datos)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pulsador_inc
+      = Convert.<span style="color:#191970; font-weight:bold; ">ToInt16</span>(vector_datos[<span style="color:#00008b; ">0</span>]);<span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label2.Text
+        = pulsador_inc.<span style="color:#191970; font-weight:bold; ">ToString</span>();</span><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#0000ff; font-weight:bold; ">if</span>&nbsp;(pulsador_inc==<span style="color:#00008b; ">1</span>)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label3.BackColor
+        = Color.LimeGreen;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#0000ff; font-weight:bold; ">else</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label3.BackColor
+        = Color.DarkGray;</span><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pulsador_dec
+      = Convert.<span style="color:#191970; font-weight:bold; ">ToInt16</span>(vector_datos[<span style="color:#00008b; ">1</span>]);<span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label5.Text
+        = pulsador_dec.<span style="color:#191970; font-weight:bold; ">ToString</span>();<span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#0000ff; font-weight:bold; ">if</span>&nbsp;(pulsador_dec==<span style="color:#00008b; ">1</span>)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label6.BackColor
+          = Color.LimeGreen;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#0000ff; font-weight:bold; ">else</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label6.BackColor
+          = Color.DarkGray;</span></span><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><br>
+              <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:#008000; ">//Programar acción pulsador_reset</span></span><br>
+        </span></span><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contador
+        = Convert.<span style="color:#191970; font-weight:bold; ">ToInt16</span>(vector_datos[<span style="color:#00008b; ">3</span>]);</span><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label11.Text
+        = contador.<span style="color:#191970; font-weight:bold; ">ToString</span>();</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trackBar1.Value
+      = contador;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff0000; ">void</span>&nbsp;<span style="color:#191970; font-weight:bold; ">MainFormLoad</span>(<span style="color:#ff0000; ">object</span>&nbsp;sender,&nbsp;EventArgs
+      e)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Threading.Thread.CurrentThread.CurrentCulture
+      =&nbsp;<span style="color:#008b8b; font-weight:bold; ">new</span>&nbsp;System.Globalization.<span style="color:#191970; font-weight:bold; ">CultureInfo</span>(<span style="color:#0000ff; ">"en-US"</span>);<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff0000; ">void</span>&nbsp;<span style="color:#191970; font-weight:bold; ">MainFormFormClosed</span>(<span style="color:#ff0000; ">object</span>&nbsp;sender,&nbsp;FormClosedEventArgs
+      e)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialPort1.<span style="color:#191970; font-weight:bold; ">Close</span>();<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      }</p>
+</body></html>

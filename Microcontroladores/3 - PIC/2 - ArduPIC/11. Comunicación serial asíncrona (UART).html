@@ -1,0 +1,254 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style type="text/css">
+<!--
+p.MsoNormal {
+margin-top:0cm;
+margin-right:0cm;
+margin-bottom:10.0pt;
+margin-left:0cm;
+line-height:115%;
+font-size:11.0pt;
+font-family:"Calibri","sans-serif";
+}
+-->
+</style>
+<style type="text/css">
+<!--
+table.MsoNormalTable {
+font-size:10.0pt;
+font-family:"Calibri","sans-serif";
+}
+-->
+</style>
+<script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
+<script type="text/javascript">
+	document.oncontextmenu = function(){return false;}
+    function disabletext(e){
+    return false
+    }
+    function reEnable(){
+    return true
+    }
+    document.onselectstart=new Function ("return false")
+    if (window.sidebar){
+    document.onmousedown=disabletext
+    document.onclick=reEnable
+    }
+</script>
+<style type="text/css">
+<!--
+p.MsoListParagraph {
+margin-top:0cm;
+margin-right:0cm;
+margin-bottom:10.0pt;
+margin-left:36.0pt;
+line-height:115%;
+font-size:11.0pt;
+font-family:"Calibri","sans-serif";
+}
+p.MsoNormal1 {	margin-top: 0cm;
+	margin-right: 0cm;
+	margin-bottom: 10.0pt;
+	margin-left: 0cm;
+	line-height: 115%;
+	font-size: 12pt;
+	font-family: Arial, sans-serif;
+}
+-->
+</style>
+</head>
+
+<body>
+<p><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Comunicación serial asíncrona (UART)</span></strong></p>
+<p><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Algunas referencias de microcontroladores PIC incluyen  módulos para comunicación dentro de su hardware. El módulo para comunicaciones  RS-232 se conoce también como UART.</span></span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">En general habrá que usar un conversor de niveles  basado en el MAX232 o similar.</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">El protocolo serie es una descripción  &quot;digital&quot; (0/1) de lo que debe estar pasando en la línea (por  ejemplo, 1 mientras se espera, 0 indica el bit de start, etc.), pero no  especifica que voltajes representan el 0/1 lógicos.</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Por ejemplo en los PIC se usa la convención (lógica)  que el 0 lógico son 0V y el 1 lógico (línea alta) son 5V.</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">En el puerto serie de un PC (standard RS232) la  relación lógica/voltajes está invertida. Un 0 lógico se representa con un  voltaje entre 3 y 15V (12 es típico) y un 1 lógico por un voltaje negativo  (entre -3 y -15V). Es por esto por lo que para comunicar PIC-PC necesitamos un  Max232 o equivalente.</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Las especificaciones de su tarjeta le dirán cuales son  los voltajes asociados a su puerto serie. Si dice algo de RS232 tendrá que usar  seguramente un buffer tipo MAX232.</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Si nuestro PIC no tiene UART como es el caso del PIC  16f84A, CCS nos permite implementar la comunicación serie por software y de  forma totalmente transparente para el programador. Sin embargo el utilizar un  PIC con UART nos permite disponer de una serie de funcionalidades adicionales,  como el empleo de interrupciones para controlar el envío y recepción de datos.</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> Si queremos realizar una comunicación serie utilizando la UART del MSP430G2553, las conexiones tendrán que ser a las siguientes: P1_2 para la transmisión de datos y P1_1 para la recepción de datos.</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: 13.5pt; background: white; font-family: Arial, sans-serif; font-size: 12pt;">El procedimiento Serial.begin(baud) admite como parámetro la tasa de transferencia de bits de la comunicación a establecer:</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Para este tipo de comunicación lo primero será  configurarla mediante la siguiente directiva en la cabecera del programa:</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><br>
+  <span style="color:#00B050; ">#use  rs232(baud=9600,bits=8,parity=N,xmit=PIN_C6,rcv=PIN_C7,errors)</span></span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Esto quiere decir que cada vez que queramos utilizar  las funciones para enviar o recibir información utilizando el protocolo de  comunicación serie RS-232 debemos haber incluido previamente esta directiva,  que posibilita la comunicación del PIC con otro dispositivo.</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Como vemos la directiva #use RS232 admite una serie de  parámetros que son los que van entre paréntesis separados por comas, estos son  los siguientes:</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">baud</span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> con este parámetro establecemos la  velocidad en baudios a la que queremos que se transmitan los datos por el  puerto serie, 9600 es lo normal.</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">bits</span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> número de bits que utilizaremos en  la transmisión, el estándar establece que pueden ser 8 ó 9, para la  comunicación con microcontroladores con 8 son suficientes.</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">parity</span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> nos permite utilizar un bit de  paridad para la comprobación de errores.<strong></strong></span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">xmit</span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> ésta opción nos permite seleccionar  la patilla del PIC por la cual saldrán los datos.</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">rcv</span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> ésta opción nos permite seleccionar  la patilla del PIC por la cual PIC se recibirán los datos.</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">errors</span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> El PIC se sobrecargará al recibir 3  caracteres con la función getc(). Esta opción previene el apagado del módulo  UART detectando la condición y reseteándolo.</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Pero ¿de qué funciones disponemos para enviar y  recibir datos desde y hacia nuestro PIC?.</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Para éste propósito disponemos de múltiples funciones</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Para enviar solamente un caracter tenemos: <strong>putc()</strong></span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Para enviar una cadena de caracteres: <strong>printf()</strong></span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">La forma de hacer la llamada a la función printf es la  siguiente:</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">printf(cadena de caracteres,valores);</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Los datos se enviaran por el puerto serie al pin que  hayamos definido en la directiva #use RS232, en esta llamada vemos que tenemos  la cadena de caracteres limitada por las comillas dobles y separado por una  coma, como tercer parámetro el nombre de la variable i1 que habíamos declarado  previamente. En la cadena de caracteres vemos que aparece el carácter de %  seguido de la letra d, ese es un carácter especial para la función y lo que le  indica a la función es que en esa posición muestre el valor de la variable i1,  la d le indica a la función que represente ese valor en formato de número  entero. Podemos representar el valor de la variable en diferentes formatos  según se muestra en la tabla de abajo:</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; "><br>
+  &nbsp;</span></p>
+<div align="center">
+  <table class="MsoNormalTable" border="1" cellpadding="0" width="329" style="width:246.75pt;background:white;">
+    <tr>
+      <td width="42" style="width:31.5pt;padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">c</span></p></td>
+      <td width="271" style="width:203.25pt;padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Caracter</span></p></td>
+    </tr>
+    <tr>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">s</span></p></td>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Cadena ó caracter</span></p></td>
+    </tr>
+    <tr>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">u</span></p></td>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Entero sin signo</span></p></td>
+    </tr>
+    <tr>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">d</span></p></td>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Entero con signo</span></p></td>
+    </tr>
+    <tr>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Lu</span></p></td>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Entero largo sin signo</span></p></td>
+    </tr>
+    <tr>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Ld</span></p></td>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Entero largo con signo</span></p></td>
+    </tr>
+    <tr>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">x</span></p></td>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Entero Hexadecimal (minúsculas)</span></p></td>
+    </tr>
+    <tr>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">X</span></p></td>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Entero Hexadecimal (mayúsculas)</span></p></td>
+    </tr>
+    <tr>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Lx</span></p></td>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Entero largo Hexadecimal (minúsculas)</span></p></td>
+    </tr>
+    <tr>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">LX</span></p></td>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Entero largo Hexadecimal (mayúsculas)</span></p></td>
+    </tr>
+    <tr>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">f</span></p></td>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Número real en coma flotante truncado</span></p></td>
+    </tr>
+    <tr>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">g</span></p></td>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Número real en coma flotante con redondeo</span></p></td>
+    </tr>
+    <tr>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">e</span></p></td>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Número real en formato exponencial</span></p></td>
+    </tr>
+    <tr>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">w</span></p></td>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Entero sin signo con decimales insertados. Especifica dos números para n.    La 1ª cifra indica el total y la 2ª el número de decimales</span></p></td>
+    </tr>
+  </table>
+</div>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Si quisiésemos mostrar el valor de más de una variable  lo haríamos de la siguiente forma:</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> </span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">printf(&quot;El valor i1 es: %d el de i2: %d y el de  i3: %d&quot;,i1,i2,i3);</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> </span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Vamos con la última llamada a la función del 1º  ejemplo:</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "> </span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">printf (lcd_putc,&quot;El valor de i1 es:  %d&quot;,i1);</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">En esta llamada hemos incluido el primer parámetro y  hemos puesto el nombre de la función lcd_putc, está función está definida en la  librería LCD.C que trae el compilador para ayuda del manejo de los dispositivos  LCD y que hemos incluido en nuestro programa por medio de la directiva #include  &lt;lcd.c&gt;, vemos que la librería está encerrada entre los símbolos de  &lt;&gt; esto le indica al compilador que busque la librería en el directorio  en que se instalo el compilador, si copiáramos esa librería en otro directorio  tendríamos que indicarle la ruta completa, pero esta vez encerrada entre  comillas dobles.</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Las secuencias de escape se utilizan para representar  caracteres o acciones especiales.</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#00B050; ">printf(&quot;Esto es una  cadena\r&quot;);</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">como parámetro incluimos una cadena de caracteres  constante que termina en (\r), esa barra invertida junto con la r se le llama  secuencia de escape y le está diciendo al compilador que al final de la cadena  introduzca un retorno de carro (tecla enter).</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">En la tabla de abajo se muestran las secuencias de escape que tenemos  disponibles para utilizar con la función printf:</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">&nbsp;</span></p>
+<div align="center">
+  <table class="MsoNormalTable" border="1" cellpadding="0" width="200" style="width:150.0pt;background:white;">
+    <tr>
+      <td width="28" style="width:21.0pt;padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">\r</span></p></td>
+      <td width="156" style="width:117.0pt;padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Retorno de carro</span></p></td>
+    </tr>
+    <tr>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">\t</span></p></td>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Tabulador</span></p></td>
+    </tr>
+    <tr>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">\'</span></p></td>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Comilla simple</span></p></td>
+    </tr>
+    <tr>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">\&quot;</span></p></td>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Comillas dobles</span></p></td>
+    </tr>
+    <tr>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">\\</span></p></td>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Barra invertida</span></p></td>
+    </tr>
+    <tr>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">\?</span></p></td>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Símbolo de interrogación</span></p></td>
+    </tr>
+    <tr>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">\0</span></p></td>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Caracter nulo</span></p></td>
+    </tr>
+    <tr>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">\%</span></p></td>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Símbolo Tanto por ciento</span></p></td>
+    </tr>
+    <tr>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">\b</span></p></td>
+      <td style="padding:0cm 0cm 0cm 0cm;"><p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">Retroceder un caracter</span></p></td>
+    </tr>
+  </table>
+</div>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;line-height:12.45pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; color:#404040; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Para recibir solamente un caracter tenemos: <strong>getc(), getch() y getchar()</strong>. Las tres  hacen lo mismo por lo que podemos usarlas indistintamente.</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Estas funciones esperan un carácter por la patilla del  PIC que hayamos definido en la directiva #use RS232 con el parámetro <strong>rcv</strong>.</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Pues vamos a ver nuestro primer ejemplo acerca del uso  de estas funciones:</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;"><span style="line-height:115%; font-family:'Arial','sans-serif'; font-size:12.0pt; ">Además de la  función printf esta directiva permite el uso de otras funciones para la entrada  y salida de datos serie como: getc, getchar, gets, puts y kbhit que iremos  viendo poco a poco, pero la más importante para la salida de datos sin duda es  printf, porque nos permite formatear la salida de esos datos de la forma que  nosotros queramos.</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Cada vez que por el pin configurado en la  directiva   #use rs232 como rcv se reciba  nueva información, actuará la interrupción por recepción RS232 anteriormente  habilitada y el programa saltará inmediatamente a la función int_RDA donde se  encuentra el código que debe ejecutarse, en este caso, mostrar la información  recibida por LCD.</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Durante la  simulación es muy conveniente que el micro nos mande mensajes, así como en un  programa de PC normal con la ayuda de la función printf(), para este caso se  puede conectar la terminal virtual de ISIS a la línea TX del micro que nos va a  mandar la información y, con un simple printf() el programa va a mandar esa  cadena por el puerto serial.</span></p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Manos a la  obra!!!</span></p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><br>
+  En PIC-C CCS creamos un&nbsp;proyecto con las siguientes características:</span></p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">*  Micro-controlador PIC 18F4550.</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">* Frecuencia  de reloj 20 MHz</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;"><span class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Extraído  parcialmente de: <a href="http://www.aquihayapuntes.com/programacion-pic-en-c.html?start=7">http://www.aquihayapuntes.com/programacion-pic-en-c.html?start=7</a></span></span></p>
+</body>
+</html>

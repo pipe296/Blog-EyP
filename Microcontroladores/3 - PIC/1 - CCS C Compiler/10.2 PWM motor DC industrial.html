@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+
+
+<title>Documento sin título</title>
+<style type="text/css">
+<!--
+p.MsoNormal {
+margin-top:0cm;
+margin-right:0cm;
+margin-bottom:10.0pt;
+margin-left:0cm;
+line-height:115%;
+font-size:11.0pt;
+font-family:"Calibri","sans-serif";
+}
+-->
+</style>
+<style type="text/css">
+<!--
+table.MsoNormalTable {
+font-size:10.0pt;
+font-family:"Calibri","sans-serif";
+}
+-->
+</style>
+<script type="text/javascript">
+	document.oncontextmenu = function(){return false;}
+    function disabletext(e){
+    return false
+    }
+    function reEnable(){
+    return true
+    }
+    document.onselectstart=new Function ("return false")
+    if (window.sidebar){
+    document.onmousedown=disabletext
+    document.onclick=reEnable
+    }
+</script>
+<style type="text/css">
+<!--
+p.MsoListParagraph {
+margin-top:0cm;
+margin-right:0cm;
+margin-bottom:10.0pt;
+margin-left:36.0pt;
+line-height:115%;
+font-size:11.0pt;
+font-family:"Calibri","sans-serif";
+}
+p.MsoNormal1 {	margin-top: 0cm;
+	margin-right: 0cm;
+	margin-bottom: 10.0pt;
+	margin-left: 0cm;
+	line-height: 115%;
+	font-size: 12pt;
+	font-family: Arial, sans-serif;
+}
+p.MsoNormal11 {margin-top:0cm;
+margin-right:0cm;
+margin-bottom:10.0pt;
+margin-left:0cm;
+line-height:115%;
+font-size:11.0pt;
+font-family:"Calibri","sans-serif";
+}
+-->
+</style>
+</head>
+
+<body>
+<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">PWM Motor DC Industrial</span></strong>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">
+  <img src="../img/PWM%20motor%20DC%20industrial_1.png" alt="" height="873" width="841"></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<video controlslist="nodownload" preload="auto" autoplay="autoplay" loop="">
+  <source src="../../img/10.2%20PWM%20motor%20DC%20industrial.m4v" type="video/mp4">
+</video>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp; </p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#include &lt;16F877A.h&gt;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#include </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&lt;</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">16</span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">F877</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">.</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">h</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&gt;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#fuses </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">HS</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">NOWDT</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">NOPROTECT</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">NOLVP</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">NODEBUG</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#use </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">clock</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">=1</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">2000000</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#use </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">PWM</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">OUTPUT</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">=</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">PIN_C2</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">, </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">FREQUENCY</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">=</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">10</span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">kHz</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">, </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">DUTY</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">=</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">&nbsp;</span></strong></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#include </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">"./Drivers/flex_lcd</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">.</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">c" </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//Driver para LCD alfanumérico 2x16</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">&nbsp;</span></strong></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">int32 </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">PWM</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">&nbsp;</span></strong></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">void </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">main</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">()</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">{</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; setup_adc_ports</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">AN0</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//Configura  entrada analógica (sAN0 en el 16F887)</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; setup_adc</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">adc_clock_internal</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);&nbsp; </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//Establece frecuencia de muestreo  conversor A/D</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; set_adc_channel</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//Selecciona canal  análogo a leer</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; lcd_init</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//Inicialización del LCD</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; delay_ms</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">200</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; OUTPUT_HIGH</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">PIN_D3</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//El pin D3 es para la retroiluminación del LCD</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; pwm_on</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; printf</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">lcd_putc</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">"PWM:  0"</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//Se imprime el texto en el LCD</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; </span><strong><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">while </span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">true</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//Bucle infinito que mantendrá el programa en ejecución</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">{</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;PWM</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">=</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">read_adc</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;delay_ms</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">10</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;PWM</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">=</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">PWM</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">*</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">1000</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">/</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">255</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;pwm_set_duty_percent</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">PWM</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);&nbsp;&nbsp; </span><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//Establecer ciclo  de trabajo PWM (0 - 1000)</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">lcd_gotoxy</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">6</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">1</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;printf</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">lcd_putc</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">"%Ld "</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">PWM</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;delay_ms</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><strong><span style="font-family:Courier; font-size:10.0pt; color:green; ">500</span></strong><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+<span style="line-height:107%; font-family:Courier; font-size:10.0pt; color:#101010; ">}</span>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+</body></html>
