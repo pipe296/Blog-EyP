@@ -5,6 +5,11 @@
 
 
 
+
+
+
+
+
 <title>Documento sin título</title>
 <style type="text/css">
 <!--
@@ -64,36 +69,11 @@ p.MsoNormal1 {	margin-top: 0cm;
 </style>
 </head>
 
-<body>
-<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Control motor DC con transistor BJT</span></strong>
+<body><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Control motor DC con transistor BJT</span></strong>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<video controls="controls" preload="preload" autoplay="autoplay" loop="loop">
+<video controls="controls" controlslist="nodownload" preload="preload" autoplay="autoplay" loop="loop">
   <source src="../video/3.1.1%20Control%20motor%20DC%20con%20transistor%20BJT.m4v" type="video/mp4">
 </video>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
-<pre>#define&nbsp;boton_start&nbsp;P1_0
-#define&nbsp;boton_stop&nbsp;P1_1
-#define&nbsp;salida&nbsp;P2_5
-
-#define&nbsp;estado_boton_start&nbsp;<span style="color: #FF8000;">digitalRead</span>(boton_start)
-#define&nbsp;estado_boton_stop&nbsp;<span style="color: #FF8000;">digitalRead</span>(boton_stop)
-#define&nbsp;salida_ON&nbsp;<span style="color: #FF8000;">digitalWrite</span>(salida, <span style="color: #0066FF;">HIGH</span>)
-#define&nbsp;salida_OFF&nbsp;<span style="color: #FF8000;">digitalWrite</span>(salida, <span style="color: #0066FF;">LOW</span>)
-
-<span style="color: #FF0000;">void</span> <span style="color: #8B308B;"><b>setup</b></span>() {
-&nbsp;&nbsp;<span style="color: #007F00;">// put your setup code here, to run once:</span>
-&nbsp;&nbsp;<span style="color: #FF8000;">pinMode</span>(boton_start, <span style="color: #0066FF;">INPUT</span>);
-&nbsp;&nbsp;<span style="color: #FF8000;">pinMode</span>(boton_stop, <span style="color: #0066FF;">INPUT</span>);
-&nbsp;&nbsp;<span style="color: #FF8000;">pinMode</span>(salida, <span style="color: #0066FF;">OUTPUT</span>);
-}
-
-<span style="color: #FF0000;">void</span> <span style="color: #FF8000;">loop</span>() {
-&nbsp;&nbsp;<span style="color: #007F00;">// put your main code here, to run repeatedly:</span>
-&nbsp;&nbsp;<span style="color: #FF0000;">if</span> (estado_boton_start==1 &amp;&amp; estado_boton_stop==0)
-&nbsp;&nbsp;&nbsp;&nbsp;salida_ON;
-&nbsp;&nbsp;<span style="color: #FF0000;">if</span> (estado_boton_stop==1)
-&nbsp;&nbsp;&nbsp;&nbsp;salida_OFF;
-}
-
-</pre>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><br></p>
+<img src="img/3.1.1%20Control%20motor%20DC%20con%20transistor%20BJT.png" alt="" height="auto" width="auto">
 </body></html>
