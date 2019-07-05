@@ -5,6 +5,7 @@
 
 
 
+
     
     <title>Documento sin título</title>
     <style type="text/css">
@@ -71,9 +72,21 @@ font-family:"Calibri","sans-serif";
 }
 -->
 </style> </head>
-  <body> <strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">PWM
+  <body><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Salida análoga PWM</span></strong>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Muchas veces  nos gustaría controlar la cantidad física de una acción: qué tan brillantes son  las luces, qué tan rápido se mueve un motor, cuantos grados girar, etc. En este  caso estaremos hablando de salidas de tipo analógico, con este tipo de salidas  podemos tener un grado de control sobre la salida, donde el resultado no solo  se limitará a On-Off.</span></p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Como la mayoría de los microcontroladores no pueden  generar un voltaje (real) variable en sus pines de salida, una de las  soluciones para resolver esta carencia es utilizar un truco electrónico que se  basa en la modulación del ancho del pulso – Pulse Width Modulation - (PWM para  abreviar).</span></p>
+<p><span class="MsoNormal" style="margin-bottom:12.0pt;text-align:center;line-height:13.5pt;background:white;">
+<img src="../../img/Microcontroladores%20PIC%20-%20CCS_clip_image001_0001.png" alt="" height="278" width="326"></span></p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">La conversión digital a analógico que es  capaz de hacer un PIC consiste en convertir un valor discreto en el ciclo de  trabajo del PWM proporcional al valor de tensión (voltaje) que deseamos  producir en un PIN habilitado para ello.</span></span></p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Como se  puede observar en la figura, el voltaje promedio es el resultado de alternar el  valor de salida de un pin entre 0 y 5 voltios con un ancho de pulso variable,  durante un periodo de tiempo determinado.</span><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:12.0pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Dicho  de otra forma: En un pin del PIC podemos tener una tensión, con respecto a GND,  entre 0V y 5V obtenida de la tensión promedio generada por el ciclo de trabajo  del PWM. Entonces el PIC puede "escribir" esa tensión en 100 valores  distintos, siendo el 0 el correspondiente a los 0V y el 100 el correspondiente  a los 5V, y todos los intermedios en "saltos" de 0,05 (5V/100).</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white; font-size: 12pt; font-family: Arial, sans-serif;">Extraído parcialmente de: <a href="http://www.dtic.upf.edu/%7Ejlozano/interfaces/interfaces5.html" target="_blank">http://www.dtic.upf.edu/~jlozano/interfaces/interfaces5.html</a></p>
+
+  <p> <strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><br></span></strong></p>
+<p><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">PWM
         Motor 12VDC</span></strong>
-    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+    </p><p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
     <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Como
         ejemplo del uso de la señal PWM vamos a utilizar las funciones para
         controlar la velociidad de un motor de corriente continua conectado al
