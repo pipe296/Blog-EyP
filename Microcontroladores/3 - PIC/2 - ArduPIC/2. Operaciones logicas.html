@@ -18,6 +18,9 @@
 
 
 
+
+
+
 <meta content="IE=edge">
 <title>Documento sin título</title>
 <style type="text/css">
@@ -110,10 +113,8 @@ function obtener_valor(variable)
 <script language="JavaScript">
   window.onload = function () { 
 		var valor = obtener_valor("verinfo");
-    var posicion = obtener_valor("pos");
-		window.location.href = "#"+valor;
-    if (posicion>=0)
-    	window.parent.scrollTo(0,posicion);
+    var element = document.getElementById(valor);
+    element.scrollIntoView();
   }
 </script>
 </head>
