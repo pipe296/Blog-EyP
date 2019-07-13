@@ -6,6 +6,10 @@
 
 
 
+
+
+
+
 <title>Documento sin título</title>
 <style type="text/css">
 <!--
@@ -63,23 +67,66 @@ p.MsoNormal1 {	margin-top: 0cm;
 }
 -->
 </style>
+
+<script language="JavaScript">
+var remplaza = /\+/gi; 
+var url = window.location.href;
+
+url = unescape(url);
+url = url.replace(remplaza, " ");
+
+function obtener_valor(variable) 
+{ 
+	var variable_may = variable;
+	var variable_pos = url.indexOf(variable);
+
+	if (variable_pos != -1) 
+	{
+		var pos_separador = url.indexOf("&", variable_pos);
+		if (pos_separador != -1) 
+		{
+			return url.substring(variable_pos + variable_may.length + 1, pos_separador);
+		}
+    else
+		{
+			return url.substring(variable_pos + variable_may.length + 1, url.length);
+		}
+	}
+  else 
+	{
+		return "NO_ENCONTRADO";
+	}
+}
+</script>
+<script language="JavaScript">
+  window.onload = function () { 
+		var valor = obtener_valor("verinfo");
+    var element = document.getElementById(valor);
+    element.scrollIntoView();
+  }
+</script>
 </head>
 
 <body>
-<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Bluetooth</span></strong>
-<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><br></span></p>
+	<a id="Bluetooth">
+		<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Bluetooth</span></strong>
+  </a>
+  <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><br></span></p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family: 'Arial', 'sans-serif'; font-size: 12.0pt">&nbsp;&nbsp;&nbsp; RN-42</span></strong></span></span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="font-family: 'Arial', 'sans-serif'; font-size: 12.0pt">
           &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;          &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; HC05 /          HC06</span></strong></p>
 <p>
 
-<img src="../../img/Bluetooth_RN42.png" alt="" height="auto" width="auto"><img src="../../img/Bluetooth_HC05.png" alt="" height="auto" width="auto"></p><p><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family: 'Arial', 'sans-serif'; font-size: 12.0pt">Bluetooth
+<img src="../../img/Bluetooth_RN42.png" alt="" height="auto" width="auto">
+<img src="../../img/Bluetooth_HC05.png" alt="" height="auto" width="auto"></p><p><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family: 'Arial', 'sans-serif'; font-size: 12.0pt">Bluetooth
             XBee</span></strong></span></p>
 <img src="../../img/Bluetooth_HC06.png" alt="" height="auto" width="auto">
 <p><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family: 'Arial', 'sans-serif'; font-size: 12.0pt"><br></span></strong></span></p>
 <img src="../img/Bluetooth_RN-42.png" alt="" height="auto" width="auto">
-<p><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Micro a Bluetooth_pulsadores</span></strong></p>
+	<a id="Micro a Bluetooth_pulsadores">
+		<p><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Micro a Bluetooth_pulsadores</span></strong></p>
+  </a>
 <p><img src="../video/16.1.1%20Micro%20a%20Bluetooth_pulsador.gif" alt="" height="auto" width="auto"><img src="../../img/16.1.1%20Micro%20a%20Bluetooth_pulsadores_1.png" alt="" height="auto" width="auto"></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Código PIC C Compiler</span></strong></span></span></span></p>
@@ -144,8 +191,11 @@ p.MsoNormal1 {	margin-top: 0cm;
 <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><img src="../../img/16.1.1%20Micro%20a%20bluetooth_pulsadores_3.png" alt="" height="734" width="716"></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><img src="../../img/16.1.1%20Micro%20a%20bluetooth_pulsadores_4.png" alt="" height="1073" width="1000"></p>
-<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Micro a Bluetooth_pulsadores_contador</span></strong>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+	  
+	<a id="Micro a Bluetooth_pulsadores_contador">
+  	<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Micro a Bluetooth_pulsadores_contador</span></strong>
+  </a>
+ 	<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p><img src="../video/16.1.2%20Micro%20a%20Bluetooth_pulsador_contador.gif" alt="" height="auto" width="auto"><img src="../../img/16.1.2%20Micro%20a%20Bluetooth_pulsadores_contador_1.png" alt="" height="auto" width="auto"></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Código PIC C Compiler</span></strong></span></span></span></span></p>
@@ -239,8 +289,10 @@ p.MsoNormal1 {	margin-top: 0cm;
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><img src="../../img/16.1.2%20Micro%20a%20bluetooth_pulsadores_contador_3.png" alt="" height="775" width="716"></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><img src="../../img/16.1.2%20Micro%20a%20bluetooth_pulsadores_contador_4.png" alt="" height="1256" width="1000"></p>
-<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Micro a Bluetooth_pulsadores_contador_sensor</span></strong>
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+	<a id="Micro a Bluetooth_pulsadores_contador_sensor">
+  	<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Micro a Bluetooth_pulsadores_contador_sensor</span></strong>
+  </a>
+  <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p><img src="../video/16.1.3%20Micro%20a%20Bluetooth_pulsador_contador_sensor.gif" alt="" height="auto" width="auto"><img src="../../img/16.1.3%20Micro%20a%20Bluetooth_pulsadores_contador_sensor_1.png" alt="" height="auto" width="auto"></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Código PIC C Compiler</span></strong></span></span></span></span></p>
@@ -344,8 +396,9 @@ p.MsoNormal1 {	margin-top: 0cm;
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><img src="../../img/16.1.3%20Micro%20a%20bluetooth_pulsadores_contador_sensor_3.png" alt="" height="818" width="716"></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><img src="../../img/16.1.3%20Micro%20a%20bluetooth_pulsadores_contador_sensor_4.png" alt="" height="1374" width="1000"></p>
-<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Bluetooth
-        a micro_bits</span></strong>
+	<a id="Bluetooth a micro_bits">
+  	<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Bluetooth a micro_bits</span></strong>
+  </a>
     <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
     <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><img src="../../img/16.1.4%20Bluetooth%20a%20micro_bits_1.png" alt="" height="auto" width="auto"></span><img src="../video/16.1.4%20Bluetooth%20a%20micro_bits.gif" alt="" height="auto" width="auto"></p>
     <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
@@ -511,8 +564,10 @@ p.MsoNormal1 {	margin-top: 0cm;
     <p class="MsoNormal"><img src="../../img/16.1.4%20Bluetooth%20a%20micro_bits_4.png" alt="" height="999" width="584"></p>
     <p class="MsoNormal"><img src="../../img/16.1.4%20Bluetooth%20a%20micro_bits_5.png" alt="" height="1001" width="615"></p>
     <p class="MsoNormal"><img src="../../img/16.1.4%20Bluetooth%20a%20micro_bits_6.png" alt="" height="600" width="448"></p>
-<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Bluetooth a micro_byte_7Seg</span></strong>
-<p><img src="../../img/16.1.5%20Bluetooth%20a%20micro%20byte_7Seg_1.png" alt="" height="auto" width="auto"><img src="../video/16.1.5%20Bluetooth%20a%20micro%20byte_7Seg.gif" alt="" height="auto" width="auto"></p>
+	<a id="Bluetooth a micro_byte_7Seg">
+  	<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Bluetooth a micro_byte_7Seg</span></strong>
+  </a>
+  <p><img src="../../img/16.1.5%20Bluetooth%20a%20micro%20byte_7Seg_1.png" alt="" height="auto" width="auto"><img src="../video/16.1.5%20Bluetooth%20a%20micro%20byte_7Seg.gif" alt="" height="auto" width="auto"></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Código PIC C Compiler</span></strong></span></span></span></span></p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
 <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC16F84A</span></p>
@@ -598,10 +653,90 @@ p.MsoNormal1 {	margin-top: 0cm;
 <p><img src="../../img/16.1.5%20Bluetooth%20a%20micro%20byte_7Seg_3.png" alt="" height="1017" width="693"></p>
 <p><img src="../../img/16.1.5%20Bluetooth%20a%20micro%20byte_7Seg_4.png" alt="" height="2742" width="535"></p>
 <p><img src="../../img/16.1.5%20Bluetooth%20a%20micro%20byte_7Seg_5.png" alt="" height="1074" width="464"></p>
-<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Proyecto
-        co</span></strong><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">municación
-        micro&lt;-&gt;Bluetooth</span></strong>
-    <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+	<a id="Bluetooth a micro_byte_PWM">
+  	<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Bluetooth a micro_byte_PWM</span></strong>
+  </a>
+  <p><span class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><img src="../../img/16.1.6%20Bluetooth%20a%20micro%20byte_PWM_1.png" alt="" height="auto" width="auto"></span><span class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><img src="../video/16.1.6%20Bluetooth%20a%20micro%20byte_PWM.gif" alt="" height="auto" width="auto"></span></p>
+<p><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><span class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Código PIC C Compiler</span></strong></span></span></span></span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC16F84A</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC16F628A</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC16F818</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC16F873A</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC16F883</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC16F877A</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#device </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">PIC16F887</span></span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device PIC18F2550</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device  PIC18F4455</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">//#device  PIC18F4550</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#include </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">&lt;Arduino</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">.</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">h</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">.</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">encrypted&gt;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span class="MsoNormal1" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#include </span></strong><span style="font-family:Courier; font-size:10.0pt; color:black; ">&lt;LiquidCrystal</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">.</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">h&gt;</span></span></span></span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">char </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">inputString</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">[</span><span style="font-family:Courier; font-size:10.0pt; color:green; ">10</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">];</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">int1 </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">stringComplete</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">int16 </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">intPWM </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">= </span><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">float </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">floatPWM </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">= </span><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">char </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">[</span><span style="font-family:Courier; font-size:10.0pt; color:green; ">12</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">];</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">void </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">setup</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">()</span> <span style="font-family:Courier; font-size:10.0pt; color:#101010; ">{</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; pinMode</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">PIN_C2</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">, </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">OUTPUT_</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; digitalWrite</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">LCD_BACKLIGHT</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">, </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">HIGH</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; lcd_begin</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:green; ">16</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:green; ">2</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; delay</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:green; ">200</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">"PWM: 0%%"</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp; Serial_begin</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:green; ">9600</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">void </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">loop</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">()</span> <span style="font-family:Courier; font-size:10.0pt; color:#101010; ">{</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">&nbsp;&nbsp; if </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">stringComplete</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;&nbsp;  {</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  intPWM </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">= </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">atol</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">inputString</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  floatPWM </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">= </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">intPWM </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">/ </span><span style="font-family:Courier; font-size:10.0pt; color:green; ">10.0</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  sprintf</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">"%3.1f%% "</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">floatPWM</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  lcd_setCursor</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:green; ">5</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  lcd_print</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">txt2stream</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  analogWrite</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">PIN_C2</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">intPWM</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // clear the string:</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  sprintf</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">inputString</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">""</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  stringComplete </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">= </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">false</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;&nbsp;  }</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#F32933; ">#INT_RDA</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">void </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">serialEvent</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">()</span> <span style="font-family:Courier; font-size:10.0pt; color:#101010; ">{</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">&nbsp;&nbsp; while </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">Serial_available</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">())</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;&nbsp;  {</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">inChar</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">[</span><span style="font-family:Courier; font-size:10.0pt; color:green; ">2</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">] <span class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">= <span style="font-family:Courier; font-size:10.0pt; color:purple; ">"0"</span></span>;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // get the new byte:</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  inChar</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">[</span><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">] = </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">Serial_read</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">();</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // add it to the inputString:</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  strcat</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">inputString</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">,</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">inChar</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">);</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // if the incoming character is a newline, set a flag</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:gray; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // so the main loop can do something about it:</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#003EC7; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">(</span><span style="font-family:Courier; font-size:10.0pt; color:black; ">inChar</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">[</span><span style="font-family:Courier; font-size:10.0pt; color:green; ">0</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">] == </span><span style="font-family:Courier; font-size:10.0pt; color:purple; ">'\r'</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">)</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:black; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  stringComplete </span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">= </span><span style="font-family:Courier; font-size:10.0pt; color:black; ">true</span><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><span style="font-family:Courier; font-size:10.0pt; color:#101010; ">}</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Programa App Inventor 2</span></strong></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><img src="../../img/16.1.6%20Bluetooth%20a%20micro%20byte_PWM_1.png" alt="" height="auto" width="auto"></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><img src="../../img/16.1.6%20Bluetooth%20a%20micro%20byte_PWM_2.png" alt="" height="546" width="744"></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;text-autospace:none;"><img src="../../img/16.1.6%20Bluetooth%20a%20micro%20byte_PWM_3.png" alt="" height="1173" width="758"></p>
+
+  
+  <a id="Proyecto comunicacion micro_Bluetooth">
+  	<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Proyecto comunicación micro&lt;-&gt;Bluetooth</span></strong>
+  </a>
+  <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
     <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;"><img src="../../img/16.1.7%20Proyecto%20comunicaci%C3%B3n%20micro_bluetooth_1.png" alt="" height="auto" width="auto"><img src="../video/16.1.7%20Proyecto%20comunicacion%20micro_bluetooth.gif" alt="" height="auto" width="auto"></p>
     <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
     <p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
