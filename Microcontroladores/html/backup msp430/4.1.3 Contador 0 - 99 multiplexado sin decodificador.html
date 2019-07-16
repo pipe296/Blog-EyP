@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+
+<title>Documento sin título</title>
+<style type="text/css">
+<!--
+p.MsoNormal {
+margin-top:0cm;
+margin-right:0cm;
+margin-bottom:10.0pt;
+margin-left:0cm;
+line-height:115%;
+font-size:11.0pt;
+font-family:"Calibri","sans-serif";
+}
+-->
+</style>
+<style type="text/css">
+<!--
+table.MsoNormalTable {
+font-size:10.0pt;
+font-family:"Calibri","sans-serif";
+}
+-->
+</style>
+<script type="text/javascript">
+	document.oncontextmenu = function(){return false;}
+    function disabletext(e){
+    return false
+    }
+    function reEnable(){
+    return true
+    }
+    document.onselectstart=new Function ("return false")
+    if (window.sidebar){
+    document.onmousedown=disabletext
+    document.onclick=reEnable
+    }
+</script>
+<style type="text/css">
+<!--
+p.MsoListParagraph {
+margin-top:0cm;
+margin-right:0cm;
+margin-bottom:10.0pt;
+margin-left:36.0pt;
+line-height:115%;
+font-size:11.0pt;
+font-family:"Calibri","sans-serif";
+}
+p.MsoNormal1 {	margin-top: 0cm;
+	margin-right: 0cm;
+	margin-bottom: 10.0pt;
+	margin-left: 0cm;
+	line-height: 115%;
+	font-size: 12pt;
+	font-family: Arial, sans-serif;
+}
+-->
+</style>
+</head>
+
+<body>
+<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Contador 0 - 99 multiplexado sin decodificador</span></strong>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<video controls="controls" controlslist="nodownload" preload="preload" autoplay="autoplay" loop="loop">
+  <source src="../video/4.1.3%20Contador%200%20-%2099%20multiplexado%20sin%20decodificador.m4v" type="video/mp4">
+</video>
+<pre><span style="color: #007F00;">/**</span>
+<span style="color: #007F00;">Display&nbsp;7&nbsp;segmenti&nbsp;per&nbsp;corso&nbsp;arduino.</span>
+
+<span style="color: #007F00;">segmenti:&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span style="color: #007F00;">a&nbsp;&nbsp;&nbsp;P2_0</span>
+<span style="color: #007F00;">b&nbsp;&nbsp;&nbsp;P2_1</span>
+<span style="color: #007F00;">c&nbsp;&nbsp;&nbsp;P2_2</span>
+<span style="color: #007F00;">d&nbsp;&nbsp;&nbsp;P2_3</span>
+<span style="color: #007F00;">e&nbsp;&nbsp;&nbsp;P2_4</span>
+<span style="color: #007F00;">f&nbsp;&nbsp;&nbsp;P2_5</span>
+<span style="color: #007F00;">g&nbsp;&nbsp;&nbsp;P2_6</span>
+<span style="color: #007F00;">*/</span>
+
+#define&nbsp;boton_inc&nbsp;P1_0&nbsp;<span style="color: #007F00;">//Boton incremento</span>
+#define&nbsp;boton_dec&nbsp;P1_1&nbsp;<span style="color: #007F00;">//Boton decremento</span>
+#define&nbsp;boton_reset&nbsp;P1_2&nbsp;<span style="color: #007F00;">//Boton reset</span>
+
+#define&nbsp;digito&nbsp;P2_7
+
+#define&nbsp;estado_boton_inc&nbsp;<span style="color: #FF8000;">digitalRead</span>(boton_inc)
+#define&nbsp;estado_boton_dec&nbsp;<span style="color: #FF8000;">digitalRead</span>(boton_dec)
+#define&nbsp;estado_boton_reset&nbsp;<span style="color: #FF8000;">digitalRead</span>(boton_reset)
+
+<span style="color: #FF8000;">boolean</span> estado_boton_inc_ant;
+<span style="color: #FF8000;">boolean</span> estado_boton_dec_ant;
+
+<span style="color: #FF8000;">byte</span> unidades = 0;
+<span style="color: #FF8000;">byte</span> decenas = 0;
+
+<span style="color: #FF8000;">byte</span> seven_seg_digits[11][7] = {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;1,1,1,1,1,1,0&nbsp;},&nbsp;&nbsp;<span style="color: #007F00;">// = 0</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;0,1,1,0,0,0,0&nbsp;},&nbsp;&nbsp;<span style="color: #007F00;">// = 1</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;1,1,0,1,1,0,1&nbsp;},&nbsp;&nbsp;<span style="color: #007F00;">// = 2</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;1,1,1,1,0,0,1&nbsp;},&nbsp;&nbsp;<span style="color: #007F00;">// = 3</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;0,1,1,0,0,1,1&nbsp;},&nbsp;&nbsp;<span style="color: #007F00;">// = 4</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;1,0,1,1,0,1,1&nbsp;},&nbsp;&nbsp;<span style="color: #007F00;">// = 5</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;1,0,1,1,1,1,1&nbsp;},&nbsp;&nbsp;<span style="color: #007F00;">// = 6</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;1,1,1,0,0,0,0&nbsp;},&nbsp;&nbsp;<span style="color: #007F00;">// = 7</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;1,1,1,1,1,1,1&nbsp;},&nbsp;&nbsp;<span style="color: #007F00;">// = 8</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;1,1,1,0,0,1,1&nbsp;},&nbsp;&nbsp;<span style="color: #007F00;">// = 9</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;0,0,0,0,0,0,0&nbsp;}&nbsp;&nbsp;&nbsp;<span style="color: #007F00;">// = blank</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color: #FF8000;">long</span> pins_P2[7] = {P2_0, P2_1, P2_2, P2_3, P2_4, P2_5, P2_6};
+&nbsp;&nbsp;&nbsp;
+<span style="color: #FF0000;">void</span> write_digit(<span style="color: #FF8000;">byte</span> cifra){
+&nbsp;&nbsp;<span style="color: #FF8000;">digitalWrite</span>(pins_P2[0], seven_seg_digits[cifra][0]);
+&nbsp;&nbsp;<span style="color: #FF8000;">digitalWrite</span>(pins_P2[1], seven_seg_digits[cifra][1]);
+&nbsp;&nbsp;<span style="color: #FF8000;">digitalWrite</span>(pins_P2[2], seven_seg_digits[cifra][2]);
+&nbsp;&nbsp;<span style="color: #FF8000;">digitalWrite</span>(pins_P2[3], seven_seg_digits[cifra][3]);
+&nbsp;&nbsp;<span style="color: #FF8000;">digitalWrite</span>(pins_P2[4], seven_seg_digits[cifra][4]);
+&nbsp;&nbsp;<span style="color: #FF8000;">digitalWrite</span>(pins_P2[5], seven_seg_digits[cifra][5]);
+&nbsp;&nbsp;<span style="color: #FF8000;">digitalWrite</span>(pins_P2[6], seven_seg_digits[cifra][6]);
+}
+
+<span style="color: #FF0000;">void</span> <span style="color: #8B308B;"><b>setup</b></span>(){
+&nbsp;&nbsp;<span style="color: #FF8000;">byte</span> i;
+&nbsp;&nbsp;<span style="color: #FF8000;">pinMode</span>(boton_inc, <span style="color: #0066FF;">INPUT</span>);
+&nbsp;&nbsp;<span style="color: #FF8000;">pinMode</span>(boton_dec, <span style="color: #0066FF;">INPUT</span>);
+&nbsp;&nbsp;<span style="color: #FF8000;">pinMode</span>(boton_reset, <span style="color: #0066FF;">INPUT</span>);
+&nbsp;&nbsp;<span style="color: #FF0000;">for</span> (i=0; i&lt;7; i++){
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF8000;">pinMode</span>(pins_P2[i], <span style="color: #0066FF;">OUTPUT</span>);
+&nbsp;&nbsp;}
+&nbsp;&nbsp;<span style="color: #FF8000;">pinMode</span>(digito, <span style="color: #0066FF;">OUTPUT</span>);
+}
+
+<span style="color: #FF0000;">void</span> <span style="color: #FF8000;">loop</span>(){
+&nbsp;&nbsp;<span style="color: #FF0000;">if</span> (estado_boton_inc!=estado_boton_inc_ant)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">if</span> ((estado_boton_inc==1)&amp;&amp;(decenas*10+unidades&lt;99))
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unidades++;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">if</span> (unidades&gt;9)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unidades&nbsp;=&nbsp;0;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decenas++;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;estado_boton_inc_ant&nbsp;=&nbsp;estado_boton_inc;
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(5);
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;<span style="color: #007F00;">//Programar acción boton_dec</span>
+
+&nbsp;&nbsp;<span style="color: #FF0000;">if</span> (estado_boton_reset==1)
+&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;unidades&nbsp;=&nbsp;0;
+&nbsp;&nbsp;&nbsp;&nbsp;decenas&nbsp;=&nbsp;0;
+&nbsp;&nbsp;}
+&nbsp;&nbsp;
+&nbsp;&nbsp;<span style="color: #FF8000;">digitalWrite</span>(digito, <span style="color: #0066FF;">LOW</span>);
+&nbsp;&nbsp;write_digit(unidades);
+&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(50);
+&nbsp;&nbsp;write_digit(10);
+&nbsp;&nbsp;<span style="color: #FF8000;">digitalWrite</span>(digito, <span style="color: #0066FF;">HIGH</span>);
+&nbsp;&nbsp;write_digit(decenas);
+&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(50);
+&nbsp;&nbsp;write_digit(10);
+}
+</pre>
+</body></html>

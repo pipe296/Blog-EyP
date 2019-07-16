@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+
+<title>Documento sin título</title>
+<style type="text/css">
+<!--
+p.MsoNormal {
+margin-top:0cm;
+margin-right:0cm;
+margin-bottom:10.0pt;
+margin-left:0cm;
+line-height:115%;
+font-size:11.0pt;
+font-family:"Calibri","sans-serif";
+}
+-->
+</style>
+<style type="text/css">
+<!--
+table.MsoNormalTable {
+font-size:10.0pt;
+font-family:"Calibri","sans-serif";
+}
+-->
+</style>
+<script type="text/javascript">
+	document.oncontextmenu = function(){return false;}
+    function disabletext(e){
+    return false
+    }
+    function reEnable(){
+    return true
+    }
+    document.onselectstart=new Function ("return false")
+    if (window.sidebar){
+    document.onmousedown=disabletext
+    document.onclick=reEnable
+    }
+</script>
+<style type="text/css">
+<!--
+p.MsoListParagraph {
+margin-top:0cm;
+margin-right:0cm;
+margin-bottom:10.0pt;
+margin-left:36.0pt;
+line-height:115%;
+font-size:11.0pt;
+font-family:"Calibri","sans-serif";
+}
+p.MsoNormal1 {	margin-top: 0cm;
+	margin-right: 0cm;
+	margin-bottom: 10.0pt;
+	margin-left: 0cm;
+	line-height: 115%;
+	font-size: 12pt;
+	font-family: Arial, sans-serif;
+}
+-->
+</style>
+</head>
+
+<body>
+<strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Contador 0 - 9 con decodificador</span></strong>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+<video controls="controls" controlslist="nodownload" preload="preload" autoplay="autoplay" loop="loop">
+  <source src="../video/4.1.4%20Contador%200%20-%209%20con%20decodificador.m4v" type="video/mp4">
+</video>
+<pre>#define&nbsp;boton_inc&nbsp;P1_0&nbsp;&nbsp;<span style="color: #007F00;">//Boton incremento</span>
+#define&nbsp;boton_dec&nbsp;P1_1&nbsp;&nbsp;<span style="color: #007F00;">//Boton decremento</span>
+#define&nbsp;boton_reset&nbsp;P1_2&nbsp;&nbsp;<span style="color: #007F00;">//Boton reset</span>
+
+#define&nbsp;estado_boton_inc&nbsp;<span style="color: #FF8000;">digitalRead</span>(boton_inc)
+#define&nbsp;estado_boton_dec&nbsp;<span style="color: #FF8000;">digitalRead</span>(boton_dec)
+#define&nbsp;estado_boton_reset&nbsp;<span style="color: #FF8000;">digitalRead</span>(boton_reset)
+
+<span style="color: #FF8000;">boolean</span> estado_boton_inc_ant;
+<span style="color: #FF8000;">boolean</span> estado_boton_dec_ant;
+
+<span style="color: #FF8000;">byte</span> unidades = 0;
+
+<span style="color: #FF8000;">long</span> pins_P2[4] = {P2_0, P2_1, P2_2, P2_3};
+
+<span style="color: #FF0000;">void</span> write_digit(<span style="color: #FF8000;">byte</span> cifra){
+&nbsp;&nbsp;<span style="color: #FF8000;">byte</span> i;
+&nbsp;&nbsp;<span style="color: #FF0000;">for</span> (i=0; i&lt;4; i++){
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF8000;">digitalWrite</span>(pins_P2[i], (cifra&gt;&gt;i)&amp;1);
+&nbsp;&nbsp;}
+}
+
+<span style="color: #FF0000;">void</span> <span style="color: #8B308B;"><b>setup</b></span>(){
+&nbsp;&nbsp;<span style="color: #FF8000;">byte</span> i;
+&nbsp;&nbsp;<span style="color: #FF8000;">pinMode</span>(boton_inc, <span style="color: #0066FF;">INPUT</span>);
+&nbsp;&nbsp;<span style="color: #FF8000;">pinMode</span>(boton_dec, <span style="color: #0066FF;">INPUT</span>);
+&nbsp;&nbsp;<span style="color: #FF8000;">pinMode</span>(boton_reset, <span style="color: #0066FF;">INPUT</span>);
+&nbsp;&nbsp;<span style="color: #FF0000;">for</span> (i=0; i&lt;4; i++){
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF8000;">pinMode</span>(pins_P2[i], <span style="color: #0066FF;">OUTPUT</span>);
+&nbsp;&nbsp;}
+}
+
+<span style="color: #FF0000;">void</span> <span style="color: #FF8000;">loop</span>(){
+&nbsp;&nbsp;<span style="color: #FF0000;">if</span> (estado_boton_inc!=estado_boton_inc_ant)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">if</span> ((estado_boton_inc==1)&amp;&amp;(unidades&lt;9))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unidades++;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;estado_boton_inc_ant&nbsp;=&nbsp;estado_boton_inc;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(5);
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;<span style="color: #FF0000;">if</span> (estado_boton_dec!=estado_boton_dec_ant)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF0000;">if</span> ((estado_boton_dec==1)&amp;&amp;(unidades&gt;0))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unidades--;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;estado_boton_dec_ant&nbsp;=&nbsp;estado_boton_dec;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #FF8000;">delay</span>(5);
+&nbsp;&nbsp;}
+&nbsp;&nbsp;
+&nbsp;&nbsp;<span style="color: #FF0000;">if</span> (estado_boton_reset==1)
+&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;unidades&nbsp;=&nbsp;0;
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;write_digit(unidades);
+}
+</pre>
+</body></html>
