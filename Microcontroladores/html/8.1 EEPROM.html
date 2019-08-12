@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
+
 <title>Documento sin título</title>
 <style type="text/css">
 <!--
@@ -64,11 +65,18 @@ p.MsoNormal1 {	margin-top: 0cm;
 
 <body><span class="MsoNormal" style="text-align:justify;"><strong><span style="line-height:115%; font-family:'Arial','sans-serif'; font-size:12.0pt; ">EEPROM</span></strong></span>
 
-<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:justify;line-height:normal;background:white;">&nbsp;</p>
+
 <figure>
   <figcaption></figcaption>
-</figure>
+</figure><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">CCS implementa muchas funciones para trabajar con la  memoria EEPROM interna del microcontrolador,&nbsp;  estas funciones son:</span>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">value =  read_eeprom(address):</span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">
+ función  básica para leer el valor de la EEPROM interna del PIC.&nbsp; 
+Devuelve un valor entero (int8) de un byte.  "address" puede ser un 
+entero de 8 ó 16 bit.&nbsp; Dependiendo del PIC que utilicemos  dispondremos 
+de mas ó menos memoria EEPROM, por ejemplo el PIC 16f84A&nbsp; dispone de 64 
+bytes y los PIC 16F87X tienen  256 bytes que se direccionan del 0 a 255.</span></p>
+<p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; "><br></span></p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">write_eeprom(address,  value): </span></strong><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">esta función  escribe un dato (entero de 8 bit) en la dirección especificada en address en la  memoria interna del PIC. Al igual que read_eeprom address puede ser un entero  de 8 ó 16 bit.</span></p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">&nbsp;</span></p>
 <p class="MsoNormal1" style="margin-bottom:.0001pt;text-align:justify;line-height:13.5pt;background:white;"><span style="font-family:'Arial','sans-serif'; font-size:12.0pt; ">Algunas consideraciones a tener en cuenta sobre la  memoria EEPROM es que es rápida en el proceso de lectura, pero puede tardar  varios milisegundos en realizar un proceso de escritura. Otro factor a tener en  cuenta es que se pueden hacer operaciones de lectura sobre el valor de sus  registros el número de veces que se quiera, pero soportan un número limitado de  ciclos de escritura / borrado. Ese número según Microchip es de aproximadamente  un millón.</span></p>
